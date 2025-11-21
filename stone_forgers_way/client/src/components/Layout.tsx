@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronRight, ChevronDown, Sparkles } from "lucide-react";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { getLatestQuizResult, getArchetypeName } from "@/lib/archetypeQuiz";
 
@@ -40,6 +40,7 @@ function useNavStructure() {
     {
       label: "Explore",
       items: [
+        { href: "/todays-practice", label: "Today's Practice" },
         { href: "/concepts", label: "Concepts" },
         { href: "/practices", label: "Practices" },
         { href: "/glossary", label: "Glossary" },

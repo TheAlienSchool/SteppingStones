@@ -26,6 +26,7 @@ import TermaInAction from "./pages/reflections/TermaInAction";
 import ThankYou from "./pages/ThankYou";
 import ArchetypeQuiz from "./pages/ArchetypeQuiz";
 import MyArchetype from "./pages/MyArchetype";
+import TodaysPracticePage from "./pages/TodaysPracticePage";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 
 function Router() {
@@ -38,6 +39,7 @@ function Router() {
       <Route path={"/archetypes"} component={Archetypes} />
       <Route path={"/archetype-quiz"} component={ArchetypeQuiz} />
       <Route path={"/my-archetype"} component={MyArchetype} />
+      <Route path={"/todays-practice"} component={TodaysPracticePage} />
       <Route path={"/concepts"} component={Concepts} />
       <Route path={"/practices"} component={Practices} />
       <Route path={"/glossary"} component={Glossary} />

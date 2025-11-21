@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import SEO from "@/components/SEO";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
+import TodaysPractice from "@/components/TodaysPractice";
 
 const navGroups = [
   { label: "The Journey", href: "/journey" },
@@ -20,6 +21,7 @@ const navGroups = [
   {
     label: "Explore",
     items: [
+      { href: "/todays-practice", label: "Today's Practice" },
       { href: "/concepts", label: "Concepts" },
       { href: "/practices", label: "Practices" },
       { href: "/glossary", label: "Glossary" },
@@ -191,8 +193,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Today's Practice */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-xl mx-auto">
+            <TodaysPractice />
+          </div>
+        </div>
+      </section>
+
       {/* Kamau's Story Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-stone-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-4xl font-serif text-stone-800 text-center">

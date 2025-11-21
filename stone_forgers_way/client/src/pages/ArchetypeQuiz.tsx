@@ -13,6 +13,9 @@ import {
   saveQuizResult,
   type QuizResult
 } from "@/lib/archetypeQuiz";
+import TodaysPractice from "@/components/TodaysPractice";
+import PracticeReminder from "@/components/PracticeReminder";
+import { getTodaysPractice } from "@/lib/todaysPractice";
 
 export default function ArchetypeQuiz() {
   const [, setLocation] = useLocation();
@@ -224,6 +227,18 @@ export default function ArchetypeQuiz() {
                     );
                   })}
                 </div>
+              </Card>
+
+              {/* Today's Practice with Reminder */}
+              <Card
+                className="p-8 mb-8 bg-white opacity-0"
+                style={{ animation: "fadeInUp 0.6s ease-out 1.05s forwards" }}
+              >
+                <h3 className="text-2xl font-serif text-stone-800 mb-6">
+                  Today's Practice for You
+                </h3>
+                <TodaysPractice variant="full" />
+                <PracticeReminder practice={getTodaysPractice()} className="mt-4" />
               </Card>
 
               {/* Actions */}

@@ -12,6 +12,9 @@ import {
   type QuizResult
 } from "@/lib/archetypeQuiz";
 import SocialShare from "@/components/SocialShare";
+import TodaysPractice from "@/components/TodaysPractice";
+import PracticeReminder from "@/components/PracticeReminder";
+import { getTodaysPractice } from "@/lib/todaysPractice";
 
 export default function MyArchetype() {
   const [result, setResult] = useState<ReturnType<typeof getLatestQuizResult>>(null);
@@ -110,6 +113,14 @@ export default function MyArchetype() {
                   </p>
                 ))}
               </div>
+            </div>
+
+            <div className="border-t border-stone-200 pt-8">
+              <h3 className="text-2xl font-serif text-stone-800 mb-4">
+                Today's Practice
+              </h3>
+              <TodaysPractice variant="full" />
+              <PracticeReminder practice={getTodaysPractice()} className="mt-4" />
             </div>
 
             {history.length > 1 && (
