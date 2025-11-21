@@ -55,6 +55,10 @@ export const analytics = {
   contributionClick: (tier: string, amount: number, location: string) => {
     trackEvent('contribution_click', { tier, amount, location });
   },
+
+  contributionComplete: (tier: string, sessionId: string) => {
+    trackEvent('contribution_complete', { tier, session_id: sessionId });
+  },
   
   // Navigation events
   navigationClick: (destination: string, source: string) => {

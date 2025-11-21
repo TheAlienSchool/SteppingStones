@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { getLatestQuizResult, getArchetypeName } from "@/lib/archetypeQuiz";
 
@@ -10,7 +9,13 @@ interface LayoutProps {
   showNav?: boolean;
 }
 
-function useNavLinks() {
+interface NavGroup {
+  label: string;
+  href?: string;
+  items?: { href: string; label: string }[];
+}
+
+function useNavStructure() {
   const [hasArchetype, setHasArchetype] = useState(false);
   const [archetypeName, setArchetypeName] = useState("");
 
@@ -22,38 +27,100 @@ function useNavLinks() {
     }
   }, []);
 
-  const baseLinks = [
-    { href: "/journey", label: "The Journey" },
-    { href: "/archetypes", label: "Archetypes" },
+  const navGroups: NavGroup[] = [
+    { label: "The Journey", href: "/journey" },
+    {
+      label: "Archetypes",
+      items: [
+        { href: "/archetypes", label: "The Archetypes" },
+        { href: "/archetype-quiz", label: "Discover Your Archetype" },
+        ...(hasArchetype ? [{ href: "/my-archetype", label: `My Archetype :: ${archetypeName}` }] : []),
+      ],
+    },
+    {
+      label: "Explore",
+      items: [
+        { href: "/concepts", label: "Concepts" },
+        { href: "/practices", label: "Practices" },
+        { href: "/glossary", label: "Glossary" },
+        { href: "/works", label: "Complete Works" },
+      ],
+    },
+    { label: "Reflections", href: "/reflections" },
+    {
+      label: "Lineage",
+      items: [
+        { href: "/the-container", label: "The Container" },
+        { href: "/samuel-r-harris", label: "Samuel R. Harris" },
+      ],
+    },
+    { label: "About", href: "/about" },
   ];
 
-  if (hasArchetype) {
-    baseLinks.push({ href: "/my-archetype", label: `My Archetype :: ${archetypeName}` });
+  return navGroups;
+}
+
+function DropdownMenu({ group }: { group: NavGroup }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  if (!group.items) {
+    return (
+      <Link href={group.href!}>
+        <span className="text-stone-700 hover:text-amber-700 transition-colors cursor-pointer">
+          {group.label}
+        </span>
+      </Link>
+    );
   }
 
-  return [
-    ...baseLinks,
-    { href: "/concepts", label: "Concepts" },
-    { href: "/practices", label: "Practices" },
-    { href: "/glossary", label: "Glossary" },
-    { href: "/works", label: "Complete Works" },
-    { href: "/reflections", label: "Reflections" },
-    { href: "/the-container", label: "The Container" },
-    { href: "/samuel-r-harris", label: "Samuel R. Harris" },
-    { href: "/about", label: "About" },
-  ];
+  return (
+    <div ref={dropdownRef} className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-1 text-stone-700 hover:text-amber-700 transition-colors"
+      >
+        {group.label}
+        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+      {isOpen && (
+        <div className="absolute top-full left-0 mt-2 py-2 bg-white rounded-lg shadow-lg border border-stone-200 min-w-[200px] z-50">
+          {group.items.map((item) => (
+            <Link key={item.href} href={item.href}>
+              <div
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-2 text-stone-700 hover:bg-amber-50 hover:text-amber-700 transition-colors cursor-pointer"
+              >
+                {item.label}
+              </div>
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 function Breadcrumbs() {
   const [location] = useLocation();
-  
+
   if (location === "/") return null;
-  
+
   const pathSegments = location.split("/").filter(Boolean);
   const breadcrumbs = [{ href: "/", label: "Home" }];
-  
+
   let currentPath = "";
-  pathSegments.forEach((segment, index) => {
+  pathSegments.forEach((segment) => {
     currentPath += `/${segment}`;
     const label = segment
       .split("-")
@@ -61,7 +128,7 @@ function Breadcrumbs() {
       .join(" ");
     breadcrumbs.push({ href: currentPath, label });
   });
-  
+
   return (
     <div className="container mx-auto px-4 py-2">
       <div className="flex items-center gap-2 text-sm text-stone-600">
@@ -86,8 +153,20 @@ function Breadcrumbs() {
 
 export default function Layout({ children, showNav = true }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navLinks = useNavLinks();
-  
+  const navGroups = useNavStructure();
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-stone-100">
       {showNav && (
@@ -100,18 +179,14 @@ export default function Layout({ children, showNav = true }: LayoutProps) {
                     The Stone Forger's Way
                   </span>
                 </Link>
-                
+
                 {/* Desktop Navigation */}
-                <div className="hidden lg:flex items-center gap-6">
-                  {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href}>
-                      <span className="text-stone-700 hover:text-amber-700 transition-colors cursor-pointer">
-                        {link.label}
-                      </span>
-                    </Link>
+                <div className="hidden lg:flex items-center gap-8">
+                  {navGroups.map((group) => (
+                    <DropdownMenu key={group.label} group={group} />
                   ))}
                 </div>
-                
+
                 {/* Mobile Menu Button */}
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -122,37 +197,88 @@ export default function Layout({ children, showNav = true }: LayoutProps) {
                 </button>
               </div>
             </div>
-            
-            {/* Mobile Menu */}
-            {mobileMenuOpen && (
-              <div className="lg:hidden bg-amber-50 border-t border-amber-200/50">
-                <div className="container mx-auto px-4 py-4 space-y-3">
-                  {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href}>
-                      <div
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block py-2 text-stone-700 hover:text-amber-700 transition-colors cursor-pointer"
-                      >
-                        {link.label}
-                      </div>
-                    </Link>
+          </nav>
+
+          {/* Mobile Menu - Full Screen Overlay */}
+          {mobileMenuOpen && (
+            <div className="fixed inset-0 z-40 lg:hidden">
+              {/* Backdrop */}
+              <div
+                className="absolute inset-0 bg-stone-900/50 backdrop-blur-sm"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+
+              {/* Menu Panel */}
+              <div className="absolute top-0 right-0 h-full w-full max-w-sm bg-amber-50 shadow-xl overflow-y-auto">
+                {/* Close button area */}
+                <div className="sticky top-0 bg-amber-50 border-b border-amber-200/50 p-4 flex justify-between items-center">
+                  <span className="text-lg font-serif text-stone-800">Menu</span>
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 text-stone-700 hover:text-amber-700 transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+
+                {/* Menu Content */}
+                <div className="p-4 space-y-6">
+                  {navGroups.map((group) => (
+                    <div key={group.label}>
+                      {group.items ? (
+                        <div>
+                          <p className="text-xs font-semibold text-amber-700 uppercase tracking-wider mb-3">
+                            {group.label}
+                          </p>
+                          <div className="space-y-1 pl-2 border-l-2 border-amber-200">
+                            {group.items.map((item) => (
+                              <Link key={item.href} href={item.href}>
+                                <div
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block py-2 px-3 text-stone-700 hover:text-amber-700 hover:bg-amber-100/50 rounded-r transition-colors cursor-pointer"
+                                >
+                                  {item.label}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Link href={group.href!}>
+                          <div
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-3 text-lg font-medium text-stone-800 hover:text-amber-700 transition-colors cursor-pointer border-b border-amber-200/50"
+                          >
+                            {group.label}
+                          </div>
+                        </Link>
+                      )}
+                    </div>
                   ))}
                 </div>
+
+                {/* Footer */}
+                <div className="p-4 mt-auto border-t border-amber-200/50">
+                  <p className="text-xs text-stone-500 text-center">
+                    "It's better to light a candle than to curse the darkness."
+                  </p>
+                </div>
               </div>
-            )}
-          </nav>
-          
+            </div>
+          )}
+
           {/* Breadcrumbs */}
-          <div className="fixed top-16 left-0 right-0 z-40 bg-stone-50/90 backdrop-blur-sm border-b border-stone-200/50">
+          <div className="fixed top-16 left-0 right-0 z-30 bg-stone-50/90 backdrop-blur-sm border-b border-stone-200/50">
             <Breadcrumbs />
           </div>
         </>
       )}
-      
+
       <main className={showNav ? "pt-28" : ""}>
         {children}
       </main>
-      
+
       {/* Back to Top Button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -163,14 +289,14 @@ export default function Layout({ children, showNav = true }: LayoutProps) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
       </button>
-      
+
       <footer className="bg-stone-800 text-stone-200 py-12">
         <div className="container mx-auto px-4">
           {/* Newsletter Signup */}
           <div className="max-w-2xl mx-auto mb-12">
             <NewsletterSignup variant="compact" />
           </div>
-          
+
           <div className="text-center space-y-4">
             <p className="text-sm">
               "It's better to light a candle than to curse the darkness."

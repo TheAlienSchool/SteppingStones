@@ -3,29 +3,57 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import NewsletterSignup from "@/components/NewsletterSignup";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import SEO from "@/components/SEO";
 
-const navLinks = [
-  { href: "/journey", label: "The Journey" },
-  { href: "/archetypes", label: "Archetypes" },
-  { href: "/concepts", label: "Concepts" },
-  { href: "/practices", label: "Practices" },
-  { href: "/glossary", label: "Glossary" },
-  { href: "/works", label: "Complete Works" },
-  { href: "/reflections", label: "Reflections" },
-  { href: "/the-container", label: "The Container" },
-  { href: "/samuel-r-harris", label: "Samuel R. Harris" },
-  { href: "/about", label: "About" },
+const navGroups = [
+  { label: "The Journey", href: "/journey" },
+  {
+    label: "Archetypes",
+    items: [
+      { href: "/archetypes", label: "The Archetypes" },
+      { href: "/archetype-quiz", label: "Discover Your Archetype" },
+    ],
+  },
+  {
+    label: "Explore",
+    items: [
+      { href: "/concepts", label: "Concepts" },
+      { href: "/practices", label: "Practices" },
+      { href: "/glossary", label: "Glossary" },
+      { href: "/works", label: "Complete Works" },
+    ],
+  },
+  { label: "Reflections", href: "/reflections" },
+  {
+    label: "Lineage",
+    items: [
+      { href: "/the-container", label: "The Container" },
+      { href: "/samuel-r-harris", label: "Samuel R. Harris" },
+    ],
+  },
+  { label: "About", href: "/about" },
 ];
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <Layout showNav={false}>
-      <SEO 
+      <SEO
         title="The Stone Forger's Way :: A Temporal Technology for Conscious Creation"
         description="Explore archetypes, practices, and concepts for forging your path with trust and intention. A collaboration between Kamau Zuberi Akabueze and Manus AI."
         image="/trust-stepping.png"
@@ -39,29 +67,79 @@ export default function Home() {
       >
         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
-      
-      {/* Mobile Menu Overlay */}
+
+      {/* Menu Overlay - Scrollable */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-stone-900/95 backdrop-blur-sm">
-          <div className="container mx-auto px-4 py-24 space-y-6">
-            <Link href="/">
-              <div
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-3xl font-serif text-amber-100 hover:text-amber-300 transition-colors cursor-pointer text-center mb-12"
-              >
-                The Stone Forger's Way
-              </div>
-            </Link>
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <div
+        <div className="fixed inset-0 z-40">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-stone-900/90 backdrop-blur-sm"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+
+          {/* Menu Panel */}
+          <div className="absolute top-0 right-0 h-full w-full max-w-sm bg-stone-900 shadow-xl overflow-y-auto">
+            {/* Header */}
+            <div className="sticky top-0 bg-stone-900 border-b border-stone-700 p-4 flex justify-between items-center">
+              <Link href="/">
+                <span
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 text-2xl text-stone-100 hover:text-amber-300 transition-colors cursor-pointer text-center border-b border-stone-700"
+                  className="text-xl font-serif text-amber-100 hover:text-amber-300 transition-colors cursor-pointer"
                 >
-                  {link.label}
-                </div>
+                  The Stone Forger's Way
+                </span>
               </Link>
-            ))}
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 text-stone-300 hover:text-amber-300 transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Menu Content */}
+            <div className="p-6 space-y-8">
+              {navGroups.map((group) => (
+                <div key={group.label}>
+                  {group.items ? (
+                    <div>
+                      <p className="text-xs font-semibold text-amber-500 uppercase tracking-wider mb-3">
+                        {group.label}
+                      </p>
+                      <div className="space-y-1 pl-3 border-l-2 border-stone-700">
+                        {group.items.map((item) => (
+                          <Link key={item.href} href={item.href}>
+                            <div
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block py-2 px-3 text-stone-200 hover:text-amber-300 hover:bg-stone-800 rounded-r transition-colors cursor-pointer"
+                            >
+                              {item.label}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link href={group.href!}>
+                      <div
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block py-3 text-xl font-medium text-stone-100 hover:text-amber-300 transition-colors cursor-pointer border-b border-stone-700"
+                      >
+                        {group.label}
+                      </div>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Footer */}
+            <div className="p-6 border-t border-stone-700">
+              <p className="text-xs text-stone-500 text-center italic">
+                "It's better to light a candle than to curse the darkness."
+              </p>
+            </div>
           </div>
         </div>
       )}
