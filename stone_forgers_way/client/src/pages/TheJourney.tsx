@@ -22,7 +22,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 The Originating Question
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   During an early morning Inspired Breath practice at <strong>1000 Ways to Sit</strong>, 
                   a question arose in the space between breath and thought:
@@ -47,7 +47,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Phase 1: Terma and Tertön
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   The first discovery was the Tibetan Buddhist concept of <strong>Terma</strong> (hidden treasures) 
                   and <strong>Tertön</strong> (treasure revealers).
@@ -67,7 +67,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Phase 2: Stepping Stones
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   The stepping stones concept synthesized physics, contemplation, and evolutionary consciousness.
                 </p>
@@ -91,7 +91,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Phase 3: Trust is The Cheat Code
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   <strong>Trust is The Cheat Code</strong> because it bypasses the tyranny of the rational mind 
                   that demands proof before it will move.
@@ -115,7 +115,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Phase 4: The Archetypes Emerge
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   Four primary archetypes emerged to describe the human relationship with stones:
                 </p>
@@ -160,7 +160,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Phase 5: Active Patience
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   <strong>Active Patience</strong>—the unnecessary rebranding of a legendary art in our times 
                   of intentional environmental dissonance. True patience was always active, always in partnership 
@@ -178,7 +178,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Phase 6: The Stone Thrower's Backache
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   The backache is the somatic cost of throwing stones while keeping the shield up. The sympathetic 
                   nervous system in chronic activation. The muscular tension from sustained defensive posture. 
@@ -195,7 +195,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Phase 7: Breaking the Fourth Wall
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   The recognition that the exploration itself became the demonstration. The hoarding of wealth :: 
                   hiding the AI collaboration out of shame. The Stone Thrower's Heartache: not being in love with 
@@ -213,7 +213,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Phase 8: The Lineage Revealed
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   Samuel R. Harris, the grandfather who taught "it's better to light a candle than to curse the 
                   darkness."
@@ -236,7 +236,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 The Container: 1000 Ways to Sit
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   None of this would have emerged without the container.
                 </p>
@@ -258,7 +258,7 @@ export default function TheJourney() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6 text-center">
                 The Invitation
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-xl leading-relaxed text-stone-700 text-center">
                   This is the journey. This is how The Stone Forger's Way emerged from a single question into a 
                   complete temporal technology for conscious creation.

@@ -68,27 +68,30 @@ export default function Archetypes() {
       <div className="bg-gradient-to-b from-amber-50 to-white">
         <section className="py-24">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
+            <div className="max-w-4xl mx-auto text-center space-y-8">
               <h1 className="text-5xl md:text-6xl font-serif text-stone-800">
                 The Archetypes
               </h1>
+
               <p className="text-xl text-stone-600 leading-relaxed">
-  We are all of these. At different times.
-</p>
-<p className="text-xl text-stone-600 leading-relaxed">
-  In different moments. The goal is not to kill off the archetypes we don't like.
-</p>
-<p className="text-xl text-stone-600 leading-relaxed">
-  The goal is to recognize them, have compassion for them, and consciously choose 
-              <div className="mt-8">
+                We are all of these. At different times.
+              </p>
+
+              <p className="text-xl text-stone-600 leading-relaxed">
+                In different moments. The goal is not to kill off the archetypes we don't like.
+              </p>
+
+              <p className="text-xl text-stone-600 leading-relaxed">
+                The goal is to recognize them, have compassion for them, and consciously choose which one leads.
+              </p>
+
+              <div className="pt-4">
                 <Link href="/archetype-quiz">
                   <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-8 py-6">
                     Discover Your Archetype
                   </Button>
                 </Link>
               </div>
-                which one leads.
-</p>
             </div>
           </div>
         </section>
@@ -117,9 +120,9 @@ export default function Archetypes() {
                       {archetype.description}
                     </p>
                     
-                    <div className="prose prose-lg prose-stone">
+                    <div className="space-y-8">
                       {archetype.fullText.split('\n\n').map((para, i) => (
-                        <p key={i} className="text-stone-700 leading-relaxed">{para}</p>
+                        <p key={i} className="text-lg text-stone-700 leading-relaxed">{para}</p>
                       ))}
                     </div>
                     
