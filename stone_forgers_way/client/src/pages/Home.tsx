@@ -8,39 +8,11 @@ import { Menu, X } from "lucide-react";
 import SEO from "@/components/SEO";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
 import TodaysPractice from "@/components/TodaysPractice";
-
-const navGroups = [
-  { label: "The Journey", href: "/journey" },
-  {
-    label: "Archetypes",
-    items: [
-      { href: "/archetypes", label: "The Archetypes" },
-      { href: "/archetype-quiz", label: "Discover Your Archetype" },
-    ],
-  },
-  {
-    label: "Explore",
-    items: [
-      { href: "/todays-practice", label: "Today's Practice" },
-      { href: "/concepts", label: "Concepts" },
-      { href: "/practices", label: "Practices" },
-      { href: "/glossary", label: "Glossary" },
-      { href: "/works", label: "Complete Works" },
-    ],
-  },
-  { label: "Reflections", href: "/reflections" },
-  {
-    label: "Lineage",
-    items: [
-      { href: "/the-container", label: "The Container" },
-      { href: "/samuel-r-harris", label: "Samuel R. Harris" },
-    ],
-  },
-  { label: "About", href: "/about" },
-];
+import { useNavigation } from "@/hooks/useNavigation";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navGroups = useNavigation();
 
   // Prevent body scroll when menu is open
   useEffect(() => {

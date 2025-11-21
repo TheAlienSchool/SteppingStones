@@ -1,64 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ChevronRight, ChevronDown, Sparkles } from "lucide-react";
+import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
 import NewsletterSignup from "@/components/NewsletterSignup";
-import { getLatestQuizResult, getArchetypeName } from "@/lib/archetypeQuiz";
+import { useNavigation, type NavGroup } from "@/hooks/useNavigation";
 
 interface LayoutProps {
   children: React.ReactNode;
   showNav?: boolean;
-}
-
-interface NavGroup {
-  label: string;
-  href?: string;
-  items?: { href: string; label: string }[];
-}
-
-function useNavStructure() {
-  const [hasArchetype, setHasArchetype] = useState(false);
-  const [archetypeName, setArchetypeName] = useState("");
-
-  useEffect(() => {
-    const result = getLatestQuizResult();
-    if (result) {
-      setHasArchetype(true);
-      setArchetypeName(getArchetypeName(result.archetype));
-    }
-  }, []);
-
-  const navGroups: NavGroup[] = [
-    { label: "The Journey", href: "/journey" },
-    {
-      label: "Archetypes",
-      items: [
-        { href: "/archetypes", label: "The Archetypes" },
-        { href: "/archetype-quiz", label: "Discover Your Archetype" },
-        ...(hasArchetype ? [{ href: "/my-archetype", label: `My Archetype :: ${archetypeName}` }] : []),
-      ],
-    },
-    {
-      label: "Explore",
-      items: [
-        { href: "/todays-practice", label: "Today's Practice" },
-        { href: "/concepts", label: "Concepts" },
-        { href: "/practices", label: "Practices" },
-        { href: "/glossary", label: "Glossary" },
-        { href: "/works", label: "Complete Works" },
-      ],
-    },
-    { label: "Reflections", href: "/reflections" },
-    {
-      label: "Lineage",
-      items: [
-        { href: "/the-container", label: "The Container" },
-        { href: "/samuel-r-harris", label: "Samuel R. Harris" },
-      ],
-    },
-    { label: "About", href: "/about" },
-  ];
-
-  return navGroups;
 }
 
 function DropdownMenu({ group }: { group: NavGroup }) {
@@ -154,7 +102,7 @@ function Breadcrumbs() {
 
 export default function Layout({ children, showNav = true }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navGroups = useNavStructure();
+  const navGroups = useNavigation();
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
