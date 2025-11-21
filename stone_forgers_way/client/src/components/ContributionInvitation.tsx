@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { analytics } from "@/lib/analytics";
+import { Heart, X } from "lucide-react";
 
 interface ContributionTier {
   name: string;
@@ -33,9 +35,21 @@ const tiers: ContributionTier[] = [
 const gratitudeGrantUrl = "https://buy.stripe.com/3cI28reiQ655goadwf14403";
 
 export default function ContributionInvitation() {
+  const [showGratitude, setShowGratitude] = useState(false);
+  const [selectedTier, setSelectedTier] = useState<{ name: string; amount: number; url: string } | null>(null);
+
   const handleContribution = (tier: string, amount: number, stripeUrl: string) => {
-    analytics.contributionClick(tier, amount, 'contribution_invitation');
-    window.open(stripeUrl, '_blank');
+    setSelectedTier({ name: tier, amount, url: stripeUrl });
+    setShowGratitude(true);
+  };
+
+  const proceedToPayment = () => {
+    if (selectedTier) {
+      analytics.contributionClick(selectedTier.name, selectedTier.amount, 'contribution_invitation');
+      window.open(selectedTier.url, '_blank');
+      setShowGratitude(false);
+      setSelectedTier(null);
+    }
   };
 
   return (
@@ -88,6 +102,63 @@ export default function ContributionInvitation() {
           This honors the sacred cycle of value exchange while keeping all wisdom freely accessible.
         </p>
       </CardContent>
+
+      {/* Pre-Transaction Gratitude Modal */}
+      {showGratitude && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative animate-in fade-in zoom-in duration-200">
+            <button
+              onClick={() => setShowGratitude(false)}
+              className="absolute top-4 right-4 text-stone-400 hover:text-stone-600"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="text-center space-y-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full">
+                <Heart className="w-8 h-8 text-amber-700 fill-amber-700" />
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="text-2xl font-serif text-stone-800">
+                  Thank You
+                </h3>
+                <p className="text-stone-600 leading-relaxed">
+                  Your intention to contribute is itself a gift. You are participating in conscious value exchange—not obligation, but resonance.
+                </p>
+              </div>
+
+              {selectedTier && selectedTier.amount > 0 && (
+                <div className="bg-amber-50 rounded-lg p-4">
+                  <p className="text-sm text-stone-600">{selectedTier.name}</p>
+                  <p className="text-2xl font-bold text-amber-700">${selectedTier.amount}</p>
+                </div>
+              )}
+
+              <p className="text-sm text-stone-500 italic">
+                "It is better to light a candle than to curse the darkness."
+              </p>
+
+              <div className="space-y-3 pt-2">
+                <Button
+                  onClick={proceedToPayment}
+                  className="w-full bg-amber-600 hover:bg-amber-700"
+                  size="lg"
+                >
+                  Continue to Secure Payment
+                </Button>
+                <button
+                  onClick={() => setShowGratitude(false)}
+                  className="text-sm text-stone-500 hover:text-stone-700"
+                >
+                  Return to reading
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </Card>
   );
 }

@@ -2,7 +2,15 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { getLatestQuizResult, getArchetypeName, getArchetypeDescription, getArchetypePractices, getQuizHistory } from "@/lib/archetypeQuiz";
+import {
+  getLatestQuizResult,
+  getArchetypeName,
+  getArchetypeDescription,
+  getArchetypePractices,
+  getQuizHistory,
+  type ArchetypeType,
+  type QuizResult
+} from "@/lib/archetypeQuiz";
 import SocialShare from "@/components/SocialShare";
 
 export default function MyArchetype() {
@@ -74,7 +82,7 @@ export default function MyArchetype() {
                   <div key={key} className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-stone-700 font-medium">
-                        {getArchetypeName(key as any)}
+                        {getArchetypeName(key as ArchetypeType)}
                       </span>
                       <span className="text-amber-700 font-semibold">
                         {score}%
@@ -110,7 +118,7 @@ export default function MyArchetype() {
                   Your Archetype Evolution
                 </h3>
                 <div className="space-y-4">
-                  {history.map((h: any, index: number) => (
+                  {history.map((h: QuizResult, index: number) => (
                     <div key={h.completedAt} className="flex items-center gap-4 p-4 bg-stone-50 rounded-lg">
                       <div className="text-sm text-stone-500 w-32">
                         {new Date(h.completedAt).toLocaleDateString()}

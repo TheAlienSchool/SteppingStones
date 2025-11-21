@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "wouter";
 import { findGlossaryTerm, termToSlug } from "@/lib/glossaryData";
+import { X } from "lucide-react";
 
 interface GlossaryTooltipProps {
   term: string;
@@ -11,8 +12,10 @@ interface GlossaryTooltipProps {
 export default function GlossaryTooltip({ term, children, className = "" }: GlossaryTooltipProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [position, setPosition] = useState<"top" | "bottom">("bottom");
+  const [horizontalAlign, setHorizontalAlign] = useState<"center" | "left" | "right">("center");
   const tooltipRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLSpanElement>(null);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
 
   const glossaryEntry = findGlossaryTerm(term);
 
@@ -23,11 +26,23 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
       const spaceBelow = window.innerHeight - rect.bottom;
       const spaceAbove = rect.top;
 
-      // If less than 200px below, show above
+      // Vertical positioning
       if (spaceBelow < 200 && spaceAbove > spaceBelow) {
         setPosition("top");
       } else {
         setPosition("bottom");
+      }
+
+      // Horizontal positioning - prevent overflow on edges
+      const tooltipWidth = 320; // w-80 = 20rem = 320px
+      const halfWidth = tooltipWidth / 2;
+
+      if (rect.left < halfWidth) {
+        setHorizontalAlign("left");
+      } else if (window.innerWidth - rect.right < halfWidth) {
+        setHorizontalAlign("right");
+      } else {
+        setHorizontalAlign("center");
       }
     }
   }, [isOpen]);
@@ -67,24 +82,42 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
       {isOpen && (
         <div
           ref={tooltipRef}
-          className={`absolute z-50 w-80 max-w-[90vw] p-4 bg-white rounded-lg shadow-xl border border-stone-200 ${
+          className={`absolute z-50 w-80 max-w-[90vw] max-h-[60vh] overflow-y-auto p-4 bg-white rounded-lg shadow-xl border border-stone-200 ${
             position === "top" ? "bottom-full mb-2" : "top-full mt-2"
-          } left-1/2 -translate-x-1/2`}
-          onMouseEnter={() => setIsOpen(true)}
-          onMouseLeave={() => setIsOpen(false)}
+          } ${
+            horizontalAlign === "left" ? "left-0" :
+            horizontalAlign === "right" ? "right-0" :
+            "left-1/2 -translate-x-1/2"
+          }`}
+          onMouseEnter={() => !isMobile && setIsOpen(true)}
+          onMouseLeave={() => !isMobile && setIsOpen(false)}
         >
-          {/* Arrow */}
-          <div
-            className={`absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-stone-200 transform rotate-45 ${
-              position === "top"
-                ? "bottom-[-6px] border-r border-b"
-                : "top-[-6px] border-l border-t"
-            }`}
-          />
+          {/* Arrow - only show when centered */}
+          {horizontalAlign === "center" && (
+            <div
+              className={`absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-stone-200 transform rotate-45 ${
+                position === "top"
+                  ? "bottom-[-6px] border-r border-b"
+                  : "top-[-6px] border-l border-t"
+              }`}
+            />
+          )}
 
           {/* Content */}
           <div className="relative">
-            <h4 className="font-serif text-lg text-stone-800 mb-2">
+            {/* Mobile close button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
+              className="absolute -top-1 -right-1 w-6 h-6 flex items-center justify-center text-stone-400 hover:text-stone-600 sm:hidden"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <h4 className="font-serif text-lg text-stone-800 mb-2 pr-6 sm:pr-0">
               {glossaryEntry.term}
             </h4>
             <p className="text-sm text-stone-600 mb-3">
@@ -93,7 +126,10 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
             <Link
               href={`/glossary#${termToSlug(glossaryEntry.term)}`}
               className="text-xs text-amber-600 hover:text-amber-700 font-medium inline-flex items-center gap-1"
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
             >
               Learn more
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -37,11 +37,12 @@ function Router() {
       <Route path={"/journey"} component={TheJourney} />
       <Route path={"/archetypes"} component={Archetypes} />
       <Route path={"/archetype-quiz"} component={ArchetypeQuiz} />
-      <Route path={"/my-archetype"} component={MyArchetype} />      <Route path={"/concepts"} component={Concepts} />
+      <Route path={"/my-archetype"} component={MyArchetype} />
+      <Route path={"/concepts"} component={Concepts} />
       <Route path={"/practices"} component={Practices} />
       <Route path={"/glossary"} component={Glossary} />
       <Route path={"/works"} component={CompleteWorks} />
-        <Route path="/about" component={About} />
+      <Route path="/about" component={About} />
       <Route path="/samuel-r-harris" component={SamuelRHarris} />
       <Route path="/the-container" component={TheContainer} />
       <Route path="/reflections" component={Reflections} />
@@ -53,7 +54,8 @@ function Router() {
       <Route path="/reflections/stone-throwing-vs-stone-forging" component={StoneThrowingVsStoneForging} />
       <Route path="/reflections/the-gift-of-grace" component={TheGiftOfGrace} />
       <Route path="/reflections/terma-in-action" component={TermaInAction} />
-      <Route path={"/thank-you"} component={ThankYou} />      <Route path={"/404"} component={NotFound} />
+      <Route path={"/thank-you"} component={ThankYou} />
+      <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
