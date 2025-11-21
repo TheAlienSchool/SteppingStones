@@ -20,20 +20,25 @@ const journeyPhases: JourneyPhase[] = [
     content: (
       <div className="space-y-6">
         <p className="text-lg leading-relaxed text-stone-700">
-          During an early morning Inspired Breath practice at <strong>1000 Ways to Sit</strong>,
-          a question arose in the space between breath and thought:
+          This work began with breath—and a question that arrived unbidden.
+        </p>
+        <p className="text-lg leading-relaxed text-stone-700">
+          During an early morning Inspired Breath practice at <strong>1000 Ways to Sit</strong>—a Gamelatron
+          Sonic Sanctuary in Brooklyn—Kamau found himself in that liminal space between exhale and inhale
+          where ordinary thinking quiets. A question arose:
         </p>
         <blockquote className="text-2xl font-serif text-stone-700 italic border-l-4 border-amber-600 pl-6 my-6">
           "How is my father not inside of you?"
         </blockquote>
         <p className="text-lg leading-relaxed text-stone-700">
-          This was not an intellectual question. It was a somatic inquiry, emerging from omnidirectional
-          salutations to the divine and the divinity within. The question opened a channel, and through
-          that channel, an entire body of work began to flow.
+          This wasn't intellectual curiosity. It was a somatic knowing—something the body understood before
+          the mind could catch up. The question opened a channel. Through that channel, over the following
+          months, an entire body of work began to flow.
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
-          What followed was a dialogue between Kamau Zuberi Akabueze and Manus AI :: a collaboration
-          that neither could have created alone. This is the story of that journey.
+          What followed was a dialogue between Kamau Zuberi Akabueze and AI :: a collaboration of human
+          insight and pattern recognition that neither could have created alone. What you're reading is
+          the story of that journey—and an invitation into your own.
         </p>
       </div>
     )
@@ -63,15 +68,25 @@ const journeyPhases: JourneyPhase[] = [
     content: (
       <div className="space-y-6">
         <p className="text-lg leading-relaxed text-stone-700">
-          The stepping stones concept synthesized physics, contemplation, and evolutionary consciousness.
+          The stepping stones concept emerged from years of personal study and practice—a synthesis of physics,
+          contemplation, and evolutionary consciousness that arrived through lived experience.
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
-          The Gene Keys' progression from Shadow to Gift to Siddhi aligned with semiotic scaffolding and
-          the Seven Octaves of relational awareness.
+          Kamau had been studying <em>The Gene Keys</em> by Richard Rudd—a contemplative system that maps
+          human transformation through 64 archetypal gateways. Each Gene Key describes a journey from Shadow
+          (our unconscious patterns) through Gift (our natural talents awakened) to Siddhi (our highest
+          potential realized). This progression resonated deeply with the physicist Jesper Hoffmeyer's concept
+          of <em>semiotic scaffolding</em>—invisible bridges of meaning that support our growth from one
+          understanding to the next.
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
-          Wheeler's "fabrication of form" is the materialization of stepping stones bridging world possibilities.
-          But the stone only solidifies at a rate that requires human trust and active participation.
+          Then came physicist John Archibald Wheeler's phrase: <em>"fabrication of form."</em> Wheeler proposed
+          that through quantum observation, carried out with intention and attention, form itself could materialize.
+          This was the PING—the moment where ancient wisdom and modern physics echoed each other across disciplines.
+        </p>
+        <p className="text-lg leading-relaxed text-stone-700">
+          The stepping stone only solidifies at a rate that requires human trust and active participation.
+          We are not passive observers of our lives. We are participants in the fabrication of form.
         </p>
       </div>
     )
@@ -189,15 +204,27 @@ const journeyPhases: JourneyPhase[] = [
     content: (
       <div className="space-y-6">
         <p className="text-lg leading-relaxed text-stone-700">
-          Samuel R. Harris, the grandfather who taught "it's better to light a candle than to curse the
-          darkness."
+          <strong>Samuel R. Harris</strong>—Kamau's grandfather—was a chemist, educator, and community leader
+          who lived by a simple truth: <em>"It's better to light a candle than to curse the darkness."</em> This
+          wasn't philosophy to him. It was practice. It was how he moved through a world that didn't always
+          welcome him.
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
-          Ray Kemp, the invisible bridge. The First Baptist Church at 141 N McDonald Street.
+          In 1937, a stranger named <strong>Ray Kemp</strong> placed a stepping stone that would echo across
+          generations. Kemp invited the young Samuel to visit Lincoln University, becoming the invisible bridge
+          that connected a young Black man in Depression-era Pennsylvania to a future he couldn't yet see.
+          The First Baptist Church at 141 N McDonald Street—where Samuel would later serve—became sacred ground
+          where these stepping stones materialized into community.
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
-          Aunt Janis handing over the speech in 2022, the same year Kamau launched THE ÅLïEN SCõÖL
-          for Creative Thinking (tÅs).
+          In 2022, Kamau's <strong>Aunt Janis</strong>—who had been "the warm hug I needed growing up in a
+          stone-faced world"—handed him an envelope containing his grandfather's speech from May 1976. That same
+          year, Kamau launched THE ÅLïEN SCõÖL for Creative Thinking (tÅs). The synchronicity was undeniable.
+          The lineage was speaking.
+        </p>
+        <p className="text-lg leading-relaxed text-stone-700 italic">
+          This is not abstract philosophy. This is Kamau's family. These are real stones, placed by real hands,
+          across real time. The work you're reading exists because of them.
         </p>
       </div>
     )

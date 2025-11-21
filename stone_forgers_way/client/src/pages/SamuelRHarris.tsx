@@ -191,10 +191,7 @@ export default function SamuelRHarris() {
                   bridge made visible across generations.
 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
-                  Kamau remembers family reunions near the church with his wonderful <strong>Aunt Grace</strong> 
-                  (Mabel's sister) and <strong>Uncle Jerry</strong>. He remembers <strong>Aunt Janis</strong> 
-                  as "the warm hug I needed growing up in a stone-faced world." The gift of Grace :: both the 
-                  person and the quality :: woven into his childhood.
+                  Kamau remembers family reunions near the church with his wonderful <strong>Aunt Grace</strong> (Mabel's sister) and <strong>Uncle Jerry</strong>. He remembers <strong>Aunt Janis</strong> as "the warm hug I needed growing up in a stone-faced world." The gift of Grace :: both the person and the quality :: woven into his childhood.
                 </p>
               </div>
             </section>
