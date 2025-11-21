@@ -162,11 +162,21 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-stone-600 leading-relaxed">
               A temporal approach to conscious creation
             </p>
-            
-            <div className="pt-8">
+
+            <p className="text-lg text-stone-500 max-w-2xl mx-auto leading-relaxed">
+              Where the idea of productivity meets the nature of presence. Discover which archetype
+              you embody, and learn practices to transform circular motion into forward momentum.
+            </p>
+
+            <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/journey">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-8 py-6">
                   Begin the Journey
+                </Button>
+              </Link>
+              <Link href="/archetype-quiz">
+                <Button size="lg" variant="outline" className="border-2 border-stone-600 text-stone-700 hover:bg-stone-100 text-lg px-8 py-6">
+                  Discover Your Archetype
                 </Button>
               </Link>
             </div>
@@ -227,6 +237,17 @@ export default function Home() {
               <p className="text-lg leading-relaxed text-stone-700 italic text-center pt-8">
                 — Kamau Z. Akabueze
               </p>
+
+              <div className="text-center pt-8">
+                <Link href="/journey">
+                  <span className="inline-flex items-center gap-2 text-amber-700 hover:text-amber-800 font-medium transition-colors cursor-pointer">
+                    Continue to The Journey
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -239,29 +260,54 @@ export default function Home() {
             The Archetypes
           </h2>
           
+          <p className="text-lg text-stone-600 text-center max-w-2xl mx-auto mb-12">
+            You are all four archetypes. This reveals where you are now—and illuminates the path forward.
+          </p>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
-              { name: "The Stone Carrier", image: "/stone-carrier.png", description: "Burdened by suspended stones" },
-              { name: "The Stone Thrower", image: "/stone-thrower.png", description: "Exhausted by misdirected energy" },
-              { name: "The Conscious Forger", image: "/active-patience.png", description: "Present with each stone" },
-              { name: "The Stone Forger", image: "/stone-forger.png", description: "Integrated and creating" }
+              {
+                name: "The Stone Carrier",
+                image: "/stone-carrier.png",
+                description: "Burdened by suspended stones, moving in circles. The shadow of inertia where life force is drained by details disconnected from purpose."
+              },
+              {
+                name: "The Stone Thrower",
+                image: "/stone-thrower.png",
+                description: "Exhausted by misdirected energy, casting stones outward. The reactive nature that seeks diversion from inner stillness."
+              },
+              {
+                name: "The Conscious Forger",
+                image: "/active-patience.png",
+                description: "Present with each stone, awakening to purpose. The first step off the circular path onto the one that leads over the horizon."
+              },
+              {
+                name: "The Stone Forger",
+                image: "/stone-forger.png",
+                description: "Integrated and creating. Where productivity meets presence—every step aligned with a dream, every stone deliberately placed."
+              }
             ].map((archetype) => (
-              <div key={archetype.name} className="text-center space-y-4">
-                <img 
-                  src={archetype.image} 
+              <div key={archetype.name} className="text-center space-y-4 p-4 rounded-xl hover:bg-amber-50/50 transition-colors">
+                <img
+                  src={archetype.image}
                   alt={archetype.name}
-                  className="w-48 h-48 mx-auto object-cover rounded-lg shadow-lg"
+                  className="w-56 h-56 mx-auto object-cover rounded-lg shadow-lg"
                 />
                 <h3 className="text-xl font-semibold text-stone-800">{archetype.name}</h3>
-                <p className="text-stone-600">{archetype.description}</p>
+                <p className="text-stone-600 text-sm leading-relaxed">{archetype.description}</p>
               </div>
             ))}
           </div>
-          
-          <div className="text-center mt-12">
+
+          <div className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/archetype-quiz">
+              <Button size="lg" className="bg-amber-600 hover:bg-amber-700">
+                Which Archetype Are You?
+              </Button>
+            </Link>
             <Link href="/archetypes">
               <Button variant="outline" size="lg" className="border-amber-600 text-amber-700 hover:bg-amber-50">
-                Explore the Archetypes
+                Explore All Archetypes
               </Button>
             </Link>
           </div>
