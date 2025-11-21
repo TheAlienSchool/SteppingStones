@@ -73,7 +73,7 @@ export default function SamuelRHarris() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Quantum Poetry in Ancestral Motion
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
   Samuel R. Harris was a research chemist who understood combustion, light, and energy 
                   at the molecular level.
@@ -112,7 +112,7 @@ export default function SamuelRHarris() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 From the Coal Mines to the Laboratory
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
   Samuel R. Harris was born in 1918 in Muse, Pennsylvania, a small coal mining town in 
                   Washington County.
@@ -132,7 +132,7 @@ export default function SamuelRHarris() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Ray Kemp: The Invisible Bridge
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
   <strong>Raymond Howard Kemp</strong> (1907–2002) was a legend. Born in Cecil, Pennsylvania, 
                   he worked in the coal mines for a year before enrolling at Duquesne University, where he 
@@ -170,7 +170,7 @@ export default function SamuelRHarris() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 141 N McDonald Street: The Sacred Nexus
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   Ray Kemp's family home was at <strong>141 N McDonald Street</strong> in McDonald, Pennsylvania. 
                   This address was also the location of the <strong>First Baptist Church of McDonald</strong>, 
@@ -204,7 +204,7 @@ export default function SamuelRHarris() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 Education & Career
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
   Samuel graduated from Lincoln University in 1942 with a B.S. in Chemistry. He married 
                   <strong> Mabel Carter</strong> on August 4, 1942.
@@ -237,7 +237,7 @@ export default function SamuelRHarris() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
                 The Lineage of Light
               </h2>
-              <div className="prose prose-lg prose-stone">
+              <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
                   Samuel R. Harris's philosophy: <em>"It is better to light a candle than to curse the darkness."</em>
                 </p>
