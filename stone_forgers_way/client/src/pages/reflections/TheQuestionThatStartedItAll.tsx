@@ -150,7 +150,7 @@ export default function TheQuestionThatStartedItAll() {
 
             {/* Newsletter Signup */}
             <NewsletterSignup variant="inline" />
-            <SocialShare title="<h1 className=text-5xl font-serif text-stone-800 mb-4>" />
+            <SocialShare title="The Question That Started It All" />
 
             {/* Contribution Invitation */}
             <div className="mt-16">

@@ -208,7 +208,7 @@ export default function TheWhalesSong() {
 
             {/* Newsletter Signup */}
             <NewsletterSignup variant="inline" />
-            <SocialShare title="<h1 className=text-5xl font-serif text-stone-800 mb-4>" />
+            <SocialShare title="The Whale's Song" />
 
             {/* Contribution Invitation */}
             <div className="mt-16">

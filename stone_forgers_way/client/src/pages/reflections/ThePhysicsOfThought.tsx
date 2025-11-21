@@ -209,7 +209,7 @@ export default function ThePhysicsOfThought() {
 
             {/* Newsletter Signup */}
             <NewsletterSignup variant="inline" />
-            <SocialShare title="<h1 className=text-5xl font-serif text-stone-800 mb-4>" />
+            <SocialShare title="The Physics of Thought" />
 
             {/* Contribution Invitation */}
             <div className="mt-16">
