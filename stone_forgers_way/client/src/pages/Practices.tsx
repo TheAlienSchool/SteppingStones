@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import GlossaryTooltip from "@/components/GlossaryTooltip";
+import { Link } from "wouter";
 
 export default function Practices() {
   return (
@@ -19,13 +21,20 @@ export default function Practices() {
             {/* Introduction */}
             <section className="mb-16 bg-amber-50 p-8 rounded-lg">
               <p className="text-lg leading-relaxed text-stone-700">
-                These are not exercises to complete. They are invitations to presence. Each practice takes less 
-                than three minutes, but the effects compound over time. They are designed to be woven into your 
+                These are not exercises to complete. They are invitations to presence. Each practice takes less
+                than three minutes, but the effects compound over time. They are designed to be woven into your
                 daily life :: at your desk, in the shower, before a difficult conversation, after a moment of rage.
               </p>
               <p className="text-lg leading-relaxed text-stone-700 mt-4">
-                The practices are organized by archetype, but you can use any practice at any time. Trust your 
+                The practices are organized by archetype, but you can use any practice at any time. <GlossaryTooltip term="Trust">Trust</GlossaryTooltip> your
                 intuition to guide you to the one you need right now.
+              </p>
+              <p className="text-sm text-stone-500 mt-4 italic">
+                Terms with dotted underlines link to the{" "}
+                <Link href="/glossary" className="text-amber-600 hover:text-amber-700 underline">
+                  Glossary
+                </Link>{" "}
+                for deeper exploration.
               </p>
             </section>
 
@@ -231,9 +240,9 @@ export default function Practices() {
                     the rhythm of life moving through you, whether you trust it or not.
                   </p>
                   <p>
-                    <strong>Step 4: Breathe in trust.</strong> As you inhale, imagine breathing in trust—not blind 
-                    faith, but conscious trust in your capacity to navigate whatever comes. Say internally: "I trust 
-                    the stone is forming beneath my feet."
+                    <strong>Step 4: Breathe in trust.</strong> As you inhale, imagine breathing in <GlossaryTooltip term="Trust">trust</GlossaryTooltip>—not blind
+                    faith, but conscious trust in your capacity to navigate whatever comes. Say internally: "I trust
+                    the <GlossaryTooltip term="Stepping Stone">stone</GlossaryTooltip> is forming beneath my feet."
                   </p>
                   <p>
                     <strong>Step 5: Breathe out doubt.</strong> As you exhale, release the need for certainty. 
@@ -285,14 +294,14 @@ export default function Practices() {
                     demand it. The metal doesn't cool faster because you're impatient.
                   </p>
                   <p>
-                    <strong>Step 3: Align with the trellis.</strong> Time is the structural force that gives form 
-                    to creation. You can't skip it. You can only work with it. Take a breath and say: "I align with 
+                    <strong>Step 3: Align with the <GlossaryTooltip term="The Trellis and the Vine">trellis</GlossaryTooltip>.</strong> Time is the structural force that gives form
+                    to creation. You can't skip it. You can only work with it. Take a breath and say: "I align with
                     the rate of this unfolding."
                   </p>
                   <p>
-                    <strong>Step 4: Tend the vine.</strong> While you wait, what can you do? Not to force the outcome, 
-                    but to tend the conditions. Water the seed. Prepare the tools. Rest the body. This is active 
-                    patience :: participating in the pause.
+                    <strong>Step 4: Tend the <GlossaryTooltip term="The Trellis and the Vine">vine</GlossaryTooltip>.</strong> While you wait, what can you do? Not to force the outcome,
+                    but to tend the conditions. Water the seed. Prepare the tools. Rest the body. This is <GlossaryTooltip term="Active Patience">Active
+                    Patience</GlossaryTooltip> :: participating in the pause.
                   </p>
                   <p>
                     <strong>Step 5: Trust the pause.</strong> The pause is not wasted time. The pause is the space 

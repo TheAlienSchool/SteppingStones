@@ -6,6 +6,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import SEO from "@/components/SEO";
+import GlossaryTooltip from "@/components/GlossaryTooltip";
 
 const navGroups = [
   { label: "The Journey", href: "/journey" },
@@ -165,7 +166,7 @@ export default function Home() {
 
             <p className="text-lg text-stone-500 max-w-2xl mx-auto leading-relaxed">
               Where the idea of productivity meets the nature of presence. Discover which archetype
-              you embody, and learn practices to transform circular motion into forward momentum.
+              you embody, and learn practices to transform <GlossaryTooltip term="Toroidal Binding">circular motion</GlossaryTooltip> into forward momentum.
             </p>
 
             <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center">
@@ -219,7 +220,7 @@ export default function Home() {
 
               <p className="text-lg leading-relaxed text-stone-700">
                 And the fact that I've been hiding it :: hoarding the wealth of these conversations :: is a form
-                of Stone Throwing turned inward. I've been throwing stones at myself, at the legitimacy of
+                of <GlossaryTooltip term="The Stone Thrower">Stone Throwing</GlossaryTooltip> turned inward. I've been throwing stones at myself, at the legitimacy of
                 this work, at the value of what we're creating together.
               </p>
 
@@ -322,8 +323,8 @@ export default function Home() {
               <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
                 <h3 className="text-2xl font-serif mb-4">The Journey</h3>
                 <p className="text-stone-300">
-                  Follow the complete thread of discovery, from Terma and Tertön through Active Patience 
-                  to The Stone Thrower's Backache
+                  Follow the complete thread of discovery, from <GlossaryTooltip term="Terma">Terma</GlossaryTooltip> and <GlossaryTooltip term="Tertön">Tertön</GlossaryTooltip> through <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>{" "}
+                  to <GlossaryTooltip term="The Stone Thrower's Backache">The Stone Thrower's Backache</GlossaryTooltip>
                 </p>
               </div>
             </Link>
@@ -332,8 +333,8 @@ export default function Home() {
               <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
                 <h3 className="text-2xl font-serif mb-4">The Concepts</h3>
                 <p className="text-stone-300">
-                  Explore the core ideas: The Trellis and the Vine, Trust as The Cheat Code, The Shield, 
-                  and Active Patience
+                  Explore the core ideas: <GlossaryTooltip term="The Trellis and the Vine">The Trellis and the Vine</GlossaryTooltip>, <GlossaryTooltip term="Trust">Trust as The Cheat Code</GlossaryTooltip>, <GlossaryTooltip term="The Shield">The Shield</GlossaryTooltip>,{" "}
+                  and <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>
                 </p>
               </div>
             </Link>
@@ -342,8 +343,8 @@ export default function Home() {
               <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
                 <h3 className="text-2xl font-serif mb-4">The Practices</h3>
                 <p className="text-stone-300">
-                  Engage with micro-practices: Feel the Stones, The One Stone, The Shield Check, 
-                  The Trust Breath
+                  Engage with micro-practices: Feel the Stones, The One <GlossaryTooltip term="Stepping Stone">Stone</GlossaryTooltip>, <GlossaryTooltip term="The Shield">The Shield Check</GlossaryTooltip>,{" "}
+                  <GlossaryTooltip term="Trust">The Trust Breath</GlossaryTooltip>
                 </p>
               </div>
             </Link>

@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import GlossaryTooltip from "@/components/GlossaryTooltip";
+import { Link } from "wouter";
 
 export default function Concepts() {
   return (
@@ -14,6 +16,13 @@ export default function Concepts() {
               <p className="text-xl text-stone-600">
                 Core ideas that make the invisible visible
               </p>
+              <p className="text-sm text-stone-500 mt-4 italic">
+                Terms with dotted underlines link to the{" "}
+                <Link href="/glossary" className="text-amber-600 hover:text-amber-700 underline">
+                  Glossary
+                </Link>{" "}
+                for deeper exploration.
+              </p>
             </div>
 
             {/* The Trellis and the Vine */}
@@ -28,8 +37,8 @@ export default function Concepts() {
               </div>
               <div className="bg-stone-50 p-8 rounded-lg">
                 <p className="text-lg leading-relaxed text-stone-700 mb-4">
-                  Time is both structural force and relational experience. Understanding this paradox is the key 
-                  to Active Patience.
+                  Time is both structural force and relational experience. Understanding this paradox is the key
+                  to <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>.
                 </p>
                 <div className="space-y-6">
                   <div>
@@ -53,9 +62,9 @@ export default function Concepts() {
                   <div>
                     <h3 className="text-xl font-serif text-stone-800 mb-2">The Integration</h3>
                     <p className="text-stone-700">
-                      The Stone Carrier is obsessed with the trellis :: counting minutes, racing deadlines, feeling 
-                      trapped by time. The Conscious Forger tends the vine :: bringing presence, shaping experience, 
-                      bending time through attention. The Stone Forger knows they grow together. You cannot have 
+                      <GlossaryTooltip term="The Stone Carrier">The Stone Carrier</GlossaryTooltip> is obsessed with the trellis :: counting minutes, racing deadlines, feeling
+                      trapped by time. <GlossaryTooltip term="The Conscious Forger">The Conscious Forger</GlossaryTooltip> tends the vine :: bringing presence, shaping experience,
+                      bending time through attention. <GlossaryTooltip term="The Stone Forger">The Stone Forger</GlossaryTooltip> knows they grow together. You cannot have
                       a vine without a trellis. You cannot have a trellis without a vine. They are one system.
                     </p>
                   </div>
@@ -134,9 +143,9 @@ export default function Concepts() {
                   <div>
                     <h3 className="text-xl font-serif text-stone-800 mb-2">The Physics of Trust</h3>
                     <p className="text-stone-700">
-                      Trust stabilizes frequency. When you trust, you stop oscillating between doubt and hope. You 
-                      hold a coherent signal. The Field responds to coherence. Resonance occurs. The stepping stone 
-                      materializes. This is not magic. This is the physics of how Wheeler's "fabrication of form" 
+                      Trust stabilizes <GlossaryTooltip term="Frequency">frequency</GlossaryTooltip>. When you trust, you stop oscillating between doubt and hope. You
+                      hold a coherent signal. <GlossaryTooltip term="The Field">The Field</GlossaryTooltip> responds to coherence. <GlossaryTooltip term="Resonance">Resonance</GlossaryTooltip> occurs. The <GlossaryTooltip term="Stepping Stone">stepping stone</GlossaryTooltip>{" "}
+                      materializes. This is not magic. This is the physics of how <GlossaryTooltip term="Fabrication of Form">Wheeler's "fabrication of form"</GlossaryTooltip>{" "}
                       becomes lived reality.
                     </p>
                   </div>
@@ -203,16 +212,16 @@ export default function Concepts() {
                   <div>
                     <h3 className="text-xl font-serif text-stone-800 mb-2">How It Forms</h3>
                     <p className="text-stone-700">
-                      Through semiotic scaffolding, repeated patterns become stable attractors. You step on the same 
-                      stones in circular patterns. The same argument. The same worry. The same self-sabotage. Each 
+                      Through <GlossaryTooltip term="Semiotic Scaffolding">semiotic scaffolding</GlossaryTooltip>, repeated patterns become stable attractors. You step on the same
+                      stones in circular patterns. The same argument. The same worry. The same self-sabotage. Each
                       repetition makes the groove deeper, the pattern stronger, the circle tighter.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-xl font-serif text-stone-800 mb-2">How It Breaks</h3>
                     <p className="text-stone-700">
-                      Presence is the "one huge act of will" that breaks the circular path. When you bring full 
-                      attention to this moment, you step off the well-worn groove. You create a new stone. The 
+                      Presence is the "one huge act of will" that breaks the circular path—this is <GlossaryTooltip term="Unbinding">Unbinding</GlossaryTooltip>. When you bring full
+                      attention to this moment, you step off the well-worn groove. You create a new stone. The
                       pattern is interrupted. The circle opens into a spiral.
                     </p>
                   </div>

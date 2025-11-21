@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import GlossaryTooltip from "@/components/GlossaryTooltip";
 
 const archetypes = [
   {
@@ -83,6 +84,16 @@ export default function Archetypes() {
 
               <p className="text-xl text-stone-600 leading-relaxed">
                 The goal is to recognize them, have compassion for them, and consciously choose which one leads.
+              </p>
+
+              <p className="text-sm text-stone-500 italic">
+                New to these concepts? Each archetype connects to deeper patterns like{" "}
+                <GlossaryTooltip term="Toroidal Binding">Toroidal Binding</GlossaryTooltip>,{" "}
+                <GlossaryTooltip term="Shadow">Shadow</GlossaryTooltip>, and{" "}
+                <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>.{" "}
+                <Link href="/glossary" className="text-amber-600 hover:text-amber-700 underline">
+                  Explore the Glossary
+                </Link>{" "}for definitions.
               </p>
 
               <div className="pt-4">
