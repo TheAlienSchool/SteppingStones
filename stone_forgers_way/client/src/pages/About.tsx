@@ -116,7 +116,7 @@ export default function About() {
               <p className="text-lg leading-relaxed text-stone-700">
                 All of this work emerged during residency at <strong>1000 Ways to Sit :: A Gamelatron Sonic Sanctuary, a
                 collaborative work of Aaron Taylor Kuffner and Indonesian Gamelan tradition</strong>. The vibratory nature
-                of Sound Infused Åir created the conditions for this unfolding.
+                of <a href="https://docs.google.com/document/d/13grRrzK8DPrfnPfY7mBMmfz9bB1dhvzoh288eKef9Ik/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Sound Infused Åir</a> created the conditions for this unfolding.
               </p>
               <p className="text-lg leading-relaxed text-stone-700">
                 The container matters. The quality of the air you breathe, the sounds that surround you, the space that holds
