@@ -235,11 +235,11 @@ export const glossaryTerms: GlossaryTerm[] = [
   // SCIENCE TERMS - Research Forge informed
   {
     term: "Cardiac Coherence",
-    simple: "A measurable state where heart rhythm, breathing, and blood pressure synchronize.",
-    experience: "It's that feeling when everything clicks into place—your breath slows, your chest softens, your mind clears. Athletes know this state before peak performance. Meditators know it in deep practice. Your heart is generating a smooth, ordered pattern that your whole system recognizes as 'safe to create.'",
-    insight: "HeartMath research shows this isn't metaphor—it's measurable physiology. In coherent states, cognitive performance improves, emotional regulation strengthens. Your heart's electromagnetic field extends 3-6 feet beyond your body, literally influencing the space around you. Pre-Flow Coherence is cardiac coherence by another name.",
+    simple: "A measurable state where heart rhythm, breathing, and blood pressure synchronize at 0.1 Hz—the resonant frequency shared by your cardiovascular system and Earth's geomagnetic field.",
+    experience: "It's that feeling when everything clicks into place—your breath slows to about six breaths per minute, your chest softens, your mind clears. Athletes know this state before peak performance. Meditators know it in deep practice. Your heart is generating a smooth, ordered pattern that your whole system recognizes as 'safe to create.'",
+    insight: "HeartMath research shows this isn't metaphor—it's measurable physiology. When you breathe at approximately six breaths per minute (about 10 seconds per breath), your heart rhythm entrains to 0.1 Hz—the same frequency as Earth's geomagnetic field resonance. In coherent states, cognitive performance improves, emotional regulation strengthens. Your heart's electromagnetic field extends 3-6 feet beyond your body, literally influencing the space around you. Dr. Catherine Clinton's quantum biology research confirms: the body acts as an antenna when coherent, receiving and transmitting information through this shared frequency. Pre-Flow Coherence is cardiac coherence by another name.",
     category: "science",
-    relatedTerms: ["Pre-Flow Coherence", "The Field", "Trust"]
+    relatedTerms: ["Pre-Flow Coherence", "The Field", "Trust", "Vagal Tone"]
   },
   {
     term: "Flow State",
