@@ -225,6 +225,10 @@ export default function Home() {
                 — Kamau Zuberi Akabueze
               </p>
 
+              <p className="text-center pt-2">
+                <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline font-medium">My Research Forge</a>
+              </p>
+
               <div className="text-center pt-8">
                 <Link href="/journey">
                   <span className="inline-flex items-center gap-2 text-amber-700 hover:text-amber-800 font-medium transition-colors cursor-pointer">
