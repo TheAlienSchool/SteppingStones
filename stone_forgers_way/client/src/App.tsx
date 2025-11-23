@@ -23,6 +23,7 @@ import ThePhysicsOfThought from "./pages/reflections/ThePhysicsOfThought";
 import StoneThrowingVsStoneForging from "./pages/reflections/StoneThrowingVsStoneForging";
 import TheGiftOfGrace from "./pages/reflections/TheGiftOfGrace";
 import TermaInAction from "./pages/reflections/TermaInAction";
+import TheCreativeFortress from "./pages/reflections/TheCreativeFortress";
 import ThankYou from "./pages/ThankYou";
 import ArchetypeQuiz from "./pages/ArchetypeQuiz";
 import MyArchetype from "./pages/MyArchetype";
@@ -58,6 +59,7 @@ function Router() {
       <Route path="/reflections/stone-throwing-vs-stone-forging" component={StoneThrowingVsStoneForging} />
       <Route path="/reflections/the-gift-of-grace" component={TheGiftOfGrace} />
       <Route path="/reflections/terma-in-action" component={TermaInAction} />
+      <Route path="/reflections/the-creative-fortress" component={TheCreativeFortress} />
       <Route path={"/thank-you"} component={ThankYou} />
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />
       <Route path={"/disclaimer"} component={Disclaimer} />

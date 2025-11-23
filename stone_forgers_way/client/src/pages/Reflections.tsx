@@ -76,6 +76,14 @@ const blogPosts: BlogPost[] = [
     date: "2025",
     excerpt: "I was born Samuel Todd Harris. I changed my name to Kamau Zuberi Akabueze because the definitions of my chosen names speak to me. I learned later that they are names from the region of my birth. I didn't learn something new :: I remembered what was already hidden within me.",
     category: "Origin"
+  },
+  {
+    slug: "the-creative-fortress",
+    title: "The Creative Fortress",
+    subtitle: "On protecting the vision until it's ready to illuminate",
+    date: "2025",
+    excerpt: "Two men. Two lineages. Two different languages for the same truth. Samuel R. Harris lit candles in a world that cursed the darkness. Chadwick Boseman built fortresses to protect the flame until it was strong enough to withstand the wind. Both understood: transformation happens through practice, not performance.",
+    category: "Lineage"
   }
 ];
 
