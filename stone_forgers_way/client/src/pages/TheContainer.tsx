@@ -21,7 +21,7 @@ export default function TheContainer() {
               <p className="text-lg leading-relaxed text-stone-700">
   All of this work :: every text, every archetype, every insight :: emerged into expression during residency 
                 at <strong>1000 Ways to Sit :: A Gamelatron Sonic Sanctuary, a collaborative work of Aaron Taylor Kuffner 
-                and Indonesian Gamelan tradition</strong>. The vibratory nature of Sound Infused Åir created the conditions 
+                and Indonesian Gamelan tradition</strong>. The vibratory nature of <a href="https://docs.google.com/document/d/13grRrzK8DPrfnPfY7mBMmfz9bB1dhvzoh288eKef9Ik/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Sound Infused Åir</a> created the conditions
                 for this unfolding.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
@@ -66,7 +66,7 @@ export default function TheContainer() {
                 </p>
                 <p className="text-lg leading-relaxed text-stone-700 mb-4">
                   Living in truth here has been unwaveringly supportive in seeing the self and hearing the self speaking. 
-                  The Sound Infused Åir :: the intentional acoustic environment :: creates a field where the invisible becomes 
+                  The <a href="https://docs.google.com/document/d/13grRrzK8DPrfnPfY7mBMmfz9bB1dhvzoh288eKef9Ik/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Sound Infused Åir</a> :: the intentional acoustic environment :: creates a field where the invisible becomes
                   audible, where the unspoken becomes speakable, where the hidden treasures (Terma) reveal themselves.
                 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
@@ -84,7 +84,7 @@ export default function TheContainer() {
               <h2 className="text-3xl font-serif text-stone-800 mb-6">The Inspired Breath</h2>
               <div className="bg-stone-50 p-8 rounded-lg">
                 <p className="text-lg leading-relaxed text-stone-700 mb-6">
-  <strong>The Inspired Breath</strong> is a practice created in collaboration with THE ÅLIEN SCöÖL 
+  <strong>The Inspired Breath</strong> is a practice created in collaboration with <a href="https://thealienschool.com" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">THE ÅLIEN SCöÖL</a>
                   and OPTIMIZE NORMALIZE. It is not just breathwork.
 </p>
 <p className="text-lg leading-relaxed text-stone-700 mb-6">
@@ -101,17 +101,6 @@ export default function TheContainer() {
 </p>
 <p className="text-stone-700">
   The body becomes the antenna. The questions that arise are not from the mind, but from the Field speaking through you.
-</p>
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Schedule</h3>
-                    <p className="text-stone-700">
-  Tuesdays 6:00pm, Saturdays 11:30am. These are not arbitrary times.
-</p>
-<p className="text-stone-700">
-  They are rhythms aligned 
-                      with the trellis of time, creating consistent openings for the vine to grow.
 </p>
                   </div>
                   
@@ -137,34 +126,32 @@ export default function TheContainer() {
                 Gratitude for the Container
               </h2>
               <p className="text-lg leading-relaxed text-stone-700 text-center">
-                This work is dedicated to <strong>1000 Ways to Sit</strong> and to everyone who has held space for 
-                conscious creation. To the breath workers, the sound healers, the space holders, the ones who know 
+                This work is dedicated to <strong>1000 Ways to Sit :: A Gamelatron Sonic Sanctuary</strong> and to everyone who has held space for
+                conscious creation. To the breath workers, the sound healers, the space holders, the ones who know
                 that the container is as important as the content.
               </p>
               <p className="text-lg leading-relaxed text-stone-700 text-center mt-4">
-                To THE ÅLIEN SCöÖL and OPTIMIZE NORMALIZE, for co-creating The Inspired Breath practice that opened 
-                the channel.
+                To Stevens Florez of <a href="https://optimizenormalize.com/" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">OPTIMIZE NORMALIZE</a>, for co-creating The Inspired Breath practice with me, which opened a new channel of universal creative awareness.
               </p>
               <p className="text-lg leading-relaxed text-stone-700 text-center mt-4 font-serif italic">
-  The stone forged here will ripple outward. The candle lit here will light other candles.
-</p>
-<p className="text-lg leading-relaxed text-stone-700 text-center mt-4 font-serif italic">
-  The breath 
-                taken here will inspire other breaths.
-</p>
+                The stone forged here will ripple outward. The candle lit here will light other candles.
+              </p>
+              <p className="text-lg leading-relaxed text-stone-700 text-center mt-4 font-serif italic">
+                The breath taken here will inspire other breaths.
+              </p>
             </section>
 
             {/* Learn More */}
             <section className="text-center">
               <h2 className="text-2xl font-serif text-stone-800 mb-4">
-                Experience The Inspired Breath
+                To Experience The Inspired Breath
               </h2>
               <p className="text-lg text-stone-700 mb-6">
-                If you're in the area, you're invited to join The Inspired Breath practice at 1000 Ways to Sit.
+                Stay tuned to the work and travels of Kamau Zuberi Akabueze on The Listener's Path, and connect with Stevens Florez at <a href="https://optimizenormalize.com/" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">optimizenormalize.com</a>.
               </p>
               <div className="flex justify-center gap-4">
                 <a
-                  href="https://www.1000waystosit.com"
+                  href="https://1000waystosit.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg transition-colors"
@@ -172,9 +159,6 @@ export default function TheContainer() {
                   Visit 1000 Ways to Sit
                 </a>
               </div>
-              <p className="text-sm text-stone-600 mt-6">
-                Tuesdays 6:00pm • Saturdays 11:30am
-              </p>
             </section>
           </div>
         </div>

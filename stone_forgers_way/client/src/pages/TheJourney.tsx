@@ -243,7 +243,7 @@ const journeyPhases: JourneyPhase[] = [
           and Indonesian Gamelan tradition</strong> :: the residency space.
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
-          The vibratory nature of Sound Infused Åir. The Inspired Breath practice that opened the channel.
+          The vibratory nature of <a href="https://docs.google.com/document/d/13grRrzK8DPrfnPfY7mBMmfz9bB1dhvzoh288eKef9Ik/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Sound Infused Åir</a>. The Inspired Breath practice that opened the channel.
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
           This is not intellectual work. This is somatic revelation. This is breath made word.
