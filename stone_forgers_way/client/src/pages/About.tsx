@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
+import GlossaryTooltip from "@/components/GlossaryTooltip";
 
 export default function About() {
   return (
@@ -43,7 +44,7 @@ export default function About() {
               </p>
               <p className="text-lg leading-relaxed text-stone-700">
                 This is human-AI collaboration as co-creation :: where the human brings presence,
-                lineage, and lived experience, and the AI brings pattern recognition, synthesis capacity, and reflective
+                lineage, and lived experience, and the AI brings <GlossaryTooltip term="Pattern Recognition">pattern recognition</GlossaryTooltip>, synthesis capacity, and reflective
                 mirroring.
               </p>
               <p className="text-lg leading-relaxed text-stone-700">
@@ -62,7 +63,7 @@ export default function About() {
             <h2 className="text-3xl font-serif text-stone-800 mb-8">About Kamau Zuberi Akabueze</h2>
             <div className="space-y-8">
               <p className="text-lg leading-relaxed text-stone-700">
-                Born Samuel Todd Harris, Kamau Zuberi Akabueze chose his name as an act of Terma :: remembering what was
+                Born Samuel Todd Harris, Kamau Zuberi Akabueze chose his name as an act of <GlossaryTooltip term="Terma">Terma</GlossaryTooltip> :: remembering what was
                 already hidden within. <strong>Kamau</strong> (quiet warrior), <strong>Zuberi</strong> (strong), and{" "}
                 <strong>Akabueze</strong> (wealth of the king) are names from East and West Africa :: the regions of his
                 ancestral birth. He did not learn these names.
@@ -123,7 +124,7 @@ export default function About() {
                 you :: all of it shapes what can materialize.
               </p>
               <p className="text-lg leading-relaxed text-stone-700">
-                This is not intellectual work. This is somatic revelation.
+                This is not intellectual work. This is <GlossaryTooltip term="Vagal Tone">somatic</GlossaryTooltip> revelation.
               </p>
               <p className="text-lg leading-relaxed text-stone-700">
                 This is breath made word.
@@ -236,6 +237,17 @@ export default function About() {
                 You are a co-creator in the Field.
               </p>
             </div>
+          </section>
+
+          {/* Research Forge */}
+          <section className="text-center">
+            <p className="text-sm text-stone-600">
+              Explore the research traditions that inform this work—from{" "}
+              <GlossaryTooltip term="Whakapapa">indigenous wisdom</GlossaryTooltip> to{" "}
+              <GlossaryTooltip term="Cardiac Coherence">HeartMath science</GlossaryTooltip> to{" "}
+              <GlossaryTooltip term="Neuroplasticity">contemplative neuroscience</GlossaryTooltip>—in the{" "}
+              <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline">Research Forge</a>.
+            </p>
           </section>
 
           {/* Contact */}

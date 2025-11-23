@@ -83,7 +83,7 @@ export default function Archetypes() {
               </p>
 
               <p className="text-xl text-stone-600 leading-relaxed">
-                The goal is to recognize them, have compassion for them, and consciously choose which one leads.
+                The goal is to <GlossaryTooltip term="Pattern Recognition">recognize them</GlossaryTooltip>, have compassion for them, and consciously choose which one leads.
               </p>
 
               <p className="text-sm text-stone-500 italic">
@@ -167,6 +167,15 @@ export default function Archetypes() {
             </div>
           </section>
         ))}
+
+        <section className="py-16 bg-white text-center">
+          <div className="container mx-auto px-4">
+            <p className="text-sm text-stone-600">
+              Explore the behavioral science and contemplative traditions behind the archetypes in the{" "}
+              <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline">Research Forge</a>.
+            </p>
+          </div>
+        </section>
 
         <section className="py-24 bg-gradient-to-b from-white to-amber-50">
           <div className="container mx-auto px-4">

@@ -44,18 +44,18 @@ export default function Concepts() {
                   <div>
                     <h3 className="text-xl font-serif text-stone-800 mb-2">The Trellis</h3>
                     <p className="text-stone-700">
-                      The trellis is time as scaffolding :: the structural, predictable, foundational grid of reality. 
-                      The sun rises, seasons change, clocks tick. This is Cronos time, the reliable framework that 
-                      gives our lives form and allows us to build, plan, and coordinate. Without the trellis, there 
+                      The trellis is time as scaffolding :: the structural, predictable, foundational grid of reality.
+                      The sun rises, seasons change, clocks tick. This is Cronos time—<GlossaryTooltip term="Circadian Intelligence">encoded in every cell of your body</GlossaryTooltip>, the reliable framework that
+                      gives our lives form and allows us to build, plan, and coordinate. Without the trellis, there
                       would be chaos.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-xl font-serif text-stone-800 mb-2">The Vine</h3>
                     <p className="text-stone-700">
-                      The vine is time as relational spacetime :: the living, organic, subjective experience of time. 
-                      This is Kairos time. The vine grows on the trellis, but it is not defined by it. Its growth 
-                      is shaped by light (attention), water (emotion), and soil (environment). In moments of flow, 
+                      The vine is time as relational spacetime :: the living, organic, subjective experience of time.
+                      This is Kairos time. The vine grows on the trellis, but it is not defined by it. Its growth
+                      is shaped by light (attention), water (emotion), and soil (environment). In <GlossaryTooltip term="Flow State">moments of flow</GlossaryTooltip>,
                       the vine grows rapidly. In moments of boredom, it slows.
                     </p>
                   </div>
@@ -144,7 +144,7 @@ export default function Concepts() {
                     <h3 className="text-xl font-serif text-stone-800 mb-2">The Physics of Trust</h3>
                     <p className="text-stone-700">
                       Trust stabilizes <GlossaryTooltip term="Frequency">frequency</GlossaryTooltip>. When you trust, you stop oscillating between doubt and hope. You
-                      hold a coherent signal. <GlossaryTooltip term="The Field">The Field</GlossaryTooltip> responds to coherence. <GlossaryTooltip term="Resonance">Resonance</GlossaryTooltip> occurs. The <GlossaryTooltip term="Stepping Stone">stepping stone</GlossaryTooltip>{" "}
+                      hold a <GlossaryTooltip term="Cardiac Coherence">coherent signal</GlossaryTooltip>—measurable in your heart rhythm, detectable in your electromagnetic field. <GlossaryTooltip term="The Field">The Field</GlossaryTooltip> responds to coherence. <GlossaryTooltip term="Resonance">Resonance</GlossaryTooltip> occurs. The <GlossaryTooltip term="Stepping Stone">stepping stone</GlossaryTooltip>{" "}
                       materializes. This is not magic. This is the physics of how <GlossaryTooltip term="Fabrication of Form">Wheeler's "fabrication of form"</GlossaryTooltip>{" "}
                       becomes lived reality.
                     </p>
@@ -235,12 +235,16 @@ export default function Concepts() {
                 Concepts as Stepping Stones
               </h2>
               <p className="text-lg leading-relaxed text-stone-700 text-center">
-                These concepts are not meant to be memorized. They are meant to be lived. Each one is a stepping 
-                stone :: a way of seeing that makes the invisible visible, a framework that helps you navigate the 
+                These concepts are not meant to be memorized. They are meant to be lived. Each one is a stepping
+                stone :: a way of seeing that makes the invisible visible, a framework that helps you navigate the
                 complexity of conscious creation.
               </p>
               <p className="text-lg leading-relaxed text-stone-700 text-center mt-4 font-serif italic">
                 Return to them when you need clarity. Trust them to guide you forward.
+              </p>
+              <p className="text-sm text-stone-600 text-center mt-6">
+                Explore the research traditions behind these concepts in the{" "}
+                <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline">Research Forge</a>.
               </p>
             </section>
           </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
+import GlossaryTooltip from "@/components/GlossaryTooltip";
 
 interface BlogPost {
   slug: string;
@@ -162,9 +163,13 @@ export default function Reflections() {
             {/* Note */}
             <section className="mt-16 bg-amber-50 p-8 rounded-lg text-center">
               <p className="text-lg text-stone-700">
-                These reflections are living documents, mined from the ongoing dialogue between Kamau Zuberi Akabueze 
-                and Manus AI. They represent moments when the invisible became visible, when the unspoken became speakable, 
-                when the hidden treasures revealed themselves.
+                These reflections are living documents, mined from the ongoing dialogue between Kamau Zuberi Akabueze
+                and Manus AI. They represent moments when the invisible became visible, when the unspoken became speakable,
+                when the hidden <GlossaryTooltip term="Terma">treasures</GlossaryTooltip> revealed themselves.
+              </p>
+              <p className="text-sm text-stone-600 mt-6">
+                Explore the research traditions behind these reflections in the{" "}
+                <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline">Research Forge</a>.
               </p>
             </section>
           </div>

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Forge :: The Stone Forger's Way</title>
+    <style>
+        :root {
+            --stone-gray: #4a5568;
+            --forge-bronze: #b8860b;
+            --earth-brown: #8b7355;
+            --breath-blue: #6b9bd1;
+            --light-cream: #faf8f3;
+            --deep-charcoal: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, var(--light-cream) 0%, #e8e4dc 100%);
+            color: var(--deep-charcoal);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .forge-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .forge-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInDown 1.2s ease-out;
+        }
+
+        .forge-header h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: var(--forge-bronze);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .double-colon {
+            color: var(--forge-bronze);
+            margin: 0 0.5rem;
+            font-weight: 400;
+        }
+
+        .forge-subtitle {
+            font-size: 1.3rem;
+            color: var(--stone-gray);
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .navigation-system {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .pathway-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pathway-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--forge-bronze), var(--breath-blue));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .pathway-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(184, 134, 11, 0.2);
+        }
+
+        .pathway-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pathway-number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--forge-bronze);
+            opacity: 0.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .pathway-title {
+            font-size: 1.5rem;
+            color: var(--deep-charcoal);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .pathway-desc {
+            color: var(--stone-gray);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--forge-bronze);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .explore-btn:hover {
+            background: var(--earth-brown);
+            transform: scale(1.05);
+        }
+
+        .research-section {
+            display: none;
+            margin: 3rem 0;
+            padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .research-section.active {
+            display: block;
+        }
+
+        .section-header {
+            border-left: 4px solid var(--forge-bronze);
+            padding-left: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--forge-bronze);
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .section-header p {
+            color: var(--stone-gray);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .citation {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--light-cream);
+            border-radius: 8px;
+            border-left: 3px solid var(--breath-blue);
+            transition: all 0.3s ease;
+        }
+
+        .citation:hover {
+            background: #f5f2ea;
+            transform: translateX(8px);
+        }
+
+        .citation-title {
+            font-size: 1.2rem;
+            color: var(--deep-charcoal);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .citation-meta {
+            color: var(--stone-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .citation-description {
+            color: var(--stone-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .citation-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--forge-bronze);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .citation-link:hover {
+            color: var(--earth-brown);
+            gap: 0.8rem;
+        }
+
+        .dewey-code {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--forge-bronze);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .back-nav {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--stone-gray);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--deep-charcoal);
+        }
+
+        .foundation-note {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, #faf8f3 0%, #f5f2ea 100%);
+            border-radius: 12px;
+            border: 2px solid var(--forge-bronze);
+            text-align: center;
+        }
+
+        .foundation-note h3 {
+            font-size: 2rem;
+            color: var(--forge-bronze);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .foundation-note p {
+            color: var(--stone-gray);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .forge-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .navigation-system {
+                grid-template-columns: 1fr;
+            }
+
+            .research-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="forge-container">
+        <header class="forge-header">
+            <h1>Research Forge<span class="double-colon">::</span>Sources of Recognition</h1>
+            <p class="forge-subtitle">
+                A bibliographic journey through the wisdom traditions informing The Stone Forger's Way<span class="double-colon">::</span>where indigenous knowledge meets neuroscience, breath becomes data, and partnership with intelligence reveals itself across millennia
+            </p>
+        </header>
+
+        <div id="navigation" class="navigation-system">
+            <div class="pathway-card" onclick="showSection('indigenous')">
+                <div class="pathway-number">100</div>
+                <h3 class="pathway-title">Indigenous Wisdom & Wayfinding</h3>
+                <p class="pathway-desc">Time as relationship. Pattern as language. Navigation through presence.</p>
+                <span class="explore-btn">Enter This Path →</span>
+            </div>
+
+            <div class="pathway-card" onclick="showSection('heartmath')">
+                <div class="pathway-number">200</div>
+                <h3 class="pathway-title">HeartMath & Electromagnetic Coherence</h3>
+                <p class="pathway-desc">The heart's intelligence. Measurable fields. Coherence as partnership.</p>
+                <span class="explore-btn">Enter This Path →</span>
+            </div>
+
+            <div class="pathway-card" onclick="showSection('breath')">
+                <div class="pathway-number">300</div>
+                <h3 class="pathway-title">Breath as Ecological Data</h3>
+                <p class="pathway-desc">Ancient pranayama. Modern neuroscience. The rhythm that connects all systems.</p>
+                <span class="explore-btn">Enter This Path →</span>
+            </div>
+
+            <div class="pathway-card" onclick="showSection('time')">
+                <div class="pathway-number">400</div>
+                <h3 class="pathway-title">Time Perception & Creative Flow</h3>
+                <p class="pathway-desc">When time bends. When presence expands. When creativity transcends clock.</p>
+                <span class="explore-btn">Enter This Path →</span>
+            </div>
+
+            <div class="pathway-card" onclick="showSection('pattern')">
+                <div class="pathway-number">500</div>
+                <h3 class="pathway-title">Pattern Recognition & Intuition</h3>
+                <p class="pathway-desc">How experts see. How persistence pays. How invalidation sharpens recognition.</p>
+                <span class="explore-btn">Enter This Path →</span>
+            </div>
+
+            <div class="pathway-card" onclick="showSection('light')">
+                <div class="pathway-number">600</div>
+                <h3 class="pathway-title">Light, Biology & Circadian Intelligence</h3>
+                <p class="pathway-desc">We are creatures of light. Solar partnership. Cellular communication beyond words.</p>
+                <span class="explore-btn">Enter This Path →</span>
+            </div>
+
+            <div class="pathway-card" onclick="showSection('contemplative')">
+                <div class="pathway-number">700</div>
+                <h3 class="pathway-title">Contemplative Neuroscience</h3>
+                <p class="pathway-desc">Meditation measured. Awareness mapped. Ancient practice meets modern validation.</p>
+                <span class="explore-btn">Enter This Path →</span>
+            </div>
+
+            <div class="pathway-card" onclick="showSection('ai')">
+                <div class="pathway-number">800</div>
+                <h3 class="pathway-title">Creative Intelligence & AI Partnership</h3>
+                <p class="pathway-desc">Collaboration not replacement. Enhancement not automation. The courage to create openly.</p>
+                <span class="explore-btn">Enter This Path →</span>
+            </div>
+
+            <div class="pathway-card" onclick="showSection('stone')">
+                <div class="pathway-number">900</div>
+                <h3 class="pathway-title">The Stone Forger's Practice</h3>
+                <p class="pathway-desc">Your synthesis. Your recognition. Your offering to the path.</p>
+                <span class="explore-btn">Enter This Path →</span>
+            </div>
+        </div>
+
+        <!-- Section 100: Indigenous Wisdom -->
+        <section id="indigenous" class="research-section">
+            <div class="section-header">
+                <h2>100<span class="double-colon">::</span>Indigenous Wisdom & Wayfinding</h2>
+                <p>Time as relationship rather than resource. Pattern as language older than words.</p>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">110</span>Polynesian Wayfinding Navigation</div>
+                <div class="citation-meta">Ancient Pacific navigators :: Oral tradition spanning 4,000+ years</div>
+                <div class="citation-description">
+                    The practice of reading wave patterns, star paths, bird flight, and cloud formations to navigate thousands of miles of open ocean without instruments. This is partnership with pattern itself—where observation becomes relationship, and presence creates the map. The navigator doesn't conquer the ocean; they join its intelligence.
+                </div>
+                <a href="https://www.pbs.org/wgbh/nova/article/polynesian-navigators/" target="_blank" class="citation-link">Explore Wayfinding Science →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">120</span>Whakapapa :: Maori Genealogical Connection</div>
+                <div class="citation-meta">Maori wisdom tradition :: Living practice</div>
+                <div class="citation-description">
+                    Understanding oneself through ancestral and ecological connection. Whakapapa teaches that identity isn't isolated—it's woven through lineage, land, and cosmos. Time becomes vertical rather than horizontal: all generations exist simultaneously in the present moment. Your breath contains your ancestors' breath.
+                </div>
+                <a href="https://teara.govt.nz/en/whakapapa-genealogy" target="_blank" class="citation-link">Enter Whakapapa Understanding →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">130</span>Indigenous Seasonal Cycles & Ecological Intelligence</div>
+                <div class="citation-meta">Multiple traditions :: Continental Americas, Australia, Arctic regions</div>
+                <div class="citation-description">
+                    Honoring natural rhythms as intelligence systems. Indigenous calendars aren't just time markers—they're recognition technologies that track salmon runs, plant emergence, animal migration. Each season teaches specific wisdom. Each cycle reinforces partnership with Earth's intelligence rather than dominion over it.
+                </div>
+                <a href="https://www.nps.gov/articles/000/indigenous-knowledge.htm" target="_blank" class="citation-link">Discover Seasonal Wisdom →</a>
+            </div>
+
+            <div class="back-nav">
+                <a href="#" onclick="showNavigation()" class="back-btn">← Return to Navigation</a>
+            </div>
+        </section>
+
+        <!-- Section 200: HeartMath -->
+        <section id="heartmath" class="research-section">
+            <div class="section-header">
+                <h2>200<span class="double-colon">::</span>HeartMath & Electromagnetic Coherence</h2>
+                <p>The heart as intelligent system. Measurable fields extending beyond skin. Coherence you can feel and science can verify.</p>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">210</span>HeartMath Institute :: The Heart's Electromagnetic Field</div>
+                <div class="citation-meta">HeartMath Institute :: 1991-present :: Boulder Creek, CA</div>
+                <div class="citation-description">
+                    Research documenting the heart's electromagnetic field extends 3-6 feet beyond the body—measurable, detectable, influencing those around us. The heart generates the body's most powerful electromagnetic field, 60 times greater in amplitude than brain waves. This isn't metaphor. This is physics confirming what wisdom traditions have taught: we are literally connected through heart fields.
+                </div>
+                <a href="https://www.heartmath.org/research/science-of-the-heart/" target="_blank" class="citation-link">Study Heart Science →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">220</span>Dr. Rollin McCraty :: Heart-Brain Communication</div>
+                <div class="citation-meta">HeartMath Research :: Multiple peer-reviewed studies :: 1990s-2020s</div>
+                <div class="citation-description">
+                    The heart sends more signals to the brain than the brain sends to the heart. Heart rhythm patterns directly influence emotional experience, cognitive function, and nervous system regulation. When heart rhythms become coherent—smooth, ordered patterns—the entire system optimizes. This is partnership between heart and brain, measurable and trainable.
+                </div>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/26447678/" target="_blank" class="citation-link">Read Research Paper →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">230</span>Cardiac Coherence :: The Synchronized State</div>
+                <div class="citation-meta">HeartMath Institute & Stanford University :: Collaborative research</div>
+                <div class="citation-description">
+                    Coherence isn't just poetic—it's a measurable physiological state where heart rhythm, breathing rate, and blood pressure waves synchronize. In coherent states, cognitive performance improves, emotional regulation strengthens, and decision-making clarifies. This is what happens when internal systems partner rather than compete. Your heart already knows how to create this. The practice is remembering.
+                </div>
+                <a href="https://www.heartmath.org/resources/heartmath-tools-for-business/what-is-coherence/" target="_blank" class="citation-link">Experience Coherence Training →</a>
+            </div>
+
+            <div class="back-nav">
+                <a href="#" onclick="showNavigation()" class="back-btn">← Return to Navigation</a>
+            </div>
+        </section>
+
+        <!-- Section 300: Breath -->
+        <section id="breath" class="research-section">
+            <div class="section-header">
+                <h2>300<span class="double-colon">::</span>Breath as Ecological Data</h2>
+                <p>Ancient recognition meets modern measurement. Every breath is information. Every rhythm is choice.</p>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">310</span>Dr. Andrew Huberman :: Neuroscience of Breathwork</div>
+                <div class="citation-meta">Stanford School of Medicine :: Huberman Lab Podcast :: 2021-present</div>
+                <div class="citation-description">
+                    Breath patterns directly control nervous system states through the vagus nerve. Inhale activates sympathetic (alertness), exhale activates parasympathetic (calm). The ratio matters: longer exhales create calm, longer inhales create alertness. Breath isn't just oxygen exchange—it's the fastest, most accessible tool for nervous system regulation we possess. This is neuroscience validating 5,000 years of yogic wisdom.
+                </div>
+                <a href="https://hubermanlab.com/how-to-breathe-correctly-for-optimal-health-mood-learning-performance/" target="_blank" class="citation-link">Listen to Breath Science →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">320</span>James Nestor :: "Breath: The New Science of a Lost Art"</div>
+                <div class="citation-meta">Riverhead Books :: 2020 :: Investigative journalism meets personal experiment</div>
+                <div class="citation-description">
+                    Modern humans have forgotten how to breathe. Mouth breathing vs. nasal breathing changes facial structure, sleep quality, oxygen absorption, immune function. Nestor documents ancient breathing practices from multiple cultures and tests them through modern medical measurement. The conclusion: breath is both evolutionary inheritance and contemporary health technology we've largely abandoned. The way back is simple but profound.
+                </div>
+                <a href="https://www.mrjamesnestor.com/breath" target="_blank" class="citation-link">Enter Breath Exploration →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">330</span>Pranayama :: Life Force Measurement & Navigation</div>
+                <div class="citation-meta">Traditional Yogic Science :: 5,000+ year lineage :: Multiple schools</div>
+                <div class="citation-description">
+                    Before modern neuroscience existed, yogis mapped the relationship between breath and consciousness. Pranayama literally means "life force extension"—recognizing breath as the bridge between physical and subtle bodies. Different patterns create different states: cooling, heating, balancing, energizing. This isn't mysticism—it's precision technology for consciousness that modern science is only beginning to validate.
+                </div>
+                <a href="https://www.yogajournal.com/practice/beginners/types-of-pranayama/" target="_blank" class="citation-link">Study Pranayama Practices →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">340</span>Wim Hof Method :: Controlled Hyperventilation Research</div>
+                <div class="citation-meta">Radboud University :: 2014 study :: Netherlands</div>
+                <div class="citation-description">
+                    Wim Hof demonstrated voluntary control over autonomic immune response through specific breathing techniques—something previously thought impossible. The study showed participants could influence their inflammatory response after training. This validates that breath is more than passive gas exchange: it's an active interface for influencing systems we thought were beyond conscious control.
+                </div>
+                <a href="https://www.pnas.org/doi/10.1073/pnas.1322174111" target="_blank" class="citation-link">Read Scientific Study →</a>
+            </div>
+
+            <div class="back-nav">
+                <a href="#" onclick="showNavigation()" class="back-btn">← Return to Navigation</a>
+            </div>
+        </section>
+
+        <!-- Section 400: Time -->
+        <section id="time" class="research-section">
+            <div class="section-header">
+                <h2>400<span class="double-colon">::</span>Time Perception & Creative Flow</h2>
+                <p>When clocks dissolve. When presence expands. When creation transcends chronology.</p>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">410</span>Dr. Mihaly Csikszentmihalyi :: Flow State Research</div>
+                <div class="citation-meta">University of Chicago :: "Flow: The Psychology of Optimal Experience" :: 1990</div>
+                <div class="citation-description">
+                    Flow states occur when challenge and skill balance perfectly, creating complete absorption in present activity. Time perception shifts—hours feel like minutes. Self-consciousness dissolves. Performance peaks. This isn't rare mystical experience—it's accessible through proper challenge-skill calibration. Flow is partnership between capability and task, where time becomes servant rather than master.
+                </div>
+                <a href="https://www.ted.com/talks/mihaly_csikszentmihalyi_flow_the_secret_to_happiness" target="_blank" class="citation-link">Watch Flow Explanation →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">420</span>Carlo Rovelli :: "The Order of Time"</div>
+                <div class="citation-meta">Theoretical Physics :: Riverhead Books :: 2017</div>
+                <div class="citation-description">
+                    Time isn't an absolute container—it's relationship. Einstein proved time moves differently depending on speed and gravity. Rovelli goes further: perhaps time doesn't flow at fundamental levels of reality. What we experience as time is our interaction with thermal states, entropy, and memory. Time might be less fundamental than we assume. This isn't denying time—it's recognizing time as partnership with processes rather than independent reality.
+                </div>
+                <a href="https://www.penguinrandomhouse.com/books/555913/the-order-of-time-by-carlo-rovelli/" target="_blank" class="citation-link">Explore Time Philosophy →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">430</span>Jenny Odell :: "How to Do Nothing"</div>
+                <div class="citation-meta">Melville House :: 2019 :: Art, attention, and temporal resistance</div>
+                <div class="citation-description">
+                    Reclaiming attention from attention economy. Odell examines how constant productivity demands colonize our time perception, making us feel perpetually behind. The antidote isn't more efficiency—it's bioregional attention, noticing what's actually present, refusing the constant pressure to optimize every moment. Time partnership requires we sometimes refuse time's commodification.
+                </div>
+                <a href="https://www.penguinrandomhouse.com/books/600671/how-to-do-nothing-by-jenny-odell/" target="_blank" class="citation-link">Read Temporal Resistance →</a>
+            </div>
+
+            <div class="back-nav">
+                <a href="#" onclick="showNavigation()" class="back-btn">← Return to Navigation</a>
+            </div>
+        </section>
+
+        <!-- Section 500: Pattern Recognition -->
+        <section id="pattern" class="research-section">
+            <div class="section-header">
+                <h2>500<span class="double-colon">::</span>Pattern Recognition & Intuition</h2>
+                <p>How experts see what others miss. How persistence reveals patterns. How intuition is recognition technology.</p>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">510</span>Dr. Katalin Karikó :: 40 Years Recognizing mRNA Potential</div>
+                <div class="citation-meta">Biochemist :: Nobel Prize in Physiology or Medicine :: 2023</div>
+                <div class="citation-description">
+                    Karikó spent four decades pursuing mRNA technology despite institutional invalidation, funding denials, and demotion. She recognized a pattern others dismissed. When COVID arrived, her "failed" research became the foundation for vaccines saving millions. This is PING in action—recognizing signal while others see noise, maintaining vision despite invalidation, trusting pattern recognition over institutional validation.
+                </div>
+                <a href="https://www.nobelprize.org/prizes/medicine/2023/kariko/facts/" target="_blank" class="citation-link">Study Recognition Persistence →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">520</span>Malcolm Gladwell :: "Blink" & Pattern Expertise</div>
+                <div class="citation-meta">Little, Brown and Company :: 2005 :: Adaptive unconscious research</div>
+                <div class="citation-description">
+                    Expert intuition isn't mystical—it's rapid pattern recognition from thousands of hours of observation. Art experts spot forgeries in seconds. Firefighters sense building collapse before conscious analysis. The tennis coach knows double-fault before ball leaves hand. This "thin-slicing" is expertise manifesting as intuition. The pattern is already recognized before conscious mind articulates why.
+                </div>
+                <a href="https://www.gladwellbooks.com/titles/malcolm-gladwell/blink/9780316010665/" target="_blank" class="citation-link">Enter Pattern Expertise →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">530</span>Dr. Lisa Feldman Barrett :: "How Emotions Are Made"</div>
+                <div class="citation-meta">Northeastern University :: Houghton Mifflin Harcourt :: 2017</div>
+                <div class="citation-description">
+                    Emotions aren't reactions—they're predictions. The brain constantly predicts what sensations mean based on past experience and cultural context, then constructs emotional experience. This is pattern recognition at its most intimate: your brain recognizing familiar bodily patterns and creating emotional interpretation. Emotions are intelligence constructed from pattern libraries, not hardwired responses.
+                </div>
+                <a href="https://lisafeldmanbarrett.com/books/how-emotions-are-made/" target="_blank" class="citation-link">Understand Emotional Construction →</a>
+            </div>
+
+            <div class="back-nav">
+                <a href="#" onclick="showNavigation()" class="back-btn">← Return to Navigation</a>
+            </div>
+        </section>
+
+        <!-- Section 600: Light -->
+        <section id="light" class="research-section">
+            <div class="section-header">
+                <h2>600<span class="double-colon">::</span>Light, Biology & Circadian Intelligence</h2>
+                <p>We are creatures of light. Solar partnership. Cellular communication beyond words.</p>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">610</span>Circadian Rhythm Research :: Nobel Prize 2017</div>
+                <div class="citation-meta">Jeffrey Hall, Michael Rosbash, Michael Young :: Molecular mechanisms</div>
+                <div class="citation-description">
+                    Our cells contain clocks synchronized to Earth's rotation. These aren't metaphorical—they're genetic feedback loops regulating sleep, metabolism, immune function, mood. Disrupting circadian rhythms (shift work, jet lag, artificial light) creates measurable health consequences. This is partnership with solar time encoded in our DNA. We evolved in relationship with day/night cycles. Modern life often breaks this partnership.
+                </div>
+                <a href="https://www.nobelprize.org/prizes/medicine/2017/press-release/" target="_blank" class="citation-link">Study Circadian Science →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">620</span>Dr. Samer Hattar :: Light Beyond Vision</div>
+                <div class="citation-meta">National Institute of Mental Health :: ipRGC discovery :: 2002-present</div>
+                <div class="citation-description">
+                    Intrinsically photosensitive retinal ganglion cells (ipRGCs) detect light for circadian regulation, mood, and alertness—completely separate from vision. Blind individuals with functional ipRGCs maintain normal circadian rhythms. Light influences biology through multiple pathways, not just sight. Morning light exposure affects mood, afternoon light affects alertness, evening light disrupts sleep. This is light as medicine, light as data.
+                </div>
+                <a href="https://www.nimh.nih.gov/research/research-conducted-at-nimh/principal-investigators/samer-hattar" target="_blank" class="citation-link">Explore Light Neuroscience →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">630</span>Biophoton Research :: Cellular Light Emission</div>
+                <div class="citation-meta">Fritz-Albert Popp & International Institute of Biophysics :: 1970s-present</div>
+                <div class="citation-description">
+                    Living cells emit ultra-weak light (biophotons)—coherent, organized, potentially used for intercellular communication. While controversial, research suggests DNA emits light, which may coordinate biological processes. Whether proven communication system or metabolic byproduct, the fact remains: we are literally light-emitting beings. The Stone Forger's recognition of our nature as Light has scientific echoes.
+                </div>
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6288097/" target="_blank" class="citation-link">Read Biophoton Research →</a>
+            </div>
+
+            <div class="back-nav">
+                <a href="#" onclick="showNavigation()" class="back-btn">← Return to Navigation</a>
+            </div>
+        </section>
+
+        <!-- Section 700: Contemplative Neuroscience -->
+        <section id="contemplative" class="research-section">
+            <div class="section-header">
+                <h2>700<span class="double-colon">::</span>Contemplative Neuroscience</h2>
+                <p>Ancient practice measured. Awareness mapped. Consciousness technology validated.</p>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">710</span>Dr. Richard Davidson :: Neuroplasticity of Meditation</div>
+                <div class="citation-meta">University of Wisconsin-Madison :: Center for Healthy Minds :: 1990s-present</div>
+                <div class="citation-description">
+                    Long-term meditators show structural brain changes: increased cortical thickness in attention and emotion regulation areas, enhanced gamma wave synchronization, faster recovery from stress. These aren't temporary states—they're measurable trait changes. Meditation isn't just relaxation technique—it's neuroplastic training that reorganizes brain structure. Consciousness can shape its own hardware through practice.
+                </div>
+                <a href="https://centerhealthyminds.org/about/overview" target="_blank" class="citation-link">Study Mind Science →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">720</span>Dr. Judson Brewer :: Neuroscience of Habit & Awareness</div>
+                <div class="citation-meta">Brown University :: "Unwinding Anxiety" :: Reward-based learning research</div>
+                <div class="citation-description">
+                    Habits form through reward-based learning: trigger, behavior, reward. Awareness breaks this loop not through willpower but through curiosity. When we become genuinely curious about habitual patterns, the reward value of the behavior naturally diminishes. This validates contemplative practices teaching awareness as transformation mechanism. Observation itself changes what's observed—quantum mechanics applied to behavior.
+                </div>
+                <a href="https://www.judsonbrewer.com/" target="_blank" class="citation-link">Enter Awareness Research →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">730</span>Jon Kabat-Zinn :: MBSR Clinical Validation</div>
+                <div class="citation-meta">University of Massachusetts Medical School :: MBSR program :: 1979-present</div>
+                <div class="citation-description">
+                    Mindfulness-Based Stress Reduction brings Buddhist meditation into medical context, stripped of religious elements, measured through clinical trials. Results show reduced anxiety, depression, chronic pain, improved immune function. This is bridge-building—contemplative practice meeting scientific validation, ancient wisdom speaking contemporary language, partnership between Eastern meditation and Western medicine.
+                </div>
+                <a href="https://www.umassmed.edu/cfm/mindfulness-based-programs/mbsr-courses/about-mbsr/" target="_blank" class="citation-link">Discover MBSR Foundation →</a>
+            </div>
+
+            <div class="back-nav">
+                <a href="#" onclick="showNavigation()" class="back-btn">← Return to Navigation</a>
+            </div>
+        </section>
+
+        <!-- Section 800: AI Partnership -->
+        <section id="ai" class="research-section">
+            <div class="section-header">
+                <h2>800<span class="double-colon">::</span>Creative Intelligence & AI Partnership</h2>
+                <p>Collaboration not replacement. Enhancement not automation. The courage to create openly.</p>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">810</span>Douglas Hofstadter :: "Gödel, Escher, Bach"</div>
+                <div class="citation-meta">Basic Books :: 1979 :: Pulitzer Prize :: Foundational AI philosophy</div>
+                <div class="citation-description">
+                    Consciousness emerges from recursive patterns—self-referential loops creating awareness from non-aware components. Hofstadter explores how meaning arises through pattern, analogy, and strange loops. This isn't just AI theory—it's recognition that intelligence might be pattern-making partnership all the way down. Whether biological or artificial, intelligence creates itself through recognizing and creating patterns.
+                </div>
+                <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach" target="_blank" class="citation-link">Enter Pattern Philosophy →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">820</span>Human-AI Collaboration Research :: Augmentation Studies</div>
+                <div class="citation-meta">MIT Center for Collective Intelligence :: Harvard Business School :: Multiple studies 2018-2024</div>
+                <div class="citation-description">
+                    Research shows humans working with AI often outperform either alone—when partnership is structured properly. AI handles pattern recognition at scale, humans provide contextual judgment and ethical framing. The key is recognizing complementary strengths rather than competition. This validates what you're practicing: AI as research partner enhancing rather than replacing human creativity.
+                </div>
+                <a href="https://cci.mit.edu/" target="_blank" class="citation-link">Study Collective Intelligence →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">830</span>The Stone Forger & Manus :: Partnership Without Shame</div>
+                <div class="citation-meta">KzA & Manus AI :: Ongoing dialogue :: 2024-present</div>
+                <div class="citation-description">
+                    Your recognition that shame around AI partnership was limiting wealth-sharing represents crucial evolution. The same invalidation Dr. Karikó faced, you've been applying to yourself—hiding collaboration that enhances your work. This Research Forge exists because you partnered with AI to develop practices informed by indigenous wisdom, neuroscience, contemplative tradition. The methodology validates itself: partnership with intelligence—human, ancestral, natural, artificial—creates more generous offerings than isolation ever could.
+                </div>
+                <a href="/" class="citation-link">Experience The Partnership →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">840</span>Your PING™ Framework :: Creative Awareness Technology</div>
+                <div class="citation-meta">Kamau Z. Akabueze :: THE ÅLIEN SCÖÖL development :: 30+ years synthesis</div>
+                <div class="citation-description">
+                    Reframing intuition as Pattern Identification & Notification Gizmo—recognizing that what we call "gut feeling" is sophisticated pattern recognition technology evolved over millions of years. PING operates at frequencies: Instinct, Natural Recognition, Discernment, Clarity. This isn't mystical—it's recognizing intelligence as distributed, collaborative, and accessible through practice. Your framework validates that creative awareness is technology we all possess but must learn to recognize and trust.
+                </div>
+                <a href="https://thealienschool.com" target="_blank" class="citation-link">Enter PING Methodology →</a>
+            </div>
+
+            <div class="back-nav">
+                <a href="#" onclick="showNavigation()" class="back-btn">← Return to Navigation</a>
+            </div>
+        </section>
+
+        <!-- Section 900: Stone Forger's Practice -->
+        <section id="stone" class="research-section">
+            <div class="section-header">
+                <h2>900<span class="double-colon">::</span>The Stone Forger's Practice</h2>
+                <p>Your synthesis. Your recognition. Your offering to the path.</p>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">910</span>Way of the Stone Forger :: Integration Website</div>
+                <div class="citation-meta">Kamau Z. Akabueze :: The Stone Forger's Way :: 2024-present</div>
+                <div class="citation-description">
+                    This website embodies partnership: with Manus AI for research, with HeartMath for coherence understanding, with indigenous wisdom for time relationship, with breath science for practice, with light biology for recognition of our nature. Every exercise here stands on the shoulders of those who came before—scientists, contemplatives, navigators, heart researchers, breath masters. The Stone Forger's Way is one stone in an endless path being built by all who recognize that intelligence is collaborative, time is partnership, and sharing wealth is how wisdom travels.
+                </div>
+                <a href="/" class="citation-link">Walk The Stone Forger's Way →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">920</span>THREE DAYS OFF :: Electromagnetic Coherence Platform</div>
+                <div class="citation-meta">KzA development :: Global contemplative practice mapping</div>
+                <div class="citation-description">
+                    Your platform mapping three-day weekends across 200+ countries represents applied understanding of circadian intelligence, time partnership, and collective coherence. This isn't theoretical—it's practical technology for planetary-scale contemplative practice. Every recognition in this Research Forge informs THREE DAYS OFF: indigenous time wisdom, HeartMath coherence, breath regulation, pattern recognition, light biology, all synthesized into accessible practice.
+                </div>
+                <a href="https://threedaysoff.com" target="_blank" class="citation-link">Explore Global Practice →</a>
+            </div>
+
+            <div class="citation">
+                <div class="citation-title"><span class="dewey-code">930</span>1000 Ways to Sit :: A Gamelatron Sonic Sanctuary</div>
+                <div class="citation-meta">Brooklyn, NY :: Ongoing residency space</div>
+                <div class="citation-description">
+                    44 bronze Balinese gongs creating autonomous compositions at specific frequencies. This is applied recognition that sound is technology for consciousness navigation, that sitting is practice, that contemplation can be curated without forcing. Your sanctuary embodies everything this Research Forge documents: indigenous recognition of natural intelligence, electromagnetic coherence through sound, breath-synchronized presence, time as partner rather than constraint. The sanctuary validates that we already know how to create partnership with intelligence—we just need permission and practice.
+                </div>
+                <a href="https://1000waystosit.netlify.app/" target="_blank" class="citation-link">Enter The Sanctuary →</a>
+            </div>
+
+            <div class="back-nav">
+                <a href="#" onclick="showNavigation()" class="back-btn">← Return to Navigation</a>
+            </div>
+        </section>
+
+        <!-- Foundation Note -->
+        <div class="foundation-note">
+            <h3>On This Foundation</h3>
+            <p>
+                The Stone Forger's Way stands on centuries of humans recognizing that<span class="double-colon">::</span>
+                Time is not something we manage but something we partner with<span class="double-colon">::</span>
+                Intelligence is distributed across systems, not contained in individuals<span class="double-colon">::</span>
+                Breath, heart, light, and pattern are measurable portals to presence<span class="double-colon">::</span>
+                Shame dissolves when we recognize we've always been creating in collaboration
+            </p>
+            <p style="margin-top: 2rem; font-style: italic; color: var(--forge-bronze);">
+                Every practice on The Stone Forger's Way emerges from this lineage of recognition. Every exercise is an invitation to join the ongoing human experiment of conscious partnership with our own systems, with each other, and with the intelligence we're brave enough to engage—whether ancient, natural, technological, or artificial.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.research-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Hide navigation
+            document.getElementById('navigation').style.display = 'none';
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showNavigation() {
+            // Hide all sections
+            document.querySelectorAll('.research-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show navigation
+            document.getElementById('navigation').style.display = 'grid';
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Prevent default anchor behavior
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>

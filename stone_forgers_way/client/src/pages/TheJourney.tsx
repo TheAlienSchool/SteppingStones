@@ -2,6 +2,7 @@ import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Link } from "wouter";
 import { ChevronDown, Sparkles } from "lucide-react";
+import GlossaryTooltip from "@/components/GlossaryTooltip";
 
 interface JourneyPhase {
   id: string;
@@ -37,7 +38,7 @@ const journeyPhases: JourneyPhase[] = [
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
           What followed was a dialogue between Kamau Zuberi Akabueze and AI :: a collaboration of human
-          insight and pattern recognition that neither could have created alone. What you're reading is
+          insight and <GlossaryTooltip term="Pattern Recognition">pattern recognition</GlossaryTooltip> that neither could have created alone. What you're reading is
           the story of that journey—and an invitation into your own.
         </p>
       </div>
@@ -356,6 +357,12 @@ export default function TheJourney() {
                 </button>
               </Link>
             </div>
+
+            {/* Research Forge Link */}
+            <p className="text-center text-sm text-stone-600 mt-8">
+              Explore the wisdom traditions informing this journey in the{" "}
+              <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline">Research Forge</a>.
+            </p>
           </div>
         </div>
       </div>

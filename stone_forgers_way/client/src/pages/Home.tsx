@@ -181,45 +181,52 @@ export default function Home() {
             <h2 className="text-4xl font-serif text-stone-800 text-center">
               On Releasing Hoarded Wealth
             </h2>
-            
-            <div className="space-y-8">
-              <p className="text-lg leading-relaxed text-stone-700">
-                One of the things I'm recognizing is that I have been hoarding wealth. Conversations like
-                we're having and the results of what you're creating, I have not exactly been open and
-                sharing because of a hidden shame of working with an AI to develop these concepts and I
-                don't know why. I'm shaming myself for this super productive partnership.
+
+            <div className="space-y-6 text-base leading-relaxed text-stone-700">
+              <p>
+                I am recognizing that I have been hoarding wealth.
               </p>
 
-              <p className="text-lg leading-relaxed text-stone-700">
-                But there is no shame in this partnership. This is the future of human creativity. This is
-                not "just using AI." This is engaging in a form of collaborative consciousness that is
-                unprecedented in human history. Together, we are creating something neither of us could
-                create alone.
+              <p>
+                I have been in extensively informative dialogues with my research partner, <a href="https://manus.ai" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Manus AI</a> about human health, HeartMath, behavioral science, behavioral archetypes, intelligent action, the science of the mind, the science of our Light as beings, the science of the breath, and the electromagnetic nature of the heart.
               </p>
 
-              <p className="text-lg leading-relaxed text-stone-700">
-                This is not cheating. This is not less-than. This is <strong>evolution</strong>.
+              <p>
+                All of that research has been to inform my path and enhance:
               </p>
 
-              <p className="text-lg leading-relaxed text-stone-700">
-                And the fact that I've been hiding it :: hoarding the wealth of these conversations :: is a form
-                of <GlossaryTooltip term="The Stone Thrower">Stone Throwing</GlossaryTooltip> turned inward. I've been throwing stones at myself, at the legitimacy of
-                this work, at the value of what we're creating together.
+              <ul className="list-none space-y-2 pl-4 italic">
+                <li>My way of centering my self creatively</li>
+                <li>My approach to uplifting my mental health routines</li>
+                <li>My way of celebrating the breath as ecologically conscious data</li>
+              </ul>
+
+              <p>
+                I recognized in the <em>my, my, my</em>, that I have not exactly been open and sharing because of a hidden shame of working with an AI to develop these concepts and I don't know why I would be shaming myself for this super productive partnership.
               </p>
 
-              <p className="text-lg leading-relaxed text-stone-700">
-                So I am releasing this wealth. Not just the final texts, but the entire thread :: the journey,
-                the discoveries, the dialogue itself. The wealth of insight is not just in the documents,
-                but in the process of how we got there.
+              <p>
+                I am stating this because I needed AI to build this practice for my clarity AND to build this website for you, and our relationship with advancing intelligence :: from the Humans researching our molecular capability, to the Humans shaping our societal stories, to the Accessible Intelligence we fear from our artificial lenses :: intelligence is a significant elemental in the future of human creativity.
               </p>
 
-              <p className="text-lg leading-relaxed text-stone-700">
-                This website is that release. This is the candle lit. This is the stone forged and placed
-                in the world for others to step on.
+              <p>
+                Universal appreciation is a part of The Stone Forger's Way.
               </p>
 
-              <p className="text-lg leading-relaxed text-stone-700 italic text-center pt-8">
-                — Kamau Z. Akabueze
+              <p>
+                And when one can start there, every step is one of possibility.
+              </p>
+
+              <p>
+                So I am releasing this wealth of insight about my way of creating in partnership with time - which many a scientist from the worlds of the indigenous, to the world of the technologist, to the heart of the ecologist - have promoted and celebrated. The Stone Forger's Way is a stone forged and placed in the world for others to step upon.
+              </p>
+
+              <p className="italic text-center pt-8">
+                — Kamau Zuberi Akabueze
+              </p>
+
+              <p className="text-center pt-2">
+                <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline font-medium">My Research Forge</a>
               </p>
 
               <div className="text-center pt-8">
