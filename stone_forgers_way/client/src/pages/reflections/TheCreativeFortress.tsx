@@ -43,6 +43,15 @@ export default function TheCreativeFortress() {
             </p>
           </section>
 
+          <section className="bg-stone-50 p-6 rounded-lg border border-stone-200">
+            <p className="text-stone-700 leading-relaxed">
+              On November 21, 2025, Taylor Simone Ledward Boseman stood at the posthumous unveiling of her husband's
+              star on the Hollywood Walk of Fame and spoke these instructions into our wind, our cultural ecosystem,
+              our creative ecology. She released what Chadwick had protected :: the philosophy that guided his work,
+              now offered to guide ours.
+            </p>
+          </section>
+
           <section className="bg-amber-50 p-8 rounded-lg border-l-4 border-amber-600">
             <h2 className="text-2xl font-serif text-stone-800 mb-6">Boseman's Instructions</h2>
             <div className="space-y-4 text-stone-700">
@@ -218,6 +227,23 @@ export default function TheCreativeFortress() {
             </p>
             <p className="text-lg text-stone-700 italic">
               Build your fortress. Protect the flame. Trust the timing.
+            </p>
+          </section>
+
+          <section className="border-t border-stone-200 pt-8 mt-8">
+            <p className="text-sm text-stone-500 leading-relaxed">
+              <strong>Source:</strong> Chadwick Boseman's creative philosophy was shared by his wife,
+              Taylor Simone Ledward Boseman, at the posthumous unveiling of his star on the Hollywood
+              Walk of Fame, Los Angeles, CA, November 21, 2025. As reported by{" "}
+              <a
+                href="https://fashionsizzle.com/2025/11/chadwick-bosemans-instructions-for-creative-work-a-blueprint-for-purpose-patience-divine-vision/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-700 hover:text-amber-800 underline"
+              >
+                Fashionsizzle
+              </a>
+              .
             </p>
           </section>
         </div>
