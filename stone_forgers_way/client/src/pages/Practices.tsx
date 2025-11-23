@@ -239,22 +239,28 @@ export default function Practices() {
                     the rhythm of life moving through you, whether you trust it or not. <GlossaryTooltip term="Cardiac Coherence">Your heart generates an electromagnetic field</GlossaryTooltip> that extends beyond your body—a measurable signal of your state.
                   </p>
                   <p>
-                    <strong>Step 4: Breathe in trust.</strong> As you inhale, imagine breathing in <GlossaryTooltip term="Trust">trust</GlossaryTooltip>—not blind
+                    <strong>Step 4: Slow to coherence rhythm.</strong> Breathe at approximately <GlossaryTooltip term="Cardiac Coherence">six breaths per minute</GlossaryTooltip>—about
+                    4-5 seconds in, 5-6 seconds out. This isn't arbitrary: at this rhythm, your heart entrains to 0.1 Hz,
+                    the same frequency as Earth's geomagnetic field. You are literally tuning your instrument to the planet.
+                  </p>
+                  <p>
+                    <strong>Step 5: Breathe in trust.</strong> As you inhale, imagine breathing in <GlossaryTooltip term="Trust">trust</GlossaryTooltip>—not blind
                     faith, but conscious trust in your capacity to navigate whatever comes. Say internally: "I trust
                     the <GlossaryTooltip term="Stepping Stone">stone</GlossaryTooltip> is forming beneath my feet."
                   </p>
                   <p>
-                    <strong>Step 5: Breathe out doubt.</strong> As you exhale, release the need for certainty.
+                    <strong>Step 6: Breathe out doubt.</strong> As you exhale, release the need for certainty.
                     <GlossaryTooltip term="Vagal Tone">Longer exhales activate your parasympathetic system</GlossaryTooltip>—this is neuroscience, not metaphor.
                     Say internally: "I release the demand for proof before I step."
                   </p>
                   <p>
-                    <strong>Step 6: Repeat three times.</strong> Inhale trust. Exhale doubt. Inhale trust. Exhale doubt. 
-                    Inhale trust. Exhale doubt.
+                    <strong>Step 7: Repeat three times.</strong> Inhale trust (4-5 seconds). Exhale doubt (5-6 seconds).
+                    Feel your heart rhythm smooth into coherence. Three cycles at this pace takes about 30 seconds—enough
+                    time to shift your entire nervous system from fear to readiness.
                   </p>
                   <p>
-                    <strong>Step 7: Take the step.</strong> After the third breath, take the action. Send the email. 
-                    Make the call. Say the thing. Not because you're certain, but because you trust the process of 
+                    <strong>Step 8: Take the step.</strong> After the third breath, take the action. Send the email.
+                    Make the call. Say the thing. Not because you're certain, but because you trust the process of
                     becoming certain through action.
                   </p>
                 </div>
