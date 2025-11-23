@@ -26,8 +26,7 @@ export default function Practices() {
                 daily life :: at your desk, in the shower, before a difficult conversation, after a moment of rage.
               </p>
               <p className="text-lg leading-relaxed text-stone-700 mt-4">
-                The practices are organized by archetype, but you can use any practice at any time. <GlossaryTooltip term="Trust">Trust</GlossaryTooltip> your
-                intuition to guide you to the one you need right now.
+                The practices are organized by archetype, but you can use any practice at any time. <GlossaryTooltip term="Trust">Trust</GlossaryTooltip> your <GlossaryTooltip term="Pattern Recognition">intuition</GlossaryTooltip> to guide you to the one you need right now.
               </p>
               <p className="text-sm text-stone-500 mt-4 italic">
                 Terms with dotted underlines link to the{" "}
@@ -236,8 +235,8 @@ export default function Practices() {
                     the "what if I'm wrong?" Let it be there.
                   </p>
                   <p>
-                    <strong>Step 3: Place your hand on your heart.</strong> Literally. Feel your heartbeat. This is 
-                    the rhythm of life moving through you, whether you trust it or not.
+                    <strong>Step 3: Place your hand on your heart.</strong> Literally. Feel your heartbeat. This is
+                    the rhythm of life moving through you, whether you trust it or not. <GlossaryTooltip term="Cardiac Coherence">Your heart generates an electromagnetic field</GlossaryTooltip> that extends beyond your body—a measurable signal of your state.
                   </p>
                   <p>
                     <strong>Step 4: Breathe in trust.</strong> As you inhale, imagine breathing in <GlossaryTooltip term="Trust">trust</GlossaryTooltip>—not blind
@@ -245,7 +244,8 @@ export default function Practices() {
                     the <GlossaryTooltip term="Stepping Stone">stone</GlossaryTooltip> is forming beneath my feet."
                   </p>
                   <p>
-                    <strong>Step 5: Breathe out doubt.</strong> As you exhale, release the need for certainty. 
+                    <strong>Step 5: Breathe out doubt.</strong> As you exhale, release the need for certainty.
+                    <GlossaryTooltip term="Vagal Tone">Longer exhales activate your parasympathetic system</GlossaryTooltip>—this is neuroscience, not metaphor.
                     Say internally: "I release the demand for proof before I step."
                   </p>
                   <p>
@@ -324,12 +324,16 @@ export default function Practices() {
                 The Practice is the Path
               </h2>
               <p className="text-lg leading-relaxed text-stone-700 text-center">
-                These practices are not meant to be mastered. They are meant to be lived. Return to them again 
-                and again. Each time, you will discover something new. Each time, you are forging a stone on the 
+                These practices are not meant to be mastered. They are meant to be lived. Return to them again
+                and again. Each time, you will discover something new—<GlossaryTooltip term="Neuroplasticity">your brain literally rewires itself through repeated practice</GlossaryTooltip>. Each time, you are forging a stone on the
                 path toward a more conscious, present, and powerful way of being.
               </p>
               <p className="text-lg leading-relaxed text-stone-700 text-center mt-4 font-serif italic">
                 The stone is beneath your feet. Will you step?
+              </p>
+              <p className="text-sm text-stone-600 text-center mt-6">
+                Explore the science behind these practices in the{" "}
+                <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline">Research Forge</a>.
               </p>
             </section>
           </div>

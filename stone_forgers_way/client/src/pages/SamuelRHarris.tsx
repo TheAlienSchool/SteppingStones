@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import GlossaryTooltip from "@/components/GlossaryTooltip";
 
 export default function SamuelRHarris() {
   return (
@@ -71,7 +72,7 @@ export default function SamuelRHarris() {
             {/* The Quantum Poetry */}
             <section className="mb-16 bg-amber-50 p-8 rounded-lg">
               <h2 className="text-3xl font-serif text-stone-800 mb-6">
-                Quantum Poetry in Ancestral Motion
+                Quantum Poetry in <GlossaryTooltip term="Whakapapa">Ancestral Motion</GlossaryTooltip>
               </h2>
               <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
@@ -88,12 +89,12 @@ export default function SamuelRHarris() {
                   life, lit up by love."</strong> Not just a candle.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
-  A life. Not just light.
+  A life. Not just <GlossaryTooltip term="Biophotons">light</GlossaryTooltip>.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
-  Love. This is 
-                  quantum poetry :: the recognition that a single conscious being, aligned with love, creates 
-                  a field effect that cannot be resisted.
+  Love. This is
+                  quantum poetry :: the recognition that a single conscious being, aligned with love, creates
+                  a <GlossaryTooltip term="The Field">field effect</GlossaryTooltip> that cannot be resisted.
 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
   In 2022, Samuel's daughter Janis handed his grandson Kamau an envelope containing this 
@@ -250,6 +251,17 @@ export default function SamuelRHarris() {
                   The lineage continues. The candle burns. The stones are forged.
                 </p>
               </div>
+            </section>
+
+            {/* Research Forge Connection */}
+            <section className="mb-16 text-center">
+              <p className="text-sm text-stone-600">
+                Explore the research traditions that inform The Stone Forger's Way—including the science of{" "}
+                <GlossaryTooltip term="Biophotons">light emission</GlossaryTooltip>,{" "}
+                <GlossaryTooltip term="Whakapapa">ancestral wisdom</GlossaryTooltip>, and the{" "}
+                <GlossaryTooltip term="The Field">quantum field</GlossaryTooltip>—in the{" "}
+                <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline">Research Forge</a>.
+              </p>
             </section>
 
             {/* Attribution Note */}

@@ -1,4 +1,4 @@
-export type GlossaryCategory = 'practice' | 'concepts' | 'archetypes' | 'time' | 'mechanics';
+export type GlossaryCategory = 'practice' | 'concepts' | 'archetypes' | 'time' | 'mechanics' | 'science';
 
 export interface GlossaryTerm {
   term: string;
@@ -9,14 +9,15 @@ export interface GlossaryTerm {
   relatedTerms: string[];
 }
 
-export const categoryOrder: GlossaryCategory[] = ['practice', 'concepts', 'archetypes', 'time', 'mechanics'];
+export const categoryOrder: GlossaryCategory[] = ['practice', 'concepts', 'archetypes', 'time', 'mechanics', 'science'];
 
 export const categoryLabels: Record<GlossaryCategory, string> = {
   practice: 'Practice',
   concepts: 'Concepts',
   archetypes: 'Archetypes',
   time: 'Time',
-  mechanics: 'Mechanics'
+  mechanics: 'Mechanics',
+  science: 'Science'
 };
 
 export const categoryDescriptions: Record<GlossaryCategory, string> = {
@@ -24,7 +25,8 @@ export const categoryDescriptions: Record<GlossaryCategory, string> = {
   concepts: 'Ideas to understand :: frameworks for seeing',
   archetypes: 'States of being :: patterns of consciousness',
   time: 'Temporal understanding :: your relationship with time',
-  mechanics: 'How things work :: the physics of consciousness'
+  mechanics: 'How things work :: the physics of consciousness',
+  science: 'Research validation :: where wisdom meets measurement'
 };
 
 export const glossaryTerms: GlossaryTerm[] = [
@@ -228,6 +230,80 @@ export const glossaryTerms: GlossaryTerm[] = [
     insight: "You don't build the bridge alone. It is co-created through relationship—with others, with your environment, and with your own higher purpose. Your job is to trust that the bridge is there, even when you can't see it.",
     category: "mechanics",
     relatedTerms: ["Toroidal Binding", "The Field", "Fabrication of Form"]
+  },
+
+  // SCIENCE TERMS - Research Forge informed
+  {
+    term: "Cardiac Coherence",
+    simple: "A measurable state where heart rhythm, breathing, and blood pressure synchronize.",
+    experience: "It's that feeling when everything clicks into place—your breath slows, your chest softens, your mind clears. Athletes know this state before peak performance. Meditators know it in deep practice. Your heart is generating a smooth, ordered pattern that your whole system recognizes as 'safe to create.'",
+    insight: "HeartMath research shows this isn't metaphor—it's measurable physiology. In coherent states, cognitive performance improves, emotional regulation strengthens. Your heart's electromagnetic field extends 3-6 feet beyond your body, literally influencing the space around you. Pre-Flow Coherence is cardiac coherence by another name.",
+    category: "science",
+    relatedTerms: ["Pre-Flow Coherence", "The Field", "Trust"]
+  },
+  {
+    term: "Flow State",
+    simple: "Complete absorption in present activity where time perception shifts.",
+    experience: "You're working on something you love. Hours pass like minutes. Self-consciousness dissolves. You're not thinking about the work—you are the work. When you emerge, you realize you've created something beyond what you thought possible.",
+    insight: "Dr. Csikszentmihalyi's research shows flow occurs when challenge and skill balance perfectly. This isn't rare mystical experience—it's accessible through proper calibration. The Stone Forger's practice of matching presence to task is flow technology by another name.",
+    category: "science",
+    relatedTerms: ["Pre-Flow Coherence", "The Conscious Forger", "Active Patience"]
+  },
+  {
+    term: "Circadian Intelligence",
+    simple: "The biological clocks in every cell, synchronized to Earth's rotation.",
+    experience: "You wake before the alarm. You get sleepy as darkness falls. Your energy peaks and dips at predictable times. This isn't random—it's millions of years of evolution encoding solar partnership into your DNA.",
+    insight: "The 2017 Nobel Prize in Medicine validated what indigenous wisdom always knew: we are creatures of light, designed to partner with day/night cycles. Disrupting this partnership (screens at night, artificial light, irregular sleep) creates measurable health consequences. Honoring circadian rhythms is honoring the trellis.",
+    category: "science",
+    relatedTerms: ["The Trellis and the Vine", "Active Patience", "Resonance"]
+  },
+  {
+    term: "Wayfinding",
+    simple: "Navigation through pattern recognition and relationship with environment.",
+    experience: "Polynesian navigators crossed thousands of miles of open ocean without instruments—reading wave patterns, star paths, bird flight, cloud formations. They didn't conquer the ocean; they joined its intelligence. They trusted patterns their bodies had learned to recognize.",
+    insight: "Wayfinding is Stone Forging across water. The navigator doesn't see the destination, but trusts the patterns that reveal the path. Your intuition is wayfinding technology evolved over millions of years. The stepping stone appears when you learn to read the signs.",
+    category: "science",
+    relatedTerms: ["Trust", "Stepping Stone", "Pattern Recognition"]
+  },
+  {
+    term: "Pattern Recognition",
+    simple: "The rapid, often unconscious identification of meaningful signals in noise.",
+    experience: "The art expert spots the forgery in seconds. The firefighter senses building collapse before conscious analysis. The mother knows something is wrong with her child from across the room. This isn't magic—it's thousands of hours of observation crystallized into instant knowing.",
+    insight: "What we call 'intuition' is sophisticated pattern recognition technology. Dr. Katalin Karikó recognized mRNA's potential for 40 years while institutions dismissed her. Trust your pattern recognition, especially when others don't see what you see. The invalidation may be the signal that you're onto something real.",
+    category: "science",
+    relatedTerms: ["Resonance", "Trust", "Wayfinding"]
+  },
+  {
+    term: "Neuroplasticity",
+    simple: "The brain's ability to reorganize itself through experience and practice.",
+    experience: "You start meditating. At first, your mind wanders constantly. After months of practice, you notice you can focus longer, recover from stress faster, see situations more clearly. Your brain has literally rewired itself through repeated practice.",
+    insight: "Dr. Richard Davidson's research shows long-term meditators have structural brain changes—increased cortical thickness, enhanced gamma synchronization. Consciousness can shape its own hardware. The Stone Forger's practices aren't just philosophy—they're neuroplastic training that reorganizes your instrument.",
+    category: "science",
+    relatedTerms: ["The Conscious Forger", "Active Patience", "Pre-Flow Coherence"]
+  },
+  {
+    term: "Biophotons",
+    simple: "Ultra-weak light emissions from living cells.",
+    experience: "Every cell in your body emits light—coherent, organized photons that may coordinate biological processes. You are literally a light-emitting being. The 'glow' people sometimes describe around others may have physical basis.",
+    insight: "While still being researched, biophoton science suggests we are creatures of light in ways beyond metaphor. The Stone Forger's recognition of our nature as Light has scientific echoes. What wisdom traditions sensed, measurement is beginning to confirm.",
+    category: "science",
+    relatedTerms: ["The Field", "Frequency", "Resonance"]
+  },
+  {
+    term: "Vagal Tone",
+    simple: "The activity level of the vagus nerve, indicating nervous system regulation capacity.",
+    experience: "It's your ability to calm down after stress. High vagal tone means you recover quickly from upset, can access creativity under pressure, maintain emotional equilibrium. Low vagal tone means you stay activated longer, struggle to relax, feel perpetually on edge.",
+    insight: "Breath is the fastest way to improve vagal tone. Longer exhales activate parasympathetic response. This is why every wisdom tradition emphasizes breath—not mysticism, but neuroscience. The Inspired Breath practice is vagal toning by another name.",
+    category: "science",
+    relatedTerms: ["Pre-Flow Coherence", "Trust", "Active Patience"]
+  },
+  {
+    term: "Whakapapa",
+    simple: "Māori understanding of identity through ancestral and ecological connection.",
+    experience: "You trace your lineage not just through parents, but through land, water, mountains, stars. Your breath contains your ancestors' breath. Time becomes vertical—all generations exist simultaneously in the present moment. You are not isolated; you are woven.",
+    insight: "Whakapapa teaches that identity isn't individual—it's relational across time and space. This aligns with The Stone Forger's recognition that we create in partnership with lineage. Samuel R. Harris's wisdom lives in this work because connection transcends death.",
+    category: "science",
+    relatedTerms: ["The Field", "Terma", "Resonance"]
   }
 ];
 
