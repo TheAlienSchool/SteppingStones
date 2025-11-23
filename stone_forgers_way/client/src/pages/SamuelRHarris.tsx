@@ -115,8 +115,7 @@ export default function SamuelRHarris() {
               </h2>
               <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
-  Samuel R. Harris was born in 1916 in Muse, Pennsylvania, a small coal mining town in 
-                  Washington County.
+  Samuel R. Harris was born in 1916 in Esmont, Virginia.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
   His father worked in the mines. The expectation was that Samuel would 
