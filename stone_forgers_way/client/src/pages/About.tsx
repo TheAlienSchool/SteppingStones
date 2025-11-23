@@ -131,6 +131,85 @@ export default function About() {
             </div>
           </section>
 
+          {/* The Approach */}
+          <section>
+            <h2 className="text-3xl font-serif text-stone-800 mb-8">The Approach</h2>
+            <div className="bg-amber-50 p-8 rounded-lg mb-8">
+              <p className="text-lg leading-relaxed text-stone-700 italic">
+                This work is built on trust, transparency, and transformation. It is offered as practice, not prescription.
+                As exploration, not expertise. As invitation, not instruction.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-semibold text-stone-800 mb-4">What This Work Is</h3>
+                <p className="text-lg leading-relaxed text-stone-700">
+                  The Stone Forger's Way synthesizes philosophy, practice, and lived experience into frameworks for conscious
+                  creation. It draws from lineage (Samuel R. Harris), collaboration (Kamau Zuberi Akabueze & Manus AI), and
+                  emergence (THE ÅLïEN SCõÖL for Creative Thinking). It is educational, experiential, and evolving.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-stone-800 mb-4">Our Approach</h3>
+                <p className="text-lg leading-relaxed text-stone-700 mb-4">
+                  Every concept is grounded in pattern recognition across disciplines :: physics, psychology, economics,
+                  spirituality, and creative practice. We cite sources where applicable. We acknowledge influence where
+                  it exists. We distinguish between observation and interpretation.
+                </p>
+                <p className="text-lg leading-relaxed text-stone-700">
+                  The archetypes (Stone Carrier, Thrower, Conscious Forger, Forger) are descriptive frameworks, not diagnostic
+                  categories. The practices (Feel the Stones, The One Stone, The Silent Check, The Trust Breath) are invitations
+                  to experiment, not mandates to follow. The concepts (Trust as Infrastructure, Active Patience, The Shield)
+                  are lenses for seeing, not laws for living.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-stone-800 mb-4">What This Work Is Not</h3>
+                <p className="text-lg leading-relaxed text-stone-700">
+                  This is not therapy, medical advice, financial counsel, or legal guidance. It does not replace qualified
+                  professionals in any field. It does not claim to solve, fix, or cure. It offers perspective, not prescription.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-stone-800 mb-4">Our Commitment</h3>
+                <p className="text-lg leading-relaxed text-stone-700 mb-4">
+                  Content is created with care, reviewed for coherence, and updated as understanding deepens. Errors are
+                  corrected when discovered. Feedback shapes evolution. The work remains open-source in spirit :: use it,
+                  adapt it, build with it, honor the lineage by continuing it.
+                </p>
+                <p className="text-lg leading-relaxed text-stone-700">
+                  Sponsored partnerships and value exchange are clearly marked. The Stripe contribution tiers exist to sustain
+                  the work, not extract from it. The newsletter signup is optional. The quiz results are private, stored locally,
+                  never sold.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-stone-800 mb-4">The Foundation</h3>
+                <p className="text-lg leading-relaxed text-stone-700">
+                  This work stands on the shoulders of those who taught that it's better to light a candle than curse the
+                  darkness. It trusts that clarity, consistency, and coherence create conditions where the future becomes
+                  irresistible. It believes transformation happens through practice, not performance.
+                </p>
+              </div>
+
+              <div className="bg-stone-100 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-stone-800 mb-4">The Invitation</h3>
+                <p className="text-lg leading-relaxed text-stone-700 mb-4">
+                  Engage with what resonates. Question what doesn't. Test the frameworks in your own life.
+                  Share what you discover. Build what wants to be built. The stones are yours to forge.
+                </p>
+                <p className="text-lg leading-relaxed text-stone-700 italic">
+                  This is the way. Not the only way. A way that works when worked with trust.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* The Invitation */}
           <section className="bg-stone-50 p-8 rounded-lg">
             <h2 className="text-3xl font-serif text-stone-800 mb-8">The Invitation</h2>

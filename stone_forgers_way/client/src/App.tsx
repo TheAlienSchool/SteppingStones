@@ -27,6 +27,8 @@ import ThankYou from "./pages/ThankYou";
 import ArchetypeQuiz from "./pages/ArchetypeQuiz";
 import MyArchetype from "./pages/MyArchetype";
 import TodaysPracticePage from "./pages/TodaysPracticePage";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Disclaimer from "./pages/Disclaimer";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 
 function Router() {
@@ -57,6 +59,8 @@ function Router() {
       <Route path="/reflections/the-gift-of-grace" component={TheGiftOfGrace} />
       <Route path="/reflections/terma-in-action" component={TermaInAction} />
       <Route path={"/thank-you"} component={ThankYou} />
+      <Route path={"/privacy-policy"} component={PrivacyPolicy} />
+      <Route path={"/disclaimer"} component={Disclaimer} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

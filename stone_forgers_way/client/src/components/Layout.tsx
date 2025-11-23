@@ -253,6 +253,15 @@ export default function Layout({ children, showNav = true }: LayoutProps) {
             <p className="text-xs text-stone-400">
               A collaboration between Kamau Z. Akabueze and Manus AI
             </p>
+            <div className="flex items-center justify-center gap-4 text-xs text-stone-400">
+              <Link href="/privacy-policy">
+                <span className="hover:text-amber-400 transition-colors cursor-pointer">Privacy Policy</span>
+              </Link>
+              <span>·</span>
+              <Link href="/disclaimer">
+                <span className="hover:text-amber-400 transition-colors cursor-pointer">Disclaimer</span>
+              </Link>
+            </div>
             <p className="text-xs text-stone-400">
               © {new Date().getFullYear()} · All wisdom freely shared
             </p>
