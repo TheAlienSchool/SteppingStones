@@ -13,7 +13,7 @@ export default function SamuelRHarris() {
                 Samuel R. Harris
               </h1>
               <p className="text-xl text-stone-600">
-                1918–2005 · Research Chemist, Educator, Light Bearer
+                1916–1977 · Research Chemist, Educator, Community Light Bearer
               </p>
               <p className="text-lg text-stone-500 italic mt-4">
                 "It is better to light a candle than to curse the darkness."
@@ -115,7 +115,7 @@ export default function SamuelRHarris() {
               </h2>
               <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
-  Samuel R. Harris was born in 1918 in Muse, Pennsylvania, a small coal mining town in 
+  Samuel R. Harris was born in 1916 in Muse, Pennsylvania, a small coal mining town in 
                   Washington County.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
