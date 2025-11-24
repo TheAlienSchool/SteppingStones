@@ -31,6 +31,7 @@ import MyArchetype from "./pages/MyArchetype";
 import TodaysPracticePage from "./pages/TodaysPracticePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Disclaimer from "./pages/Disclaimer";
+import CreativeContext from "./pages/CreativeContext";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 
 function Router() {
@@ -49,6 +50,7 @@ function Router() {
       <Route path={"/glossary"} component={Glossary} />
       <Route path={"/works"} component={CompleteWorks} />
       <Route path="/about" component={About} />
+      <Route path="/creative-context" component={CreativeContext} />
       <Route path="/samuel-r-harris" component={SamuelRHarris} />
       <Route path="/the-container" component={TheContainer} />
       <Route path="/reflections" component={Reflections} />
