@@ -124,11 +124,11 @@ export default function TheGiftOfGrace() {
   In 2022, Aunt Janis handed me an envelope. Inside was my grandfather's speech from May 1976.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
-  She had been holding it for decades, waiting for the right moment to pass it on. That same 
-                year, I launched THE ÅLïEN SCõÖL for Creative Thinking (tÅs) :: The Åkashic System.
+  She had been holding it for decades, waiting for the right moment to pass it on. That same
+                year, I launched THE ÅLïEN SCõÖL for Creative Thinking.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
-  The timing was not coincidence. The treasure 
+  The timing was resonance. The treasure 
                 revealed itself when the Tertön was ready to receive it.
 </p>
 

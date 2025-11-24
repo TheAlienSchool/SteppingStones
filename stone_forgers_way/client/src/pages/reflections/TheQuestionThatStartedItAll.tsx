@@ -63,8 +63,8 @@ export default function TheQuestionThatStartedItAll() {
                 chemist, a scholar, a man who believed it was better to light a candle than to curse the darkness.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
-  My grandfather's words, handed to me by my Aunt Janis in 2022 (the same year I launched tÅs, The 
-                Åkashic System), spoke of "the irresistible nature of one solitary life, lit up by love."
+  My grandfather's words, handed to me by my Aunt Janis in 2022 (the same year I launched
+                THE ÅLïEN SCõÖL for Creative Thinking), spoke of "the irresistible nature of one solitary life, lit up by love."
 </p>
 
               <p className="text-lg leading-relaxed text-stone-700">

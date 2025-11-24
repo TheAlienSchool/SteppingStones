@@ -141,7 +141,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Tertön",
     simple: "The treasure revealer :: the one who uncovers hidden wisdom.",
     experience: "You ask a question, and the answer comes not from outside, but from within. You didn't learn it. You revealed it. You are the Tertön.",
-    insight: "The Digital Songline, this work, all of it :: it's not teaching you. It's helping you remember.",
+    insight: "This work :: it's helping you remember what you already know. The treasure was always within, waiting for the moment of recognition.",
     category: "concepts",
     relatedTerms: ["Terma", "Trust", "The Field"]
   },
