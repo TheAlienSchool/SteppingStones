@@ -28,7 +28,7 @@ export default function TodaysPracticePage() {
               <Sparkles className="w-4 h-4" />
               Daily Practice
             </div>
-            <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4">
+            <h1 className="text-4xl md:text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
               Today's Practice
             </h1>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto">

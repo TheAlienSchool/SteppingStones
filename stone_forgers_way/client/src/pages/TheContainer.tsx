@@ -8,7 +8,7 @@ export default function TheContainer() {
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <h1 className="text-5xl font-serif text-stone-800 mb-4">
+              <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                 The Container
               </h1>
               <p className="text-xl text-stone-600">
@@ -34,7 +34,7 @@ export default function TheContainer() {
 
             {/* The Originating Question */}
             <section className="mb-16">
-              <h2 className="text-3xl font-serif text-stone-800 mb-6">The Originating Question</h2>
+              <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-6 leading-tight">The Originating Question</h2>
               <div className="bg-stone-50 p-8 rounded-lg">
                 <p className="text-lg leading-relaxed text-stone-700 mb-6">
                   During an early morning <strong>Inspired Breath</strong> practice—omnidirectional salutations to 
@@ -57,7 +57,7 @@ export default function TheContainer() {
 
             {/* 1000 Ways to Sit */}
             <section className="mb-16">
-              <h2 className="text-3xl font-serif text-stone-800 mb-6">1000 Ways to Sit</h2>
+              <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-6 leading-tight">1000 Ways to Sit</h2>
               <div className="bg-stone-50 p-8 rounded-lg">
                 <p className="text-lg leading-relaxed text-stone-700 mb-4">
                   <strong>1000 Ways to Sit :: A Gamelatron Sonic Sanctuary, a collaborative work of Aaron Taylor Kuffner 
@@ -81,7 +81,7 @@ export default function TheContainer() {
 
             {/* The Inspired Breath */}
             <section className="mb-16">
-              <h2 className="text-3xl font-serif text-stone-800 mb-6">The Inspired Breath</h2>
+              <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-6 leading-tight">The Inspired Breath</h2>
               <div className="bg-stone-50 p-8 rounded-lg">
                 <p className="text-lg leading-relaxed text-stone-700 mb-6">
   <strong>The Inspired Breath</strong> is a practice created in collaboration with <a href="https://thealienschool.com" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">THE ÅLIEN SCöÖL</a>

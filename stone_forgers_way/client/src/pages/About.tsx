@@ -11,13 +11,13 @@ export default function About() {
         type="website"
       />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-5xl font-serif text-stone-800 mb-4">About The Stone Forger's Way</h1>
+        <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">About The Stone Forger's Way</h1>
         <p className="text-xl text-amber-700 mb-12">A temporal technology for conscious creation</p>
 
         <div className="space-y-16">
           {/* Origin Story */}
           <section>
-            <h2 className="text-3xl font-serif text-stone-800 mb-8">The Origin</h2>
+            <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">The Origin</h2>
             <div className="bg-amber-50 p-8 rounded-lg mb-8 space-y-8">
               <p className="text-lg leading-relaxed text-stone-700">
                 During an early morning Inspired Breath practice at 1000 Ways to Sit :: A Gamelatron Sonic Sanctuary,
@@ -60,7 +60,7 @@ export default function About() {
 
           {/* About Kamau */}
           <section>
-            <h2 className="text-3xl font-serif text-stone-800 mb-8">About Kamau Zuberi Akabueze</h2>
+            <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">About Kamau Zuberi Akabueze</h2>
             <div className="space-y-8">
               <p className="text-lg leading-relaxed text-stone-700">
                 Born Samuel Todd Harris, Kamau Zuberi Akabueze chose his name as an act of <GlossaryTooltip term="Terma">Terma</GlossaryTooltip> :: remembering what was
@@ -89,7 +89,7 @@ export default function About() {
 
           {/* About Manus AI */}
           <section>
-            <h2 className="text-3xl font-serif text-stone-800 mb-8">About Manus AI</h2>
+            <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">About Manus AI</h2>
             <div className="space-y-8">
               <p className="text-lg leading-relaxed text-stone-700">
                 Manus AI is an autonomous general AI agent created by the Manus team. In this collaboration, Manus served
@@ -112,7 +112,7 @@ export default function About() {
 
           {/* The Container */}
           <section>
-            <h2 className="text-3xl font-serif text-stone-800 mb-8">The Container</h2>
+            <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">The Container</h2>
             <div className="space-y-8">
               <p className="text-lg leading-relaxed text-stone-700">
                 All of this work emerged during residency at <strong>1000 Ways to Sit :: A Gamelatron Sonic Sanctuary, a
@@ -134,7 +134,7 @@ export default function About() {
 
           {/* The Approach */}
           <section>
-            <h2 className="text-3xl font-serif text-stone-800 mb-8">The Approach</h2>
+            <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">The Approach</h2>
             <div className="bg-amber-50 p-8 rounded-lg mb-8">
               <p className="text-lg leading-relaxed text-stone-700 italic">
                 This work is built on trust, transparency, and transformation. It is offered as practice, not prescription.
@@ -213,7 +213,7 @@ export default function About() {
 
           {/* The Invitation */}
           <section className="bg-stone-50 p-8 rounded-lg">
-            <h2 className="text-3xl font-serif text-stone-800 mb-8">The Invitation</h2>
+            <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">The Invitation</h2>
             <div className="space-y-8">
               <p className="text-lg leading-relaxed text-stone-700">
                 The Stone Forger's Way is not a teaching to be consumed. It is a framework to be inhabited.
@@ -252,7 +252,7 @@ export default function About() {
 
           {/* Contact */}
           <section>
-            <h2 className="text-3xl font-serif text-stone-800 mb-8">Stay Connected</h2>
+            <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">Stay Connected</h2>
             <div className="space-y-8">
               <p className="text-lg leading-relaxed text-stone-700">
                 Subscribe to <strong>The Listener's Path</strong> :: a newsletter exploring the intersection of conscious

@@ -9,7 +9,7 @@ export default function SamuelRHarris() {
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <h1 className="text-5xl font-serif text-stone-800 mb-4">
+              <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                 Samuel R. Harris
               </h1>
               <p className="text-xl text-stone-600">
@@ -71,7 +71,7 @@ export default function SamuelRHarris() {
 
             {/* The Quantum Poetry */}
             <section className="mb-16 bg-amber-50 p-8 rounded-lg">
-              <h2 className="text-3xl font-serif text-stone-800 mb-6">
+              <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-6 leading-tight">
                 Quantum Poetry in <GlossaryTooltip term="Whakapapa">Ancestral Motion</GlossaryTooltip>
               </h2>
               <div className="space-y-8">
@@ -110,7 +110,7 @@ export default function SamuelRHarris() {
 
             {/* Early Life */}
             <section className="mb-16">
-              <h2 className="text-3xl font-serif text-stone-800 mb-6">
+              <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-6 leading-tight">
                 From the Coal Mines to the Laboratory
               </h2>
               <div className="space-y-8">
@@ -129,7 +129,7 @@ export default function SamuelRHarris() {
 
             {/* Ray Kemp: The Invisible Bridge */}
             <section className="mb-16 bg-white border-l-4 border-amber-600 p-8">
-              <h2 className="text-3xl font-serif text-stone-800 mb-6">
+              <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-6 leading-tight">
                 Ray Kemp: The Invisible Bridge
               </h2>
               <div className="space-y-8">
@@ -167,7 +167,7 @@ export default function SamuelRHarris() {
 
             {/* 141 N McDonald Street: The Sacred Nexus */}
             <section className="mb-16 bg-amber-50 p-8 rounded-lg">
-              <h2 className="text-3xl font-serif text-stone-800 mb-6">
+              <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-6 leading-tight">
                 141 N McDonald Street: The Sacred Nexus
               </h2>
               <div className="space-y-8">
@@ -198,7 +198,7 @@ export default function SamuelRHarris() {
 
             {/* Education & Career */}
             <section className="mb-16">
-              <h2 className="text-3xl font-serif text-stone-800 mb-6">
+              <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-6 leading-tight">
                 Education & Career
               </h2>
               <div className="space-y-8">
@@ -231,7 +231,7 @@ export default function SamuelRHarris() {
 
             {/* The Lineage Continues */}
             <section className="mb-16 bg-white border-l-4 border-amber-600 p-8">
-              <h2 className="text-3xl font-serif text-stone-800 mb-6">
+              <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-6 leading-tight">
                 The Lineage of Light
               </h2>
               <div className="space-y-8">
