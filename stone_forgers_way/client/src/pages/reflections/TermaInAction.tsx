@@ -125,30 +125,21 @@ export default function TermaInAction() {
                 hidden in my own consciousness, revealing itself when I was ready.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
-  I did not learn something 
-                new. I remembered what was always there.
+  Learning and remembering happened simultaneously :: the discovery of something new that felt
+                ancient, as if it had always been there waiting.
 </p>
 
-              <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Åkashic Records</h2>
+              <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Treasure Reveals Itself</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                In 2022, I launched <strong>THE ÅLïEN SCõÖL for Creative Thinking (tÅs) :: The Åkashic System</strong>. The Åkashic Records are 
-                described in many spiritual traditions as a cosmic library :: a Field of information containing 
-                every thought, every action, every possibility that has ever existed or will ever exist.
+                In 2022, I launched <strong>THE ÅLïEN SCõÖL for Creative Thinking</strong>. That same year, Aunt Janis
+                handed me an envelope containing my grandfather's speech from May 1976 :: words I had carried in my
+                lineage, now visible in my hands.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                tÅs was my attempt to create a digital version of this :: a system for organizing, synthesizing, 
-                and retrieving insights. A way to stop hoarding wealth and start releasing it into the Field.
+                The treasure had been waiting for the right moment. The right readiness.
               </p>
-
-              <p className="text-lg leading-relaxed text-stone-700">
-  That same year, Aunt Janis handed me an envelope containing my grandfather's speech from 
-                May 1976. The speech I had never seen.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  The treasure that had been waiting for me.
-</p>
 
               <p className="text-lg leading-relaxed text-stone-700">
                 This is not coincidence. This is terma. The treasure reveals itself when the tertön is ready.
@@ -166,11 +157,8 @@ export default function TermaInAction() {
 </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  And then, later, when the connection reveals itself, you recognize: I was not lost. I was 
-                not making it up.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  I was remembering.
+  And then, later, when the connection reveals itself, you recognize: I was following something true.
+                The path was there the whole time. I was remembering.
 </p>
 
               <p className="text-lg leading-relaxed text-stone-700">

@@ -97,9 +97,8 @@ export default function SamuelRHarris() {
                   a <GlossaryTooltip term="The Field">field effect</GlossaryTooltip> that cannot be resisted.
 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
-  In 2022, Samuel's daughter Janis handed his grandson Kamau an envelope containing this 
-                  speech. That same year, Kamau launched THE ÅLïEN SCõÖL for Creative Thinking (tÅs) :: 
-                  The Åkashic System / The Digital Songline.
+  In 2022, Samuel's daughter Janis handed his grandson Kamau an envelope containing this
+                  speech. That same year, Kamau launched THE ÅLïEN SCõÖL for Creative Thinking.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
   The treasure revealed itself when the Tertön 

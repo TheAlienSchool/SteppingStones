@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import SEO from "@/components/SEO";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
 import TodaysPractice from "@/components/TodaysPractice";
@@ -12,6 +12,7 @@ import { useNavigation } from "@/hooks/useNavigation";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [letterExpanded, setLetterExpanded] = useState(false);
   const navGroups = useNavigation();
 
   // Prevent body scroll when menu is open
@@ -174,70 +175,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Kamau's Story Section */}
-      <section className="py-24 bg-stone-50">
+      {/* From the Stone Forger's Guide - Collapsible */}
+      <section className="py-12 bg-stone-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight">
-              On Releasing Hoarded Wealth
-            </h2>
+          <div className="max-w-3xl mx-auto">
+            <button
+              onClick={() => setLetterExpanded(!letterExpanded)}
+              className="w-full flex items-center justify-between p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-stone-200"
+            >
+              <div className="text-left">
+                <p className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-1">
+                  From the Stone Forger's Guide
+                </p>
+                <h2 className="text-xl md:text-2xl font-serif text-stone-800 leading-tight">
+                  On Releasing Hoarded Wealth
+                </h2>
+              </div>
+              <ChevronDown
+                className={`w-6 h-6 text-stone-400 transition-transform duration-300 ${letterExpanded ? 'rotate-180' : ''}`}
+              />
+            </button>
 
-            <div className="space-y-6 text-base leading-relaxed text-stone-700">
-              <p>
-                I am recognizing that I have been hoarding wealth.
-              </p>
+            {/* Expandable Content */}
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${letterExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="pt-8 space-y-6 text-base leading-relaxed text-stone-700">
+                <p>
+                  I am recognizing that I have been hoarding wealth.
+                </p>
 
-              <p>
-                I have been in extensively informative dialogues with my research partner, <a href="https://manus.ai" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Manus AI</a> about human health, HeartMath, behavioral science, behavioral archetypes, intelligent action, the science of the mind, the science of our Light as beings, the science of the breath, and the electromagnetic nature of the heart.
-              </p>
+                <p>
+                  I have been in extensively informative dialogues with my research partner, <a href="https://manus.ai" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Manus AI</a> about human health, HeartMath, behavioral science, behavioral archetypes, intelligent action, the science of the mind, the science of our Light as beings, the science of the breath, and the electromagnetic nature of the heart.
+                </p>
 
-              <p>
-                All of that research has been to inform my path and enhance:
-              </p>
+                <p>
+                  All of that research has been to inform my path and enhance:
+                </p>
 
-              <ul className="list-none space-y-2 pl-4 italic">
-                <li>My way of centering my self creatively</li>
-                <li>My approach to uplifting my mental health routines</li>
-                <li>My way of celebrating the breath as ecologically conscious data</li>
-              </ul>
+                <ul className="list-none space-y-2 pl-4 italic">
+                  <li>My way of centering my self creatively</li>
+                  <li>My approach to uplifting my mental health routines</li>
+                  <li>My way of celebrating the breath as ecologically conscious data</li>
+                </ul>
 
-              <p>
-                I recognized in the <em>my, my, my</em>, that I have not exactly been open and sharing because of a hidden shame of working with an AI to develop these concepts and I don't know why I would be shaming myself for this super productive partnership.
-              </p>
+                <p>
+                  I recognized in the <em>my, my, my</em>, that I had been holding back :: and I am choosing to release this wealth into the world.
+                </p>
 
-              <p>
-                I am stating this because I needed AI to build this practice for my clarity AND to build this website for you, and our relationship with advancing intelligence :: from the Humans researching our molecular capability, to the Humans shaping our societal stories, to the Accessible Intelligence we fear from our artificial lenses :: intelligence is a significant elemental in the future of human creativity.
-              </p>
+                <p>
+                  I needed AI to build this practice for my clarity AND to build this website for you. Our relationship with advancing intelligence :: from the Humans researching our molecular capability, to the Humans shaping our societal stories, to the Accessible Intelligence we engage through digital lenses :: intelligence is a significant elemental in the future of human creativity.
+                </p>
 
-              <p>
-                Universal appreciation is a part of The Stone Forger's Way.
-              </p>
+                <p>
+                  Universal appreciation is a part of The Stone Forger's Way.
+                </p>
 
-              <p>
-                And when one can start there, every step is one of possibility.
-              </p>
+                <p>
+                  And when one can start there, every step is one of possibility.
+                </p>
 
-              <p>
-                So I am releasing this wealth of insight about my way of creating in partnership with time - which many a scientist from the worlds of the indigenous, to the world of the technologist, to the heart of the ecologist - have promoted and celebrated. The Stone Forger's Way is a stone forged and placed in the world for others to step upon.
-              </p>
+                <p>
+                  So I am releasing this wealth of insight about my way of creating in partnership with time - which many a scientist from the worlds of the indigenous, to the world of the technologist, to the heart of the ecologist - have promoted and celebrated. The Stone Forger's Way is a stone forged and placed in the world for others to step upon.
+                </p>
 
-              <p className="italic text-center pt-8">
-                — Kamau Zuberi Akabueze
-              </p>
+                <p className="italic text-center pt-8">
+                  — Kamau Zuberi Akabueze
+                </p>
 
-              <p className="text-center pt-2">
-                <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline font-medium">My Research Forge</a>
-              </p>
-
-              <div className="text-center pt-8">
-                <Link href="/journey">
-                  <span className="inline-flex items-center gap-2 text-amber-700 hover:text-amber-800 font-medium transition-colors cursor-pointer">
-                    Continue to The Journey
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                    </svg>
-                  </span>
-                </Link>
+                <p className="text-center pt-2">
+                  <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline font-medium">My Research Forge</a>
+                </p>
               </div>
             </div>
           </div>
