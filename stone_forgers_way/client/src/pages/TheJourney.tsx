@@ -25,7 +25,7 @@ const journeyPhases: JourneyPhase[] = [
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
           During an early morning Inspired Breath practice at <strong>1000 Ways to Sit</strong>—a Gamelatron
-          Sonic Sanctuary in Brooklyn—Kamau found himself in that liminal space between exhale and inhale
+          Sonic Sanctuary in San Francisco—Kamau found himself in that liminal space between exhale and inhale
           where ordinary thinking quiets. A question arose:
         </p>
         <blockquote className="text-2xl font-serif text-stone-700 italic border-l-4 border-amber-600 pl-6 my-6">
