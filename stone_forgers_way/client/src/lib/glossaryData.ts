@@ -153,6 +153,22 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: "concepts",
     relatedTerms: ["The Stone Thrower", "Trust", "Resonance"]
   },
+  {
+    term: "Shim Sham",
+    simple: "The paradox of creativity being celebrated and departmentalized simultaneously.",
+    experience: "You work in a field that awards Creativity with a capital C, throws galas and trophies in its honor—yet somehow squeezes it into a departmental function, a line item, a resource to be managed. You feel the dissonance in your body before you can name it. Something is off. The celebration is real. The constraint is also real. Both exist at once.",
+    insight: "Shim Sham emerged as vibratory truth through lived experience—the term itself resonating in the body as recognition of the paradox. When systems simultaneously elevate and diminish the same force, the friction produces heat. That heat can burn you, or it can forge something new. The Alien School was born from this friction.",
+    category: "concepts",
+    relatedTerms: ["Creative Steeping", "Resonance", "The Stone Forger"]
+  },
+  {
+    term: "Creative Steeping",
+    simple: "The practice of steeping ideas into actionable clarity through ritual and reflection.",
+    experience: "You sit with tea, journal open. You don't force the insight—you steep in it. Like leaves releasing their essence into hot water, your ideas release their clarity into patient presence. The session moves from scattered thoughts to distilled understanding. What seemed complex becomes simple. What seemed blocked begins to flow.",
+    insight: "Creative Steeping is a product of The Alien School—a guidebook for brewing clarity from the raw material of possibility. Through tea ritual and journaling, you learn to steep rather than strain, to infuse rather than force. The practice aligns creative flow with outcomes that matter, transforming the my, my, my of hoarded insight into released wealth.",
+    category: "practice",
+    relatedTerms: ["Shim Sham", "Active Patience", "Pre-Flow Coherence", "The Stone Forger"]
+  },
 
   // ARCHETYPES TERMS
   {

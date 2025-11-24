@@ -85,6 +85,14 @@ const blogPosts: BlogPost[] = [
     date: "2025",
     excerpt: "Two men. Two lineages. Two different languages for the same truth. Samuel R. Harris lit candles in a world that cursed the darkness. Chadwick Boseman built fortresses to protect the flame until it was strong enough to withstand the wind. Both understood: transformation happens through practice, not performance.",
     category: "Lineage"
+  },
+  {
+    slug: "the-path-to-1000-ways-to-sit",
+    title: "The Path to 1000 Ways to Sit",
+    subtitle: "A postcard flyer, nine years, and the feeling that is the secret",
+    date: "November 2025",
+    excerpt: "How a postcard flyer stayed on my desk for nine years, waiting. How a feeling remembered became a path materialized. From Brooklyn 2016 to San Francisco 2025, through the Shim Sham, The Alien School, and a friendship between fathers—this is terma emerging in the tertön.",
+    category: "Origin"
   }
 ];
 
