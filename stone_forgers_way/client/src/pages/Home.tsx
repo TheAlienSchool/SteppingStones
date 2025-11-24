@@ -178,7 +178,7 @@ export default function Home() {
       <section className="py-24 bg-stone-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl font-serif text-stone-800 text-center">
+            <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight">
               On Releasing Hoarded Wealth
             </h2>
 
@@ -247,7 +247,7 @@ export default function Home() {
       {/* The Archetypes Preview */}
       <section className="py-24 bg-gradient-to-b from-white to-amber-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-serif text-stone-800 text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-16">
             The Archetypes
           </h2>
           
@@ -311,7 +311,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <Link href="/journey">
               <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
-                <h3 className="text-2xl font-serif mb-4">The Journey</h3>
+                <h3 className="text-2xl font-serif mb-4 leading-tight">The Journey</h3>
                 <p className="text-stone-300">
                   Follow the complete thread of discovery, from <GlossaryTooltip term="Terma">Terma</GlossaryTooltip> and <GlossaryTooltip term="Tertön">Tertön</GlossaryTooltip> through <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>{" "}
                   to <GlossaryTooltip term="The Stone Thrower's Backache">The Stone Thrower's Backache</GlossaryTooltip>
@@ -321,7 +321,7 @@ export default function Home() {
             
             <Link href="/concepts">
               <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
-                <h3 className="text-2xl font-serif mb-4">The Concepts</h3>
+                <h3 className="text-2xl font-serif mb-4 leading-tight">The Concepts</h3>
                 <p className="text-stone-300">
                   Explore the core ideas: <GlossaryTooltip term="The Trellis and the Vine">The Trellis and the Vine</GlossaryTooltip>, <GlossaryTooltip term="Trust">Trust as The Cheat Code</GlossaryTooltip>, <GlossaryTooltip term="The Shield">The Shield</GlossaryTooltip>,{" "}
                   and <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>
@@ -331,7 +331,7 @@ export default function Home() {
             
             <Link href="/practices">
               <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
-                <h3 className="text-2xl font-serif mb-4">The Practices</h3>
+                <h3 className="text-2xl font-serif mb-4 leading-tight">The Practices</h3>
                 <p className="text-stone-300">
                   Engage with micro-practices: Feel the Stones, The One <GlossaryTooltip term="Stepping Stone">Stone</GlossaryTooltip>, <GlossaryTooltip term="The Shield">The Shield Check</GlossaryTooltip>,{" "}
                   <GlossaryTooltip term="Trust">The Trust Breath</GlossaryTooltip>
@@ -341,7 +341,7 @@ export default function Home() {
             
             <Link href="/works">
               <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
-                <h3 className="text-2xl font-serif mb-4">Complete Works</h3>
+                <h3 className="text-2xl font-serif mb-4 leading-tight">Complete Works</h3>
                 <p className="text-stone-300">
                   Access all texts, research documents, and downloadable resources
                 </p>

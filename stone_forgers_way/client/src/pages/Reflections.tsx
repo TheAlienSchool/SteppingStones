@@ -109,7 +109,7 @@ export default function Reflections() {
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <h1 className="text-5xl font-serif text-stone-800 mb-4">
+              <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                 Reflections
               </h1>
               <p className="text-xl text-stone-600">

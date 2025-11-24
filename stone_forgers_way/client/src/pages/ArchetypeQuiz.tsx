@@ -121,7 +121,7 @@ export default function ArchetypeQuiz() {
                 style={{ animation: "fadeInUp 0.6s ease-out forwards" }}
               >
                 <p className="text-lg text-amber-600 mb-2">Your path has been revealed</p>
-                <h1 className="text-5xl font-serif text-stone-800 mb-4">
+                <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                   You are
                 </h1>
               </div>
@@ -335,7 +335,7 @@ export default function ArchetypeQuiz() {
           <div className="max-w-3xl mx-auto">
             {/* Header */}
             <div className="text-center mb-12">
-              <h1 className="text-5xl font-serif text-stone-800 mb-4">
+              <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                 Discover Your Archetype
               </h1>
               <p className="text-xl text-stone-600 mb-8">

@@ -6,12 +6,26 @@
     <title>Research Forge :: The Stone Forger's Way</title>
     <style>
         :root {
-            --stone-gray: #4a5568;
-            --forge-bronze: #b8860b;
+            /* Aligned with Tailwind stone/amber palette */
+            --stone-800: #292524;
+            --stone-700: #44403c;
+            --stone-600: #57534e;
+            --stone-500: #78716c;
+            --stone-200: #e7e5e4;
+            --stone-100: #f5f5f4;
+            --stone-50: #fafaf9;
+            --amber-700: #b45309;
+            --amber-600: #d97706;
+            --amber-500: #f59e0b;
+            --amber-100: #fef3c7;
+            --amber-50: #fffbeb;
+            /* Legacy mappings */
+            --stone-gray: var(--stone-600);
+            --forge-bronze: var(--amber-700);
             --earth-brown: #8b7355;
             --breath-blue: #6b9bd1;
-            --light-cream: #faf8f3;
-            --deep-charcoal: #2d3748;
+            --light-cream: var(--stone-50);
+            --deep-charcoal: var(--stone-800);
         }
 
         * {
@@ -21,17 +35,23 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, var(--light-cream) 0%, #e8e4dc 100%);
-            color: var(--deep-charcoal);
-            line-height: 1.7;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, var(--stone-50) 0%, var(--amber-50) 50%, var(--stone-100) 100%);
+            color: var(--stone-700);
+            line-height: 1.625; /* matches leading-relaxed */
             overflow-x: hidden;
         }
 
         .forge-container {
-            max-width: 1400px;
+            max-width: 1280px; /* matches max-w-6xl */
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 6rem 1rem; /* matches py-24 px-4 */
+        }
+
+        @media (min-width: 768px) {
+            .forge-container {
+                padding: 6rem 2rem;
+            }
         }
 
         .forge-header {
@@ -40,12 +60,33 @@
             animation: fadeInDown 1.2s ease-out;
         }
 
+        .site-nav-link {
+            display: inline-block;
+            color: var(--amber-700);
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            transition: color 0.2s ease;
+        }
+
+        .site-nav-link:hover {
+            color: var(--stone-800);
+            text-decoration: underline;
+        }
+
         .forge-header h1 {
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: var(--forge-bronze);
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 400;
+            color: var(--stone-800);
             margin-bottom: 1rem;
-            letter-spacing: 2px;
+            letter-spacing: 0.025em;
+            line-height: 1.25; /* leading-tight */
+        }
+
+        @media (min-width: 768px) {
+            .forge-header h1 {
+                font-size: 3rem; /* text-5xl */
+            }
         }
 
         .double-colon {
@@ -55,12 +96,12 @@
         }
 
         .forge-subtitle {
-            font-size: 1.3rem;
-            color: var(--stone-gray);
-            font-style: italic;
-            max-width: 800px;
+            font-size: 1.125rem; /* text-lg */
+            color: var(--stone-600);
+            font-style: normal;
+            max-width: 56rem; /* max-w-4xl */
             margin: 0 auto;
-            line-height: 1.8;
+            line-height: 1.625;
         }
 
         .navigation-system {
@@ -112,10 +153,17 @@
         }
 
         .pathway-title {
-            font-size: 1.5rem;
-            color: var(--deep-charcoal);
-            margin-bottom: 1rem;
+            font-size: 1.25rem; /* text-xl */
+            color: var(--stone-800);
+            margin-bottom: 0.75rem;
             font-weight: 600;
+            line-height: 1.25;
+        }
+
+        @media (min-width: 768px) {
+            .pathway-title {
+                font-size: 1.5rem; /* text-2xl */
+            }
         }
 
         .pathway-desc {
@@ -162,37 +210,52 @@
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--forge-bronze);
+            font-size: 1.875rem; /* text-3xl */
+            color: var(--stone-800);
             margin-bottom: 0.5rem;
-            font-weight: 300;
+            font-weight: 400;
+            line-height: 1.25;
+        }
+
+        @media (min-width: 768px) {
+            .section-header h2 {
+                font-size: 2.25rem; /* text-4xl */
+            }
         }
 
         .section-header p {
-            color: var(--stone-gray);
-            font-size: 1.1rem;
-            font-style: italic;
+            color: var(--stone-600);
+            font-size: 1.125rem; /* text-lg */
+            font-style: normal;
+            line-height: 1.625;
         }
 
         .citation {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: var(--light-cream);
-            border-radius: 8px;
-            border-left: 3px solid var(--breath-blue);
+            margin: 1.5rem 0;
+            padding: 2rem; /* p-8 equivalent */
+            background: var(--stone-50);
+            border-radius: 0.5rem; /* rounded-lg */
+            border-left: 4px solid var(--amber-600);
             transition: all 0.3s ease;
         }
 
         .citation:hover {
-            background: #f5f2ea;
-            transform: translateX(8px);
+            background: var(--amber-50);
+            border-left-color: var(--amber-700);
         }
 
         .citation-title {
-            font-size: 1.2rem;
-            color: var(--deep-charcoal);
+            font-size: 1.125rem; /* text-lg */
+            color: var(--stone-800);
             margin-bottom: 0.5rem;
             font-weight: 600;
+            line-height: 1.375;
+        }
+
+        @media (min-width: 768px) {
+            .citation-title {
+                font-size: 1.25rem; /* text-xl */
+            }
         }
 
         .citation-meta {
@@ -203,9 +266,10 @@
         }
 
         .citation-description {
-            color: var(--stone-gray);
-            line-height: 1.8;
+            color: var(--stone-700);
+            line-height: 1.625;
             margin-bottom: 1rem;
+            font-size: 1rem;
         }
 
         .citation-link {
@@ -317,6 +381,7 @@
 <body>
     <div class="forge-container">
         <header class="forge-header">
+            <a href="/" class="site-nav-link">← Return to The Stone Forger's Way</a>
             <h1>Research Forge<span class="double-colon">::</span>Sources of Recognition</h1>
             <p class="forge-subtitle">
                 A bibliographic journey through the wisdom traditions informing The Stone Forger's Way<span class="double-colon">::</span>where indigenous knowledge meets neuroscience, breath becomes data, and partnership with intelligence reveals itself across millennia
