@@ -10,7 +10,7 @@ export default function Concepts() {
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <h1 className="text-5xl font-serif text-stone-800 mb-4">
+              <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                 The Concepts
               </h1>
               <p className="text-xl text-stone-600">
@@ -33,7 +33,7 @@ export default function Concepts() {
                   alt="The Trellis and the Vine" 
                   className="w-20 h-20 rounded-full object-cover"
                 />
-                <h2 className="text-3xl font-serif text-stone-800">The Trellis and the Vine</h2>
+                <h2 className="text-2xl md:text-3xl font-serif text-stone-800 leading-tight">The Trellis and the Vine</h2>
               </div>
               <div className="bg-stone-50 p-8 rounded-lg">
                 <p className="text-lg leading-relaxed text-stone-700 mb-4">
@@ -42,7 +42,7 @@ export default function Concepts() {
                 </p>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Trellis</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Trellis</h3>
                     <p className="text-stone-700">
                       The trellis is time as scaffolding :: the structural, predictable, foundational grid of reality.
                       The sun rises, seasons change, clocks tick. This is Cronos time—<GlossaryTooltip term="Circadian Intelligence">encoded in every cell of your body</GlossaryTooltip>, the reliable framework that
@@ -51,7 +51,7 @@ export default function Concepts() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Vine</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Vine</h3>
                     <p className="text-stone-700">
                       The vine is time as relational spacetime :: the living, organic, subjective experience of time.
                       This is Kairos time. The vine grows on the trellis, but it is not defined by it. Its growth
@@ -60,7 +60,7 @@ export default function Concepts() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Integration</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Integration</h3>
                     <p className="text-stone-700">
                       <GlossaryTooltip term="The Stone Carrier">The Stone Carrier</GlossaryTooltip> is obsessed with the trellis :: counting minutes, racing deadlines, feeling
                       trapped by time. <GlossaryTooltip term="The Conscious Forger">The Conscious Forger</GlossaryTooltip> tends the vine :: bringing presence, shaping experience,
@@ -80,7 +80,7 @@ export default function Concepts() {
                   alt="The Shield" 
                   className="w-20 h-20 rounded-full object-cover"
                 />
-                <h2 className="text-3xl font-serif text-stone-800">The Shield</h2>
+                <h2 className="text-2xl md:text-3xl font-serif text-stone-800 leading-tight">The Shield</h2>
               </div>
               <div className="bg-stone-50 p-8 rounded-lg">
                 <p className="text-lg leading-relaxed text-stone-700 mb-4">
@@ -89,7 +89,7 @@ export default function Concepts() {
                 </p>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Purpose</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Purpose</h3>
                     <p className="text-stone-700">
                       The shield is brilliant, ancient, life-saving technology. It was designed for acute threat :: 
                       to go up when the predator appears and come down when the predator leaves. It protects us 
@@ -97,7 +97,7 @@ export default function Concepts() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Problem</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Problem</h3>
                     <p className="text-stone-700">
                       The tragedy of modern life is that the predator never leaves. The threat is constant, ambient, 
                       systemic. So the shield stays up. And when the shield becomes permanent, it creates three costs: 
@@ -105,7 +105,7 @@ export default function Concepts() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Practice</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Practice</h3>
                     <p className="text-stone-700">
                       The work is not to shame yourself for having a shield. The work is to recognize when it's up 
                       and consciously choose whether to keep it there. The Shield Check practice teaches you to 
@@ -125,7 +125,7 @@ export default function Concepts() {
                   alt="Trust as stepping" 
                   className="w-20 h-20 rounded-full object-cover"
                 />
-                <h2 className="text-3xl font-serif text-stone-800">Trust as The Cheat Code</h2>
+                <h2 className="text-2xl md:text-3xl font-serif text-stone-800 leading-tight">Trust as The Cheat Code</h2>
               </div>
               <div className="bg-stone-50 p-8 rounded-lg">
                 <p className="text-lg leading-relaxed text-stone-700 mb-4">
@@ -133,7 +133,7 @@ export default function Concepts() {
                 </p>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">Why Trust is a Cheat Code</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">Why Trust is a Cheat Code</h3>
                     <p className="text-stone-700">
                       The rational mind demands proof before it will move. "Show me the stone is solid, then I'll step." 
                       But in the quantum reality of consciousness, the stone does not fully form until you step. Trust 
@@ -141,7 +141,7 @@ export default function Concepts() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Physics of Trust</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Physics of Trust</h3>
                     <p className="text-stone-700">
                       Trust stabilizes <GlossaryTooltip term="Frequency">frequency</GlossaryTooltip>. When you trust, you stop oscillating between doubt and hope. You
                       hold a <GlossaryTooltip term="Cardiac Coherence">coherent signal</GlossaryTooltip>—measurable in your heart rhythm, detectable in your electromagnetic field. <GlossaryTooltip term="The Field">The Field</GlossaryTooltip> responds to coherence. <GlossaryTooltip term="Resonance">Resonance</GlossaryTooltip> occurs. The <GlossaryTooltip term="Stepping Stone">stepping stone</GlossaryTooltip>{" "}
@@ -150,7 +150,7 @@ export default function Concepts() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">Trust vs. Blind Faith</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">Trust vs. Blind Faith</h3>
                     <p className="text-stone-700">
                       Trust is not blind faith. Blind faith says "everything will be fine." Trust says "I have the 
                       capacity to navigate whatever comes." Trust is not passive. It is the most active stance you 
@@ -171,7 +171,7 @@ export default function Concepts() {
                 </p>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Invisible Bridge</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Invisible Bridge</h3>
                     <p className="text-stone-700">
                       The scaffolding itself is an invisible bridge made of existence :: the relational field, the 
                       vibrational matrix, the information exchange that connects all things. Wheeler's "fabrication 
@@ -180,7 +180,7 @@ export default function Concepts() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Quality of Stepping</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Quality of Stepping</h3>
                     <p className="text-stone-700">
                       You raise the stone to a higher octave by raising the vibration of your thoughts toward higher 
                       purpose, ideal, intention, and potential. Shadow stepping (low vibration) creates circular 
@@ -189,7 +189,7 @@ export default function Concepts() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">The Mathematics Beyond Conception</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Mathematics Beyond Conception</h3>
                     <p className="text-stone-700">
                       Each human is a unique frequency materializing a unique path. There is no universal formula. 
                       The complexity can only be navigated through trust in your own sense field, not through calculation. 
@@ -210,7 +210,7 @@ export default function Concepts() {
                 </p>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">How It Forms</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">How It Forms</h3>
                     <p className="text-stone-700">
                       Through <GlossaryTooltip term="Semiotic Scaffolding">semiotic scaffolding</GlossaryTooltip>, repeated patterns become stable attractors. You step on the same
                       stones in circular patterns. The same argument. The same worry. The same self-sabotage. Each
@@ -218,7 +218,7 @@ export default function Concepts() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">How It Breaks</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">How It Breaks</h3>
                     <p className="text-stone-700">
                       Presence is the "one huge act of will" that breaks the circular path—this is <GlossaryTooltip term="Unbinding">Unbinding</GlossaryTooltip>. When you bring full
                       attention to this moment, you step off the well-worn groove. You create a new stone. The
