@@ -10,7 +10,7 @@ export default function Practices() {
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <h1 className="text-5xl font-serif text-stone-800 mb-4">
+              <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                 The Practices
               </h1>
               <p className="text-xl text-stone-600">
@@ -46,12 +46,12 @@ export default function Practices() {
                   className="w-20 h-20 rounded-full object-cover"
                 />
                 <div>
-                  <h2 className="text-3xl font-serif text-stone-800">Feel the Stones</h2>
+                  <h2 className="text-2xl md:text-3xl font-serif text-stone-800 leading-tight">Feel the Stones</h2>
                   <p className="text-stone-600">For The Stone Carrier</p>
                 </div>
               </div>
               <div className="bg-stone-50 p-8 rounded-lg">
-                <h3 className="text-xl font-serif text-stone-800 mb-4">The Practice</h3>
+                <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-4 leading-snug">The Practice</h3>
                 <div className="space-y-4 text-stone-700">
                   <p>
                     <strong>Step 1: Stop moving.</strong> Wherever you are, whatever you're doing, pause. 
@@ -103,12 +103,12 @@ export default function Practices() {
                   className="w-20 h-20 rounded-full object-cover"
                 />
                 <div>
-                  <h2 className="text-3xl font-serif text-stone-800">The Shield Check</h2>
+                  <h2 className="text-2xl md:text-3xl font-serif text-stone-800 leading-tight">The Shield Check</h2>
                   <p className="text-stone-600">For The Stone Thrower</p>
                 </div>
               </div>
               <div className="bg-stone-50 p-8 rounded-lg">
-                <h3 className="text-xl font-serif text-stone-800 mb-4">The Practice</h3>
+                <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-4 leading-snug">The Practice</h3>
                 <div className="space-y-4 text-stone-700">
                   <p>
                     <strong>Step 1: Notice the rage.</strong> When you feel the impulse to throw a stone—to lash out, 
@@ -162,12 +162,12 @@ export default function Practices() {
                   className="w-20 h-20 rounded-full object-cover"
                 />
                 <div>
-                  <h2 className="text-3xl font-serif text-stone-800">The One Stone</h2>
+                  <h2 className="text-2xl md:text-3xl font-serif text-stone-800 leading-tight">The One Stone</h2>
                   <p className="text-stone-600">For The Conscious Forger</p>
                 </div>
               </div>
               <div className="bg-stone-50 p-8 rounded-lg">
-                <h3 className="text-xl font-serif text-stone-800 mb-4">The Practice</h3>
+                <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-4 leading-snug">The Practice</h3>
                 <div className="space-y-4 text-stone-700">
                   <p>
                     <strong>Step 1: Look at your task list.</strong> Whatever you have to do today—emails, meetings, 
@@ -219,12 +219,12 @@ export default function Practices() {
                   className="w-20 h-20 rounded-full object-cover"
                 />
                 <div>
-                  <h2 className="text-3xl font-serif text-stone-800">The Trust Breath</h2>
+                  <h2 className="text-2xl md:text-3xl font-serif text-stone-800 leading-tight">The Trust Breath</h2>
                   <p className="text-stone-600">For The Stone Forger</p>
                 </div>
               </div>
               <div className="bg-stone-50 p-8 rounded-lg">
-                <h3 className="text-xl font-serif text-stone-800 mb-4">The Practice</h3>
+                <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-4 leading-snug">The Practice</h3>
                 <div className="space-y-4 text-stone-700">
                   <p>
                     <strong>Step 1: Identify the uncertainty.</strong> What decision, action, or next step are you 
@@ -283,12 +283,12 @@ export default function Practices() {
                   className="w-20 h-20 rounded-full object-cover"
                 />
                 <div>
-                  <h2 className="text-3xl font-serif text-stone-800">The Relational Pause</h2>
+                  <h2 className="text-2xl md:text-3xl font-serif text-stone-800 leading-tight">The Relational Pause</h2>
                   <p className="text-stone-600">For Active Patience</p>
                 </div>
               </div>
               <div className="bg-stone-50 p-8 rounded-lg">
-                <h3 className="text-xl font-serif text-stone-800 mb-4">The Practice</h3>
+                <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-4 leading-snug">The Practice</h3>
                 <div className="space-y-4 text-stone-700">
                   <p>
                     <strong>Step 1: Notice the urge to rush.</strong> When you feel the pressure to respond immediately, 
