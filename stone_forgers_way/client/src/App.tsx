@@ -24,6 +24,7 @@ import StoneThrowingVsStoneForging from "./pages/reflections/StoneThrowingVsSton
 import TheGiftOfGrace from "./pages/reflections/TheGiftOfGrace";
 import TermaInAction from "./pages/reflections/TermaInAction";
 import TheCreativeFortress from "./pages/reflections/TheCreativeFortress";
+import ThePathTo1000WaysToSit from "./pages/reflections/ThePathTo1000WaysToSit";
 import ThankYou from "./pages/ThankYou";
 import ArchetypeQuiz from "./pages/ArchetypeQuiz";
 import MyArchetype from "./pages/MyArchetype";
@@ -60,6 +61,7 @@ function Router() {
       <Route path="/reflections/the-gift-of-grace" component={TheGiftOfGrace} />
       <Route path="/reflections/terma-in-action" component={TermaInAction} />
       <Route path="/reflections/the-creative-fortress" component={TheCreativeFortress} />
+      <Route path="/reflections/the-path-to-1000-ways-to-sit" component={ThePathTo1000WaysToSit} />
       <Route path={"/thank-you"} component={ThankYou} />
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />
       <Route path={"/disclaimer"} component={Disclaimer} />

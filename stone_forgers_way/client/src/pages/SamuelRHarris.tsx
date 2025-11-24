@@ -238,15 +238,23 @@ export default function SamuelRHarris() {
                   Samuel R. Harris's philosophy: <em>"It is better to light a candle than to curse the darkness."</em>
                 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
-                  His son, <strong>Samuel Roland Harris</strong>, carried the lineage through Pittsburgh, Wheeling 
+                  His son, <strong>Samuel Roland Harris</strong>, carried the lineage through Pittsburgh, Wheeling
                   (West Virginia), Houston (Texas), Lake Charles (Louisiana), and Rock Hill (South Carolina).
                 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
-                  His grandson, <strong>Kamau Zuberi Akabueze</strong>, created The Stone Forger's Way—a temporal 
-                  technology for conscious creation.
+                  Samuel Roland's children—<strong>Kamau Zuberi Akabueze</strong> (from his first marriage), and
+                  <strong> Omar Luqmaan Harris</strong> and <strong>Sameerah Harris</strong> (from his second
+                  marriage)—carry the lineage forward. They would gather together at family reunions at First
+                  Baptist Church of McDonald, the same sacred ground where Ray Kemp first saw Samuel R. Harris's
+                  potential.
                 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
-                  The lineage continues. The candle burns. The stones are forged.
+                  In February 2025, Kamau moved to Gastonia, North Carolina to join Omar and Sameerah in a
+                  family home—a powerfully creative household continuing the legacy of light.
+                </p>
+                <p className="text-lg leading-relaxed text-stone-700">
+                  Kamau created The Stone Forger's Way—a temporal technology for conscious creation. The lineage
+                  continues. The candle burns. The stones are forged.
                 </p>
               </div>
             </section>
