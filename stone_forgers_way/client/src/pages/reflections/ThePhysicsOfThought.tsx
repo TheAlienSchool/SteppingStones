@@ -53,7 +53,7 @@ export default function ThePhysicsOfThought() {
 </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  This is not metaphor. This is physics.
+  Physics and metaphor dance together here :: each illuminating the other.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
   The question is whether we have the courage to take 

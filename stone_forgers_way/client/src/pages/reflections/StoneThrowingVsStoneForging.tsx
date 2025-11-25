@@ -69,7 +69,7 @@ export default function StoneThrowingVsStoneForging() {
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Stone Thrower's Backache</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  The Stone Thrower develops a backache. This is not metaphor :: this is physiology.
+  The Stone Thrower develops a backache :: physiology expressing what metaphor reveals.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
   When you are 

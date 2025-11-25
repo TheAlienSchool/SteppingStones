@@ -148,7 +148,7 @@ export default function Home() {
                 knows this weight. The question is: what will you do with it?
               </p>
               <p>
-                The Stone Forger's Way offers a path :: a temporal approach to conscious creation
+                <strong>The Stone Forger's Way</strong> offers a path :: a temporal approach to conscious creation
                 that draws from ancient wisdom, modern science, and Earth's most grounding force—stone itself.
                 This practice teaches you to transform weight into opportunity. To <GlossaryTooltip term="Trust">trust</GlossaryTooltip> that
                 the <GlossaryTooltip term="Stepping Stone">stone solidifies as you step</GlossaryTooltip>.
@@ -242,8 +242,8 @@ export default function Home() {
             </p>
 
             <p className="text-lg text-stone-700 text-center max-w-3xl mx-auto mb-16 leading-relaxed">
-              The Stone Forger's Way is an amalgamation—a synthesis of indigenous wisdom traditions,
-              quantum physics, neuroscience, personal lineage, and lived creative practice. This isn't metaphor. It's mechanics.
+              <strong>The Stone Forger's Way</strong> is an amalgamation—a synthesis of indigenous wisdom traditions,
+              quantum physics, neuroscience, personal lineage, and lived creative practice.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -284,9 +284,12 @@ export default function Home() {
             </div>
 
             <p className="text-stone-600 text-center mt-12 max-w-3xl mx-auto leading-relaxed">
-              This practice draws from <strong>THE ÅLïEN SCõÖL for Creative Thinking</strong>, <strong>1000 Ways to Sit ::
-              A Gamelatron Sonic Sanctuary</strong>, and decades of <GlossaryTooltip term="Creative Steeping">creative presence work</GlossaryTooltip>.
-              It's grounded in Earth's magnetic forces—stone as teacher, stone as ally.
+              This practice draws from decades of creative presence work throughout a career needing many
+              deep breaths, explorative research on methodologies for uplifting the creative spirit in
+              organizations and teams, and conscious behavior shifting realizations by Kamau Zuberi Akabueze
+              on his path to informed and intentional creative responsibility. Most importantly, <strong>The Stone
+              Forger's Way</strong> is grounded in Earth's abundant magnetic forces :: appreciating stone as teacher,
+              stone as ally.
             </p>
           </div>
         </div>
