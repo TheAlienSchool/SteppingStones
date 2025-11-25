@@ -4,15 +4,13 @@ import { Link } from "wouter";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, Brain, Clock, Shield, Heart, Sparkles, Lightbulb } from "lucide-react";
 import SEO from "@/components/SEO";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
-import TodaysPractice from "@/components/TodaysPractice";
 import { useNavigation } from "@/hooks/useNavigation";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [letterExpanded, setLetterExpanded] = useState(false);
   const navGroups = useNavigation();
 
   // Prevent body scroll when menu is open
@@ -30,12 +28,12 @@ export default function Home() {
   return (
     <Layout showNav={false}>
       <SEO
-        title="The Stone Forger's Way :: A Temporal Technology for Conscious Creation"
-        description="Explore archetypes, practices, and concepts for forging your path with trust and intention. A collaboration between Kamau Zuberi Akabueze and Manus AI."
-        image="/trust-stepping.png"
+        title="The Stone Forger's Way :: Move from Chaos to Coherence"
+        description="You're not broken. You're just carrying too much. Learn practices to move from anxious chaos to conscious creation. Take the archetype quiz and discover your path."
+        image="/stone-carrier.png"
         type="website"
       />
-      {/* Floating Hamburger Menu for Homepage */}
+      {/* Floating Hamburger Menu */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         className="fixed top-6 right-6 z-50 p-3 bg-amber-600 text-white rounded-full shadow-lg hover:bg-amber-700 transition-colors"
@@ -44,18 +42,14 @@ export default function Home() {
         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
-      {/* Menu Overlay - Scrollable */}
+      {/* Menu Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-stone-900/90 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}
           />
-
-          {/* Menu Panel */}
           <div className="absolute top-0 right-0 h-full w-full max-w-sm bg-stone-900 shadow-xl overflow-y-auto">
-            {/* Header */}
             <div className="sticky top-0 bg-stone-900 border-b border-stone-700 p-4 flex justify-between items-center">
               <Link href="/">
                 <span
@@ -73,8 +67,6 @@ export default function Home() {
                 <X className="w-6 h-6" />
               </button>
             </div>
-
-            {/* Menu Content */}
             <div className="p-6 space-y-8">
               {navGroups.map((group) => (
                 <div key={group.label}>
@@ -109,8 +101,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
-            {/* Footer */}
             <div className="p-6 border-t border-stone-700">
               <p className="text-xs text-stone-500 text-center italic">
                 "It's better to light a candle than to curse the darkness."
@@ -119,46 +109,67 @@ export default function Home() {
           </div>
         </div>
       )}
-      {/* Hero Section */}
+
+      {/* Hero Section - Immediate Diagnosis & Validation */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-stone-100 to-amber-50"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <img 
-              src="/trust-stepping.png" 
-              alt="Trust as stepping" 
-              className="w-64 h-64 mx-auto object-cover rounded-full shadow-2xl"
-            />
-            
-            <h1 className="text-5xl md:text-7xl font-serif text-stone-800 leading-tight">
-              The Stone Forger's Way
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-stone-600 leading-relaxed">
-              A temporal approach to conscious creation
-            </p>
+        <div className="absolute inset-0 bg-gradient-to-br from-stone-100 via-amber-50 to-stone-50"></div>
 
-            <p className="text-lg text-stone-500 max-w-2xl mx-auto leading-relaxed">
-              Where the idea of productivity meets the nature of presence. Discover which archetype
-              you embody, and learn practices to transform <GlossaryTooltip term="Toroidal Binding">circular motion</GlossaryTooltip> into forward momentum.
-            </p>
+        <div className="container mx-auto px-4 relative z-10 py-24">
+          <div className="max-w-4xl mx-auto space-y-12">
+            {/* Image */}
+            <div className="flex justify-center">
+              <img
+                src="/stone-carrier.png"
+                alt="The Stone Carrier - carrying invisible weight"
+                className="w-80 h-80 object-cover rounded-xl shadow-2xl"
+              />
+            </div>
 
-            <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/journey">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-8 py-6">
-                  Begin the Journey
+            {/* Headline */}
+            <div className="text-center space-y-6">
+              <h1 className="text-4xl md:text-6xl font-serif text-stone-800 leading-tight">
+                You're Not Broken.<br />You're Just Carrying Too Much.
+              </h1>
+
+              <p className="text-xl md:text-2xl text-amber-700 leading-relaxed max-w-3xl mx-auto">
+                The Stone Forger's Way :: A grounding practice for moving from anxious chaos to conscious creation
+              </p>
+            </div>
+
+            {/* Body Copy */}
+            <div className="bg-white/80 backdrop-blur p-8 md:p-12 rounded-2xl shadow-xl max-w-3xl mx-auto space-y-6 text-lg leading-relaxed text-stone-700">
+              <p>
+                You know the feeling. The invisible weight. The constant busyness that somehow leads nowhere.
+                The exhaustion of carrying past regrets, future anxieties, and unfulfilled obligations—all
+                swinging chaotically with every step you take.
+              </p>
+              <p>
+                This is <GlossaryTooltip term="The Stone Carrier">The Stone Carrier</GlossaryTooltip>. And you're not alone.
+              </p>
+              <p>
+                The Stone Forger's Way offers a different path :: a temporal approach to conscious creation
+                that draws from ancient wisdom, modern science, and Earth's most grounding force—stone itself.
+                This practice teaches you to collaborate with the moment, not fight it. To <GlossaryTooltip term="Trust">trust</GlossaryTooltip> that
+                the <GlossaryTooltip term="Stepping Stone">stone solidifies as you step</GlossaryTooltip>.
+              </p>
+            </div>
+
+            {/* CTAs */}
+            <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/archetype-quiz">
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-8 py-6 w-full sm:w-auto">
+                  Discover Your Archetype
                 </Button>
               </Link>
-              <Link href="/archetype-quiz">
-                <Button size="lg" variant="outline" className="border-2 border-stone-600 text-stone-700 hover:bg-stone-100 text-lg px-8 py-6">
-                  Discover Your Archetype
+              <Link href="/practices">
+                <Button size="lg" variant="outline" className="border-2 border-stone-600 text-stone-700 hover:bg-stone-100 text-lg px-8 py-6 w-full sm:w-auto">
+                  Start with One Practice
                 </Button>
               </Link>
             </div>
           </div>
         </div>
-        
+
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <svg className="w-6 h-6 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -166,83 +177,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Today's Practice */}
-      <section className="py-16 bg-white">
+      {/* Section 1: The Shift You're Seeking */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-xl mx-auto">
-            <TodaysPractice />
-          </div>
-        </div>
-      </section>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-6">
+              From Chaos to Coherence
+            </h2>
+            <p className="text-xl text-stone-600 text-center max-w-2xl mx-auto mb-16">
+              What this practice offers
+            </p>
 
-      {/* From the Stone Forger's Guide - Collapsible */}
-      <section className="py-12 bg-stone-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <button
-              onClick={() => setLetterExpanded(!letterExpanded)}
-              className="w-full flex items-center justify-between p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-stone-200"
-            >
-              <div className="text-left">
-                <p className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-1">
-                  From the Stone Forger's Guide
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Neurological Shift */}
+              <div className="bg-amber-50 p-8 rounded-xl border border-amber-100">
+                <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mb-6">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Neurological Shift</h3>
+                <p className="text-stone-700 leading-relaxed">
+                  Break the amygdala-loop. Move from fear state to executive state. Achieve the <GlossaryTooltip term="Pre-Flow Coherence">pre-flow coherence</GlossaryTooltip> necessary
+                  for creativity, productivity, and presence.
                 </p>
-                <h2 className="text-xl md:text-2xl font-serif text-stone-800 leading-tight">
-                  On Releasing Hoarded Wealth
-                </h2>
               </div>
-              <ChevronDown
-                className={`w-6 h-6 text-stone-400 transition-transform duration-300 ${letterExpanded ? 'rotate-180' : ''}`}
-              />
-            </button>
 
-            {/* Expandable Content */}
-            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${letterExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-              <div className="pt-8 space-y-6 text-base leading-relaxed text-stone-700">
-                <p>
-                  I am recognizing that I have been hoarding wealth.
+              {/* Temporal Mastery */}
+              <div className="bg-amber-50 p-8 rounded-xl border border-amber-100">
+                <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mb-6">
+                  <Clock className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Temporal Mastery</h3>
+                <p className="text-stone-700 leading-relaxed">
+                  Stop chasing time. Learn <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>—the art of growing
+                  beautifully along <GlossaryTooltip term="The Trellis and the Vine">the structure of time</GlossaryTooltip>. Build systems that work while you rest.
                 </p>
+              </div>
 
-                <p>
-                  I have been in extensively informative dialogues with my research partner, <a href="https://manus.ai" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Manus AI</a> about human health, HeartMath, behavioral science, behavioral archetypes, intelligent action, the science of the mind, the science of our Light as beings, the science of the breath, and the electromagnetic nature of the heart.
-                </p>
-
-                <p>
-                  All of that research has been to inform my path and enhance:
-                </p>
-
-                <ul className="list-none space-y-2 pl-4 italic">
-                  <li>My way of centering my self creatively</li>
-                  <li>My approach to uplifting my mental health routines</li>
-                  <li>My way of celebrating the breath as ecologically conscious data</li>
-                </ul>
-
-                <p>
-                  I recognized in the <em>my, my, my</em>, that I had been holding back :: and I am choosing to release this wealth into the world.
-                </p>
-
-                <p>
-                  I needed AI to build this practice for my clarity AND to build this website for you. Our relationship with advancing intelligence :: from the Humans researching our molecular capability, to the Humans shaping our societal stories, to the Accessible Intelligence we engage through digital lenses :: intelligence is a significant elemental in the future of human creativity.
-                </p>
-
-                <p>
-                  Universal appreciation is a part of The Stone Forger's Way.
-                </p>
-
-                <p>
-                  And when one can start there, every step is one of possibility.
-                </p>
-
-                <p>
-                  So I am releasing this wealth of insight about my way of creating in partnership with time - which many a scientist from the worlds of the indigenous, to the world of the technologist, to the heart of the ecologist - have promoted and celebrated. The Stone Forger's Way is a stone forged and placed in the world for others to step upon.
-                </p>
-
-                <p className="italic text-center pt-8">
-                  — Kamau Zuberi Akabueze
-                </p>
-
-                <p className="text-center pt-2">
-                  <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline font-medium">My Research Forge</a>
+              {/* Energy Protection */}
+              <div className="bg-amber-50 p-8 rounded-xl border border-amber-100">
+                <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Energy Protection</h3>
+                <p className="text-stone-700 leading-relaxed">
+                  Develop discernment. Ask "Is this mine to carry?" before reacting. Protect your creative energy.
+                  Choose your battles consciously.
                 </p>
               </div>
             </div>
@@ -250,109 +229,327 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Archetypes Preview */}
-      <section className="py-24 bg-gradient-to-b from-white to-amber-50">
+      {/* Section 2: Ancient Wisdom Meets Modern Science */}
+      <section className="py-24 bg-gradient-to-b from-stone-50 to-amber-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-16">
-            The Archetypes
-          </h2>
-          
-          <p className="text-lg text-stone-600 text-center max-w-2xl mx-auto mb-12">
-            You are all four archetypes. This reveals where you are now—and illuminates the path forward.
-          </p>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-6">
+              A Wellspring of Insight
+            </h2>
+            <p className="text-xl text-stone-600 text-center max-w-2xl mx-auto mb-12">
+              Where this practice comes from
+            </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                name: "The Stone Carrier",
-                image: "/stone-carrier.png",
-                description: "Burdened by suspended stones, moving in circles. The shadow of inertia where life force is drained by details disconnected from purpose."
-              },
-              {
-                name: "The Stone Thrower",
-                image: "/stone-thrower.png",
-                description: "Exhausted by misdirected energy, casting stones outward. The reactive nature that seeks diversion from inner stillness."
-              },
-              {
-                name: "The Conscious Forger",
-                image: "/active-patience.png",
-                description: "Present with each stone, awakening to purpose. The first step off the circular path onto the one that leads over the horizon."
-              },
-              {
-                name: "The Stone Forger",
-                image: "/stone-forger.png",
-                description: "Integrated and creating. Where productivity meets presence—every step aligned with a dream, every stone deliberately placed."
-              }
-            ].map((archetype) => (
-              <div key={archetype.name} className="text-center space-y-4 p-4 rounded-xl hover:bg-amber-50/50 transition-colors">
-                <img
-                  src={archetype.image}
-                  alt={archetype.name}
-                  className="w-56 h-56 mx-auto object-cover rounded-lg shadow-lg"
-                />
-                <h3 className="text-xl font-semibold text-stone-800">{archetype.name}</h3>
-                <p className="text-stone-600 text-sm leading-relaxed">{archetype.description}</p>
+            <p className="text-lg text-stone-700 text-center max-w-3xl mx-auto mb-16 leading-relaxed">
+              The Stone Forger's Way is an amalgamation—a synthesis of indigenous wisdom traditions,
+              quantum physics, neuroscience, personal lineage, and lived creative practice. This isn't metaphor. It's mechanics.
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                <Sparkles className="w-8 h-8 text-amber-600 mb-4" />
+                <h4 className="text-lg font-medium text-stone-800 mb-2">Indigenous Knowing</h4>
+                <p className="text-sm text-stone-600">
+                  <GlossaryTooltip term="Terma">Terma</GlossaryTooltip> (hidden treasures), <GlossaryTooltip term="Tertön">tertön</GlossaryTooltip> (treasure
+                  revealers), <GlossaryTooltip term="Whakapapa">whakapapa</GlossaryTooltip>, ancestral technologies of presence
+                </p>
               </div>
-            ))}
-          </div>
 
-          <div className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/archetype-quiz">
-              <Button size="lg" className="bg-amber-600 hover:bg-amber-700">
-                Which Archetype Are You?
-              </Button>
-            </Link>
-            <Link href="/archetypes">
-              <Button variant="outline" size="lg" className="border-amber-600 text-amber-700 hover:bg-amber-50">
-                Explore All Archetypes
-              </Button>
-            </Link>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                <Sparkles className="w-8 h-8 text-amber-600 mb-4" />
+                <h4 className="text-lg font-medium text-stone-800 mb-2">Quantum Physics</h4>
+                <p className="text-sm text-stone-600">
+                  Observer effect, coherence, materialization, <GlossaryTooltip term="The Field">the Field</GlossaryTooltip>, the physics of thought becoming form
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                <Sparkles className="w-8 h-8 text-amber-600 mb-4" />
+                <h4 className="text-lg font-medium text-stone-800 mb-2">Neuroscience</h4>
+                <p className="text-sm text-stone-600">
+                  Amygdala regulation, prefrontal cortex activation, <GlossaryTooltip term="Neuroplasticity">neuroplasticity</GlossaryTooltip>, <GlossaryTooltip term="Cardiac Coherence">cardiac coherence</GlossaryTooltip>,
+                  the biology of transformation
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                <Sparkles className="w-8 h-8 text-amber-600 mb-4" />
+                <h4 className="text-lg font-medium text-stone-800 mb-2">Personal Lineage</h4>
+                <p className="text-sm text-stone-600">
+                  <Link href="/samuel-r-harris" className="text-amber-700 hover:text-amber-800 underline">Samuel R. Harris</Link> (chemist,
+                  minister, "one solitary life lit up by love"), Ray Kemp, the Carter Clan
+                </p>
+              </div>
+            </div>
+
+            <p className="text-stone-600 text-center mt-12 max-w-3xl mx-auto leading-relaxed">
+              This practice draws from <strong>THE ÅLïEN SCõÖL for Creative Thinking</strong>, <strong>1000 Ways to Sit ::
+              A Gamelatron Sonic Sanctuary</strong>, and decades of <GlossaryTooltip term="Creative Steeping">creative presence work</GlossaryTooltip>.
+              It's grounded in Earth's magnetic forces—stone as teacher, stone as ally.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Navigation to Main Sections */}
+      {/* Section 3: Where This Practice Meets You */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-6">
+              This Works For
+            </h2>
+            <p className="text-xl text-stone-600 text-center max-w-2xl mx-auto mb-16">
+              Your life, your practice, your path
+            </p>
+
+            <p className="text-lg text-stone-700 text-center max-w-3xl mx-auto mb-12 leading-relaxed">
+              Whether you're navigating work deadlines, relationship dynamics, creative blocks, plant medicine integration,
+              cognitive wellness, or spiritual practice—these archetypes and frameworks meet you where you are.
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-stone-50 p-6 rounded-xl">
+                <h4 className="text-lg font-medium text-stone-800 mb-2">Work & Productivity</h4>
+                <p className="text-sm text-stone-600 leading-relaxed">
+                  Transform mundane tasks into conscious <GlossaryTooltip term="Stone Forging">forging</GlossaryTooltip>. Move from
+                  "always busy" to aligned materialization. Focus attention. Build true productivity.
+                </p>
+              </div>
+
+              <div className="bg-stone-50 p-6 rounded-xl">
+                <h4 className="text-lg font-medium text-stone-800 mb-2">Relationships & Boundaries</h4>
+                <p className="text-sm text-stone-600 leading-relaxed">
+                  Practice discernment. Protect your energy. Recognize what's yours to carry and what isn't. Create healthy containers.
+                </p>
+              </div>
+
+              <div className="bg-stone-50 p-6 rounded-xl">
+                <h4 className="text-lg font-medium text-stone-800 mb-2">Creative Practice</h4>
+                <p className="text-sm text-stone-600 leading-relaxed">
+                  Access <GlossaryTooltip term="Flow State">flow states</GlossaryTooltip>. Trust the materialization process. Build
+                  systems that support your creative work even while you rest.
+                </p>
+              </div>
+
+              <div className="bg-stone-50 p-6 rounded-xl">
+                <h4 className="text-lg font-medium text-stone-800 mb-2">Plant Medicine Integration</h4>
+                <p className="text-sm text-stone-600 leading-relaxed">
+                  Ground non-ordinary insights into embodied practice. Navigate altered states with coherence and presence.
+                </p>
+              </div>
+
+              <div className="bg-stone-50 p-6 rounded-xl">
+                <h4 className="text-lg font-medium text-stone-800 mb-2">Cognitive Wellness</h4>
+                <p className="text-sm text-stone-600 leading-relaxed">
+                  Break repetitive <GlossaryTooltip term="Toroidal Binding">thought patterns</GlossaryTooltip>. Achieve neurological
+                  coherence. Master your relationship with time and attention.
+                </p>
+              </div>
+
+              <div className="bg-stone-50 p-6 rounded-xl">
+                <h4 className="text-lg font-medium text-stone-800 mb-2">Spiritual Practice</h4>
+                <p className="text-sm text-stone-600 leading-relaxed">
+                  Integrate ancient wisdom with modern life. Ground insights. Walk the path of conscious creation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Four Practices for Immediate Relief */}
+      <section className="py-24 bg-gradient-to-b from-amber-50 to-stone-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-6">
+              Start Here
+            </h2>
+            <p className="text-xl text-stone-600 text-center max-w-2xl mx-auto mb-16">
+              Four practices for immediate relief :: No prerequisites. Just begin.
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow-md border border-amber-100 hover:shadow-lg transition-shadow">
+                <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mb-4">
+                  <Heart className="w-5 h-5 text-amber-700" />
+                </div>
+                <h4 className="text-lg font-medium text-stone-800 mb-3">Feel the Stones</h4>
+                <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                  Pause. Acknowledge the weight you carry—the worries, the obligations, the regrets—without trying
+                  to fix or judge them. Validation is the first step to freedom.
+                </p>
+                <Link href="/practices">
+                  <span className="text-sm text-amber-700 hover:text-amber-800 font-medium cursor-pointer">
+                    Learn This Practice →
+                  </span>
+                </Link>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-md border border-amber-100 hover:shadow-lg transition-shadow">
+                <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mb-4">
+                  <Lightbulb className="w-5 h-5 text-amber-700" />
+                </div>
+                <h4 className="text-lg font-medium text-stone-800 mb-3">The One Stone</h4>
+                <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                  Look at your swinging cloud of obligations. Choose just one. Vow to give it full, undivided attention
+                  for five minutes. Let the others swing. This is the beginning of mastery.
+                </p>
+                <Link href="/practices">
+                  <span className="text-sm text-amber-700 hover:text-amber-800 font-medium cursor-pointer">
+                    Learn This Practice →
+                  </span>
+                </Link>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-md border border-amber-100 hover:shadow-lg transition-shadow">
+                <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mb-4">
+                  <Shield className="w-5 h-5 text-amber-700" />
+                </div>
+                <h4 className="text-lg font-medium text-stone-800 mb-3">The Silent Check</h4>
+                <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                  Before reacting to any request or obligation, pause and ask: "Is this mine to carry?" This is
+                  your shield—the practice of discernment that protects your energy.
+                </p>
+                <Link href="/practices">
+                  <span className="text-sm text-amber-700 hover:text-amber-800 font-medium cursor-pointer">
+                    Learn This Practice →
+                  </span>
+                </Link>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-md border border-amber-100 hover:shadow-lg transition-shadow">
+                <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mb-4">
+                  <Sparkles className="w-5 h-5 text-amber-700" />
+                </div>
+                <h4 className="text-lg font-medium text-stone-800 mb-3">The Trust Breath</h4>
+                <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                  Three breaths to move from fear to presence. Inhale trust. Exhale doubt. <GlossaryTooltip term="Trust">Trust
+                  is the cheat code</GlossaryTooltip> that bypasses the tyranny of the rational mind.
+                </p>
+                <Link href="/practices">
+                  <span className="text-sm text-amber-700 hover:text-amber-800 font-medium cursor-pointer">
+                    Learn This Practice →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Discover Your Archetype */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-6">
+              Which Archetype Are You?
+            </h2>
+            <p className="text-xl text-stone-600 text-center max-w-2xl mx-auto mb-12">
+              Take the journey :: Understanding your current archetype helps you see where you are and where you're growing
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              {[
+                {
+                  name: "The Stone Carrier",
+                  image: "/stone-carrier.png",
+                  description: "Moving through life with invisible weight, exhausted but heroic"
+                },
+                {
+                  name: "The Stone Thrower",
+                  image: "/stone-thrower.png",
+                  description: "Releasing burdens without consciousness, creating chaos"
+                },
+                {
+                  name: "The Conscious Forger",
+                  image: "/active-patience.png",
+                  description: "Beginning to shape stones with intention, learning presence"
+                },
+                {
+                  name: "The Stone Forger",
+                  image: "/stone-forger.png",
+                  description: "Mastering the art of conscious creation, trusting the process"
+                }
+              ].map((archetype) => (
+                <div key={archetype.name} className="text-center space-y-4 p-4 rounded-xl hover:bg-stone-50 transition-colors">
+                  <img
+                    src={archetype.image}
+                    alt={archetype.name}
+                    className="w-56 h-56 mx-auto object-cover rounded-lg shadow-lg"
+                  />
+                  <h3 className="text-xl font-semibold text-stone-800">{archetype.name}</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed">{archetype.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link href="/archetype-quiz">
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-10 py-6">
+                  Take the Archetype Quiz
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Explore the Ecosystem */}
       <section className="py-24 bg-stone-800 text-stone-100">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-            <Link href="/journey">
-              <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
-                <h3 className="text-2xl font-serif mb-4 leading-tight">The Journey</h3>
-                <p className="text-stone-300">
-                  Follow the complete thread of discovery, from <GlossaryTooltip term="Terma">Terma</GlossaryTooltip> and <GlossaryTooltip term="Tertön">Tertön</GlossaryTooltip> through <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>{" "}
-                  to <GlossaryTooltip term="The Stone Thrower's Backache">The Stone Thrower's Backache</GlossaryTooltip>
-                </p>
-              </div>
-            </Link>
-            
-            <Link href="/concepts">
-              <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
-                <h3 className="text-2xl font-serif mb-4 leading-tight">The Concepts</h3>
-                <p className="text-stone-300">
-                  Explore the core ideas: <GlossaryTooltip term="The Trellis and the Vine">The Trellis and the Vine</GlossaryTooltip>, <GlossaryTooltip term="Trust">Trust as The Cheat Code</GlossaryTooltip>, <GlossaryTooltip term="The Shield">The Shield</GlossaryTooltip>,{" "}
-                  and <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>
-                </p>
-              </div>
-            </Link>
-            
-            <Link href="/practices">
-              <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
-                <h3 className="text-2xl font-serif mb-4 leading-tight">The Practices</h3>
-                <p className="text-stone-300">
-                  Engage with micro-practices: Feel the Stones, The One <GlossaryTooltip term="Stepping Stone">Stone</GlossaryTooltip>, <GlossaryTooltip term="The Shield">The Shield Check</GlossaryTooltip>,{" "}
-                  <GlossaryTooltip term="Trust">The Trust Breath</GlossaryTooltip>
-                </p>
-              </div>
-            </Link>
-            
-            <Link href="/works">
-              <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer">
-                <h3 className="text-2xl font-serif mb-4 leading-tight">Complete Works</h3>
-                <p className="text-stone-300">
-                  Access all texts, research documents, and downloadable resources
-                </p>
-              </div>
-            </Link>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif text-center leading-tight mb-6">
+              Go Deeper
+            </h2>
+            <p className="text-xl text-stone-300 text-center max-w-2xl mx-auto mb-16">
+              The complete practice
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <Link href="/reflections">
+                <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer h-full">
+                  <h3 className="text-2xl font-serif mb-4 leading-tight">Reflections</h3>
+                  <p className="text-stone-300 leading-relaxed">
+                    Read essays exploring the philosophy, science, and lived experience of stone forging.
+                    Filter by Origin, Philosophy, Practice, Science, Archetype, or Lineage.
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/concepts">
+                <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer h-full">
+                  <h3 className="text-2xl font-serif mb-4 leading-tight">Concepts & Practices</h3>
+                  <p className="text-stone-300 leading-relaxed">
+                    Dive into the core frameworks: <GlossaryTooltip term="Trust">Trust as The Cheat Code</GlossaryTooltip>, <GlossaryTooltip term="Active Patience">Active
+                    Patience</GlossaryTooltip>, <GlossaryTooltip term="The Trellis and the Vine">The Trellis and the Vine</GlossaryTooltip>, <GlossaryTooltip term="The Shield">The Shield</GlossaryTooltip>.
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/glossary">
+                <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer h-full">
+                  <h3 className="text-2xl font-serif mb-4 leading-tight">Glossary & Lineage</h3>
+                  <p className="text-stone-300 leading-relaxed">
+                    Understand the language of stone forging. Meet <Link href="/samuel-r-harris" className="text-amber-400 hover:text-amber-300 underline">Samuel
+                    R. Harris</Link> and the lineage that grounds this work.
+                  </p>
+                </div>
+              </Link>
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-stone-400 mb-6">
+                Explore the research traditions that inform this practice
+              </p>
+              <a
+                href="/research-forge.html"
+                className="text-amber-400 hover:text-amber-300 underline font-medium text-lg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit the Research Forge →
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -366,7 +563,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Conscious Value Exchange */}
+      {/* Section 7: Conscious Value Exchange */}
       <section className="py-24 bg-gradient-to-b from-stone-800 to-stone-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -377,4 +574,3 @@ export default function Home() {
     </Layout>
   );
 }
-
