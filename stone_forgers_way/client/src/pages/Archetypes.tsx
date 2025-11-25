@@ -13,7 +13,7 @@ const archetypes = [
 
 The Stone Carrier often doesn't even know the stones are there. They just feel the weight, the backache, the chronic fatigue. They wonder why moving forward feels so hard.
 
-The Stone Carrier is not broken. The Stone Carrier is learning. The first step is recognition: "I am carrying stones I no longer need to carry."`,
+The Stone Carrier is aware of weight. Every human knows this experience. The first step is recognition: "I am carrying stones. What will I do with them?"`,
     shadow: "The Tyrant",
     shadowText: "When The Stone Carrier is starved of meaning and exhausted by the weight, they can become The Tyrant :: demanding that others carry stones too, or lashing out at those who seem to move freely.",
     practice: "Feel the Stones",

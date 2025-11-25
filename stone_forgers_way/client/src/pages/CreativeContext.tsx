@@ -185,7 +185,7 @@ const voiceGuidelines = {
       "Problem-aware, benefit-explicit"
     ],
     balance: "The site holds space for both HeartMath research and ancestral wisdom, quantum physics and intuitive knowing. Neither dismisses the other.",
-    homepage: "The homepage leads with immediate diagnosis and compassionate validation ('You're not broken. You're just carrying too much') before offering the path. Benefits are explicit (neurological shift, temporal mastery, energy protection) before diving into philosophy."
+    homepage: "The homepage leads with awareness and opportunity ('Are you aware of how many stones you are carrying? Their weight is your opportunity') before offering the path. Benefits are explicit (neurological shift, temporal mastery, energy protection) before diving into philosophy."
   },
   keyPhrases: [
     "Trust is the cheat code",
@@ -194,9 +194,10 @@ const voiceGuidelines = {
     "The irresistible nature of one solitary life, lit up by love",
     "Terma emerges in the tertön",
     "The feeling is the secret",
-    "You're not broken. You're just carrying too much",
+    "Are you aware of how many stones you are carrying? Their weight is your opportunity",
     "From anxious chaos to conscious creation",
-    "Is this mine to carry?"
+    "Is this mine to carry?",
+    "Every human knows this weight"
   ],
   conversionStrategy: {
     primary: "Archetype quiz (engagement + personalization)",
@@ -205,12 +206,13 @@ const voiceGuidelines = {
     quaternary: "Contribute financially (conscious value exchange)"
   },
   homepageApproach: {
-    hero: "Immediate diagnosis and validation - Stone Carrier archetype named early with compassion",
+    hero: "Awareness invitation and opportunity framing - Stone Carrier weight acknowledged as universal human experience",
     benefits: "Neurological shift, temporal mastery, energy protection stated explicitly before philosophy",
     credibility: "Ancient wisdom + modern science amalgamation (4 pillars with specific examples)",
     application: "Clear domains where practice applies (work, relationships, creativity, plant medicine, cognitive wellness, spiritual practice)",
     entry: "Four micro-practices with immediate relief (Feel the Stones, The One Stone, The Silent Check, The Trust Breath)",
-    engagement: "Archetype quiz prominent, multiple pathways (quiz, practices, reflections, concepts)"
+    engagement: "Archetype quiz prominent, multiple pathways (quiz, practices, reflections, concepts)",
+    languageShift: "No deficit framing ('broken', 'just', validation-of-lack). Instead: awareness questions, weight as tangible reality, opportunity emphasis"
   }
 };
 

@@ -29,7 +29,7 @@ export default function Home() {
     <Layout showNav={false}>
       <SEO
         title="The Stone Forger's Way :: Move from Chaos to Coherence"
-        description="You're not broken. You're just carrying too much. Learn practices to move from anxious chaos to conscious creation. Take the archetype quiz and discover your path."
+        description="Are you aware of how many stones you are carrying? Their weight is your opportunity. Learn practices to move from anxious chaos to conscious creation."
         image="/stone-carrier.png"
         type="website"
       />
@@ -128,11 +128,11 @@ export default function Home() {
             {/* Headline */}
             <div className="text-center space-y-6">
               <h1 className="text-4xl md:text-6xl font-serif text-stone-800 leading-tight">
-                You're Not Broken.<br />You're Just Carrying Too Much.
+                Are You Aware of How Many Stones<br />You Are Carrying?
               </h1>
 
               <p className="text-xl md:text-2xl text-amber-700 leading-relaxed max-w-3xl mx-auto">
-                The Stone Forger's Way :: A grounding practice for moving from anxious chaos to conscious creation
+                Their weight is your opportunity :: A grounding practice for moving from chaos to coherence
               </p>
             </div>
 
@@ -144,12 +144,13 @@ export default function Home() {
                 swinging chaotically with every step you take.
               </p>
               <p>
-                This is <GlossaryTooltip term="The Stone Carrier">The Stone Carrier</GlossaryTooltip>. And you're not alone.
+                This is <GlossaryTooltip term="The Stone Carrier">The Stone Carrier</GlossaryTooltip>. Every human
+                knows this weight. The question is: what will you do with it?
               </p>
               <p>
-                The Stone Forger's Way offers a different path :: a temporal approach to conscious creation
+                The Stone Forger's Way offers a path :: a temporal approach to conscious creation
                 that draws from ancient wisdom, modern science, and Earth's most grounding force—stone itself.
-                This practice teaches you to collaborate with the moment, not fight it. To <GlossaryTooltip term="Trust">trust</GlossaryTooltip> that
+                This practice teaches you to transform weight into opportunity. To <GlossaryTooltip term="Trust">trust</GlossaryTooltip> that
                 the <GlossaryTooltip term="Stepping Stone">stone solidifies as you step</GlossaryTooltip>.
               </p>
             </div>
