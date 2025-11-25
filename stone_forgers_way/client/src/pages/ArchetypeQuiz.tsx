@@ -11,14 +11,34 @@ import {
   getArchetypePractices,
   quizQuestions,
   saveQuizResult,
-  type QuizResult
+  type QuizResult,
+  type ArchetypeType
 } from "@/lib/archetypeQuiz";
 import TodaysPractice from "@/components/TodaysPractice";
 import PracticeReminder from "@/components/PracticeReminder";
 import { getTodaysPractice } from "@/lib/todaysPractice";
 
+// Fisher-Yates shuffle
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function ArchetypeQuiz() {
   const [, setLocation] = useLocation();
+
+  // Randomize questions and options on mount
+  const [randomizedQuestions, setRandomizedQuestions] = useState(() => {
+    return shuffleArray(quizQuestions).map(q => ({
+      ...q,
+      options: shuffleArray(q.options)
+    }));
+  });
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [result, setResult] = useState<QuizResult | null>(null);
@@ -27,9 +47,9 @@ export default function ArchetypeQuiz() {
   const [showMilestone, setShowMilestone] = useState(false);
   const [showResult, setShowResult] = useState(false);
 
-  const progress = ((currentQuestion + 1) / quizQuestions.length) * 100;
-  const question = quizQuestions[currentQuestion];
-  const halfwayPoint = Math.floor(quizQuestions.length / 2);
+  const progress = ((currentQuestion + 1) / randomizedQuestions.length) * 100;
+  const question = randomizedQuestions[currentQuestion];
+  const halfwayPoint = Math.floor(randomizedQuestions.length / 2);
 
   const handleAnswer = (optionIndex: number) => {
     if (isTransitioning) return;
@@ -44,7 +64,7 @@ export default function ArchetypeQuiz() {
       setAnswers(newAnswers);
       setSelectedOption(null);
 
-      if (currentQuestion < quizQuestions.length - 1) {
+      if (currentQuestion < randomizedQuestions.length - 1) {
         // Check for halfway milestone
         if (currentQuestion + 1 === halfwayPoint) {
           setShowMilestone(true);
@@ -58,8 +78,36 @@ export default function ArchetypeQuiz() {
           setIsTransitioning(false);
         }
       } else {
-        // Quiz complete - calculate and show result with animation
-        const quizResult = calculateArchetype(newAnswers);
+        // Quiz complete - calculate scores from randomized answers
+        const scores = {
+          carrier: 0,
+          thrower: 0,
+          conscious: 0,
+          forger: 0
+        };
+
+        newAnswers.forEach((answerIndex, questionIndex) => {
+          const randomizedQuestion = randomizedQuestions[questionIndex];
+          const selectedOption = randomizedQuestion.options[answerIndex];
+          scores.carrier += selectedOption.scores.carrier;
+          scores.thrower += selectedOption.scores.thrower;
+          scores.conscious += selectedOption.scores.conscious;
+          scores.forger += selectedOption.scores.forger;
+        });
+
+        // Determine primary archetype
+        const archetypeEntries = Object.entries(scores) as [ArchetypeType, number][];
+        const primaryArchetype = archetypeEntries.reduce((a, b) =>
+          a[1] > b[1] ? a : b
+        )[0];
+
+        const quizResult: QuizResult = {
+          archetype: primaryArchetype,
+          scores,
+          completedAt: new Date().toISOString(),
+          answers: newAnswers
+        };
+
         saveQuizResult(quizResult);
         setResult(quizResult);
         // Delay showing result for dramatic reveal
@@ -72,6 +120,13 @@ export default function ArchetypeQuiz() {
   };
 
   const handleRestart = () => {
+    // Re-randomize questions and options for new quiz attempt
+    setRandomizedQuestions(
+      shuffleArray(quizQuestions).map(q => ({
+        ...q,
+        options: shuffleArray(q.options)
+      }))
+    );
     setCurrentQuestion(0);
     setAnswers([]);
     setResult(null);

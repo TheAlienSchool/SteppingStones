@@ -142,9 +142,16 @@ const designSystem = {
   },
   patterns: {
     collapsible: "Button with ChevronDown, max-h animation for expand/collapse",
-    tooltips: "GlossaryTooltip component with hover reveal",
+    tooltips: {
+      component: "GlossaryTooltip - React component that renders hover tooltips",
+      implementation: "<GlossaryTooltip term='Trust'>trust</GlossaryTooltip>",
+      behavior: "Hover reveals three-layer definition (Simple, Experience, Insight)",
+      styling: "Underline dotted decoration, amber color on hover, tooltip with backdrop blur",
+      science: "Educational layer without interrupting reading flow - validates visitor's intelligence while providing depth on demand"
+    },
     cards: "bg-white/amber-50, rounded-lg, shadow-sm, border-stone-200",
-    accentBorder: "border-l-4 border-amber-600 for highlighted sections"
+    accentBorder: "border-l-4 border-amber-600 for highlighted sections",
+    icons: "lucide-react icons (Brain, Clock, Shield, Heart, Sparkles, Lightbulb) in amber-600 circles for visual hierarchy"
   }
 };
 
@@ -173,9 +180,12 @@ const voiceGuidelines = {
       "Scientific but not cold",
       "Spiritual but not dogmatic",
       "Personal but universal",
-      "Inviting but not desperate"
+      "Inviting but not desperate",
+      "Validation-first, solution-second",
+      "Problem-aware, benefit-explicit"
     ],
-    balance: "The site holds space for both HeartMath research and ancestral wisdom, quantum physics and intuitive knowing. Neither dismisses the other."
+    balance: "The site holds space for both HeartMath research and ancestral wisdom, quantum physics and intuitive knowing. Neither dismisses the other.",
+    homepage: "The homepage leads with awareness and opportunity ('Are you aware of how many stones you are carrying? Their weight is your opportunity') before offering the path. Benefits are explicit (neurological shift, temporal mastery, energy protection) before diving into philosophy."
   },
   keyPhrases: [
     "Trust is the cheat code",
@@ -183,8 +193,27 @@ const voiceGuidelines = {
     "It is better to light a candle than to curse the darkness",
     "The irresistible nature of one solitary life, lit up by love",
     "Terma emerges in the tertön",
-    "The feeling is the secret"
-  ]
+    "The feeling is the secret",
+    "Are you aware of how many stones you are carrying? Their weight is your opportunity",
+    "From anxious chaos to conscious creation",
+    "Is this mine to carry?",
+    "Every human knows this weight"
+  ],
+  conversionStrategy: {
+    primary: "Archetype quiz (engagement + personalization)",
+    secondary: "Try one micro-practice (immediate relief + validation)",
+    tertiary: "Subscribe to newsletter (ongoing relationship)",
+    quaternary: "Contribute financially (conscious value exchange)"
+  },
+  homepageApproach: {
+    hero: "Awareness invitation and opportunity framing - Stone Carrier weight acknowledged as universal human experience",
+    benefits: "Neurological shift, temporal mastery, energy protection stated explicitly before philosophy",
+    credibility: "Ancient wisdom + modern science amalgamation (4 pillars with specific examples)",
+    application: "Clear domains where practice applies (work, relationships, creativity, plant medicine, cognitive wellness, spiritual practice)",
+    entry: "Four micro-practices with immediate relief (Feel the Stones, The One Stone, The Silent Check, The Trust Breath)",
+    engagement: "Archetype quiz prominent, multiple pathways (quiz, practices, reflections, concepts)",
+    languageShift: "No deficit framing ('broken', 'just', validation-of-lack). Instead: awareness questions, weight as tangible reality, opportunity emphasis"
+  }
 };
 
 // The story/timeline

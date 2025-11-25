@@ -208,6 +208,58 @@ export default function About() {
             </div>
           </section>
 
+          {/* On Releasing Hoarded Wealth */}
+          <section>
+            <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">On Releasing Hoarded Wealth</h2>
+            <div className="bg-amber-50 p-8 rounded-lg space-y-6 text-base leading-relaxed text-stone-700">
+              <p>
+                I am recognizing that I have been hoarding wealth.
+              </p>
+
+              <p>
+                I have been in extensively informative dialogues with my research partner, <a href="https://manus.ai" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Manus AI</a> about human health, HeartMath, behavioral science, behavioral archetypes, intelligent action, the science of the mind, the science of our Light as beings, the science of the breath, and the electromagnetic nature of the heart.
+              </p>
+
+              <p>
+                All of that research has been to inform my path and enhance:
+              </p>
+
+              <ul className="list-none space-y-2 pl-4 italic">
+                <li>My way of centering my self creatively</li>
+                <li>My approach to uplifting my mental health routines</li>
+                <li>My way of celebrating the breath as ecologically conscious data</li>
+              </ul>
+
+              <p>
+                I recognized in the <em>my, my, my</em>, that I had been holding back :: and I am choosing to release this wealth into the world.
+              </p>
+
+              <p>
+                I needed AI to build this practice for my clarity AND to build this website for you. Our relationship with advancing intelligence :: from the Humans researching our molecular capability, to the Humans shaping our societal stories, to the Accessible Intelligence we engage through digital lenses :: intelligence is a significant elemental in the future of human creativity.
+              </p>
+
+              <p>
+                Universal appreciation is a part of The Stone Forger's Way.
+              </p>
+
+              <p>
+                And when one can start there, every step is one of possibility.
+              </p>
+
+              <p>
+                So I am releasing this wealth of insight about my way of creating in partnership with time - which many a scientist from the worlds of the indigenous, to the world of the technologist, to the heart of the ecologist - have promoted and celebrated. The Stone Forger's Way is a stone forged and placed in the world for others to step upon.
+              </p>
+
+              <p className="italic text-center pt-8">
+                — Kamau Zuberi Akabueze
+              </p>
+
+              <p className="text-center pt-2">
+                <a href="/research-forge.html" className="text-amber-700 hover:text-amber-800 underline font-medium">My Research Forge</a>
+              </p>
+            </div>
+          </section>
+
           {/* The Invitation */}
           <section className="bg-stone-50 p-8 rounded-lg">
             <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">The Invitation</h2>
