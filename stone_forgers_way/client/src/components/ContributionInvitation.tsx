@@ -56,7 +56,7 @@ export default function ContributionInvitation() {
     <Card className="bg-amber-50/50 border-amber-200">
       <CardHeader>
         <CardTitle className="text-2xl font-serif text-stone-800">
-          Conscious Value Exchange
+          Intentional Value Exchange
         </CardTitle>
         <CardDescription className="text-stone-600">
           All content is freely accessible. If this work has created value in your life, 

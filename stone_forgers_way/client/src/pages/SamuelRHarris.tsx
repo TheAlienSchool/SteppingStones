@@ -253,7 +253,7 @@ export default function SamuelRHarris() {
                   family home—a powerfully creative household continuing the legacy of light.
                 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
-                  Kamau created The Stone Forger's Way—a temporal technology for conscious creation. The lineage
+                  Kamau created The Stone Forger's Way—a temporal approach to intentional creation. The lineage
                   continues. The candle burns. The stones are forged.
                 </p>
               </div>
