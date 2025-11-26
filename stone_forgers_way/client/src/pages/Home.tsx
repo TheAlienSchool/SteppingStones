@@ -132,7 +132,7 @@ export default function Home() {
               </h1>
 
               <p className="text-xl md:text-2xl text-amber-700 leading-relaxed max-w-3xl mx-auto">
-                Their weight is your opportunity :: A grounding practice for moving from chaos to coherence
+                Their weight is your opportunity. Welcome to <strong>The Stone Forger's Way</strong> :: an Earth-optimized grounding practice for moving from audible chaos to clarified coherence
               </p>
             </div>
 
