@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { glossaryTerms, categoryLabels, type GlossaryTerm } from "@/lib/glossaryData";
 import { Download, Copy, Check, Heart } from "lucide-react";
@@ -282,6 +282,21 @@ export default function CreativeContext() {
   const [copied, setCopied] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("overview");
 
+  // Handle URL hash for direct section linking
+  useEffect(() => {
+    const hash = window.location.hash.slice(1); // Remove the '#'
+    const validSections = ["overview", "design", "voice", "glossary", "reflections", "timeline", "honor", "exchange"];
+    if (hash && validSections.includes(hash)) {
+      setActiveSection(hash);
+    }
+  }, []);
+
+  // Update hash when section changes
+  const handleSectionChange = (sectionId: string) => {
+    setActiveSection(sectionId);
+    window.location.hash = sectionId;
+  };
+
   const handleDownloadJSON = () => {
     const context = buildContextObject();
     const blob = new Blob([JSON.stringify(context, null, 2)], { type: "application/json" });
@@ -355,7 +370,7 @@ export default function CreativeContext() {
                 {sections.map((section) => (
                   <button
                     key={section.id}
-                    onClick={() => setActiveSection(section.id)}
+                    onClick={() => handleSectionChange(section.id)}
                     className={`px-4 py-2 rounded-full text-sm transition-colors ${
                       activeSection === section.id
                         ? "bg-amber-600 text-white"
