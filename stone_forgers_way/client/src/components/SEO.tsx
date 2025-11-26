@@ -10,7 +10,7 @@ interface SEOProps {
 
 export default function SEO({
   title = "The Stone Forger's Way",
-  description = "A temporal technology for conscious creation :: Explore archetypes, practices, and concepts for forging your path with trust and intention.",
+  description = "A temporal approach to intentional creation :: Explore archetypes, practices, and concepts for forging your path with trust and intention.",
   image = "/trust-stepping.png",
   url,
   type = "website",

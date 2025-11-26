@@ -252,7 +252,7 @@ export default function Home() {
                 <h4 className="text-lg font-medium text-stone-800 mb-2">Indigenous Knowing</h4>
                 <p className="text-sm text-stone-600">
                   <GlossaryTooltip term="Terma">Terma</GlossaryTooltip> (hidden treasures), <GlossaryTooltip term="Tertön">tertön</GlossaryTooltip> (treasure
-                  revealers), <GlossaryTooltip term="Whakapapa">whakapapa</GlossaryTooltip>, ancestral technologies of presence
+                  revealers), <GlossaryTooltip term="Whakapapa">whakapapa</GlossaryTooltip>, ancestral practices of presence
                 </p>
               </div>
 
@@ -286,7 +286,7 @@ export default function Home() {
             <p className="text-stone-600 text-center mt-12 max-w-3xl mx-auto leading-relaxed">
               This practice draws from decades of creative presence work throughout a career needing many
               deep breaths, explorative research on methodologies for uplifting the creative spirit in
-              organizations and teams, and conscious behavior shifting realizations by Kamau Zuberi Akabueze
+              organizations and teams, and intentional behavior shifting realizations by Kamau Zuberi Akabueze
               on his path to informed and intentional creative responsibility. Most importantly, <strong>The Stone
               Forger's Way</strong> is grounded in Earth's abundant magnetic forces :: appreciating stone as teacher,
               stone as ally.

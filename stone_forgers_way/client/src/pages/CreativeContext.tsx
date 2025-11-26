@@ -161,7 +161,7 @@ const voiceGuidelines = {
     pattern: "::",
     meaning: "Used as a conceptual bridge, pause for reflection, or to connect related ideas. Not a colon, not a dash—a breath between thoughts.",
     examples: [
-      "Stone Forging :: the conscious act of creating your path",
+      "Stone Forging :: the intentional act of creating your path",
       "Trust is the cheat code :: and you already knew this"
     ]
   },
@@ -196,7 +196,7 @@ const voiceGuidelines = {
     "Terma emerges in the tertön",
     "The feeling is the secret",
     "Are you aware of how many stones you are carrying? Their weight is your opportunity",
-    "From anxious chaos to conscious creation",
+    "From anxious chaos to intentional creation",
     "Is this mine to carry?",
     "Every human knows this weight",
     "Physics and metaphor dance together here",
@@ -207,7 +207,7 @@ const voiceGuidelines = {
     primary: "Archetype quiz (engagement + personalization)",
     secondary: "Try one micro-practice (immediate relief + validation)",
     tertiary: "Subscribe to newsletter (ongoing relationship)",
-    quaternary: "Contribute financially (conscious value exchange)"
+    quaternary: "Contribute financially (intentional value exchange)"
   },
   homepageApproach: {
     hero: "Awareness invitation and opportunity framing - Stone Carrier weight acknowledged as universal human experience",
@@ -218,7 +218,7 @@ const voiceGuidelines = {
     engagement: "Archetype quiz prominent, multiple pathways (quiz, practices, reflections, concepts)",
     languageShift: "No deficit framing ('broken', 'just', validation-of-lack). Instead: awareness questions, weight as tangible reality, opportunity emphasis",
     negationsRemoved: "Deleted dismissive language like 'This isn't metaphor. It's mechanics.' - metaphor is valued as keystone to cognitive embodiment, not negated",
-    practiceOrigin: "Draws from decades of creative presence work throughout a career needing many deep breaths, explorative research on uplifting creative spirit in organizations and teams, conscious behavior shifting realizations by Kamau Zuberi Akabueze on his path to informed and intentional creative responsibility. Grounded in Earth's abundant magnetic forces :: appreciating stone as teacher, stone as ally",
+    practiceOrigin: "Draws from decades of creative presence work throughout a career needing many deep breaths, explorative research on uplifting creative spirit in organizations and teams, intentional behavior shifting realizations by Kamau Zuberi Akabueze on his path to informed and intentional creative responsibility. Grounded in Earth's abundant magnetic forces :: appreciating stone as teacher, stone as ally",
     brandPresentation: "Always bold: **The Stone Forger's Way**"
   }
 };
@@ -243,7 +243,7 @@ function buildContextObject() {
   return {
     meta: {
       name: "The Stone Forger's Way",
-      tagline: "A temporal technology for conscious creation",
+      tagline: "A temporal approach to intentional creation",
       author: "Kamau Zuberi Akabueze",
       url: "https://thestoneforgers.way", // Update with actual URL
       generatedAt: new Date().toISOString(),
@@ -266,13 +266,13 @@ function buildContextObject() {
       format: "Created with The Stone Forger's Creative Context :: thestoneforgers.way",
       spirit: "This work is released as wealth into the Field. Those who resonate will use it well."
     },
-    consciousValueExchange: {
+    intentionalValueExchange: {
       invitation: "If this context serves your creative work, consider supporting The Stone Forger's Way.",
       ways: [
         "Share the work with those who would resonate",
         "Attend a Creative Steeping session",
         "Contribute to the open source project",
-        "Support through conscious exchange"
+        "Support through intentional exchange"
       ]
     }
   };
@@ -376,7 +376,7 @@ export default function CreativeContext() {
                   <h2 className="text-3xl font-serif text-stone-800 mb-6 leading-tight">Overview</h2>
                   <div className="bg-amber-50 p-8 rounded-lg space-y-6">
                     <p className="text-lg leading-relaxed text-stone-700">
-                      <strong>The Stone Forger's Way</strong> is a temporal technology for conscious creation,
+                      <strong>The Stone Forger's Way</strong> is a temporal approach to intentional creation,
                       developed by Kamau Zuberi Akabueze. It bridges ancestral wisdom with contemporary science,
                       offering practices and frameworks for those who want to create their path rather than
                       merely walk one.
@@ -660,10 +660,10 @@ export default function CreativeContext() {
                 </section>
               )}
 
-              {/* Conscious Value Exchange */}
+              {/* Intentional Value Exchange */}
               {activeSection === "exchange" && (
                 <section>
-                  <h2 className="text-3xl font-serif text-stone-800 mb-6 leading-tight">Conscious Value Exchange</h2>
+                  <h2 className="text-3xl font-serif text-stone-800 mb-6 leading-tight">Intentional Value Exchange</h2>
                   <div className="bg-stone-50 p-8 rounded-lg space-y-6">
                     <p className="text-lg leading-relaxed text-stone-700">
                       If this Creative Context serves your work—if it helps you create something valuable,

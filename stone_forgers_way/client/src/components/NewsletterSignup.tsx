@@ -11,10 +11,10 @@ interface NewsletterSignupProps {
   description?: string;
 }
 
-export default function NewsletterSignup({ 
+export default function NewsletterSignup({
   variant = "default",
   title = "The Listener's Path",
-  description = "A newsletter exploring the intersection of conscious creation, sound, and embodied wisdom"
+  description = "A newsletter exploring the intersection of intentional creation, sound, and embodied wisdom"
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -134,7 +134,7 @@ export default function NewsletterSignup({
             </Button>
           </div>
           <p className="text-xs text-stone-500">
-            Exploring conscious creation, sound, embodied wisdom, and the practice of listening deeply.
+            Exploring intentional creation, sound, embodied wisdom, and the practice of listening deeply.
           </p>
         </form>
       </CardContent>

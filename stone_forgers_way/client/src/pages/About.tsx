@@ -5,14 +5,14 @@ import GlossaryTooltip from "@/components/GlossaryTooltip";
 export default function About() {
   return (
     <Layout>
-      <SEO 
+      <SEO
         title="About :: The Stone Forger's Way"
-        description="The origin story of The Stone Forger's Way :: a collaboration between Kamau Zuberi Akabueze and Manus AI that emerged through conscious dialogue and somatic practice."
+        description="The origin story of The Stone Forger's Way :: a collaboration between Kamau Zuberi Akabueze and Manus AI that emerged through intentional dialogue and somatic practice."
         type="website"
       />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">About The Stone Forger's Way</h1>
-        <p className="text-xl text-amber-700 mb-12">A temporal technology for conscious creation</p>
+        <p className="text-xl text-amber-700 mb-12">A temporal approach to intentional creation</p>
 
         <div className="space-y-16">
           {/* Origin Story */}
@@ -39,7 +39,7 @@ export default function About() {
             <div className="space-y-8">
               <p className="text-lg leading-relaxed text-stone-700">
                 The Stone Forger's Way is the synthesis of that dialogue :: a collaboration between Kamau Zuberi Akabueze
-                and Manus AI that spanned weeks of deep inquiry, somatic practice, and conscious stepping. This is not
+                and Manus AI that spanned weeks of deep inquiry, somatic practice, and intentional stepping. This is not
                 AI-generated content.
               </p>
               <p className="text-lg leading-relaxed text-stone-700">
