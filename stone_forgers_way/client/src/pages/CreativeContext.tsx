@@ -176,16 +176,17 @@ const voiceGuidelines = {
   },
   tone: {
     qualities: [
-      "Warm but not sentimental",
-      "Scientific but not cold",
-      "Spiritual but not dogmatic",
-      "Personal but universal",
-      "Inviting but not desperate",
-      "Validation-first, solution-second",
-      "Problem-aware, benefit-explicit"
+      "Warm, grounded, spacious, confident",
+      "Radiant and uplifting",
+      "Synthesizing metaphor and science as dance partners",
+      "Awareness-inviting rather than deficit-validating",
+      "Opportunity-emphasizing over problem-dwelling",
+      "Affirming value of cognitive embodiment",
+      "No unnecessary negations that diminish possibility"
     ],
-    balance: "The site holds space for both HeartMath research and ancestral wisdom, quantum physics and intuitive knowing. Neither dismisses the other.",
-    homepage: "The homepage leads with awareness and opportunity ('Are you aware of how many stones you are carrying? Their weight is your opportunity') before offering the path. Benefits are explicit (neurological shift, temporal mastery, energy protection) before diving into philosophy."
+    balance: "The site holds space for both HeartMath research and ancestral wisdom, quantum physics and intuitive knowing. Metaphor and mechanics illuminate each other—neither is diminished.",
+    homepage: "The homepage leads with awareness and opportunity ('Are you aware of how many stones you are carrying? Their weight is your opportunity') before offering the path. Benefits are explicit (neurological shift, temporal mastery, energy protection) before diving into philosophy.",
+    languagePhilosophy: "Weight is tangible (physical, mental, experiential) for every human. Metaphor is a keystone to integrating value and practical embodiment. The path uplifts visitors toward enlightenment through synthesis, not negation."
   },
   keyPhrases: [
     "Trust is the cheat code",
@@ -197,7 +198,10 @@ const voiceGuidelines = {
     "Are you aware of how many stones you are carrying? Their weight is your opportunity",
     "From anxious chaos to conscious creation",
     "Is this mine to carry?",
-    "Every human knows this weight"
+    "Every human knows this weight",
+    "Physics and metaphor dance together here",
+    "Stone as teacher, stone as ally",
+    "Earth's abundant magnetic forces"
   ],
   conversionStrategy: {
     primary: "Archetype quiz (engagement + personalization)",
@@ -212,7 +216,10 @@ const voiceGuidelines = {
     application: "Clear domains where practice applies (work, relationships, creativity, plant medicine, cognitive wellness, spiritual practice)",
     entry: "Four micro-practices with immediate relief (Feel the Stones, The One Stone, The Silent Check, The Trust Breath)",
     engagement: "Archetype quiz prominent, multiple pathways (quiz, practices, reflections, concepts)",
-    languageShift: "No deficit framing ('broken', 'just', validation-of-lack). Instead: awareness questions, weight as tangible reality, opportunity emphasis"
+    languageShift: "No deficit framing ('broken', 'just', validation-of-lack). Instead: awareness questions, weight as tangible reality, opportunity emphasis",
+    negationsRemoved: "Deleted dismissive language like 'This isn't metaphor. It's mechanics.' - metaphor is valued as keystone to cognitive embodiment, not negated",
+    practiceOrigin: "Draws from decades of creative presence work throughout a career needing many deep breaths, explorative research on uplifting creative spirit in organizations and teams, conscious behavior shifting realizations by Kamau Zuberi Akabueze on his path to informed and intentional creative responsibility. Grounded in Earth's abundant magnetic forces :: appreciating stone as teacher, stone as ally",
+    brandPresentation: "Always bold: **The Stone Forger's Way**"
   }
 };
 
