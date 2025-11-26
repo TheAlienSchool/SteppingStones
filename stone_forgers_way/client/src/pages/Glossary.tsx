@@ -70,7 +70,7 @@ export default function TheGlossary() {
                   placeholder="Search terms..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
+                  className="w-full px-4 py-3 border border-stone-300 rounded-lg bg-white text-stone-800 placeholder:text-stone-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-colors"
                 />
               </div>
 
