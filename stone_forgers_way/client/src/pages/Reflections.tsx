@@ -93,6 +93,14 @@ const blogPosts: BlogPost[] = [
     date: "November 2025",
     excerpt: "How a postcard flyer stayed on my desk for nine years, waiting. How a feeling remembered became a path materialized. From Brooklyn 2016 to San Francisco 2025, through the Shim Sham, The Alien School, and a friendship between fathers—this is terma emerging in the tertön.",
     category: "Origin"
+  },
+  {
+    slug: "welcome-to-multifaceted-meditation",
+    title: "Welcome to Multifaceted Meditation For the Multi-Dimensional Being",
+    subtitle: "An observational essay on presence, dimension, and the physics of consciousness",
+    date: "November 2025",
+    excerpt: "What if meditation is not merely one posture, one breath pattern, one path to presence—but a multifaceted practice for beings who exist across multiple dimensions simultaneously? Explore meditation as quantum coherence, dimensional friction, creative steeping, and the physics of sitting at 1000 Ways to Sit.",
+    category: "Philosophy"
   }
 ];
 
