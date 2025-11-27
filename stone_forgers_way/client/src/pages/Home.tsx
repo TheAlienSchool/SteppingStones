@@ -119,7 +119,7 @@ export default function Home() {
             {/* Image */}
             <div className="flex justify-center">
               <img
-                src="/stone-carrier.png"
+                src="/The-Stone-Carrier.png"
                 alt="The Stone Carrier - carrying invisible weight"
                 className="w-80 h-80 object-cover rounded-xl shadow-2xl"
               />
