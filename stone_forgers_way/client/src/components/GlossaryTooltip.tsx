@@ -13,6 +13,7 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
   const [isOpen, setIsOpen] = useState(false);
   const [position, setPosition] = useState<"top" | "bottom">("bottom");
   const [horizontalAlign, setHorizontalAlign] = useState<"center" | "left" | "right">("center");
+  const [tooltipStyle, setTooltipStyle] = useState<React.CSSProperties>({});
   const tooltipRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLSpanElement>(null);
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
@@ -21,7 +22,7 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
 
   // Calculate tooltip position based on viewport
   useEffect(() => {
-    if (isOpen && triggerRef.current) {
+    if (isOpen && triggerRef.current && tooltipRef.current) {
       const rect = triggerRef.current.getBoundingClientRect();
       const spaceBelow = window.innerHeight - rect.bottom;
       const spaceAbove = rect.top;
@@ -33,19 +34,48 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
         setPosition("bottom");
       }
 
-      // Horizontal positioning - prevent overflow on edges
-      const tooltipWidth = 320; // w-80 = 20rem = 320px
-      const halfWidth = tooltipWidth / 2;
+      // Horizontal positioning - use actual tooltip width and add viewport padding
+      const actualTooltipWidth = tooltipRef.current.offsetWidth;
+      const viewportPadding = 16; // 16px padding from screen edges
+      const halfWidth = actualTooltipWidth / 2;
 
-      if (rect.left < halfWidth) {
+      // On mobile, use fixed positioning to ensure tooltip stays in viewport
+      if (isMobile) {
+        const maxTooltipWidth = window.innerWidth - (viewportPadding * 2);
+
+        // Calculate optimal left position
+        let leftPosition = rect.left;
+
+        // Ensure tooltip doesn't overflow right edge
+        if (leftPosition + actualTooltipWidth > window.innerWidth - viewportPadding) {
+          leftPosition = window.innerWidth - actualTooltipWidth - viewportPadding;
+        }
+
+        // Ensure tooltip doesn't overflow left edge
+        if (leftPosition < viewportPadding) {
+          leftPosition = viewportPadding;
+        }
+
+        setTooltipStyle({
+          position: 'fixed',
+          left: `${leftPosition}px`,
+          maxWidth: `${maxTooltipWidth}px`,
+          width: 'auto'
+        });
         setHorizontalAlign("left");
-      } else if (window.innerWidth - rect.right < halfWidth) {
-        setHorizontalAlign("right");
       } else {
-        setHorizontalAlign("center");
+        // Desktop: use centered positioning when possible
+        setTooltipStyle({});
+        if (rect.left < halfWidth + viewportPadding) {
+          setHorizontalAlign("left");
+        } else if (window.innerWidth - rect.right < halfWidth + viewportPadding) {
+          setHorizontalAlign("right");
+        } else {
+          setHorizontalAlign("center");
+        }
       }
     }
-  }, [isOpen]);
+  }, [isOpen, isMobile]);
 
   // Close tooltip when clicking outside
   useEffect(() => {
@@ -82,13 +112,22 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
       {isOpen && (
         <div
           ref={tooltipRef}
-          className={`absolute z-50 w-80 max-w-[90vw] max-h-[60vh] overflow-y-auto p-4 bg-white rounded-lg shadow-xl border border-stone-200 ${
+          className={`${isMobile ? '' : 'absolute'} z-50 w-80 max-w-[90vw] max-h-[60vh] overflow-y-auto p-4 bg-white rounded-lg shadow-xl border border-stone-200 ${
             position === "top" ? "bottom-full mb-0.5" : "top-full mt-0.5"
           } ${
-            horizontalAlign === "left" ? "left-0" :
-            horizontalAlign === "right" ? "right-0" :
-            "left-1/2 -translate-x-1/2"
+            !isMobile ? (
+              horizontalAlign === "left" ? "left-0" :
+              horizontalAlign === "right" ? "right-0" :
+              "left-1/2 -translate-x-1/2"
+            ) : ""
           }`}
+          style={isMobile ? {
+            ...tooltipStyle,
+            top: position === "top"
+              ? `${triggerRef.current!.getBoundingClientRect().top - 8}px`
+              : `${triggerRef.current!.getBoundingClientRect().bottom + 8}px`,
+            transform: position === "top" ? 'translateY(-100%)' : 'none'
+          } : undefined}
           onMouseEnter={() => !isMobile && setIsOpen(true)}
           onMouseLeave={() => !isMobile && setIsOpen(false)}
         >
