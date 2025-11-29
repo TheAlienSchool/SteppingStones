@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import ContributionInvitation from "@/components/ContributionInvitation";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { useState, useEffect } from "react";
 import { Menu, X, Brain, Clock, Shield, Heart, Sparkles, Lightbulb } from "lucide-react";
@@ -563,15 +562,6 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <NewsletterSignup />
-          </div>
-        </div>
-      </section>
-
-      {/* Section 7: Conscious Value Exchange */}
-      <section className="py-24 bg-gradient-to-b from-stone-800 to-stone-900">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <ContributionInvitation />
           </div>
         </div>
       </section>

@@ -72,8 +72,8 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
       <span
         ref={triggerRef}
         onClick={() => setIsOpen(!isOpen)}
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
+        onMouseEnter={() => !isMobile && setIsOpen(true)}
+        onMouseLeave={() => !isMobile && setIsOpen(false)}
         className={`cursor-help border-b border-dotted border-amber-600 text-amber-700 hover:text-amber-800 hover:border-amber-800 transition-colors ${className}`}
       >
         {children || term}
@@ -83,7 +83,7 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
         <div
           ref={tooltipRef}
           className={`absolute z-50 w-80 max-w-[90vw] max-h-[60vh] overflow-y-auto p-4 bg-white rounded-lg shadow-xl border border-stone-200 ${
-            position === "top" ? "bottom-full mb-2" : "top-full mt-2"
+            position === "top" ? "bottom-full mb-0.5" : "top-full mt-0.5"
           } ${
             horizontalAlign === "left" ? "left-0" :
             horizontalAlign === "right" ? "right-0" :

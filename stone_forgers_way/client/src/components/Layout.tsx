@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import ContributionInvitation from "@/components/ContributionInvitation";
 import { useNavigation, type NavGroup } from "@/hooks/useNavigation";
 
 interface LayoutProps {
@@ -241,6 +242,11 @@ export default function Layout({ children, showNav = true }: LayoutProps) {
 
       <footer className="bg-stone-800 text-stone-200 py-12">
         <div className="container mx-auto px-4">
+          {/* Intentional Value Exchange */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <ContributionInvitation />
+          </div>
+
           {/* Newsletter Signup */}
           <div className="max-w-2xl mx-auto mb-12">
             <NewsletterSignup variant="compact" />
