@@ -311,7 +311,15 @@ export const glossaryTerms: GlossaryTerm[] = [
     experience: "It's your ability to calm down after stress. High vagal tone means you recover quickly from upset, can access creativity under pressure, maintain emotional equilibrium. Low vagal tone means you stay activated longer, struggle to relax, feel perpetually on edge.",
     insight: "Breath is the fastest way to improve vagal tone. Longer exhales activate parasympathetic response. This is why every wisdom tradition emphasizes breath—not mysticism, but neuroscience. The Inspired Breath practice is vagal toning by another name.",
     category: "science",
-    relatedTerms: ["Pre-Flow Coherence", "Trust", "Active Patience"]
+    relatedTerms: ["Pre-Flow Coherence", "Trust", "Active Patience", "Somatic"]
+  },
+  {
+    term: "Somatic",
+    simple: "Of or relating to the body; knowledge that lives in your physical form rather than your thoughts.",
+    experience: "You meet someone and your stomach tightens before your mind registers why. You walk into a room and your shoulders drop—your body knows this space is safe before you consciously process it. A memory surfaces and you feel it in your chest, your throat, your hands. This is somatic knowing—the body as instrument of wisdom.",
+    insight: "Neuroscience confirms what embodied practices have always known: the body stores memory, processes emotion, and perceives truth independent of cognition. Somatic inquiry is not 'listening to your body'—it's recognizing that your body is listening, constantly, and has information your thinking mind cannot access. The Stone Forger's Way is fundamentally somatic work—practices that engage the nervous system directly, bypassing the limitations of cognitive processing.",
+    category: "science",
+    relatedTerms: ["Vagal Tone", "The Stone Thrower's Backache", "Trust", "Embodied Knowing"]
   },
   {
     term: "Whakapapa",

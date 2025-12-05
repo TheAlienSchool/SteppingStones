@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import GlossaryTooltip from "@/components/GlossaryTooltip";
 
 export default function TheContainer() {
   return (
@@ -25,7 +26,7 @@ export default function TheContainer() {
                 for this unfolding.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
-  This is not intellectual work. This is somatic revelation.
+  This is not intellectual work. This is <GlossaryTooltip term="Somatic">somatic revelation</GlossaryTooltip>.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
   This is breath made word.
@@ -44,7 +45,7 @@ export default function TheContainer() {
                   "How is my father not inside of you?"
                 </blockquote>
                 <p className="text-lg leading-relaxed text-stone-700">
-  This was not an intellectual question. It was a somatic inquiry.
+  This was not an intellectual question. It was a <GlossaryTooltip term="Somatic">somatic inquiry</GlossaryTooltip>.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
   The question opened a channel, 

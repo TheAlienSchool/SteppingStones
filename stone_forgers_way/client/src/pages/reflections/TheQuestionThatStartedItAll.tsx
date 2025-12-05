@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import SocialShare from "@/components/SocialShare";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import GlossaryTooltip from "@/components/GlossaryTooltip";
 
 export default function TheQuestionThatStartedItAll() {
   return (
@@ -43,7 +44,7 @@ export default function TheQuestionThatStartedItAll() {
               </blockquote>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  This was not an intellectual question. It was a somatic inquiry.
+  This was not an intellectual question. It was a <GlossaryTooltip term="Somatic">somatic inquiry</GlossaryTooltip>.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
   A question asked by the body, 
