@@ -52,7 +52,7 @@ export default function Social() {
                 Share the Way
               </h1>
               <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
-                Your repository of shareable wisdom. Every piece is optimized for social media—
+                Your repository of shareable wisdom. 30+ cards optimized for social media—
                 screengrab and share what resonates, or download high-quality images for your posts.
               </p>
 
@@ -87,7 +87,7 @@ export default function Social() {
               <div className="mb-8">
                 <h2 className="text-3xl font-serif text-stone-800 mb-3">Quote Cards</h2>
                 <p className="text-stone-600">
-                  Powerful insights and wisdom from The Stone Forger's Way
+                  Powerful insights and wisdom from The Stone Forger's Way · 10 cards
                 </p>
               </div>
 
@@ -201,6 +201,63 @@ export default function Social() {
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
                         You create in The Field."
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-trust-cheat-code"
+                  title="Trust is The Cheat Code"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-xl md:text-2xl font-serif leading-tight">
+                        "Trust is the cheat code because it bypasses the tyranny of the rational mind
+                      </p>
+                      <p className="text-xl md:text-2xl font-serif leading-tight">
+                        that demands proof before it will move."
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-backache-somatic"
+                  title="The Somatic Cost"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        "The backache is the somatic cost of throwing stones while keeping the shield up.
+                      </p>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        The sympathetic nervous system in chronic activation."
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-breath-word"
+                  title="Breath Made Word"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        "This is not intellectual work.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        This is breath made word."
                       </p>
                     </>
                   }
@@ -443,6 +500,224 @@ export default function Social() {
                         The shield keeps you safe and blind. Lower it to see.
                       </p>
                     </div>
+                  }
+                />
+              </div>
+            </section>
+
+            {/* Archetype Cards Section */}
+            <section className="mb-20">
+              <div className="mb-8">
+                <h2 className="text-3xl font-serif text-stone-800 mb-3">Archetype Cards</h2>
+                <p className="text-stone-600">
+                  The four archetypal states of consciousness in The Stone Forger's Way
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <SocialCard
+                  id="archetype-stone-carrier"
+                  title="The Stone Carrier"
+                  format="square"
+                  theme={theme}
+                  category="archetype"
+                  onDownload={handleDownload}
+                  content={
+                    <div className="space-y-4">
+                      <h3 className="text-3xl font-serif">The Stone Carrier</h3>
+                      <p className="text-lg leading-relaxed">
+                        Weighted by unexamined burdens. Aware enough to feel the stones, not yet ready to set them down.
+                      </p>
+                      <p className="text-sm opacity-80">
+                        Practice: Feel the Stones
+                      </p>
+                    </div>
+                  }
+                />
+
+                <SocialCard
+                  id="archetype-stone-thrower"
+                  title="The Stone Thrower"
+                  format="square"
+                  theme={theme}
+                  category="archetype"
+                  onDownload={handleDownload}
+                  content={
+                    <div className="space-y-4">
+                      <h3 className="text-3xl font-serif">The Stone Thrower</h3>
+                      <p className="text-lg leading-relaxed">
+                        Exhausted by misdirected energy. Throwing stones at external targets while the shield stays up.
+                      </p>
+                      <p className="text-sm opacity-80">
+                        Practice: The Shield Check
+                      </p>
+                    </div>
+                  }
+                />
+
+                <SocialCard
+                  id="archetype-conscious-forger"
+                  title="The Conscious Forger"
+                  format="square"
+                  theme={theme}
+                  category="archetype"
+                  onDownload={handleDownload}
+                  content={
+                    <div className="space-y-4">
+                      <h3 className="text-3xl font-serif">The Conscious Forger</h3>
+                      <p className="text-lg leading-relaxed">
+                        Actively creating your path. Each step intentional, each stone forged with purpose.
+                      </p>
+                      <p className="text-sm opacity-80">
+                        Practice: The One Stone
+                      </p>
+                    </div>
+                  }
+                />
+
+                <SocialCard
+                  id="archetype-patient-forger"
+                  title="The Patient Forger"
+                  format="square"
+                  theme={theme}
+                  category="archetype"
+                  onDownload={handleDownload}
+                  content={
+                    <div className="space-y-4">
+                      <h3 className="text-3xl font-serif">The Patient Forger</h3>
+                      <p className="text-lg leading-relaxed">
+                        Trusting the process. Waiting while moving, patient while present, allowing emergence.
+                      </p>
+                      <p className="text-sm opacity-80">
+                        Practice: Active Patience
+                      </p>
+                    </div>
+                  }
+                />
+              </div>
+            </section>
+
+            {/* Reflection Highlights Section */}
+            <section className="mb-20">
+              <div className="mb-8">
+                <h2 className="text-3xl font-serif text-stone-800 mb-3">Reflection Highlights</h2>
+                <p className="text-stone-600">
+                  Key insights from reflections that deserve to be shared
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <SocialCard
+                  id="reflection-money-teacher"
+                  title="Money as Teacher"
+                  format="square"
+                  theme={theme}
+                  category="reflection"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
+                        "Money reveals where you don't trust yourself."
+                      </p>
+                      <p className="text-sm opacity-80">
+                        From: Money as Teacher
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="reflection-whales-song"
+                  title="The Whale's Song"
+                  format="square"
+                  theme={theme}
+                  category="reflection"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
+                        "The whale doesn't sing because it has an audience. It sings because that's what whales do."
+                      </p>
+                      <p className="text-sm opacity-80">
+                        From: The Whale's Song
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="reflection-terma"
+                  title="Terma in Action"
+                  format="square"
+                  theme={theme}
+                  category="reflection"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
+                        "What you need is already inside you, waiting for the right moment to be discovered."
+                      </p>
+                      <p className="text-sm opacity-80">
+                        From: Terma in Action
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="reflection-grace"
+                  title="The Gift of Grace"
+                  format="square"
+                  theme={theme}
+                  category="reflection"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
+                        "Grace is what happens when you stop fighting the river and learn to navigate it."
+                      </p>
+                      <p className="text-sm opacity-80">
+                        From: The Gift of Grace
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="reflection-creative-fortress"
+                  title="The Creative Fortress"
+                  format="square"
+                  theme={theme}
+                  category="reflection"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
+                        "Your creative practice needs protection, not from the world, but from your own patterns."
+                      </p>
+                      <p className="text-sm opacity-80">
+                        From: The Creative Fortress
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="reflection-container"
+                  title="The Container"
+                  format="square"
+                  theme={theme}
+                  category="reflection"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
+                        "You provided space and runway for wisdom to flow. The container shapes what emerges."
+                      </p>
+                      <p className="text-sm opacity-80">
+                        From: The Container
+                      </p>
+                    </>
                   }
                 />
               </div>

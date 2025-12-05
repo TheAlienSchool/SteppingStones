@@ -8,7 +8,7 @@ interface SocialCardProps {
   content: React.ReactNode;
   format: "square" | "story" | "landscape";
   theme?: "light" | "dark";
-  category: "quote" | "glossary" | "practice";
+  category: "quote" | "glossary" | "practice" | "archetype" | "reflection";
   onDownload?: (id: string, format: string) => void;
 }
 
@@ -20,16 +20,24 @@ const formatDimensions = {
 
 const gradients = {
   quote: {
-    light: "bg-gradient-to-br from-amber-50 via-stone-50 to-amber-100",
+    light: "bg-gradient-to-br from-white via-stone-50 to-amber-50/30",
     dark: "bg-gradient-to-br from-stone-800 via-stone-900 to-amber-900"
   },
   glossary: {
-    light: "bg-gradient-to-br from-stone-50 via-amber-50 to-stone-100",
+    light: "bg-gradient-to-br from-amber-50/20 via-white to-stone-50/40",
     dark: "bg-gradient-to-br from-stone-900 via-amber-900 to-stone-800"
   },
   practice: {
-    light: "bg-gradient-to-br from-amber-100 via-stone-50 to-amber-50",
+    light: "bg-gradient-to-br from-stone-50/30 via-white to-amber-50/40",
     dark: "bg-gradient-to-br from-amber-900 via-stone-900 to-stone-800"
+  },
+  archetype: {
+    light: "bg-gradient-to-br from-white via-amber-50/30 to-stone-50/30",
+    dark: "bg-gradient-to-br from-stone-900 via-stone-800 to-amber-900/80"
+  },
+  reflection: {
+    light: "bg-gradient-to-br from-stone-50/20 via-white to-amber-50/30",
+    dark: "bg-gradient-to-br from-stone-800 via-amber-900/60 to-stone-900"
   }
 };
 
@@ -102,7 +110,7 @@ export default function SocialCard({
 
           {/* Watermark */}
           <div className={`text-xs ${theme === "dark" ? "text-stone-400" : "text-stone-500"} mt-8`}>
-            TheStoneForger.com
+            The Stone Forger's Way
           </div>
         </div>
       </div>
