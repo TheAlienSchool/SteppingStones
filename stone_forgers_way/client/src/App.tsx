@@ -13,6 +13,7 @@ import Glossary from "./pages/Glossary";
 import CompleteWorks from "./pages/CompleteWorks";
 import About from "./pages/About";
 import Social from "./pages/Social";
+import Voices from "./pages/Voices";
 import SamuelRHarris from "./pages/SamuelRHarris";
 import TheContainer from "./pages/TheContainer";
 import Reflections from "./pages/Reflections";
@@ -53,6 +54,7 @@ function Router() {
       <Route path={"/works"} component={CompleteWorks} />
       <Route path="/about" component={About} />
       <Route path="/social" component={Social} />
+      <Route path="/voices" component={Voices} />
       <Route path="/creative-context" component={CreativeContext} />
       <Route path="/samuel-r-harris" component={SamuelRHarris} />
       <Route path="/the-container" component={TheContainer} />
