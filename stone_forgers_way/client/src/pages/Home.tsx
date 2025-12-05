@@ -440,7 +440,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 5: Discover Your Archetype */}
+      {/* Section 5: Voices from The Way */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-6">
+              Voices from The Way
+            </h2>
+            <p className="text-xl text-stone-600 text-center max-w-2xl mx-auto mb-16">
+              Field reports from practitioners experiencing The Stone Forger's Way
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-gradient-to-br from-amber-50/30 via-white to-stone-50/20 p-8 rounded-xl shadow-lg border border-stone-200">
+                <p className="text-lg text-stone-700 leading-relaxed mb-6">
+                  "Trust is the cheat code because it bypasses the tyranny of the rational mind that demands proof before it will move... is an insane quote. I'm going to be thinking about that for a while."
+                </p>
+                <p className="text-sm text-stone-500 italic">
+                  — A Stone Thrower recognizing the teaching
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-amber-50/30 via-white to-stone-50/20 p-8 rounded-xl shadow-lg border border-stone-200">
+                <p className="text-lg text-stone-700 leading-relaxed mb-6">
+                  "The backache is the <GlossaryTooltip term="Somatic">somatic</GlossaryTooltip> cost of throwing stones while keeping the shield up. The sympathetic nervous system in chronic activation... this really spoke to me."
+                </p>
+                <p className="text-sm text-stone-500 italic">
+                  — A Stone Carrier feeling the weight
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-amber-50/30 via-white to-stone-50/20 p-8 rounded-xl shadow-lg border border-stone-200">
+                <p className="text-lg text-stone-700 leading-relaxed mb-6">
+                  "This feels like a whole book spread across a website. The practices and prompts make it real—it's not just philosophy floating in space."
+                </p>
+                <p className="text-sm text-stone-500 italic">
+                  — A Conscious Forger using the tools
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <Link href="/social">
+                <span className="text-amber-700 hover:text-amber-800 font-medium cursor-pointer inline-flex items-center gap-2">
+                  Explore shareable content from The Way
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Discover Your Archetype */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -497,7 +551,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 6: Explore the Ecosystem */}
+      {/* Section 7: Explore the Ecosystem */}
       <section className="py-24 bg-stone-800 text-stone-100">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">

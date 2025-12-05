@@ -8,7 +8,7 @@ interface SocialCardProps {
   content: React.ReactNode;
   format: "square" | "story" | "landscape";
   theme?: "light" | "dark";
-  category: "quote" | "glossary" | "practice" | "archetype" | "reflection";
+  category: "quote" | "glossary" | "practice" | "archetype" | "reflection" | "voice";
   onDownload?: (id: string, format: string) => void;
 }
 
@@ -38,6 +38,10 @@ const gradients = {
   reflection: {
     light: "bg-gradient-to-br from-stone-50/20 via-white to-amber-50/30",
     dark: "bg-gradient-to-br from-stone-800 via-amber-900/60 to-stone-900"
+  },
+  voice: {
+    light: "bg-gradient-to-br from-amber-50/30 via-white to-stone-50/20",
+    dark: "bg-gradient-to-br from-amber-900/70 via-stone-900 to-stone-800"
   }
 };
 

@@ -52,7 +52,7 @@ export default function Social() {
                 Share the Way
               </h1>
               <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
-                Your repository of shareable wisdom. 30+ cards optimized for social media—
+                Your repository of shareable wisdom. 35+ cards optimized for social media—
                 screengrab and share what resonates, or download high-quality images for your posts.
               </p>
 
@@ -716,6 +716,113 @@ export default function Social() {
                       </p>
                       <p className="text-sm opacity-80">
                         From: The Container
+                      </p>
+                    </>
+                  }
+                />
+              </div>
+            </section>
+
+            {/* Voices from The Way Section */}
+            <section className="mb-20">
+              <div className="mb-8">
+                <h2 className="text-3xl font-serif text-stone-800 mb-3">Voices from The Way</h2>
+                <p className="text-stone-600">
+                  Field reports from practitioners experiencing The Stone Forger's Way
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <SocialCard
+                  id="voice-trust-cheat-code"
+                  title="Breakthrough Recognition"
+                  format="square"
+                  theme={theme}
+                  category="voice"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-lg md:text-xl leading-relaxed mb-6">
+                        "Trust is the cheat code because it bypasses the tyranny of the rational mind that demands proof before it will move... is an insane quote. I'm going to be thinking about that for a while."
+                      </p>
+                      <p className="text-sm opacity-70 italic">
+                        — A Stone Thrower recognizing the teaching
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="voice-somatic-recognition"
+                  title="Somatic Recognition"
+                  format="square"
+                  theme={theme}
+                  category="voice"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-lg md:text-xl leading-relaxed mb-6">
+                        "The backache is the somatic cost of throwing stones while keeping the shield up. The sympathetic nervous system in chronic activation... this really spoke to me."
+                      </p>
+                      <p className="text-sm opacity-70 italic">
+                        — A Stone Carrier feeling the weight
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="voice-whole-book"
+                  title="Making It Real"
+                  format="square"
+                  theme={theme}
+                  category="voice"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-lg md:text-xl leading-relaxed mb-6">
+                        "This feels like a whole book spread across a website. The practices and prompts make it real—it's not just philosophy floating in space."
+                      </p>
+                      <p className="text-sm opacity-70 italic">
+                        — A Conscious Forger using the tools
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="voice-vocabulary-gold"
+                  title="Precision Language"
+                  format="square"
+                  theme={theme}
+                  category="voice"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-lg md:text-xl leading-relaxed mb-6">
+                        "The color schemes and glossary tooltips are brilliant. The vocabulary you've created is gold—I've never had language for these experiences before."
+                      </p>
+                      <p className="text-sm opacity-70 italic">
+                        — A Patient Forger appreciating the craft
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="voice-putting-down-stones"
+                  title="Already Moving"
+                  format="square"
+                  theme={theme}
+                  category="voice"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-lg md:text-xl leading-relaxed mb-6">
+                        "I have already started putting down stones. Not throwing them at things, not carrying them—actually forging my path forward."
+                      </p>
+                      <p className="text-sm opacity-70 italic">
+                        — A Conscious Forger in motion
                       </p>
                     </>
                   }
