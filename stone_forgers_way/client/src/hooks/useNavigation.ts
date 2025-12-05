@@ -45,6 +45,7 @@ export function useNavigation(): NavGroup[] {
       ],
     },
     { label: "Reflections", href: "/reflections" },
+    { label: "Social Content", href: "/social" },
     {
       label: "Lineage",
       items: [
