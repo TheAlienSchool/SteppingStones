@@ -99,9 +99,9 @@ export default function Concepts() {
                   <div>
                     <h3 className="text-lg md:text-xl font-serif text-stone-800 mb-2 leading-snug">The Problem</h3>
                     <p className="text-stone-700">
-                      The tragedy of modern life is that the predator never leaves. The threat is constant, ambient, 
-                      systemic. So the shield stays up. And when the shield becomes permanent, it creates three costs: 
-                      the backache (somatic), the blindness (perceptual), and the ricocheting stones (energetic).
+                      The tragedy of modern life is that the predator never leaves. The threat is constant, ambient,
+                      systemic. So the shield stays up. And when the shield becomes permanent, it creates three costs:
+                      the backache (<GlossaryTooltip term="Somatic">somatic</GlossaryTooltip>), the blindness (perceptual), and the ricocheting stones (energetic).
                     </p>
                   </div>
                   <div>

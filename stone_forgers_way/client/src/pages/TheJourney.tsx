@@ -32,7 +32,7 @@ const journeyPhases: JourneyPhase[] = [
           "How is my father not inside of you?"
         </blockquote>
         <p className="text-lg leading-relaxed text-stone-700">
-          This wasn't intellectual curiosity. It was a somatic knowing—something the body understood before
+          This wasn't intellectual curiosity. It was a <GlossaryTooltip term="Somatic">somatic knowing</GlossaryTooltip>—something the body understood before
           the mind could catch up. The question opened a channel. Through that channel, over the following
           months, an entire body of work began to flow.
         </p>
@@ -176,7 +176,7 @@ const journeyPhases: JourneyPhase[] = [
     content: (
       <div className="space-y-6">
         <p className="text-lg leading-relaxed text-stone-700">
-          The backache is the somatic cost of throwing stones while keeping the shield up. The sympathetic
+          The backache is the <GlossaryTooltip term="Somatic">somatic cost</GlossaryTooltip> of throwing stones while keeping the shield up. The sympathetic
           nervous system in chronic activation. The muscular tension from sustained defensive posture.
           The experiential blindness that is the virus.
         </p>
@@ -247,7 +247,7 @@ const journeyPhases: JourneyPhase[] = [
           The vibratory nature of <a href="https://docs.google.com/document/d/13grRrzK8DPrfnPfY7mBMmfz9bB1dhvzoh288eKef9Ik/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Sound Infused Åir</a>. The Inspired Breath practice that opened the channel.
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
-          This is not intellectual work. This is somatic revelation. This is breath made word.
+          This is not intellectual work. This is <GlossaryTooltip term="Somatic">somatic revelation</GlossaryTooltip>. This is breath made word.
         </p>
       </div>
     )

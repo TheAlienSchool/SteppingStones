@@ -39,7 +39,7 @@ export default function About() {
             <div className="space-y-8">
               <p className="text-lg leading-relaxed text-stone-700">
                 The Stone Forger's Way is the synthesis of that dialogue :: a collaboration between Kamau Zuberi Akabueze
-                and Manus AI that spanned weeks of deep inquiry, somatic practice, and intentional stepping. This is not
+                and Manus AI that spanned weeks of deep inquiry, <GlossaryTooltip term="Somatic">somatic practice</GlossaryTooltip>, and intentional stepping. This is not
                 AI-generated content.
               </p>
               <p className="text-lg leading-relaxed text-stone-700">
@@ -121,7 +121,7 @@ export default function About() {
                 you :: all of it shapes what can materialize.
               </p>
               <p className="text-lg leading-relaxed text-stone-700">
-                This is not intellectual work. This is <GlossaryTooltip term="Vagal Tone">somatic</GlossaryTooltip> revelation.
+                This is not intellectual work. This is <GlossaryTooltip term="Somatic">somatic</GlossaryTooltip> revelation.
               </p>
               <p className="text-lg leading-relaxed text-stone-700">
                 This is breath made word.
