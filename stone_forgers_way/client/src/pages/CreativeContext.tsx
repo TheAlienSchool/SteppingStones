@@ -107,11 +107,45 @@ const designSystem = {
         900: "#78350f"
       }
     },
+    cloudDancer: {
+      name: "Cloud Dancer (Pantone 11-4201 - 2026 Color of the Year)",
+      philosophy: "Serene white with subtle accents, creating space for creativity and contemplation",
+      implementation: "Integrated as the light theme foundation for social cards, testimonials, and key UI elements",
+      gradient: "from-white via-stone-50 to-amber-50/30 (subtle, spacious, grounding)"
+    },
     usage: {
-      background: "stone-50, white",
+      background: "stone-50, white, Cloud Dancer-inspired gradients",
       text: "stone-700 (body), stone-800 (headings)",
       accent: "amber-600, amber-700 (links, highlights)",
       muted: "stone-400, stone-500 (secondary text)"
+    }
+  },
+  socialCardGradients: {
+    quote: {
+      light: "bg-gradient-to-br from-white via-stone-50 to-amber-50/30",
+      dark: "bg-gradient-to-br from-stone-800 via-stone-900 to-amber-900",
+      philosophy: "Cloud Dancer foundation with gentle amber warmth"
+    },
+    glossary: {
+      light: "bg-gradient-to-br from-stone-50/20 via-white to-amber-50/20",
+      dark: "bg-gradient-to-br from-stone-900 via-stone-800 to-amber-900/60"
+    },
+    practice: {
+      light: "bg-gradient-to-br from-amber-50/20 via-white to-stone-50",
+      dark: "bg-gradient-to-br from-amber-900/50 via-stone-900 to-stone-800"
+    },
+    archetype: {
+      light: "bg-gradient-to-br from-white via-amber-50/30 to-stone-50/20",
+      dark: "bg-gradient-to-br from-stone-900 via-amber-900/70 to-stone-800"
+    },
+    reflection: {
+      light: "bg-gradient-to-br from-stone-50/20 via-white to-amber-50/30",
+      dark: "bg-gradient-to-br from-stone-800 via-amber-900/60 to-stone-900"
+    },
+    voice: {
+      light: "bg-gradient-to-br from-amber-50/30 via-white to-stone-50/20",
+      dark: "bg-gradient-to-br from-amber-900/70 via-stone-900 to-stone-800",
+      purpose: "For testimonials - slightly warmer, human-centered"
     }
   },
   typography: {
@@ -152,6 +186,25 @@ const designSystem = {
     cards: "bg-white/amber-50, rounded-lg, shadow-sm, border-stone-200",
     accentBorder: "border-l-4 border-amber-600 for highlighted sections",
     icons: "lucide-react icons (Brain, Clock, Shield, Heart, Sparkles, Lightbulb) in amber-600 circles for visual hierarchy"
+  },
+  socialCardsSystem: {
+    overview: "35+ downloadable, shareable cards optimized for social media (Instagram, Twitter/X, LinkedIn)",
+    url: "/social",
+    technology: "html2canvas for high-quality PNG download, theme toggle (light/dark), responsive grid layout",
+    categories: {
+      quote: "10 cards - Key wisdom and insights from The Stone Forger's Way",
+      glossary: "6 cards - Core concepts and definitions with three-layer explanations",
+      practice: "4 cards - Actionable micro-practices with step-by-step guidance",
+      archetype: "4 cards - The four archetypal states of consciousness",
+      reflection: "6 cards - Highlights from deep-dive reflections",
+      voice: "5 cards - Testimonials from practitioners with archetype-aligned attributions"
+    },
+    formats: {
+      square: "1:1 aspect ratio - Instagram posts, profile images",
+      landscape: "16:9 aspect ratio - Twitter/X, LinkedIn posts",
+      story: "9:16 aspect ratio - Instagram/Facebook stories (future)"
+    },
+    branding: "Watermarked with 'The Stone Forger's Way' - changed from TheStoneForger.com to match brand evolution"
   }
 };
 
@@ -203,11 +256,27 @@ const voiceGuidelines = {
     "Stone as teacher, stone as ally",
     "Earth's abundant magnetic forces"
   ],
+  testimonials: {
+    philosophy: "Voices from The Way - field reports from practitioners experiencing the work",
+    attribution: "Archetype-aligned instead of names (e.g., 'A Stone Thrower recognizing the teaching' rather than personal names)",
+    channels: {
+      social: "/social - 5 voice cards downloadable for sharing",
+      homepage: "/ - 3 featured testimonials in Cloud Dancer gradients",
+      voices: "/voices - Dedicated page with comprehensive testimonial showcase"
+    },
+    approach: "Authentic practitioner feedback showcasing real transformation moments, grounded in archetype framework for consistency",
+    examples: [
+      "'Trust is the cheat code because it bypasses the tyranny of the rational mind...' — A Stone Thrower recognizing the teaching",
+      "'The backache is the somatic cost of throwing stones while keeping the shield up...' — A Stone Carrier feeling the weight",
+      "'I have already started putting down stones. Not throwing them, not carrying them—actually forging my path forward.' — A Conscious Forger in motion"
+    ]
+  },
   conversionStrategy: {
     primary: "Archetype quiz (engagement + personalization)",
     secondary: "Try one micro-practice (immediate relief + validation)",
     tertiary: "Subscribe to newsletter (ongoing relationship)",
-    quaternary: "Contribute financially (intentional value exchange)"
+    quaternary: "Contribute financially (intentional value exchange)",
+    social: "Share testimonials and social cards (amplification + social proof)"
   },
   homepageApproach: {
     hero: "Awareness invitation and opportunity framing - Stone Carrier weight acknowledged as universal human experience",
@@ -247,10 +316,46 @@ function buildContextObject() {
       author: "Kamau Zuberi Akabueze",
       url: "https://thestoneforgers.way", // Update with actual URL
       generatedAt: new Date().toISOString(),
-      version: "1.0"
+      version: "2.0",
+      updates: {
+        "2.0": "Added Cloud Dancer color integration, Social Cards system (35+ cards), Voices from The Way testimonials, /voices page, updated homepage with testimonial section"
+      }
+    },
+    pages: {
+      core: [
+        { path: "/", name: "Home", description: "Homepage with hero, practices, testimonials, archetype quiz CTA" },
+        { path: "/journey", name: "The Journey", description: "The path from Stone Carrier to Stone Forger" },
+        { path: "/archetypes", name: "Archetypes", description: "The four archetypal states of consciousness" },
+        { path: "/archetype-quiz", name: "Archetype Quiz", description: "Discover your current archetype" },
+        { path: "/concepts", name: "Concepts & Practices", description: "Core frameworks and actionable practices" },
+        { path: "/practices", name: "Practices", description: "Micro-practices for immediate relief" },
+        { path: "/glossary", name: "Glossary", description: "Complete vocabulary with three-layer definitions" }
+      ],
+      content: [
+        { path: "/reflections", name: "Reflections", description: "11 deep-dive essays on philosophy, practice, science" },
+        { path: "/social", name: "Social Content Arsenal", description: "35+ shareable cards optimized for social media" },
+        { path: "/voices", name: "Voices from The Way", description: "Testimonials from practitioners with archetype-aligned attributions" }
+      ],
+      lineage: [
+        { path: "/samuel-r-harris", name: "Samuel R. Harris", description: "Kamau's grandfather, chemist and minister" },
+        { path: "/the-container", name: "The Container", description: "On holding space and the practice of listening" },
+        { path: "/about", name: "About", description: "About Kamau and The Stone Forger's Way" }
+      ],
+      utility: [
+        { path: "/creative-context", name: "Creative Context", description: "Complete DNA for AI collaborators and creators" }
+      ]
     },
     designSystem,
     voiceGuidelines,
+    socialCards: {
+      total: 35,
+      categories: designSystem.socialCardsSystem.categories,
+      formats: designSystem.socialCardsSystem.formats,
+      gradients: designSystem.socialCardGradients,
+      branding: designSystem.socialCardsSystem.branding,
+      technology: designSystem.socialCardsSystem.technology
+    },
+    testimonials: voiceGuidelines.testimonials,
     glossary: glossaryTerms.map((term: GlossaryTerm) => ({
       term: term.term,
       category: term.category,
@@ -285,7 +390,7 @@ export default function CreativeContext() {
   // Handle URL hash for direct section linking
   useEffect(() => {
     const hash = window.location.hash.slice(1); // Remove the '#'
-    const validSections = ["overview", "design", "voice", "glossary", "reflections", "timeline", "honor", "exchange"];
+    const validSections = ["overview", "design", "voice", "social", "glossary", "reflections", "timeline", "honor", "exchange"];
     if (hash && validSections.includes(hash)) {
       setActiveSection(hash);
     }
@@ -321,6 +426,7 @@ export default function CreativeContext() {
     { id: "overview", label: "Overview" },
     { id: "design", label: "Design System" },
     { id: "voice", label: "Voice & Language" },
+    { id: "social", label: "Social Cards & Voices" },
     { id: "glossary", label: "Glossary" },
     { id: "reflections", label: "Reflections" },
     { id: "timeline", label: "Timeline" },
@@ -554,6 +660,85 @@ export default function CreativeContext() {
                       <div className="space-y-2">
                         {voiceGuidelines.keyPhrases.map((phrase) => (
                           <p key={phrase} className="text-lg text-amber-700 italic">"{phrase}"</p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* Social Cards & Voices */}
+              {activeSection === "social" && (
+                <section>
+                  <h2 className="text-3xl font-serif text-stone-800 mb-6 leading-tight">Social Cards & Voices</h2>
+
+                  <div className="space-y-8">
+                    {/* Overview */}
+                    <div className="bg-amber-50 p-6 rounded-lg">
+                      <p className="text-lg text-stone-700 mb-4">
+                        <strong>35+ shareable cards</strong> optimized for social media, available at{" "}
+                        <Link href="/social" className="text-amber-700 hover:text-amber-800 underline">/social</Link>.
+                        Each card is downloadable as high-quality PNG with light/dark theme options.
+                      </p>
+                      <p className="text-stone-600">
+                        Technology: html2canvas for image generation, responsive grid, Cloud Dancer color philosophy integrated throughout.
+                      </p>
+                    </div>
+
+                    {/* Categories */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Card Categories</h3>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        {Object.entries(designSystem.socialCardsSystem.categories).map(([category, description]) => (
+                          <div key={category} className="bg-white p-4 rounded-lg border border-stone-200">
+                            <h4 className="font-medium text-stone-800 capitalize mb-2">{category}</h4>
+                            <p className="text-sm text-stone-600">{description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Gradients */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Card Gradients</h3>
+                      <div className="space-y-3">
+                        {Object.entries(designSystem.socialCardGradients).map(([category, data]) => (
+                          <div key={category} className="bg-stone-50 p-4 rounded">
+                            <p className="font-medium text-stone-800 capitalize mb-2">{category}</p>
+                            <div className="text-sm space-y-1">
+                              <p className="text-stone-600"><strong>Light:</strong> <code className="bg-stone-200 px-1 rounded">{data.light}</code></p>
+                              <p className="text-stone-600"><strong>Dark:</strong> <code className="bg-stone-200 px-1 rounded">{data.dark}</code></p>
+                              {data.philosophy && <p className="text-stone-500 italic mt-2">{data.philosophy}</p>}
+                              {data.purpose && <p className="text-stone-500 italic mt-2">{data.purpose}</p>}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Voices from The Way */}
+                    <div className="border-l-4 border-amber-600 pl-6">
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Voices from The Way</h3>
+                      <p className="text-stone-700 mb-4">{voiceGuidelines.testimonials.philosophy}</p>
+                      <p className="text-stone-700 mb-4">
+                        <strong>Attribution approach:</strong> {voiceGuidelines.testimonials.attribution}
+                      </p>
+
+                      <div className="bg-stone-50 p-4 rounded mb-4">
+                        <p className="text-sm font-medium text-stone-600 mb-2">Three-channel distribution:</p>
+                        <ul className="text-sm text-stone-700 space-y-1">
+                          <li>• <strong>{voiceGuidelines.testimonials.channels.social}</strong></li>
+                          <li>• <strong>{voiceGuidelines.testimonials.channels.homepage}</strong></li>
+                          <li>• <strong>{voiceGuidelines.testimonials.channels.voices}</strong></li>
+                        </ul>
+                      </div>
+
+                      <div className="space-y-3">
+                        <p className="text-sm font-medium text-stone-600">Example testimonials:</p>
+                        {voiceGuidelines.testimonials.examples.map((example, i) => (
+                          <p key={i} className="text-stone-600 italic text-sm pl-4 border-l-2 border-stone-300">
+                            {example}
+                          </p>
                         ))}
                       </div>
                     </div>
