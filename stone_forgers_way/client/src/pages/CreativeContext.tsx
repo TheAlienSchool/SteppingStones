@@ -78,6 +78,176 @@ const reflections = [
   }
 ];
 
+// The Stone Forger's Cohort Program
+const cohortProgram = {
+  overview: "7-week intensive for growth-stage founders carrying many stones",
+  url: "/forgers-cohort",
+  nextCohort: "January 18, 2025",
+  investment: "$2,200 USD",
+  maxSize: 22,
+  format: "Weekly 90-minute live sessions on video, guided practices, journaling prompts, between-session reflections",
+  targetAudience: {
+    description: "Growth-stage founders who seek guidance, embrace growth, and are ready to turn pressure into clarity without abandoning humanity",
+    criteria: [
+      "Leading teams, raising capital, holding relationships and responsibilities that all feel urgent",
+      "Feel decisions in body, not just calendar (somatic awareness)",
+      "Committed to inner work as seriously as product/revenue/fundraising",
+      "Want to be seen as human first, founder second"
+    ]
+  },
+  weeklyJourney: [
+    "Week 1: Identify the real stones (not just the public ones)",
+    "Week 2: Learn to ask 'Is this mine to carry?' (discernment practice)",
+    "Week 3: Practice undivided attention on single stone (beginning of mastery)",
+    "Week 4: Explore biography, biology, and leadership entanglement",
+    "Week 5: Build personal Stone Map (living view of responsibilities)",
+    "Week 6: Forge leadership path with integrity, not just velocity",
+    "Week 7: Integration and commitment to ongoing practice"
+  ],
+  container: {
+    agreements: ["Confidentiality", "Non-judgment", "Presence over performance", "No extraction or selling", "Right to protect the field"],
+    philosophy: "You're not here to impress anyone. You're here to meet your stones honestly."
+  },
+  whatThisIsNot: [
+    "Not group therapy",
+    "Not a pitch stage or networking event",
+    "Not a '10x your productivity' hack"
+  ],
+  conversionFunnel: {
+    awareness: "Landing page recognizes the weight founders carry",
+    interest: "Three states of stones education",
+    desire: "Testimonials from practitioners + Voices from The Way",
+    action: "Dual-path CTA: Explore TSFW OR Join Cohort (both require Archetype Quiz)",
+    gate: "Archetype Quiz required before scheduling with Kamau"
+  },
+  testimonials: [
+    "I've experienced life-changing insights",
+    "This is transformational work beyond what I have experienced before!",
+    "I have never considered my creativity so vividly before",
+    "I had no idea I had created so much weight to carry on my own until now",
+    "The space you hold is unlike any practitioner I have worked with before",
+    "Thank you for allowing my tears to be present",
+    "I am experiencing more time, generosity, and gratitude in my creative life and I have you to thank"
+  ]
+};
+
+// The Philosophy of Stones - Core Teaching
+const stonePhilosophy = {
+  definition: "A stone is any moment, task, obligation, relationship, creative work, or life circumstance that requires your attention and energy. It's the fundamental unit of conscious creation.",
+  threeStates: {
+    unexamined: {
+      name: "Unexamined Stones",
+      archetype: "The Stone Carrier",
+      description: "Invisible weights you carry—past regrets, future anxieties, unfulfilled obligations, unprocessed emotions. They swing chaotically from your energy body, creating exhaustion and fragmentation.",
+      key: "You haven't chosen to carry them consciously; they've accumulated through conditioning and environmental dissonance",
+      visual: "Chaotic swinging stones in orbit around the figure, muted heavy colors (stone-400)",
+      energy: "Depleting, fragmenting, unconscious"
+    },
+    thrown: {
+      name: "Thrown Stones",
+      archetype: "The Stone Thrower",
+      description: "Burdens released without consciousness—obligations abandoned, relationships ended abruptly, responsibilities rejected. The release creates temporary relief but often generates new chaos.",
+      key: "The throwing wasn't intentional or aligned",
+      visual: "Scattered, broken stones flying away from figure, reactive hot colors (amber-600)",
+      energy: "Explosive, reactive, chaotic"
+    },
+    forged: {
+      name: "Forged Stones",
+      archetype: "The Conscious Forger / The Patient Forger",
+      description: "Moments, tasks, or circumstances you've chosen to engage with full presence and intention. When you bring undivided attention to a single stone, you transform it from burden into conscious creation.",
+      key: "The stone becomes part of your path, solidifying beneath your feet as you step",
+      visual: "Solid, stacked stones forming a path, intentional warm colors (amber-700)",
+      energy: "Generative, grounding, conscious"
+    }
+  },
+  coreInsight: "A stone isn't inherently good or bad, heavy or light. What matters is your relationship to it. The same obligation can be chaotic burden (Stone Carrier), destructive projectile (Stone Thrower), or conscious creation (Stone Forger).",
+  practice: {
+    feelTheStones: "Acknowledge what you're carrying without judgment",
+    chooseOneStone: "Give full attention to a single obligation (the beginning of mastery)",
+    discern: "Ask 'Is this mine to carry?' before accepting new stones",
+    forge: "Transform tasks into conscious acts of creation through presence"
+  },
+  metaphorPower: {
+    weight: "The tangible burden of existence",
+    solidity: "The materialization of thought into form",
+    foundation: "The path you're building beneath your feet",
+    patience: "The slow, geological time of transformation",
+    magnetism: "Earth's stabilizing force (stone as teacher)",
+    grounding: "Connection to Earth's abundant magnetic forces"
+  },
+  ultimateTruth: "You are always working with stones. The question is whether you're carrying them unconsciously, throwing them reactively, or forging them intentionally. The Stone Forger's Way is the practice of choosing the third path—conscious creation, one stone at a time."
+};
+
+// Infographic Recommendations for Stone States
+const infographicSpecs = {
+  visual1: {
+    name: "TSFW Stone - The Three States",
+    purpose: "Central stone icon branching into three paths showing the transformation journey",
+    layout: "Horizontal progression from left (Carrier) to center (Thrower) to right (Forger)",
+    elements: {
+      unexamined: {
+        visual: "Chaotic swinging stones in orbit around figure",
+        color: "Stone-400 (muted, heavy)",
+        label: "UNEXAMINED STONES\n(Stone Carrier)"
+      },
+      thrown: {
+        visual: "Scattered, broken stones flying away from figure",
+        color: "Amber-600 (reactive, hot)",
+        label: "THROWN STONES\n(Stone Thrower)"
+      },
+      forged: {
+        visual: "Solid, stacked stones forming path beneath figure",
+        color: "Amber-700 (intentional, warm)",
+        label: "FORGED STONES\n(Conscious Forger)"
+      }
+    }
+  },
+  visual2: {
+    name: "TSFW Stages - The Progression",
+    purpose: "Linear progression showing transformation through four archetypes",
+    layout: "Left to right: Carrier → Thrower → Conscious Forger → Patient Forger",
+    elements: "Each stage shows: body posture (bent/throwing/upright/grounded), stone relationship (carrying/releasing/forging/waiting), energy field (chaotic/explosive/focused/expansive)"
+  },
+  visual3: {
+    name: "TSFW Journey - The 7-Week Cohort Flow",
+    purpose: "Timeline visualization of cohort progression",
+    layout: "Vertical or spiral timeline with week markers",
+    weeks: [
+      "Week 1: Feel the Stones (awareness) - small rough stone icon",
+      "Week 2: The One Stone (focus) - single highlighted stone",
+      "Week 3: Is This Mine? (discernment) - stone with question mark",
+      "Week 4: The Shield Check (protection) - stone with shield",
+      "Week 5: Trust as Cheat Code (surrender) - glowing stone",
+      "Week 6: Stone Map Creation (integration) - multiple stones forming pattern",
+      "Week 7: The Path Forward (commitment) - solid stone path"
+    ],
+    progression: "Each week's stone icon grows more defined/solid, showing transformation from chaotic to intentional"
+  },
+  visual4: {
+    name: "TSFW Pillars - The Four Foundations",
+    purpose: "Show the four knowledge systems that ground The Stone Forger's Way",
+    layout: "Four pillars arranged in grid or cardinal directions",
+    pillars: ["Indigenous Knowing", "Quantum Physics", "Neuroscience", "Personal Lineage"]
+  },
+  visual5: {
+    name: "TSFW Why - The Urgency",
+    purpose: "Illustrate why this work matters now for founders and creators",
+    layout: "Problem/solution split or before/after comparison"
+  },
+  visual6: {
+    name: "TSFW Pathway - The Transformation Arc",
+    purpose: "Show the journey from unconscious burden to conscious creation",
+    layout: "Arc or bridge showing progression from chaos to coherence"
+  },
+  designGuidance: {
+    colorPalette: "Stone (grays), Amber (warmth), Cloud Dancer (white/subtle)",
+    typography: "Georgia/serif for headings, system sans for body",
+    iconography: "Simple, geometric stone shapes - circles, ovals, stacked forms",
+    style: "Minimalist, contemplative, grounded - avoid corporate slickness",
+    references: "The Stone Carrier illustration as visual anchor"
+  }
+};
+
 // Design system tokens
 const designSystem = {
   colors: {
@@ -316,9 +486,10 @@ function buildContextObject() {
       author: "Kamau Zuberi Akabueze",
       url: "https://thestoneforgers.way", // Update with actual URL
       generatedAt: new Date().toISOString(),
-      version: "2.0",
+      version: "2.1",
       updates: {
-        "2.0": "Added Cloud Dancer color integration, Social Cards system (35+ cards), Voices from The Way testimonials, /voices page, updated homepage with testimonial section"
+        "2.0": "Added Cloud Dancer color integration, Social Cards system (35+ cards), Voices from The Way testimonials, /voices page, updated homepage with testimonial section",
+        "2.1": "Added Stone Forger's Cohort program (/forgers-cohort), Stone Philosophy (three states), Infographic specifications (6 visual guides), Cohort testimonials, Full funnel architecture with Archetype Quiz gate"
       }
     },
     pages: {
@@ -334,7 +505,8 @@ function buildContextObject() {
       content: [
         { path: "/reflections", name: "Reflections", description: "11 deep-dive essays on philosophy, practice, science" },
         { path: "/social", name: "Social Content Arsenal", description: "35+ shareable cards optimized for social media" },
-        { path: "/voices", name: "Voices from The Way", description: "Testimonials from practitioners with archetype-aligned attributions" }
+        { path: "/voices", name: "Voices from The Way", description: "Testimonials from practitioners with archetype-aligned attributions" },
+        { path: "/forgers-cohort", name: "The Stone Forger's Cohort", description: "7-week intensive for growth-stage founders carrying many stones. January 18, 2025" }
       ],
       lineage: [
         { path: "/samuel-r-harris", name: "Samuel R. Harris", description: "Kamau's grandfather, chemist and minister" },
@@ -347,6 +519,9 @@ function buildContextObject() {
     },
     designSystem,
     voiceGuidelines,
+    cohortProgram,
+    stonePhilosophy,
+    infographicSpecs,
     socialCards: {
       total: 35,
       categories: designSystem.socialCardsSystem.categories,
@@ -390,7 +565,7 @@ export default function CreativeContext() {
   // Handle URL hash for direct section linking
   useEffect(() => {
     const hash = window.location.hash.slice(1); // Remove the '#'
-    const validSections = ["overview", "design", "voice", "social", "glossary", "reflections", "timeline", "honor", "exchange"];
+    const validSections = ["overview", "design", "voice", "social", "cohort", "stones", "infographics", "glossary", "reflections", "timeline", "honor", "exchange"];
     if (hash && validSections.includes(hash)) {
       setActiveSection(hash);
     }
@@ -427,6 +602,9 @@ export default function CreativeContext() {
     { id: "design", label: "Design System" },
     { id: "voice", label: "Voice & Language" },
     { id: "social", label: "Social Cards & Voices" },
+    { id: "cohort", label: "Cohort Program" },
+    { id: "stones", label: "Stone Philosophy" },
+    { id: "infographics", label: "Infographics" },
     { id: "glossary", label: "Glossary" },
     { id: "reflections", label: "Reflections" },
     { id: "timeline", label: "Timeline" },
@@ -739,6 +917,286 @@ export default function CreativeContext() {
                           <p key={i} className="text-stone-600 italic text-sm pl-4 border-l-2 border-stone-300">
                             {example}
                           </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* Cohort Program */}
+              {activeSection === "cohort" && (
+                <section>
+                  <h2 className="text-3xl font-serif text-stone-800 mb-6 leading-tight">The Stone Forger's Cohort Program</h2>
+
+                  <div className="space-y-8">
+                    {/* Overview */}
+                    <div className="bg-amber-50 p-6 rounded-lg">
+                      <p className="text-lg text-stone-700 mb-4">
+                        <strong>{cohortProgram.overview}</strong>
+                      </p>
+                      <div className="grid md:grid-cols-3 gap-4 text-sm">
+                        <div>
+                          <p className="font-medium text-amber-700">Next Cohort</p>
+                          <p className="text-stone-600">{cohortProgram.nextCohort}</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-amber-700">Investment</p>
+                          <p className="text-stone-600">{cohortProgram.investment}</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-amber-700">Max Size</p>
+                          <p className="text-stone-600">{cohortProgram.maxSize} founders</p>
+                        </div>
+                      </div>
+                      <p className="text-stone-600 mt-4">{cohortProgram.format}</p>
+                      <p className="text-center mt-4">
+                        <Link href="/forgers-cohort" className="text-amber-700 hover:text-amber-800 underline">
+                          View full cohort page →
+                        </Link>
+                      </p>
+                    </div>
+
+                    {/* Target Audience */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Who This Is For</h3>
+                      <p className="text-stone-700 mb-4">{cohortProgram.targetAudience.description}</p>
+                      <div className="grid md:grid-cols-2 gap-3">
+                        {cohortProgram.targetAudience.criteria.map((criterion, i) => (
+                          <div key={i} className="bg-stone-50 p-3 rounded text-sm text-stone-700">
+                            • {criterion}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* 7-Week Journey */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">The 7-Week Journey</h3>
+                      <div className="space-y-2">
+                        {cohortProgram.weeklyJourney.map((week, i) => (
+                          <div key={i} className="flex gap-3 items-start">
+                            <div className="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-medium">
+                              {i + 1}
+                            </div>
+                            <p className="text-stone-700 pt-1">{week}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* The Container */}
+                    <div className="border-l-4 border-amber-600 pl-6">
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">The Container</h3>
+                      <p className="text-stone-700 mb-4 italic">{cohortProgram.container.philosophy}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {cohortProgram.container.agreements.map((agreement, i) => (
+                          <span key={i} className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">
+                            {agreement}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* What This Is Not */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">What This Is Not</h3>
+                      <div className="space-y-2">
+                        {cohortProgram.whatThisIsNot.map((item, i) => (
+                          <p key={i} className="text-stone-600 flex items-center gap-2">
+                            <span className="text-stone-400">✗</span> {item}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Conversion Funnel */}
+                    <div className="bg-stone-50 p-6 rounded">
+                      <h3 className="text-xl font-serif text-stone-800 mb-4">Conversion Funnel Architecture</h3>
+                      <div className="space-y-2 text-sm">
+                        <p><strong>Awareness:</strong> {cohortProgram.conversionFunnel.awareness}</p>
+                        <p><strong>Interest:</strong> {cohortProgram.conversionFunnel.interest}</p>
+                        <p><strong>Desire:</strong> {cohortProgram.conversionFunnel.desire}</p>
+                        <p><strong>Action:</strong> {cohortProgram.conversionFunnel.action}</p>
+                        <p className="text-amber-700"><strong>Gate:</strong> {cohortProgram.conversionFunnel.gate}</p>
+                      </div>
+                    </div>
+
+                    {/* Testimonials */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Practitioner Testimonials</h3>
+                      <div className="grid md:grid-cols-2 gap-3">
+                        {cohortProgram.testimonials.map((testimonial, i) => (
+                          <div key={i} className="bg-white p-4 rounded border border-stone-200">
+                            <p className="text-stone-700 italic text-sm">"{testimonial}"</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* Stone Philosophy */}
+              {activeSection === "stones" && (
+                <section>
+                  <h2 className="text-3xl font-serif text-stone-800 mb-6 leading-tight">The Philosophy of Stones</h2>
+
+                  <div className="space-y-8">
+                    {/* Definition */}
+                    <div className="bg-amber-50 p-6 rounded-lg">
+                      <h3 className="text-xl font-serif text-stone-800 mb-3">What Is a Stone?</h3>
+                      <p className="text-lg text-stone-700 leading-relaxed">{stonePhilosophy.definition}</p>
+                    </div>
+
+                    {/* Three States */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">The Three States of Stones</h3>
+
+                      {/* Unexamined */}
+                      <div className="mb-6 border-l-4 border-stone-400 pl-6">
+                        <h4 className="text-xl font-serif text-stone-800 mb-2">{stonePhilosophy.threeStates.unexamined.name}</h4>
+                        <p className="text-sm text-stone-500 mb-3 italic">Archetype: {stonePhilosophy.threeStates.unexamined.archetype}</p>
+                        <p className="text-stone-700 mb-3">{stonePhilosophy.threeStates.unexamined.description}</p>
+                        <div className="bg-stone-50 p-3 rounded text-sm space-y-1">
+                          <p><strong>Key:</strong> {stonePhilosophy.threeStates.unexamined.key}</p>
+                          <p><strong>Visual:</strong> {stonePhilosophy.threeStates.unexamined.visual}</p>
+                          <p><strong>Energy:</strong> {stonePhilosophy.threeStates.unexamined.energy}</p>
+                        </div>
+                      </div>
+
+                      {/* Thrown */}
+                      <div className="mb-6 border-l-4 border-amber-600 pl-6">
+                        <h4 className="text-xl font-serif text-stone-800 mb-2">{stonePhilosophy.threeStates.thrown.name}</h4>
+                        <p className="text-sm text-amber-700 mb-3 italic">Archetype: {stonePhilosophy.threeStates.thrown.archetype}</p>
+                        <p className="text-stone-700 mb-3">{stonePhilosophy.threeStates.thrown.description}</p>
+                        <div className="bg-amber-50 p-3 rounded text-sm space-y-1">
+                          <p><strong>Key:</strong> {stonePhilosophy.threeStates.thrown.key}</p>
+                          <p><strong>Visual:</strong> {stonePhilosophy.threeStates.thrown.visual}</p>
+                          <p><strong>Energy:</strong> {stonePhilosophy.threeStates.thrown.energy}</p>
+                        </div>
+                      </div>
+
+                      {/* Forged */}
+                      <div className="mb-6 border-l-4 border-amber-700 pl-6">
+                        <h4 className="text-xl font-serif text-stone-800 mb-2">{stonePhilosophy.threeStates.forged.name}</h4>
+                        <p className="text-sm text-amber-800 mb-3 italic">Archetype: {stonePhilosophy.threeStates.forged.archetype}</p>
+                        <p className="text-stone-700 mb-3">{stonePhilosophy.threeStates.forged.description}</p>
+                        <div className="bg-amber-100 p-3 rounded text-sm space-y-1">
+                          <p><strong>Key:</strong> {stonePhilosophy.threeStates.forged.key}</p>
+                          <p><strong>Visual:</strong> {stonePhilosophy.threeStates.forged.visual}</p>
+                          <p><strong>Energy:</strong> {stonePhilosophy.threeStates.forged.energy}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Core Insight */}
+                    <div className="bg-stone-50 p-6 rounded">
+                      <h3 className="text-xl font-serif text-stone-800 mb-3">Core Insight</h3>
+                      <p className="text-lg text-stone-700 leading-relaxed italic">{stonePhilosophy.coreInsight}</p>
+                    </div>
+
+                    {/* The Practice */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">The Practice</h3>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        {Object.entries(stonePhilosophy.practice).map(([key, value]) => (
+                          <div key={key} className="bg-white p-4 rounded border border-stone-200">
+                            <p className="font-medium text-amber-700 capitalize mb-2">
+                              {key.replace(/([A-Z])/g, ' $1').trim()}
+                            </p>
+                            <p className="text-sm text-stone-700">{value}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Metaphor Power */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">The Metaphor's Power</h3>
+                      <p className="text-stone-600 mb-4">Stone represents:</p>
+                      <div className="grid md:grid-cols-3 gap-3">
+                        {Object.entries(stonePhilosophy.metaphorPower).map(([key, value]) => (
+                          <div key={key} className="bg-amber-50 p-3 rounded">
+                            <p className="font-medium text-stone-800 capitalize text-sm mb-1">{key}</p>
+                            <p className="text-xs text-stone-600">{value}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Ultimate Truth */}
+                    <div className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl border-2 border-amber-600">
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 text-center">The Ultimate Truth</h3>
+                      <p className="text-xl text-stone-700 leading-relaxed text-center italic">
+                        {stonePhilosophy.ultimateTruth}
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* Infographics */}
+              {activeSection === "infographics" && (
+                <section>
+                  <h2 className="text-3xl font-serif text-stone-800 mb-6 leading-tight">Infographic Specifications</h2>
+                  <p className="text-stone-600 mb-8">Visual guides for illustrating The Stone Forger's Way concepts</p>
+
+                  <div className="space-y-8">
+                    {Object.entries(infographicSpecs).filter(([key]) => key.startsWith('visual')).map(([key, spec]: [string, any]) => (
+                      <div key={key} className="bg-white p-6 rounded-lg border border-stone-200">
+                        <h3 className="text-xl font-serif text-stone-800 mb-2">{spec.name}</h3>
+                        <p className="text-sm text-stone-500 mb-3 italic">{spec.purpose}</p>
+                        <div className="space-y-2 text-sm">
+                          <p><strong>Layout:</strong> {spec.layout}</p>
+                          {spec.elements && typeof spec.elements === 'object' && !Array.isArray(spec.elements) && (
+                            <div className="mt-3">
+                              <p className="font-medium text-amber-700 mb-2">Elements:</p>
+                              <div className="space-y-2">
+                                {Object.entries(spec.elements).map(([elemKey, elemValue]: [string, any]) => (
+                                  <div key={elemKey} className="bg-stone-50 p-3 rounded">
+                                    <p className="font-medium capitalize">{elemKey}</p>
+                                    <p className="text-xs text-stone-600">{elemValue.visual || elemValue}</p>
+                                    {elemValue.color && <p className="text-xs text-stone-500">Color: {elemValue.color}</p>}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          {spec.elements && typeof spec.elements === 'string' && (
+                            <p><strong>Elements:</strong> {spec.elements}</p>
+                          )}
+                          {spec.weeks && (
+                            <div className="mt-3">
+                              <p className="font-medium text-amber-700 mb-2">Weekly Progression:</p>
+                              <div className="space-y-1">
+                                {spec.weeks.map((week: string, i: number) => (
+                                  <p key={i} className="text-xs text-stone-600 pl-3">• {week}</p>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          {spec.pillars && (
+                            <p><strong>Pillars:</strong> {spec.pillars.join(', ')}</p>
+                          )}
+                          {spec.progression && (
+                            <p className="mt-2 italic text-stone-600">{spec.progression}</p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+
+                    {/* Design Guidance */}
+                    <div className="bg-amber-50 p-6 rounded-lg">
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4">Design Guidance</h3>
+                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                        {Object.entries(infographicSpecs.designGuidance).map(([key, value]) => (
+                          <div key={key}>
+                            <p className="font-medium text-amber-700 capitalize mb-1">
+                              {key.replace(/([A-Z])/g, ' $1').trim()}
+                            </p>
+                            <p className="text-stone-700">{value}</p>
+                          </div>
                         ))}
                       </div>
                     </div>
