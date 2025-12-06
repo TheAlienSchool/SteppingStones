@@ -82,7 +82,7 @@ const reflections = [
 const cohortProgram = {
   overview: "7-week intensive for growth-stage founders carrying many stones",
   url: "/forgers-cohort",
-  nextCohort: "January 18, 2025",
+  nextCohort: "January 18, 2026",
   investment: "$2,200 USD",
   maxSize: 22,
   format: "Weekly 90-minute live sessions on video, guided practices, journaling prompts, between-session reflections",
@@ -409,7 +409,22 @@ const voiceGuidelines = {
     ],
     balance: "The site holds space for both HeartMath research and ancestral wisdom, quantum physics and intuitive knowing. Metaphor and mechanics illuminate each other—neither is diminished.",
     homepage: "The homepage leads with awareness and opportunity ('Are you aware of how many stones you are carrying? Their weight is your opportunity') before offering the path. Benefits are explicit (neurological shift, temporal mastery, energy protection) before diving into philosophy.",
-    languagePhilosophy: "Weight is tangible (physical, mental, experiential) for every human. Metaphor is a keystone to integrating value and practical embodiment. The path uplifts visitors toward enlightenment through synthesis, not negation."
+    languagePhilosophy: "Weight is tangible (physical, mental, experiential) for every human. Metaphor is a keystone to integrating value and practical embodiment. The path uplifts visitors toward enlightenment through synthesis, not negation.",
+    collectiveVoice: {
+      philosophy: "TSFW embodies collective ownership and shared human experience. We move from prescriptive ('you/your') to inclusive ('we/our') and universal ('one/one's')—recognizing that Kamau and all practitioners are IN the practice together, not above it.",
+      implementation: {
+        "we/our": "Used for shared founder/practitioner experience - 'We carry stones', 'Our decisions', 'We're not here to impress anyone'",
+        "one/one's": "Used for universal human truths - 'One feels the weight', 'One's field', 'One can stand on with integrity'",
+        "you/your": "Reserved sparingly for direct invitations to action - 'Take the quiz', 'Discover your archetype' (calls to action only)"
+      },
+      impact: "This shift transforms TSFW from expert-to-student into fellow-practitioner. It honors the lineage aspect—the guide walks the path alongside us, not from a podium. The Container holds everyone, including Kamau. This is invitation to recognition of macro challenges, not diagnosis of individual deficits.",
+      examples: [
+        "Before: 'You're carrying invisible weights' → After: 'We carry invisible weights'",
+        "Before: 'Your decisions weigh on you' → After: 'We feel the weight of our decisions'",
+        "Before: 'You want to be seen as human' → After: 'We want to be seen as human first'",
+        "Before: 'The path forms beneath your feet' → After: 'The path forms beneath our feet'"
+      ]
+    }
   },
   keyPhrases: [
     "Trust is the cheat code",
@@ -486,10 +501,11 @@ function buildContextObject() {
       author: "Kamau Zuberi Akabueze",
       url: "https://thestoneforgers.way", // Update with actual URL
       generatedAt: new Date().toISOString(),
-      version: "2.1",
+      version: "2.2",
       updates: {
         "2.0": "Added Cloud Dancer color integration, Social Cards system (35+ cards), Voices from The Way testimonials, /voices page, updated homepage with testimonial section",
-        "2.1": "Added Stone Forger's Cohort program (/forgers-cohort), Stone Philosophy (three states), Infographic specifications (6 visual guides), Cohort testimonials, Full funnel architecture with Archetype Quiz gate"
+        "2.1": "Added Stone Forger's Cohort program (/forgers-cohort), Stone Philosophy (three states), Infographic specifications (6 visual guides), Cohort testimonials, Full funnel architecture with Archetype Quiz gate",
+        "2.2": "COLLECTIVE VOICE TRANSFORMATION - Shifted from prescriptive 'you/your' to inclusive 'we/our' and universal 'one/one's' throughout site. Kamau positioned as fellow-practitioner, not expert above. The Container holds everyone. Invitation to recognition, not diagnosis. Applied to /forgers-cohort as proof of concept."
       }
     },
     pages: {
@@ -506,7 +522,7 @@ function buildContextObject() {
         { path: "/reflections", name: "Reflections", description: "11 deep-dive essays on philosophy, practice, science" },
         { path: "/social", name: "Social Content Arsenal", description: "35+ shareable cards optimized for social media" },
         { path: "/voices", name: "Voices from The Way", description: "Testimonials from practitioners with archetype-aligned attributions" },
-        { path: "/forgers-cohort", name: "The Stone Forger's Cohort", description: "7-week intensive for growth-stage founders carrying many stones. January 18, 2025" }
+        { path: "/forgers-cohort", name: "The Stone Forger's Cohort", description: "7-week intensive for growth-stage founders carrying many stones. January 18, 2026" }
       ],
       lineage: [
         { path: "/samuel-r-harris", name: "Samuel R. Harris", description: "Kamau's grandfather, chemist and minister" },

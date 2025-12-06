@@ -110,7 +110,7 @@ export default function ForgersCohort() {
               <div className="flex justify-center mb-6">
                 <div className="inline-flex items-center gap-2 bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-medium">
                   <Calendar className="w-4 h-4" />
-                  Next Cohort: January 18, 2025
+                  Next Cohort: January 18, 2026
                 </div>
               </div>
 
@@ -133,7 +133,7 @@ export default function ForgersCohort() {
 
               {/* Subhead */}
               <p className="text-xl text-stone-600 text-center max-w-3xl mx-auto mb-8 leading-relaxed">
-                For growth-stage founders who seek guidance, embrace growth, and are ready to turn pressure into clarity, resilience, and creative power—without abandoning their humanity.
+                For growth-stage founders seeking guidance and growth—ready to turn pressure into clarity, resilience, and creative power without abandoning our humanity.
               </p>
 
               {/* Soft Entry CTA */}
@@ -148,33 +148,33 @@ export default function ForgersCohort() {
           </div>
         </section>
 
-        {/* Section 1: The Weight You're Carrying */}
+        {/* Section 1: The Weight We Carry */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
 
               <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-8">
-                The Weight You're Carrying
+                The Weight We Carry
               </h2>
 
               <div className="bg-stone-50 p-8 rounded-xl mb-8">
                 <p className="text-lg text-stone-700 leading-relaxed mb-6">
-                  You know the feeling. The invisible weight. The constant busyness that somehow leads nowhere.
+                  We know the feeling. The invisible weight. The constant busyness that somehow leads nowhere.
                   The exhaustion of carrying past regrets, future anxieties, and unfulfilled obligations—all
-                  swinging chaotically with every step you take.
+                  swinging chaotically with every step we take.
                 </p>
                 <p className="text-lg text-stone-700 leading-relaxed">
                   This is <GlossaryTooltip term="The Stone Carrier">The Stone Carrier</GlossaryTooltip>. Every human
-                  knows this weight. The question is: what will you do with it?
+                  knows this weight. The question is: what will we do with it?
                 </p>
               </div>
 
-              {/* Who This Is For - Collapsible */}
+              {/* Who We Are - Collapsible */}
               <button
                 onClick={() => setShowWhoThisIsFor(!showWhoThisIsFor)}
                 className="w-full bg-amber-50 p-6 rounded-xl flex items-center justify-between hover:bg-amber-100 transition-colors"
               >
-                <h3 className="text-2xl font-serif text-stone-800">Who This Is For</h3>
+                <h3 className="text-2xl font-serif text-stone-800">Who We Are</h3>
                 {showWhoThisIsFor ? (
                   <ChevronUp className="w-6 h-6 text-amber-700" />
                 ) : (
@@ -187,25 +187,25 @@ export default function ForgersCohort() {
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
                     <p className="text-stone-700">
-                      Leading teams, raising capital, and holding relationships and responsibilities that all feel urgent at once
+                      We're leading teams, raising capital, and holding relationships and responsibilities that all feel urgent at once
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
                     <p className="text-stone-700">
-                      Feel the weight of your decisions in your <GlossaryTooltip term="Somatic">body</GlossaryTooltip>, not just your calendar
+                      We feel the weight of our decisions in our <GlossaryTooltip term="Somatic">bodies</GlossaryTooltip>, not just our calendars
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
                     <p className="text-stone-700">
-                      Committed to <GlossaryTooltip term="Inner Work">inner work</GlossaryTooltip> as seriously as you are to product, revenue, or fundraising
+                      We're committed to <GlossaryTooltip term="Inner Work">inner work</GlossaryTooltip> as seriously as we are to product, revenue, or fundraising
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
                     <p className="text-stone-700">
-                      Want a space where you are seen as human first, founder second
+                      We want a space where we're seen as human first, founder second
                     </p>
                   </div>
                 </div>
@@ -225,7 +225,7 @@ export default function ForgersCohort() {
 
               <div className="bg-amber-50 p-8 rounded-xl mb-12">
                 <p className="text-xl text-stone-700 leading-relaxed mb-4">
-                  In <strong>The Stone Forger's Way</strong>, a <GlossaryTooltip term="Stepping Stone">stone</GlossaryTooltip> is any moment, task, obligation, relationship, creative work, or life circumstance that requires your attention and energy.
+                  In <strong>The Stone Forger's Way</strong>, a <GlossaryTooltip term="Stepping Stone">stone</GlossaryTooltip> is any moment, task, obligation, relationship, creative work, or life circumstance that requires our attention and energy.
                 </p>
                 <p className="text-lg text-stone-600 leading-relaxed italic">
                   It's the fundamental unit of conscious creation.
@@ -233,7 +233,7 @@ export default function ForgersCohort() {
               </div>
 
               <p className="text-lg text-stone-600 text-center mb-12">
-                Most founders aren't short on stones. They're short on the practice of choosing which stones are yours to carry, which can be set down, and which are quietly forming the path beneath your feet.
+                We're not short on stones. We're short on the practice of choosing which stones are ours to carry, which can be set down, and which are quietly forming the path beneath our feet.
               </p>
 
               {/* Image: TSFW Stages */}
@@ -249,7 +249,7 @@ export default function ForgersCohort() {
                   <h3 className="text-xl font-serif text-stone-800 mb-3">Unexamined Stones</h3>
                   <p className="text-sm text-stone-500 mb-4 italic">The Stone Carrier's burden</p>
                   <p className="text-stone-700 leading-relaxed">
-                    Invisible weights you carry—past regrets, future anxieties, unfulfilled obligations. They swing chaotically, creating exhaustion and fragmentation.
+                    Invisible weights we carry—past regrets, future anxieties, unfulfilled obligations. They swing chaotically, creating exhaustion and fragmentation.
                   </p>
                 </div>
 
@@ -265,7 +265,7 @@ export default function ForgersCohort() {
                   <h3 className="text-xl font-serif text-stone-800 mb-3">Forged Stones</h3>
                   <p className="text-sm text-amber-800 mb-4 italic">The Stone Forger's creation</p>
                   <p className="text-stone-700 leading-relaxed">
-                    Moments you've chosen to engage with full presence. When you bring undivided attention to a single stone, it becomes part of your path.
+                    Moments we've chosen to engage with full presence. When we bring undivided attention to a single stone, it becomes part of our path.
                   </p>
                 </div>
               </div>
@@ -377,13 +377,13 @@ export default function ForgersCohort() {
           </div>
         </section>
 
-        {/* Section 5: What You'll Experience */}
+        {/* Section 5: What We'll Experience */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
 
               <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-8">
-                What You'll Experience Over 7 Weeks
+                What We'll Experience Over 7 Weeks
               </h2>
 
               {/* Image: TSFW Journey */}
@@ -401,7 +401,7 @@ export default function ForgersCohort() {
                   <div>
                     <h3 className="text-xl font-serif text-stone-800 mb-2">Identify the Real Stones</h3>
                     <p className="text-stone-700">
-                      Not just the ones you talk about publicly—the actual weight you're carrying right now
+                      Not just the ones we talk about publicly—the actual weight we're carrying right now
                     </p>
                   </div>
                 </div>
@@ -437,7 +437,7 @@ export default function ForgersCohort() {
                   <div>
                     <h3 className="text-xl font-serif text-stone-800 mb-2">Explore Biography, Biology, and Leadership</h3>
                     <p className="text-stone-700">
-                      How your past, your body, and your leadership are already entangled—and how to work with that instead of against it
+                      How our past, our bodies, and our leadership are already entangled—and how to work with that instead of against it
                     </p>
                   </div>
                 </div>
@@ -447,9 +447,9 @@ export default function ForgersCohort() {
                     5
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif text-stone-800 mb-2">Build Your Stone Map</h3>
+                    <h3 className="text-xl font-serif text-stone-800 mb-2">Build Our Stone Map</h3>
                     <p className="text-stone-700">
-                      A living view of the responsibilities, relationships, and creative work that truly belong in your field
+                      A living view of the responsibilities, relationships, and creative work that truly belong in one's field
                     </p>
                   </div>
                 </div>
@@ -461,7 +461,7 @@ export default function ForgersCohort() {
                   <div>
                     <h3 className="text-xl font-serif text-stone-800 mb-2">Forge a Leadership Path</h3>
                     <p className="text-stone-700">
-                      You can stand on with integrity, not just velocity
+                      One we can stand on with integrity, not just velocity
                     </p>
                   </div>
                 </div>
@@ -516,7 +516,7 @@ export default function ForgersCohort() {
                   This cohort is held inside a clear agreement: <strong>confidentiality</strong>, <strong>non-judgment</strong>, <strong>presence over performance</strong>, no extraction or selling, and the right to protect the field if someone repeatedly breaks the container.
                 </p>
                 <p className="text-lg text-stone-700 leading-relaxed">
-                  You're not here to impress anyone. You're here to meet your stones honestly.
+                  We're not here to impress anyone. We're here to meet our stones honestly.
                 </p>
               </div>
 
@@ -683,7 +683,7 @@ export default function ForgersCohort() {
                       <strong>Investment:</strong> $2,200 USD
                     </p>
                     <p className="text-sm text-stone-700">
-                      <strong>Next Cohort:</strong> January 18, 2025
+                      <strong>Next Cohort:</strong> January 18, 2026
                     </p>
                     <p className="text-sm text-stone-700">
                       <strong>Spots Remaining:</strong> Limited to 22 founders
@@ -723,7 +723,7 @@ export default function ForgersCohort() {
               </div>
 
               <p className="text-center text-stone-500 text-sm">
-                <GlossaryTooltip term="Trust">Trust is the cheat code</GlossaryTooltip>. If you recognize yourself in this work, you belong here.
+                <GlossaryTooltip term="Trust">Trust is the cheat code</GlossaryTooltip>. If we recognize ourselves in this work, we belong here.
               </p>
             </div>
           </div>
@@ -772,7 +772,7 @@ export default function ForgersCohort() {
                 Ready to Begin?
               </h2>
               <p className="text-xl text-stone-600 mb-8">
-                The stone solidifies as you step. <GlossaryTooltip term="Trust">Trust</GlossaryTooltip> that the path forms beneath your feet.
+                The stone solidifies as we step. <GlossaryTooltip term="Trust">Trust</GlossaryTooltip> that the path forms beneath our feet.
               </p>
               <Link href="/archetype-quiz">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-10 py-6">
