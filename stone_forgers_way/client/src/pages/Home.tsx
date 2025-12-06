@@ -28,7 +28,7 @@ export default function Home() {
     <Layout showNav={false}>
       <SEO
         title="The Stone Forger's Way :: Move from Chaos to Coherence"
-        description="Are you aware of how many stones you are carrying? Their weight is your opportunity. Learn practices to move from anxious chaos to conscious creation."
+        description="Are we aware of how many stones we are carrying? Their weight is our opportunity. Practices to move from anxious chaos to conscious creation."
         image="/stone-carrier.png"
         type="website"
       />
@@ -127,30 +127,30 @@ export default function Home() {
             {/* Headline */}
             <div className="text-center space-y-6">
               <h1 className="text-4xl md:text-6xl font-serif text-stone-800 leading-tight">
-                Are You Aware of How Many Stones<br />You Are Carrying?
+                Are We Aware of How Many Stones<br />We Are Carrying?
               </h1>
 
               <p className="text-xl md:text-2xl text-amber-700 leading-relaxed max-w-3xl mx-auto">
-                Their weight is your opportunity. Welcome to <strong>The Stone Forger's Way</strong> :: an Earth-optimized grounding practice for moving from audible chaos to clarified coherence
+                Their weight is our opportunity. Welcome to <strong>The Stone Forger's Way</strong> :: an Earth-optimized grounding practice for moving from audible chaos to clarified coherence
               </p>
             </div>
 
             {/* Body Copy */}
             <div className="bg-white/80 backdrop-blur p-8 md:p-12 rounded-2xl shadow-xl max-w-3xl mx-auto space-y-6 text-lg leading-relaxed text-stone-700">
               <p>
-                You know the feeling. The invisible weight. The constant busyness that somehow leads nowhere.
+                We know the feeling. The invisible weight. The constant busyness that somehow leads nowhere.
                 The exhaustion of carrying past regrets, future anxieties, and unfulfilled obligations—all
-                swinging chaotically with every step you take.
+                swinging chaotically with every step we take.
               </p>
               <p>
                 This is <GlossaryTooltip term="The Stone Carrier">The Stone Carrier</GlossaryTooltip>. Every human
-                knows this weight. The question is: what will you do with it?
+                knows this weight. The question is: what will we do with it?
               </p>
               <p>
                 <strong>The Stone Forger's Way</strong> offers a path :: a temporal approach to conscious creation
                 that draws from ancient wisdom, modern science, and Earth's most grounding force—stone itself.
-                This practice teaches you to transform weight into opportunity. To <GlossaryTooltip term="Trust">trust</GlossaryTooltip> that
-                the <GlossaryTooltip term="Stepping Stone">stone solidifies as you step</GlossaryTooltip>.
+                This practice invites us to transform weight into opportunity. To <GlossaryTooltip term="Trust">trust</GlossaryTooltip> that
+                the <GlossaryTooltip term="Stepping Stone">stone solidifies as we step</GlossaryTooltip>.
               </p>
             </div>
 
@@ -177,7 +177,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 1: The Shift You're Seeking */}
+      {/* Section 1: The Shift We're Seeking */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -209,7 +209,7 @@ export default function Home() {
                 <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Temporal Mastery</h3>
                 <p className="text-stone-700 leading-relaxed">
                   Stop chasing time. Learn <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>—the art of growing
-                  beautifully along <GlossaryTooltip term="The Trellis and the Vine">the structure of time</GlossaryTooltip>. Build systems that work while you rest.
+                  beautifully along <GlossaryTooltip term="The Trellis and the Vine">the structure of time</GlossaryTooltip>. Build systems that work while we rest.
                 </p>
               </div>
 
@@ -220,8 +220,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Energy Protection</h3>
                 <p className="text-stone-700 leading-relaxed">
-                  Develop discernment. Ask "Is this mine to carry?" before reacting. Protect your creative energy.
-                  Choose your battles consciously.
+                  Develop discernment. Ask "Is this mine to carry?" before reacting. Protect our creative energy.
+                  Choose our battles consciously.
                 </p>
               </div>
             </div>
@@ -294,7 +294,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 3: Where This Practice Meets You */}
+      {/* Section 3: Where This Practice Meets Us */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -302,12 +302,12 @@ export default function Home() {
               This Works For
             </h2>
             <p className="text-xl text-stone-600 text-center max-w-2xl mx-auto mb-16">
-              Your life, your practice, your path
+              Our lives, our practice, our path
             </p>
 
             <p className="text-lg text-stone-700 text-center max-w-3xl mx-auto mb-12 leading-relaxed">
-              Whether you're navigating work deadlines, relationship dynamics, creative blocks, plant medicine integration,
-              cognitive wellness, or spiritual practice—these archetypes and frameworks meet you where you are.
+              Whether we're navigating work deadlines, relationship dynamics, creative blocks, plant medicine integration,
+              cognitive wellness, or spiritual practice—these archetypes and frameworks meet us where we are.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -322,7 +322,7 @@ export default function Home() {
               <div className="bg-stone-50 p-6 rounded-xl">
                 <h4 className="text-lg font-medium text-stone-800 mb-2">Relationships & Boundaries</h4>
                 <p className="text-sm text-stone-600 leading-relaxed">
-                  Practice discernment. Protect your energy. Recognize what's yours to carry and what isn't. Create healthy containers.
+                  Practice discernment. Protect our energy. Recognize what's ours to carry and what isn't. Create healthy containers.
                 </p>
               </div>
 
@@ -330,7 +330,7 @@ export default function Home() {
                 <h4 className="text-lg font-medium text-stone-800 mb-2">Creative Practice</h4>
                 <p className="text-sm text-stone-600 leading-relaxed">
                   Access <GlossaryTooltip term="Flow State">flow states</GlossaryTooltip>. Trust the materialization process. Build
-                  systems that support your creative work even while you rest.
+                  systems that support our creative work even while we rest.
                 </p>
               </div>
 
@@ -345,7 +345,7 @@ export default function Home() {
                 <h4 className="text-lg font-medium text-stone-800 mb-2">Cognitive Wellness</h4>
                 <p className="text-sm text-stone-600 leading-relaxed">
                   Break repetitive <GlossaryTooltip term="Toroidal Binding">thought patterns</GlossaryTooltip>. Achieve neurological
-                  coherence. Master your relationship with time and attention.
+                  coherence. Master our relationship with time and attention.
                 </p>
               </div>
 
@@ -378,7 +378,7 @@ export default function Home() {
                 </div>
                 <h4 className="text-lg font-medium text-stone-800 mb-3">Feel the Stones</h4>
                 <p className="text-sm text-stone-600 leading-relaxed mb-4">
-                  Pause. Acknowledge the weight you carry—the worries, the obligations, the regrets—without trying
+                  Pause. Acknowledge the weight we carry—the worries, the obligations, the regrets—without trying
                   to fix or judge them. Validation is the first step to freedom.
                 </p>
                 <Link href="/practices">
@@ -394,7 +394,7 @@ export default function Home() {
                 </div>
                 <h4 className="text-lg font-medium text-stone-800 mb-3">The One Stone</h4>
                 <p className="text-sm text-stone-600 leading-relaxed mb-4">
-                  Look at your swinging cloud of obligations. Choose just one. Vow to give it full, undivided attention
+                  Look at our swinging cloud of obligations. Choose just one. Vow to give it full, undivided attention
                   for five minutes. Let the others swing. This is the beginning of mastery.
                 </p>
                 <Link href="/practices">
@@ -411,7 +411,7 @@ export default function Home() {
                 <h4 className="text-lg font-medium text-stone-800 mb-3">The Silent Check</h4>
                 <p className="text-sm text-stone-600 leading-relaxed mb-4">
                   Before reacting to any request or obligation, pause and ask: "Is this mine to carry?" This is
-                  your shield—the practice of discernment that protects your energy.
+                  our shield—the practice of discernment that protects our energy.
                 </p>
                 <Link href="/practices">
                   <span className="text-sm text-amber-700 hover:text-amber-800 font-medium cursor-pointer">
@@ -499,10 +499,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-6">
-              Which Archetype Are You?
+              Which Archetype Are We?
             </h2>
             <p className="text-xl text-stone-600 text-center max-w-2xl mx-auto mb-12">
-              Take the journey :: Understanding your current archetype helps you see where you are and where you're growing
+              Take the journey :: Understanding our current archetype helps us see where we are and where we're growing
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
