@@ -187,25 +187,25 @@ export default function ForgersCohort() {
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
                     <p className="text-stone-700">
-                      Leading teams, raising capital, and holding relationships and responsibilities that all feel urgent at once
+                      You're leading teams, raising capital, and holding relationships and responsibilities that all feel urgent at once
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
                     <p className="text-stone-700">
-                      Feel the weight of your decisions in your <GlossaryTooltip term="Somatic">body</GlossaryTooltip>, not just your calendar
+                      You feel the weight of your decisions in your <GlossaryTooltip term="Somatic">body</GlossaryTooltip>, not just your calendar
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
                     <p className="text-stone-700">
-                      Committed to <GlossaryTooltip term="Inner Work">inner work</GlossaryTooltip> as seriously as you are to product, revenue, or fundraising
+                      You're committed to <GlossaryTooltip term="Inner Work">inner work</GlossaryTooltip> as seriously as you are to product, revenue, or fundraising
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
                     <p className="text-stone-700">
-                      Want a space where you are seen as human first, founder second
+                      You want a space where you're seen as human first, founder second
                     </p>
                   </div>
                 </div>

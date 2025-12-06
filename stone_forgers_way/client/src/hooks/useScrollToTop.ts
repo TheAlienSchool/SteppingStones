@@ -9,7 +9,7 @@ export function useScrollToTop() {
     if (window.location.hash) {
       return;
     }
-    // Smooth scroll to top on route change
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Instant scroll to top on route change
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [location]);
 }
