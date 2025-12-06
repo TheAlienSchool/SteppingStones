@@ -1,15 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Calendar, Users, Heart, Check, ChevronDown, ChevronUp } from "lucide-react";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
+import { getLatestQuizResult } from "@/lib/archetypeQuiz";
 
 export default function ForgersCohort() {
   const [showWhoThisIsFor, setShowWhoThisIsFor] = useState(false);
   const [showFAQ, setShowFAQ] = useState<{ [key: number]: boolean }>({});
   const [quizCompleted, setQuizCompleted] = useState(false);
+
+  // Check for quiz completion on mount and listen for changes
+  useEffect(() => {
+    const checkQuizCompletion = () => {
+      const result = getLatestQuizResult();
+      setQuizCompleted(result !== null);
+    };
+
+    // Check on mount
+    checkQuizCompletion();
+
+    // Listen for storage changes (e.g., quiz completed in another tab or on this page)
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'stone_forgers_way_quiz_results') {
+        checkQuizCompletion();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
 
   const toggleFAQ = (index: number) => {
     setShowFAQ(prev => ({ ...prev, [index]: !prev[index] }));
