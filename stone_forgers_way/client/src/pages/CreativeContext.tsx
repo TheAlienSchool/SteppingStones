@@ -82,7 +82,7 @@ const reflections = [
 const cohortProgram = {
   overview: "7-week intensive for growth-stage founders carrying many stones",
   url: "/forgers-cohort",
-  nextCohort: "January 18, 2025",
+  nextCohort: "January 18, 2026",
   investment: "$2,200 USD",
   maxSize: 22,
   format: "Weekly 90-minute live sessions on video, guided practices, journaling prompts, between-session reflections",
@@ -506,7 +506,7 @@ function buildContextObject() {
         { path: "/reflections", name: "Reflections", description: "11 deep-dive essays on philosophy, practice, science" },
         { path: "/social", name: "Social Content Arsenal", description: "35+ shareable cards optimized for social media" },
         { path: "/voices", name: "Voices from The Way", description: "Testimonials from practitioners with archetype-aligned attributions" },
-        { path: "/forgers-cohort", name: "The Stone Forger's Cohort", description: "7-week intensive for growth-stage founders carrying many stones. January 18, 2025" }
+        { path: "/forgers-cohort", name: "The Stone Forger's Cohort", description: "7-week intensive for growth-stage founders carrying many stones. January 18, 2026" }
       ],
       lineage: [
         { path: "/samuel-r-harris", name: "Samuel R. Harris", description: "Kamau's grandfather, chemist and minister" },

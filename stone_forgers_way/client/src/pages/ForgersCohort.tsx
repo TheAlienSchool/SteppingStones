@@ -110,7 +110,7 @@ export default function ForgersCohort() {
               <div className="flex justify-center mb-6">
                 <div className="inline-flex items-center gap-2 bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-medium">
                   <Calendar className="w-4 h-4" />
-                  Next Cohort: January 18, 2025
+                  Next Cohort: January 18, 2026
                 </div>
               </div>
 
@@ -683,7 +683,7 @@ export default function ForgersCohort() {
                       <strong>Investment:</strong> $2,200 USD
                     </p>
                     <p className="text-sm text-stone-700">
-                      <strong>Next Cohort:</strong> January 18, 2025
+                      <strong>Next Cohort:</strong> January 18, 2026
                     </p>
                     <p className="text-sm text-stone-700">
                       <strong>Spots Remaining:</strong> Limited to 22 founders
