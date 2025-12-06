@@ -46,6 +46,7 @@ export function useNavigation(): NavGroup[] {
     },
     { label: "Reflections", href: "/reflections" },
     { label: "Social Content", href: "/social" },
+    { label: "Forger's Cohort", href: "/forgers-cohort" },
     {
       label: "Lineage",
       items: [
