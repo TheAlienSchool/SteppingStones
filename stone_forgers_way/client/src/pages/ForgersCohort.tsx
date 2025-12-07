@@ -117,7 +117,7 @@ export default function ForgersCohort() {
               {/* Central Image */}
               <div className="flex justify-center mb-8">
                 <img
-                  src="/TSFW-Stone.png"
+                  src="/TSWF-Stone.png"
                   alt="The Stone Forger's Way - What is a Stone?"
                   className="w-full max-w-2xl rounded-xl shadow-2xl"
                 />
