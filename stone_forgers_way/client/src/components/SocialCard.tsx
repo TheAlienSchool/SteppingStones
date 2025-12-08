@@ -110,12 +110,23 @@ export default function SocialCard({
         className={`${formatInfo.width} ${formatInfo.aspect} ${gradient} rounded-lg p-8 flex flex-col items-center justify-center ${textColor} shadow-lg overflow-hidden`}
       >
         <style>{`
-          @supports (font-family: futura-pt) {
-            #${id} p, #${id} h3 {
-              font-family: 'futura-pt', sans-serif;
-              line-height: 1.4;
-              word-spacing: 0.1em;
+          @supports (font-family: le-monde-livre) {
+            #${id} p {
+              font-family: 'le-monde-livre', serif;
+              line-height: 1.5;
+              word-spacing: 0.05em;
               text-rendering: optimizeLegibility;
+              font-weight: 400;
+            }
+            #${id} h3 {
+              font-family: 'le-monde-livre', serif;
+              font-weight: 600;
+              line-height: 1.4;
+              text-rendering: optimizeLegibility;
+            }
+            #${id} em {
+              font-style: italic;
+              font-weight: 400;
             }
           }
         `}</style>

@@ -46,7 +46,7 @@ export default function Social() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Share2 className="w-4 h-4" />
-                Content Arsenal
+                A Way to Share
               </div>
               <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-6">
                 Share the Way
@@ -102,13 +102,13 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        A Stone appears the moment attention gathers.
+                        A Stone appears the moment attention&nbsp;gathers.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The practice begins the moment we notice.
+                        The practice begins the moment we&nbsp;notice.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Way deepens the moment we choose to shape it.
+                        The Way deepens the moment we choose to shape&nbsp;it.
                       </p>
                     </>
                   }
@@ -124,13 +124,13 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Overwhelm often signals a cluster of unseen Stones.
+                        Overwhelm often signals a cluster of unseen&nbsp;Stones.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Recognition softens the weight.
+                        Recognition softens the&nbsp;weight.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Presence rearranges the path.
+                        Presence rearranges the&nbsp;path.
                       </p>
                     </>
                   }
@@ -146,13 +146,13 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Most reactions are just Stones thrown too quickly.
+                        Most reactions are just Stones thrown too&nbsp;quickly.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Most regrets are Stones carried too long.
+                        Most regrets are Stones carried too&nbsp;long.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Forging offers a third way forward.
+                        Forging offers a third way&nbsp;forward.
                       </p>
                     </>
                   }
@@ -168,10 +168,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        A Forger is not someone with fewer responsibilities.
+                        A Forger is not someone with fewer&nbsp;responsibilities.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        A Forger is someone who meets each moment with structure, steadiness, and choice.
+                        A Forger is someone who meets each moment with structure, steadiness, and&nbsp;choice.
                       </p>
                     </>
                   }
@@ -187,13 +187,13 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The mind rushes.
+                        The mind&nbsp;rushes.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Stone waits.
+                        The Stone&nbsp;waits.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Way invites a pace where clarity can find us.
+                        The Way invites a pace where clarity can find&nbsp;us.
                       </p>
                     </>
                   }
@@ -209,10 +209,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Transformation rarely arrives through force.
+                        Transformation rarely arrives through&nbsp;force.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It begins when a single Stone is held with clean attention.
+                        It begins when a single Stone is held with clean&nbsp;attention.
                       </p>
                     </>
                   }
@@ -228,10 +228,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Many people confuse momentum with motion.
+                        Many people confuse momentum with&nbsp;motion.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Forging teaches the difference.
+                        Forging teaches the&nbsp;difference.
                       </p>
                     </>
                   }
@@ -247,13 +247,13 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Some Stones ask to be released.
+                        Some Stones ask to be&nbsp;released.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Some ask to be shaped.
+                        Some ask to be&nbsp;shaped.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Way begins with knowing which is which.
+                        The Way begins with knowing which is&nbsp;which.
                       </p>
                     </>
                   }
@@ -269,10 +269,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Trust is the Forger's quiet advantage.
+                        Trust is the Forger's quiet&nbsp;advantage.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It rearranges weight, restores rhythm, and reveals the next step without urgency.
+                        It rearranges weight, restores rhythm, and reveals the next step without&nbsp;urgency.
                       </p>
                     </>
                   }
@@ -288,7 +288,7 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        A day becomes lighter the moment a Stone receives a name.
+                        A day becomes lighter the moment a Stone receives a&nbsp;name.
                       </p>
                     </>
                   }
@@ -304,10 +304,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Creativity falters under unexamined weight.
+                        Creativity falters under unexamined&nbsp;weight.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It expands when each Stone is met as part of the path.
+                        It expands when each Stone is met as part of the&nbsp;path.
                       </p>
                     </>
                   }
@@ -323,16 +323,16 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Carrier accumulates.
+                        The Carrier&nbsp;accumulates.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Thrower reacts.
+                        The Thrower&nbsp;reacts.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Forger chooses.
+                        The Forger&nbsp;chooses.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Choice is where transformation starts.
+                        Choice is where transformation&nbsp;starts.
                       </p>
                     </>
                   }
@@ -348,10 +348,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Founders often mistake exhaustion for destiny.
+                        Founders often mistake exhaustion for&nbsp;destiny.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Sometimes it is simply a cluster of Stones asking for a steadier hand.
+                        Sometimes it is simply a cluster of Stones asking for a steadier&nbsp;hand.
                       </p>
                     </>
                   }
@@ -367,10 +367,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Presence is not the absence of chaos.
+                        Presence is not the absence of&nbsp;chaos.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It is the ability to shape one Stone inside it.
+                        It is the ability to shape one Stone inside&nbsp;it.
                       </p>
                     </>
                   }
@@ -386,10 +386,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Patience is not delay.
+                        Patience is not&nbsp;delay.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It is the architecture that allows a Stone to become something useful.
+                        It is the architecture that allows a Stone to become something&nbsp;useful.
                       </p>
                     </>
                   }
@@ -405,10 +405,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        If clarity feels distant, consider this:
+                        If clarity feels distant, consider&nbsp;this:
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Perhaps the next Stone is asking to be felt, not solved.
+                        Perhaps the next Stone is asking to be felt, not&nbsp;solved.
                       </p>
                     </>
                   }
@@ -424,13 +424,13 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Every Stone carries information.
+                        Every Stone carries&nbsp;information.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Most people silence it with speed.
+                        Most people silence it with&nbsp;speed.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Forgers listen.
+                        Forgers&nbsp;listen.
                       </p>
                     </>
                   }
@@ -446,10 +446,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        When life feels crowded, it is often the mind running ahead of the path.
+                        When life feels crowded, it is often the mind running ahead of the&nbsp;path.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Stones return us to what is real.
+                        Stones return us to what is&nbsp;real.
                       </p>
                     </>
                   }
@@ -465,10 +465,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        A meaningful life is seldom built in leaps.
+                        A meaningful life is seldom built in&nbsp;leaps.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It forms through quiet, deliberate forging.
+                        It forms through quiet, deliberate&nbsp;forging.
                       </p>
                     </>
                   }
@@ -484,10 +484,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Way does not promise fewer challenges.
+                        The Way does not promise fewer&nbsp;challenges.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It offers a clearer relationship to the ones already here.
+                        It offers a clearer relationship to the ones already&nbsp;here.
                       </p>
                     </>
                   }
@@ -503,7 +503,7 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Many breakthroughs begin with the courage to examine the Stone we've avoided.
+                        Many breakthroughs begin with the courage to examine the Stone we've&nbsp;avoided.
                       </p>
                     </>
                   }
@@ -519,10 +519,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Stone Forger's power is subtle:
+                        The Stone Forger's power is&nbsp;subtle:
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        We shape moments until moments begin shaping us.
+                        We shape moments until moments begin shaping&nbsp;us.
                       </p>
                     </>
                   }
@@ -538,13 +538,13 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Some burdens dissolve the moment they are acknowledged.
+                        Some burdens dissolve the moment they are&nbsp;acknowledged.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Others transform the moment they are shaped.
+                        Others transform the moment they are&nbsp;shaped.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Discernment is the bridge.
+                        Discernment is the&nbsp;bridge.
                       </p>
                     </>
                   }
@@ -560,10 +560,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The mind throws what the heart has not yet held.
+                        The mind throws what the heart has not yet&nbsp;held.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Forging reunites them.
+                        Forging reunites&nbsp;them.
                       </p>
                     </>
                   }
@@ -579,10 +579,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Creation becomes simpler when the Stone is singular.
+                        Creation becomes simpler when the Stone is&nbsp;singular.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Focus is a form of relief.
+                        Focus is a form of&nbsp;relief.
                       </p>
                     </>
                   }
@@ -601,7 +601,7 @@ export default function Social() {
                         When the path feels disordered, look not at the horizon—
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        look at the Stone beneath your hand.
+                        look at the Stone beneath your&nbsp;hand.
                       </p>
                     </>
                   }
@@ -617,10 +617,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Most people chase clarity.
+                        Most people chase&nbsp;clarity.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Forgers cultivate it.
+                        Forgers cultivate&nbsp;it.
                       </p>
                     </>
                   }
@@ -636,10 +636,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        A Stone never lies.
+                        A Stone never&nbsp;lies.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It reflects the truth of the moment without judgment.
+                        It reflects the truth of the moment without&nbsp;judgment.
                       </p>
                     </>
                   }
@@ -655,13 +655,13 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Stone Forger's Way is not about perfection.
+                        The Stone Forger's Way is not about&nbsp;perfection.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It is about relationship.
+                        It is about&nbsp;relationship.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Moment to moment. Stone to Stone.
+                        Moment to moment. Stone to&nbsp;Stone.
                       </p>
                     </>
                   }
@@ -677,19 +677,19 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        Every archetype carries wisdom.
+                        Every archetype carries&nbsp;wisdom.
                       </p>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        Carrier :: deep sensing
+                        Carrier :: deep&nbsp;sensing
                       </p>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        Thrower :: swift release
+                        Thrower :: swift&nbsp;release
                       </p>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        Forger :: intentional shaping
+                        Forger :: intentional&nbsp;shaping
                       </p>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        The work is never to judge—only to notice.
+                        The work is never to judge—only to&nbsp;notice.
                       </p>
                     </>
                   }
@@ -705,7 +705,7 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The world feels heavy until we learn how to hold one Stone well.
+                        The world feels heavy until we learn how to hold one Stone&nbsp;well.
                       </p>
                     </>
                   }
@@ -721,10 +721,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Forgers do not force flow.
+                        Forgers do not force&nbsp;flow.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        They prepare the conditions that allow flow to return.
+                        They prepare the conditions that allow flow to&nbsp;return.
                       </p>
                     </>
                   }
@@ -740,10 +740,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        A Stone becomes lighter when it belongs to the moment.
+                        A Stone becomes lighter when it belongs to the&nbsp;moment.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It becomes heavier when it belongs to the past.
+                        It becomes heavier when it belongs to the&nbsp;past.
                       </p>
                     </>
                   }
@@ -759,13 +759,13 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Growth happens quietly.
+                        Growth happens&nbsp;quietly.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Recognition happens suddenly.
+                        Recognition happens&nbsp;suddenly.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Forging happens exactly in between.
+                        Forging happens exactly in&nbsp;between.
                       </p>
                     </>
                   }
@@ -781,10 +781,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The next era of your life may begin with a single sentence:
+                        The next era of your life may begin with a single&nbsp;sentence:
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        "I am ready to see the Stone."
+                        "I am ready to see the&nbsp;Stone."
                       </p>
                     </>
                   }
@@ -800,10 +800,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Burnout often signals the absence of discernment.
+                        Burnout often signals the absence of&nbsp;discernment.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Forging restores alignment between capacity and truth.
+                        Forging restores alignment between capacity and&nbsp;truth.
                       </p>
                     </>
                   }
@@ -819,10 +819,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        The Stone Forger's Way does not ask for devotion.
+                        The Stone Forger's Way does not ask for&nbsp;devotion.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It asks for honesty.
+                        It asks for&nbsp;honesty.
                       </p>
                     </>
                   }
@@ -838,7 +838,7 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        A clear practice, repeated gently, becomes a path.
+                        A clear practice, repeated gently, becomes a&nbsp;path.
                       </p>
                     </>
                   }
@@ -854,16 +854,16 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        The first Stone teaches awareness.
+                        The first Stone teaches&nbsp;awareness.
                       </p>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        The second teaches patience.
+                        The second teaches&nbsp;patience.
                       </p>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        The third teaches mastery.
+                        The third teaches&nbsp;mastery.
                       </p>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        The Way teaches all three at once.
+                        The Way teaches all three at&nbsp;once.
                       </p>
                     </>
                   }
@@ -879,10 +879,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        Some transformations arrive not with revelation but with rhythm.
+                        Some transformations arrive not with revelation but with&nbsp;rhythm.
                       </p>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        The rhythm begins when we choose the next Stone and nothing more.
+                        The rhythm begins when we choose the next Stone and nothing&nbsp;more.
                       </p>
                     </>
                   }
