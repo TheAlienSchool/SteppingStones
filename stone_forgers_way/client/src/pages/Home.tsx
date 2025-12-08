@@ -110,7 +110,7 @@ export default function Home() {
       )}
 
       {/* Hero Section - Immediate Diagnosis & Validation */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden" aria-label="Hero section">
         <div className="absolute inset-0 bg-gradient-to-br from-stone-100 via-amber-50 to-stone-50"></div>
 
         <div className="container mx-auto px-4 relative z-10 py-24">
@@ -178,7 +178,7 @@ export default function Home() {
       </section>
 
       {/* Section 1: The Shift We're Seeking */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white" aria-label="From chaos to coherence">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-6">

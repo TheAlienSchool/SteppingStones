@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { glossaryTerms, categoryLabels, type GlossaryTerm } from "@/lib/glossaryData";
-import { Download, Copy, Check, Heart } from "lucide-react";
+import { Download, Copy, Check, Heart, Type, Palette } from "lucide-react";
 import { Link } from "wouter";
+import SocialCard from "@/components/SocialCard";
 
 // Reflection posts data (mirrored from Reflections.tsx for dynamic generation)
 const reflections = [
@@ -250,6 +251,53 @@ const infographicSpecs = {
 
 // Design system tokens
 const designSystem = {
+  typography: {
+    primary: {
+      name: "Le Monde Livre",
+      foundry: "Adobe Fonts (Typekit)",
+      url: "https://use.typekit.net/zao4tzt.css",
+      philosophy: "A refined serif typeface that brings warmth, sophistication, and contemplative grace to the work",
+      usage: {
+        body: {
+          family: "'le-monde-livre', serif",
+          weight: "400 (Book)",
+          lineHeight: "1.5",
+          wordSpacing: "0.05em",
+          textRendering: "optimizeLegibility",
+          context: "All body text, paragraphs, and descriptive content"
+        },
+        headings: {
+          family: "'le-monde-livre', serif",
+          weight: "600 (Demi)",
+          lineHeight: "1.4",
+          textRendering: "optimizeLegibility",
+          context: "H2, H3, card titles, emphasis text"
+        },
+        glossaryTerms: {
+          family: "'le-monde-livre', serif",
+          weight: "400 (Book)",
+          style: "italic",
+          context: "Glossary terms, inline definitions, cited references"
+        }
+      },
+      kerning: {
+        bodyText: "Natural optical kerning (no letter-spacing) for professional readability",
+        attributionLines: "letter-spacing: 0.05em for subtle text expansion (text-sm paragraphs in social cards)",
+        watermark: "tracking-wider (Tailwind) for visual hierarchy and emphasis"
+      },
+      implementation: "Applied via @supports (font-family: le-monde-livre) in SocialCard.tsx; fallback to serif",
+      loadingStrategy: "Non-blocking async via Typekit; serif fallback ensures content readable while loading"
+    },
+    fallback: {
+      primary: "Georgia, serif",
+      reasoning: "Georgia is a professional serif with similar stroke architecture to Le Monde Livre; maintains design intent if font fails to load"
+    },
+    legacyBrand: {
+      font: "Georgia serif",
+      usage: "'The Stone Forger's Way' logo text",
+      reasoning: "Original branding typeface; maintained for logo consistency and lineage integrity"
+    }
+  },
   colors: {
     primary: {
       stone: {
@@ -289,6 +337,53 @@ const designSystem = {
       accent: "amber-600, amber-700 (links, highlights)",
       muted: "stone-400, stone-500 (secondary text)"
     }
+  },
+  socialCardSystem: {
+    overview: "Shareable wisdom cards available in 3 formats (square 1:1, story 9:16, landscape 16:9) across 6 categories with light/dark themes",
+    location: "/social - 'A Way to Share' section under Explore menu",
+    headerBadge: "Changed from 'Content Arsenal' → 'A Way to Share'",
+    formats: {
+      square: { label: "1:1", dimensions: "1080x1080px", use: "Instagram feed, LinkedIn, social media tile" },
+      story: { label: "9:16", dimensions: "1080x1920px", use: "Instagram Stories, TikTok, Reels, vertical displays" },
+      landscape: { label: "16:9", dimensions: "1200x675px", use: "Twitter/X, LinkedIn articles, blog headers" }
+    },
+    categories: {
+      quote: {
+        count: "40 wisdom quotes (recently updated, no numbering)",
+        philosophy: "Powerful insights and crystallized learnings from The Stone Forger's Way practice",
+        typography: "Le Monde Livre 400 for body, 600 for emphasis; widow/orphan prevention via &nbsp; before final words",
+        content: "Original wisdom spanning themes of trust, creation, awareness, transformation, and path-forging"
+      },
+      reflection: {
+        count: "6 highlights from major essays",
+        philosophy: "Quotes drawn from published reflection essays with attribution to source",
+        typography: "Le Monde Livre with matching kerning system; attribution lines with letter-spacing: 0.05em",
+        content: "Featured excerpts from 'Trust is The Cheat Code', 'Money as Teacher', 'Terma in Action', etc."
+      },
+      glossary: {
+        count: "6 term definitions",
+        philosophy: "Key glossary terms presented as cards for learning and reference",
+        content: "Simple Idea + Lived Experience structure; italicized terms for visual distinction"
+      },
+      practice: {
+        count: "4 micro-practice cards",
+        philosophy: "Downloadable practice summaries for daily integration",
+        content: "One card per archetype practice (Feel the Stones, The Shield Check, The One Stone, Trust Breath)"
+      },
+      archetype: {
+        count: "4 archetype cards",
+        philosophy: "Visual introduction to the four archetypal states",
+        content: "Stone Carrier, Stone Thrower, Conscious Forger, Stone Forger (integrated shadow)"
+      },
+      voice: {
+        count: "5 testimonial cards",
+        philosophy: "Authentic practitioner voices sharing transformation moments",
+        attribution: "Archetype-aligned (e.g., 'A Stone Carrier feeling the weight') instead of personal names",
+        channels: "Downloadable on /social; featured on /voices page; 3 spotlighted on homepage"
+      }
+    },
+    downloadFeature: "All cards downloadable as PNG images via html2canvas for easy social sharing",
+    widowOrphanPrevention: "Applied systematically across all 40 quote cards and 6 reflection highlights using &nbsp; before final key words to ensure professional text wrapping on downloads"
   },
   socialCardGradients: {
     quote: {
@@ -443,18 +538,14 @@ const voiceGuidelines = {
   ],
   testimonials: {
     philosophy: "Voices from The Way - field reports from practitioners experiencing the work",
-    attribution: "Archetype-aligned instead of names (e.g., 'A Stone Thrower recognizing the teaching' rather than personal names)",
+    attribution: "Archetype-aligned instead of names (e.g., 'A Stone Forger entering contemplation' rather than personal names)",
     channels: {
       social: "/social - 5 voice cards downloadable for sharing",
       homepage: "/ - 3 featured testimonials in Cloud Dancer gradients",
       voices: "/voices - Dedicated page with comprehensive testimonial showcase"
     },
     approach: "Authentic practitioner feedback showcasing real transformation moments, grounded in archetype framework for consistency",
-    examples: [
-      "'Trust is the cheat code because it bypasses the tyranny of the rational mind...' — A Stone Thrower recognizing the teaching",
-      "'The backache is the somatic cost of throwing stones while keeping the shield up...' — A Stone Carrier feeling the weight",
-      "'I have already started putting down stones. Not throwing them, not carrying them—actually forging my path forward.' — A Conscious Forger in motion"
-    ]
+    recentUpdate: "Attribution language shifted from 'A Stone Thrower recognizing the teaching' to 'A Stone Forger entering contemplation' to honor the transformative arc of the practice"
   },
   conversionStrategy: {
     primary: "Archetype quiz (engagement + personalization)",
@@ -539,12 +630,23 @@ function buildContextObject() {
     stonePhilosophy,
     infographicSpecs,
     socialCards: {
-      total: 35,
-      categories: designSystem.socialCardsSystem.categories,
-      formats: designSystem.socialCardsSystem.formats,
+      overview: "35+ shareable wisdom cards across 6 categories (quote, reflection, glossary, practice, archetype, voice) in 3 formats (square 1:1, story 9:16, landscape 16:9)",
+      location: "/social - Under 'Explore' menu as 'A Way to Share'",
+      count: {
+        total: 40,
+        quote: 40,
+        reflection: 6,
+        glossary: 6,
+        practice: 4,
+        archetype: 4,
+        voice: 5
+      },
+      typography: designSystem.typography,
+      categories: designSystem.socialCardSystem.categories,
+      formats: designSystem.socialCardSystem.formats,
       gradients: designSystem.socialCardGradients,
-      branding: designSystem.socialCardsSystem.branding,
-      technology: designSystem.socialCardsSystem.technology
+      downloadFeature: "PNG export via html2canvas; all cards downloadable for social sharing",
+      widowOrphanOptimization: "Systematic &nbsp; placement before final words on all quote and reflection cards for professional text wrapping"
     },
     testimonials: voiceGuidelines.testimonials,
     glossary: glossaryTerms.map((term: GlossaryTerm) => ({
@@ -617,7 +719,7 @@ export default function CreativeContext() {
     { id: "overview", label: "Overview" },
     { id: "design", label: "Design System" },
     { id: "voice", label: "Voice & Language" },
-    { id: "social", label: "Social Cards & Voices" },
+    { id: "social", label: "Social Cards" },
     { id: "cohort", label: "Cohort Program" },
     { id: "stones", label: "Stone Philosophy" },
     { id: "infographics", label: "Infographics" },
@@ -754,20 +856,71 @@ export default function CreativeContext() {
 
                     {/* Typography */}
                     <div>
-                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Typography</h3>
-                      <div className="bg-stone-50 p-6 rounded-lg space-y-4">
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Typography System</h3>
+                      <div className="bg-amber-50 p-6 rounded-lg space-y-6">
                         <div>
-                          <p className="text-sm font-medium text-stone-600 mb-2">Fonts</p>
-                          <p className="text-stone-700"><strong>Headings:</strong> {designSystem.typography.fonts.serif}</p>
-                          <p className="text-stone-700"><strong>Body:</strong> {designSystem.typography.fonts.sans}</p>
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-stone-600 mb-2">Scale</p>
-                          {Object.entries(designSystem.typography.scale).map(([cls, desc]) => (
-                            <p key={cls} className="text-sm text-stone-600">
-                              <code className="bg-stone-200 px-1 rounded">{cls}</code> :: {desc}
+                          <h4 className="font-semibold text-stone-800 mb-3 flex items-center gap-2">
+                            <Type className="w-5 h-5 text-amber-600" />
+                            Primary Typeface
+                          </h4>
+                          <div className="bg-white p-4 rounded-lg space-y-3">
+                            <p className="text-lg font-serif text-stone-800 italic">
+                              {designSystem.typography.primary.name}
                             </p>
-                          ))}
+                            <div className="space-y-2">
+                              <p className="text-sm text-stone-600">
+                                <strong>Foundry:</strong> {designSystem.typography.primary.foundry}
+                              </p>
+                              <p className="text-sm text-stone-600">
+                                <strong>Philosophy:</strong> {designSystem.typography.primary.philosophy}
+                              </p>
+                              <p className="text-sm text-stone-600">
+                                <strong>Load Strategy:</strong> {designSystem.typography.primary.loadingStrategy}
+                              </p>
+                            </div>
+                            
+                            <div className="bg-stone-50 p-3 rounded border border-stone-200 space-y-3">
+                              <p className="text-sm font-semibold text-stone-700">Weight & Style Usage:</p>
+                              <div className="space-y-2 text-sm">
+                                <div>
+                                  <p className="text-stone-800 font-serif" style={{fontWeight: 400, lineHeight: '1.5'}}>
+                                    <strong>Body Text (400 Book, line-height 1.5):</strong> All body paragraphs, descriptions, and flowing content
+                                  </p>
+                                </div>
+                                <div>
+                                  <p className="text-stone-800 font-serif" style={{fontWeight: 600, lineHeight: '1.4'}}>
+                                    <strong>Headings (600 Demi, line-height 1.4):</strong> H2, H3, titles, and emphasis text
+                                  </p>
+                                </div>
+                                <div>
+                                  <p className="text-stone-800 font-serif italic" style={{fontWeight: 400}}>
+                                    <strong>Glossary Terms (400 Italic):</strong> Inline definitions and cited references
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="bg-stone-50 p-3 rounded border border-stone-200 space-y-2">
+                              <p className="text-sm font-semibold text-stone-700">Kerning & Spacing:</p>
+                              <ul className="text-sm text-stone-600 space-y-1 list-disc list-inside">
+                                <li><strong>Body Text:</strong> Natural optical kerning (no letter-spacing)</li>
+                                <li><strong>Attribution Lines:</strong> letter-spacing 0.05em for subtle expansion</li>
+                                <li><strong>Watermark/Branding:</strong> tracking-wider for visual emphasis</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold text-stone-800 mb-3">Fallback & Legacy</h4>
+                          <div className="space-y-2">
+                            <p className="text-sm">
+                              <strong className="text-stone-800">Fallback Font:</strong> Georgia, serif (maintains design intent if Typekit fails)
+                            </p>
+                            <p className="text-sm">
+                              <strong className="text-stone-800">Logo/Brand Text:</strong> Georgia serif maintained for "The Stone Forger's Way" branding (lineage integrity)
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -874,29 +1027,56 @@ export default function CreativeContext() {
               {/* Social Cards & Voices */}
               {activeSection === "social" && (
                 <section>
-                  <h2 className="text-3xl font-serif text-stone-800 mb-6 leading-tight">Social Cards & Voices</h2>
+                  <h2 className="text-3xl font-serif text-stone-800 mb-6 leading-tight">Social Cards System</h2>
 
                   <div className="space-y-8">
                     {/* Overview */}
                     <div className="bg-amber-50 p-6 rounded-lg">
                       <p className="text-lg text-stone-700 mb-4">
-                        <strong>35+ shareable cards</strong> optimized for social media, available at{" "}
-                        <Link href="/social" className="text-amber-700 hover:text-amber-800 underline">/social</Link>.
-                        Each card is downloadable as high-quality PNG with light/dark theme options.
+                        <strong>40+ shareable cards</strong> across 6 categories, optimized for social media at{" "}
+                        <Link href="/social" className="text-amber-700 hover:text-amber-800 underline">/social</Link>{" "}
+                        under "A Way to Share" (Explore menu). Each card is downloadable as high-quality PNG with light/dark theme options in 3 formats.
                       </p>
-                      <p className="text-stone-600">
-                        Technology: html2canvas for image generation, responsive grid, Cloud Dancer color philosophy integrated throughout.
-                      </p>
+                      <div className="bg-white p-4 rounded-lg space-y-2 text-sm">
+                        <p className="text-stone-600">
+                          <strong>Typography:</strong> Le Monde Livre 400 (Book) for body text with natural optical kerning; attribution lines with subtle letter-spacing: 0.05em; watermark with tracking-wider
+                        </p>
+                        <p className="text-stone-600">
+                          <strong>Optimization:</strong> Widow/orphan prevention applied systematically across all quote and reflection cards using &nbsp; placement
+                        </p>
+                        <p className="text-stone-600">
+                          <strong>Technology:</strong> html2canvas for PNG generation, responsive grid, Cloud Dancer color philosophy integrated
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Formats */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Available Formats</h3>
+                      <div className="grid md:grid-cols-3 gap-4">
+                        {Object.entries(designSystem.socialCardSystem.formats).map(([format, data]) => (
+                          <div key={format} className="bg-white p-4 rounded-lg border border-stone-200">
+                            <p className="font-semibold text-stone-800 mb-2">{format.charAt(0).toUpperCase() + format.slice(1)}</p>
+                            <p className="text-sm text-stone-600 mb-2"><strong>Aspect Ratio:</strong> {data.label}</p>
+                            <p className="text-sm text-stone-600 mb-2"><strong>Dimensions:</strong> {data.dimensions}</p>
+                            <p className="text-sm text-amber-700"><strong>Use:</strong> {data.use}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
 
                     {/* Categories */}
                     <div>
                       <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Card Categories</h3>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {Object.entries(designSystem.socialCardsSystem.categories).map(([category, description]) => (
-                          <div key={category} className="bg-white p-4 rounded-lg border border-stone-200">
-                            <h4 className="font-medium text-stone-800 capitalize mb-2">{category}</h4>
-                            <p className="text-sm text-stone-600">{description}</p>
+                      <div className="space-y-4">
+                        {Object.entries(designSystem.socialCardSystem.categories).map(([category, data]) => (
+                          <div key={category} className="bg-stone-50 p-4 rounded-lg border border-stone-200">
+                            <div className="flex items-start justify-between mb-2">
+                              <h4 className="font-semibold text-stone-800 capitalize">{category}</h4>
+                              <span className="inline-block px-2 py-1 bg-amber-100 text-amber-800 text-xs rounded-full">{data.count}</span>
+                            </div>
+                            <p className="text-sm text-stone-600 mb-2"><strong>Philosophy:</strong> {data.philosophy}</p>
+                            <p className="text-sm text-stone-600"><strong>Typography:</strong> {data.typography}</p>
                           </div>
                         ))}
                       </div>
@@ -904,16 +1084,20 @@ export default function CreativeContext() {
 
                     {/* Gradients */}
                     <div>
-                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Card Gradients</h3>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Card Gradients & Theming</h3>
                       <div className="space-y-3">
                         {Object.entries(designSystem.socialCardGradients).map(([category, data]) => (
-                          <div key={category} className="bg-stone-50 p-4 rounded">
-                            <p className="font-medium text-stone-800 capitalize mb-2">{category}</p>
-                            <div className="text-sm space-y-1">
-                              <p className="text-stone-600"><strong>Light:</strong> <code className="bg-stone-200 px-1 rounded">{data.light}</code></p>
-                              <p className="text-stone-600"><strong>Dark:</strong> <code className="bg-stone-200 px-1 rounded">{data.dark}</code></p>
-                              {data.philosophy && <p className="text-stone-500 italic mt-2">{data.philosophy}</p>}
-                              {data.purpose && <p className="text-stone-500 italic mt-2">{data.purpose}</p>}
+                          <div key={category} className="bg-white p-4 rounded-lg border border-stone-200">
+                            <p className="font-semibold text-stone-800 capitalize mb-2">{category}</p>
+                            <div className="text-sm space-y-2">
+                              <div className="flex gap-2">
+                                <div className="w-20 h-20 rounded" style={{backgroundImage: "linear-gradient(to bottom right, white, #f5f5f4, rgba(254, 243, 199, 0.3))"}}></div>
+                                <div>
+                                  <p className="text-stone-600"><strong>Light Theme:</strong></p>
+                                  <code className="bg-stone-100 px-2 py-1 rounded text-xs">{data.light}</code>
+                                </div>
+                              </div>
+                              <p className="text-stone-500 italic">{data.philosophy || data.purpose}</p>
                             </div>
                           </div>
                         ))}

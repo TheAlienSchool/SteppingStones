@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
+import { lazy, Suspense } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -10,9 +11,7 @@ import Archetypes from "./pages/Archetypes";
 import Concepts from "./pages/Concepts";
 import Practices from "./pages/Practices";
 import Glossary from "./pages/Glossary";
-import CompleteWorks from "./pages/CompleteWorks";
 import About from "./pages/About";
-import Social from "./pages/Social";
 import Voices from "./pages/Voices";
 import ForgersCohort from "./pages/ForgersCohort";
 import SamuelRHarris from "./pages/SamuelRHarris";
@@ -35,8 +34,24 @@ import MyArchetype from "./pages/MyArchetype";
 import TodaysPracticePage from "./pages/TodaysPracticePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Disclaimer from "./pages/Disclaimer";
-import CreativeContext from "./pages/CreativeContext";
 import { useScrollToTop } from "./hooks/useScrollToTop";
+
+// Code splitting for heavy pages (lazy load on route navigation)
+const Social = lazy(() => import("./pages/Social"));
+const CompleteWorks = lazy(() => import("./pages/CompleteWorks"));
+const CreativeContext = lazy(() => import("./pages/CreativeContext"));
+
+// Loading fallback component
+function PageLoader() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-stone-50 to-amber-50">
+      <div className="text-center space-y-4">
+        <div className="w-12 h-12 rounded-full border-4 border-amber-200 border-t-amber-600 animate-spin mx-auto"></div>
+        <p className="text-stone-600 font-serif">Loading page...</p>
+      </div>
+    </div>
+  );
+}
 
 function Router() {
   useScrollToTop();
@@ -52,12 +67,24 @@ function Router() {
       <Route path={"/concepts"} component={Concepts} />
       <Route path={"/practices"} component={Practices} />
       <Route path={"/glossary"} component={Glossary} />
-      <Route path={"/works"} component={CompleteWorks} />
+      <Route path={"/works"} component={(props) => (
+        <Suspense fallback={<PageLoader />}>
+          <CompleteWorks {...props} />
+        </Suspense>
+      )} />
       <Route path="/about" component={About} />
-      <Route path="/social" component={Social} />
+      <Route path="/social" component={(props) => (
+        <Suspense fallback={<PageLoader />}>
+          <Social {...props} />
+        </Suspense>
+      )} />
       <Route path="/voices" component={Voices} />
       <Route path="/forgers-cohort" component={ForgersCohort} />
-      <Route path="/creative-context" component={CreativeContext} />
+      <Route path="/creative-context" component={(props) => (
+        <Suspense fallback={<PageLoader />}>
+          <CreativeContext {...props} />
+        </Suspense>
+      )} />
       <Route path="/samuel-r-harris" component={SamuelRHarris} />
       <Route path="/the-container" component={TheContainer} />
       <Route path="/reflections" component={Reflections} />

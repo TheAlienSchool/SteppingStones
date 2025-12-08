@@ -38,10 +38,12 @@ function DropdownMenu({ group }: { group: NavGroup }) {
     <div ref={dropdownRef} className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={`Toggle ${group.label} menu`}
+        aria-expanded={isOpen}
         className="flex items-center gap-1 text-stone-700 hover:text-amber-700 transition-colors"
       >
         {group.label}
-        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} aria-hidden="true" />
       </button>
       {isOpen && (
         <div className="absolute top-full left-0 mt-2 py-2 bg-white rounded-lg shadow-lg border border-stone-200 min-w-[200px] z-50">

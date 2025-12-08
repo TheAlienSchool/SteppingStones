@@ -89,16 +89,20 @@ export default function SocialCard({
             variant="outline"
             size="sm"
             className="h-8 px-2"
+            aria-label={copied ? "Link copied to clipboard" : "Copy card link to clipboard"}
+            title={copied ? "Link copied!" : "Copy link"}
           >
-            {copied ? <Check className="w-4 h-4" /> : <LinkIcon className="w-4 h-4" />}
+            {copied ? <Check className="w-4 h-4" aria-hidden="true" /> : <LinkIcon className="w-4 h-4" aria-hidden="true" />}
           </Button>
           <Button
             onClick={handleDownload}
             variant="outline"
             size="sm"
             className="h-8 px-3"
+            aria-label="Download card as PNG image"
+            title="Download as PNG"
           >
-            <Download className="w-4 h-4 mr-1" />
+            <Download className="w-4 h-4 mr-1" aria-hidden="true" />
             Save
           </Button>
         </div>
