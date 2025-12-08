@@ -1,7 +1,3 @@
-import { useState } from "react";
-import { Download, Link as LinkIcon, Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
 interface SocialCardProps {
   id: string;
   title: string;
@@ -9,7 +5,6 @@ interface SocialCardProps {
   format: "square" | "story" | "landscape";
   theme?: "light" | "dark";
   category: "quote" | "glossary" | "practice" | "archetype" | "reflection" | "voice";
-  onDownload?: (id: string, format: string) => void;
 }
 
 const formatDimensions = {
@@ -51,86 +46,26 @@ export default function SocialCard({
   content,
   format,
   theme = "light",
-  category,
-  onDownload
+  category
 }: SocialCardProps) {
-  const [copied, setCopied] = useState(false);
   const formatInfo = formatDimensions[format];
   const gradient = gradients[category][theme];
   const textColor = theme === "dark" ? "text-stone-100" : "text-stone-800";
-  const accentColor = theme === "dark" ? "text-amber-400" : "text-amber-700";
-
-  const handleCopyUrl = () => {
-    const url = `${window.location.origin}/social#${id}`;
-    navigator.clipboard.writeText(url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  const handleLongPress = (e: React.TouchEvent) => {
-    const longPressTimer = setTimeout(() => {
-      // Show mobile action sheet
-      const actions = confirm("Download or Share this card?\n\nPress OK to download, or Cancel to copy shareable link.");
-      if (actions) {
-        handleDownload();
-      } else {
-        handleCopyUrl();
-      }
-    }, 500);
-
-    const handleTouchEnd = () => {
-      clearTimeout(longPressTimer);
-      e.currentTarget.removeEventListener('touchend', handleTouchEnd);
-    };
-    e.currentTarget.addEventListener('touchend', handleTouchEnd);
-  };
-
-  const handleDownload = () => {
-    if (onDownload) {
-      onDownload(id, format);
-    }
-  };
 
   return (
     <div className="space-y-3">
-      {/* Card Title & Controls */}
-      <div className="flex items-center justify-between gap-3">
-        <div>
-          <h3 className="font-serif text-lg text-stone-800">{title}</h3>
-          <p className="text-xs text-stone-500">
-            {formatInfo.dimensions} · {formatInfo.label}
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <Button
-            onClick={handleCopyUrl}
-            variant="outline"
-            size="sm"
-            className="h-8 px-2"
-            aria-label={copied ? "Link copied to clipboard" : "Copy shareable card link"}
-            title={copied ? "Link copied!" : "Copy shareable link to this card"}
-          >
-            {copied ? <Check className="w-4 h-4" aria-hidden="true" /> : <LinkIcon className="w-4 h-4" aria-hidden="true" />}
-          </Button>
-          <Button
-            onClick={handleDownload}
-            variant="outline"
-            size="sm"
-            className="h-8 px-3"
-            aria-label="Download card as PNG image"
-            title="Download as PNG"
-          >
-            <Download className="w-4 h-4 mr-1" aria-hidden="true" />
-            Save
-          </Button>
-        </div>
+      {/* Card Title */}
+      <div>
+        <h3 className="font-serif text-lg text-stone-800">{title}</h3>
+        <p className="text-xs text-stone-500">
+          {formatInfo.dimensions} · {formatInfo.label}
+        </p>
       </div>
 
       {/* Card Preview */}
       <div
         id={id}
         className={`${formatInfo.width} ${formatInfo.aspect} ${gradient} rounded-lg ${format === "landscape" ? "p-4" : "p-6"} flex flex-col items-center justify-center ${textColor} shadow-lg overflow-hidden`}
-        onTouchStart={handleLongPress}
       >
         <style>{`
           @supports (font-family: le-monde-livre) {

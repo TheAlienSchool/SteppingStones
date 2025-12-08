@@ -1,89 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import SocialCard from "@/components/SocialCard";
 import SEO from "@/components/SEO";
 import { Sun, Moon, Share2 } from "lucide-react";
-import html2canvas from "html2canvas";
-import { detectDevice, saveCanvasToDevice, getSaveInstructions, type DeviceInfo } from "@/lib/deviceDetection";
 
 type ThemeMode = "light" | "dark";
 
 export default function Social() {
   const [theme, setTheme] = useState<ThemeMode>("light");
-  const [deviceInfo, setDeviceInfo] = useState<DeviceInfo | null>(null);
 
-  useEffect(() => {
-    // Detect device on mount
-    setDeviceInfo(detectDevice());
-  }, []);
-
-  const handleDownload = async (id: string, format: string) => {
-    // Get ONLY the card div, not the parent wrapper
-    const cardElement = document.getElementById(id);
-    if (!cardElement) {
-      console.error("Card element not found:", id);
-      alert("Could not find card to download. Please refresh and try again.");
-      return;
-    }
-
-    try {
-      console.log("Starting download for card:", id, "Format:", format);
-      
-      // Clone ONLY the card div
-      const clone = cardElement.cloneNode(true) as HTMLElement;
-      
-      // Position off-screen but in DOM so styles are computed
-      clone.style.position = "fixed";
-      clone.style.left = "-9999px";
-      clone.style.top = "-9999px";
-      clone.style.visibility = "hidden";
-      clone.style.pointerEvents = "none";
-      
-      document.body.appendChild(clone);
-
-      // Wait for DOM to settle
-      await new Promise(resolve => setTimeout(resolve, 100));
-
-      console.log("Canvas conversion starting...");
-      const canvas = await html2canvas(clone, {
-        backgroundColor: "#ffffff",
-        scale: 2,
-        logging: false,
-        useCORS: true,
-        allowTaint: true,
-        imageTimeout: 10000,
-        width: format === "square" ? 1080 : format === "story" ? 1080 : 1200,
-        height: format === "square" ? 1080 : format === "story" ? 1920 : 675
-      });
-
-      console.log("Canvas created successfully, size:", canvas.width, "x", canvas.height);
-      document.body.removeChild(clone);
-
-      // Use platform-specific save method
-      const filename = `stone-forgers-way-${id}-${Date.now()}.png`;
-      console.log("Attempting to save with device info:", deviceInfo);
-      
-      if (!deviceInfo) {
-        throw new Error("Device info not available");
-      }
-
-      await saveCanvasToDevice(canvas, filename, deviceInfo);
-      
-      console.log("Download completed successfully!");
-      alert("Image downloaded successfully!");
-    } catch (error) {
-      console.error("Download failed with full details:", error);
-      const errorMsg = error instanceof Error ? error.message : String(error);
-      console.error("Error message:", errorMsg);
-      alert(`Download failed: ${errorMsg}\n\nPlease try screenshot or contact support.`);
-    }
-  };
 
   return (
     <Layout>
       <SEO
         title="Social Content :: The Stone Forger's Way"
-        description="Shareable content from The Stone Forger's Way. Download and share wisdom, practices, and insights across your social channels."
+        description="Shareable content from The Stone Forger's Way. Screengrab and share wisdom, practices, and insights across your social channels."
         type="website"
       />
 
@@ -101,8 +32,7 @@ export default function Social() {
                 Share the Way
               </h1>
               <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
-                Your repository of shareable wisdom. 35+ cards optimized for social media—
-                screengrab and share what resonates, or download high-quality images for your posts.
+                Welcome to a repository of shareable insights from this practice. Here you will find 35+ cards optimized for social media posts. Screengrab and share what resonates. We appreciate your sharing of The Stone Forger's Way.
               </p>
 
               {/* Theme Toggle */}
@@ -147,8 +77,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         A Stone appears the moment attention&nbsp;gathers.
@@ -169,8 +98,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Overwhelm often signals a cluster of unseen&nbsp;Stones.
@@ -191,8 +119,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Most reactions are just Stones thrown too&nbsp;quickly.
@@ -213,8 +140,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         A Forger is not someone with fewer&nbsp;responsibilities.
@@ -232,8 +158,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         The mind&nbsp;rushes.
@@ -254,8 +179,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Transformation rarely arrives through&nbsp;force.
@@ -273,8 +197,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Many people confuse momentum with&nbsp;motion.
@@ -292,8 +215,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Some Stones ask to be&nbsp;released.
@@ -314,8 +236,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Trust is the Forger's quiet&nbsp;advantage.
@@ -333,8 +254,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         A day becomes lighter the moment a Stone receives a&nbsp;name.
@@ -349,8 +269,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Creativity falters under unexamined&nbsp;weight.
@@ -368,8 +287,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         The Carrier&nbsp;accumulates.
@@ -393,8 +311,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Founders often mistake exhaustion for&nbsp;destiny.
@@ -412,8 +329,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Presence is not the absence of&nbsp;chaos.
@@ -431,8 +347,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Patience is not&nbsp;delay.
@@ -450,8 +365,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         If clarity feels distant, consider&nbsp;this:
@@ -469,8 +383,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Every Stone carries&nbsp;information.
@@ -491,8 +404,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         When life feels crowded, it is often the mind running ahead of the&nbsp;path.
@@ -510,8 +422,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         A meaningful life is seldom built in&nbsp;leaps.
@@ -529,8 +440,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         The Way does not promise fewer&nbsp;challenges.
@@ -548,8 +458,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Many breakthroughs begin with the courage to examine the Stone we've&nbsp;avoided.
@@ -564,8 +473,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         The Stone Forger's power is&nbsp;subtle:
@@ -583,8 +491,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Some burdens dissolve the moment they are&nbsp;acknowledged.
@@ -605,8 +512,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         The mind throws what the heart has not yet&nbsp;held.
@@ -624,8 +530,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Creation becomes simpler when the Stone is&nbsp;singular.
@@ -643,8 +548,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         When the path feels disordered, look not at the horizon—
@@ -662,8 +566,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Most people chase&nbsp;clarity.
@@ -681,8 +584,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         A Stone never&nbsp;lies.
@@ -700,8 +602,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         The Stone Forger's Way is not about&nbsp;perfection.
@@ -722,8 +623,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-base font-serif leading-tight">
                         Every archetype carries&nbsp;wisdom.
@@ -750,8 +650,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         The world feels heavy until we learn how to hold one Stone&nbsp;well.
@@ -766,8 +665,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Forgers do not force&nbsp;flow.
@@ -785,8 +683,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         A Stone becomes lighter when it belongs to the&nbsp;moment.
@@ -804,8 +701,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Growth happens&nbsp;quietly.
@@ -826,8 +722,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         The next era of your life may begin with a single&nbsp;sentence:
@@ -845,8 +740,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Burnout often signals the absence of&nbsp;discernment.
@@ -864,8 +758,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         The Stone Forger's Way does not ask for&nbsp;devotion.
@@ -883,8 +776,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         A clear practice, repeated gently, becomes a&nbsp;path.
@@ -899,8 +791,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-base font-serif leading-tight">
                         The first Stone teaches&nbsp;awareness.
@@ -924,8 +815,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="quote"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
                         Some transformations arrive not with revelation but with&nbsp;rhythm.
@@ -955,8 +845,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="glossary"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <h3 className="text-2xl font-serif mb-4">Stone Forging</h3>
                       <p className="text-lg leading-relaxed">
@@ -975,8 +864,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="glossary"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <h3 className="text-2xl font-serif mb-4">Trust</h3>
                       <p className="text-lg leading-relaxed">
@@ -995,8 +883,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="glossary"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <h3 className="text-2xl font-serif mb-4">Somatic</h3>
                       <p className="text-lg leading-relaxed">
@@ -1015,8 +902,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="glossary"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <h3 className="text-2xl font-serif mb-4">Stepping Stone</h3>
                       <p className="text-lg leading-relaxed">
@@ -1035,8 +921,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="glossary"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <h3 className="text-2xl font-serif mb-4">The Field</h3>
                       <p className="text-lg leading-relaxed">
@@ -1055,8 +940,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="glossary"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <h3 className="text-2xl font-serif mb-4">Active Patience</h3>
                       <p className="text-lg leading-relaxed">
@@ -1087,8 +971,7 @@ export default function Social() {
                   format="landscape"
                   theme={theme}
                   category="practice"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <div className="text-left space-y-3 w-full">
                       <h3 className="text-2xl font-serif mb-4 text-center">The One Stone</h3>
                       <div className="space-y-2 text-sm">
@@ -1111,8 +994,7 @@ export default function Social() {
                   format="landscape"
                   theme={theme}
                   category="practice"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <div className="text-left space-y-3 w-full">
                       <h3 className="text-2xl font-serif mb-4 text-center">The Trust Breath</h3>
                       <div className="space-y-2 text-sm">
@@ -1135,8 +1017,7 @@ export default function Social() {
                   format="landscape"
                   theme={theme}
                   category="practice"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <div className="text-left space-y-3 w-full">
                       <h3 className="text-2xl font-serif mb-4 text-center">The Silent Check</h3>
                       <div className="space-y-2 text-sm">
@@ -1159,8 +1040,7 @@ export default function Social() {
                   format="landscape"
                   theme={theme}
                   category="practice"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <div className="text-left space-y-3 w-full">
                       <h3 className="text-2xl font-serif mb-4 text-center">The Shield Check</h3>
                       <div className="space-y-2 text-sm">
@@ -1195,8 +1075,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="archetype"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <div className="space-y-4">
                       <h3 className="text-3xl font-serif">The Stone Carrier</h3>
                       <p className="text-lg leading-relaxed">
@@ -1215,8 +1094,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="archetype"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <div className="space-y-4">
                       <h3 className="text-3xl font-serif">The Stone Thrower</h3>
                       <p className="text-lg leading-relaxed">
@@ -1235,8 +1113,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="archetype"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <div className="space-y-4">
                       <h3 className="text-3xl font-serif">The Conscious Forger</h3>
                       <p className="text-lg leading-relaxed">
@@ -1255,8 +1132,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="archetype"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <div className="space-y-4">
                       <h3 className="text-3xl font-serif">The Patient Forger</h3>
                       <p className="text-lg leading-relaxed">
@@ -1287,8 +1163,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="reflection"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
                         "Money reveals where you don't trust&nbsp;yourself."
@@ -1306,8 +1181,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="reflection"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
                         "The whale doesn't sing because it has an audience. It sings because that's what whales&nbsp;do."
@@ -1325,8 +1199,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="reflection"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
                         "What you need is already inside you, waiting for the right moment to be&nbsp;discovered."
@@ -1344,8 +1217,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="reflection"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
                         "Grace is what happens when you stop fighting the river and learn to navigate&nbsp;it."
@@ -1363,8 +1235,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="reflection"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
                         "Your creative practice needs protection, not from the world, but from your own&nbsp;patterns."
@@ -1382,8 +1253,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="reflection"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
                         "You provided space and runway for wisdom to flow. The container shapes what&nbsp;emerges."
@@ -1413,8 +1283,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="voice"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl leading-relaxed mb-6">
                         "Trust is the cheat code because it bypasses the tyranny of the rational mind that demands proof before it will move... is an insane quote. I'm going to be thinking about that for a while."
@@ -1432,8 +1301,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="voice"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl leading-relaxed mb-6">
                         "The backache is the somatic cost of throwing stones while keeping the shield up. The sympathetic nervous system in chronic activation... this really spoke to me."
@@ -1451,8 +1319,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="voice"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl leading-relaxed mb-6">
                         "This feels like a whole book spread across a website. The practices and prompts make it real—it's not just philosophy floating in space."
@@ -1470,8 +1337,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="voice"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl leading-relaxed mb-6">
                         "The color schemes and glossary tooltips are brilliant. The vocabulary you've created is gold—I've never had language for these experiences before."
@@ -1489,8 +1355,7 @@ export default function Social() {
                   format="square"
                   theme={theme}
                   category="voice"
-                  onDownload={handleDownload}
-                  content={
+                                    content={
                     <>
                       <p className="text-lg md:text-xl leading-relaxed mb-6">
                         "I have already started putting down stones. Not throwing them at things, not carrying them—actually forging my path forward."
@@ -1506,70 +1371,56 @@ export default function Social() {
 
             {/* Usage Guide */}
             <section className="bg-amber-50 rounded-xl p-8 mt-16">
-              <h2 className="text-2xl font-serif text-stone-800 mb-6">How to Save & Share</h2>
+              <h2 className="text-2xl font-serif text-stone-800 mb-6">How to Screengrab & Share</h2>
               
-              {deviceInfo && (
-                <div className="mb-8 p-4 bg-white rounded-lg border-2 border-amber-200">
-                  <p className="text-sm text-stone-600">
-                    <strong>✨ Device Detected:</strong> {deviceInfo.isIOS ? "iPhone/iPad" : deviceInfo.isAndroid ? "Android Device" : "Desktop"} · {deviceInfo.isSafari ? "Safari" : deviceInfo.isChrome ? "Chrome" : "Your Browser"}
-                  </p>
-                  <p className="text-base text-amber-800 font-medium mt-2">
-                    {getSaveInstructions(deviceInfo)}
-                  </p>
-                </div>
-              )}
-
               <div className="grid md:grid-cols-2 gap-6 text-stone-700">
                 <div>
-                  <h3 className="font-semibold mb-2">📱 iPhone Users</h3>
+                  <h3 className="font-semibold mb-2">📱 iPhone / iPad</h3>
                   <p className="text-sm">
-                    Click the <strong>"Save"</strong> button, then <strong>long-press</strong> the image that appears.
-                    Select <strong>"Save Image"</strong> to add to your Camera Roll.
-                    This is the native iOS method for saving images.
+                    Press the <strong>Side button + Volume Up</strong> simultaneously to capture a screenshot.
+                    The image saves to your Photos app, ready to share on any platform.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">🤖 Android Users</h3>
+                  <h3 className="font-semibold mb-2">🤖 Android</h3>
                   <p className="text-sm">
-                    Click the <strong>"Save"</strong> button to download the PNG file.
-                    Files go to your Downloads folder or default save location.
-                    Open any gallery app to view and share.
+                    Press and hold <strong>Power + Volume Down</strong> to take a screenshot.
+                    The image saves to your gallery, ready to edit and share.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">🖥️ Desktop Users</h3>
+                  <h3 className="font-semibold mb-2">🖥️ Desktop (Windows)</h3>
                   <p className="text-sm">
-                    Click the <strong>"Save"</strong> button to download high-resolution PNG.
-                    Choose your save location. Perfect for scheduling posts across platforms.
+                    Press <strong>Print Screen</strong> or <strong>Windows Key + Shift + S</strong> to capture.
+                    Paste into your image editor or social media platform.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">📸 Screenshot Alternative</h3>
+                  <h3 className="font-semibold mb-2">🖥️ Desktop (Mac)</h3>
                   <p className="text-sm">
-                    You can always take a screenshot of any card directly.
-                    This is reliable across all devices and platforms.
+                    Press <strong>Cmd + Shift + 4</strong> to select an area, or <strong>Cmd + Shift + 5</strong> for options.
+                    The screenshot saves to your Desktop automatically.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">🔗 Share Direct Links</h3>
+                  <h3 className="font-semibold mb-2">🌗 Toggle Themes</h3>
                   <p className="text-sm">
-                    Click the link icon to copy a shareable URL for any specific card.
-                    Send to friends or share on social media with context.
+                    Use the theme toggle at the top to switch between light and dark versions.
+                    Capture both for variety across your social feeds.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">🌗 Light & Dark Themes</h3>
+                  <h3 className="font-semibold mb-2">💡 Pro Tip</h3>
                   <p className="text-sm">
-                    Toggle the theme at the top to match your aesthetic.
-                    Download both versions for variety across your social feeds.
+                    Each card displays the theme and dimensions so you know exactly what you're capturing.
+                    Perfect for consistent, on-brand social media posts.
                   </p>
                 </div>
               </div>
 
               <div className="mt-8 p-4 bg-stone-100 rounded-lg">
                 <p className="text-xs text-stone-600">
-                  <strong>💡 Pro Tip:</strong> The download feature uses high-resolution rendering to ensure your social posts look crisp and professional.
-                  On iPhone, the native "Save Image" method automatically optimizes for Camera Roll storage.
+                  <strong>✨ Coming Soon:</strong> As we create actual visual assets for The Stone Forger's Way, we'll add direct download capabilities. For now, screengrabbing ensures you always get exactly what you see.
                 </p>
               </div>
             </section>
@@ -1580,3 +1431,5 @@ export default function Social() {
     </Layout>
   );
 }
+
+
