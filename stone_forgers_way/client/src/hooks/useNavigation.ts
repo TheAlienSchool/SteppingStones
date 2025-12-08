@@ -42,10 +42,10 @@ export function useNavigation(): NavGroup[] {
         { href: "/practices", label: "Practices" },
         { href: "/glossary", label: "Glossary" },
         { href: "/works", label: "Complete Works" },
+        { href: "/social", label: "Share The Way" },
       ],
     },
     { label: "Reflections", href: "/reflections" },
-    { label: "Social Content", href: "/social" },
     { label: "Forger's Cohort", href: "/forgers-cohort" },
     {
       label: "Lineage",

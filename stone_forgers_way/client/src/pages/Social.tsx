@@ -87,14 +87,14 @@ export default function Social() {
               <div className="mb-8">
                 <h2 className="text-3xl font-serif text-stone-800 mb-3">Quote Cards</h2>
                 <p className="text-stone-600">
-                  Powerful insights and wisdom from The Stone Forger's Way · 10 cards
+                  Powerful insights and wisdom from The Stone Forger's Way · 40 cards
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <SocialCard
-                  id="quote-stepping-stone"
-                  title="The Stepping Stone"
+                  id="quote-01"
+                  title="A Stone Appears"
                   format="square"
                   theme={theme}
                   category="quote"
@@ -102,18 +102,21 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        "The stone is not there before you step.
+                        A Stone appears the moment attention gathers.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        It solidifies as you step."
+                        The practice begins the moment we notice.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The Way deepens the moment we choose to shape it.
                       </p>
                     </>
                   }
                 />
 
                 <SocialCard
-                  id="quote-trust"
-                  title="Trust as Technology"
+                  id="quote-02"
+                  title="Overwhelm Signals"
                   format="square"
                   theme={theme}
                   category="quote"
@@ -121,18 +124,21 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        "Trust is not faith in the outcome.
+                        Overwhelm often signals a cluster of unseen Stones.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Trust is clarity in the step."
+                        Recognition softens the weight.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Presence rearranges the path.
                       </p>
                     </>
                   }
                 />
 
                 <SocialCard
-                  id="quote-backache"
-                  title="The Stone Thrower's Teaching"
+                  id="quote-03"
+                  title="Three Ways Forward"
                   format="square"
                   theme={theme}
                   category="quote"
@@ -140,18 +146,21 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        "The backache is the teacher.
+                        Most reactions are just Stones thrown too quickly.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        Stop throwing. Start forging."
+                        Most regrets are Stones carried too long.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Forging offers a third way forward.
                       </p>
                     </>
                   }
                 />
 
                 <SocialCard
-                  id="quote-candle"
-                  title="Light a Candle"
+                  id="quote-04"
+                  title="What a Forger Is"
                   format="square"
                   theme={theme}
                   category="quote"
@@ -159,18 +168,18 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        "It's better to light a candle
+                        A Forger is not someone with fewer responsibilities.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        than to curse the darkness."
+                        A Forger is someone who meets each moment with structure, steadiness, and choice.
                       </p>
                     </>
                   }
                 />
 
                 <SocialCard
-                  id="quote-somatic"
-                  title="Somatic Revelation"
+                  id="quote-05"
+                  title="Mind and Stone"
                   format="square"
                   theme={theme}
                   category="quote"
@@ -178,18 +187,21 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        "This is not intellectual work.
+                        The mind rushes.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        This is somatic revelation."
+                        The Stone waits.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The Way invites a pace where clarity can find us.
                       </p>
                     </>
                   }
                 />
 
                 <SocialCard
-                  id="quote-field"
-                  title="The Field"
+                  id="quote-06"
+                  title="Transformation Begins"
                   format="square"
                   theme={theme}
                   category="quote"
@@ -197,37 +209,467 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        "You don't create in a vacuum.
+                        Transformation rarely arrives through force.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        You create in The Field."
+                        It begins when a single Stone is held with clean attention.
                       </p>
                     </>
                   }
                 />
 
                 <SocialCard
-                  id="quote-trust-cheat-code"
-                  title="Trust is The Cheat Code"
+                  id="quote-07"
+                  title="Momentum vs Motion"
                   format="square"
                   theme={theme}
                   category="quote"
                   onDownload={handleDownload}
                   content={
                     <>
-                      <p className="text-xl md:text-2xl font-serif leading-tight">
-                        "Trust is the cheat code because it bypasses the tyranny of the rational mind
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Many people confuse momentum with motion.
                       </p>
-                      <p className="text-xl md:text-2xl font-serif leading-tight">
-                        that demands proof before it will move."
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Forging teaches the difference.
                       </p>
                     </>
                   }
                 />
 
                 <SocialCard
-                  id="quote-backache-somatic"
-                  title="The Somatic Cost"
+                  id="quote-08"
+                  title="Which is Which"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Some Stones ask to be released.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Some ask to be shaped.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The Way begins with knowing which is which.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-09"
+                  title="Trust is the Advantage"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Trust is the Forger's quiet advantage.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        It rearranges weight, restores rhythm, and reveals the next step without urgency.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-10"
+                  title="Naming a Stone"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        A day becomes lighter the moment a Stone receives a name.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-11"
+                  title="Creativity Requires"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Creativity falters under unexamined weight.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        It expands when each Stone is met as part of the path.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-12"
+                  title="The Three Archetypes"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The Carrier accumulates.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The Thrower reacts.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The Forger chooses.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Choice is where transformation starts.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-13"
+                  title="Founders and Exhaustion"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Founders often mistake exhaustion for destiny.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Sometimes it is simply a cluster of Stones asking for a steadier hand.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-14"
+                  title="Presence"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Presence is not the absence of chaos.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        It is the ability to shape one Stone inside it.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-15"
+                  title="Patience"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Patience is not delay.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        It is the architecture that allows a Stone to become something useful.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-16"
+                  title="When Clarity Feels Distant"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        If clarity feels distant, consider this:
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Perhaps the next Stone is asking to be felt, not solved.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-17"
+                  title="Every Stone Carries Information"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Every Stone carries information.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Most people silence it with speed.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Forgers listen.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-18"
+                  title="Mind Running Ahead"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        When life feels crowded, it is often the mind running ahead of the path.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Stones return us to what is real.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-19"
+                  title="Meaningful Life"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        A meaningful life is seldom built in leaps.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        It forms through quiet, deliberate forging.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-20"
+                  title="What The Way Offers"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The Way does not promise fewer challenges.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        It offers a clearer relationship to the ones already here.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-21"
+                  title="Courage to Examine"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Many breakthroughs begin with the courage to examine the Stone we've avoided.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-22"
+                  title="Subtle Power"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The Stone Forger's power is subtle:
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        We shape moments until moments begin shaping us.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-23"
+                  title="Dissolve or Transform"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Some burdens dissolve the moment they are acknowledged.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Others transform the moment they are shaped.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Discernment is the bridge.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-24"
+                  title="Mind and Heart"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The mind throws what the heart has not yet held.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Forging reunites them.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-25"
+                  title="Singular Stone"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Creation becomes simpler when the Stone is singular.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Focus is a form of relief.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-26"
+                  title="Look at the Stone"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        When the path feels disordered, look not at the horizon—
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        look at the Stone beneath your hand.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-27"
+                  title="Chase vs Cultivate"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Most people chase clarity.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Forgers cultivate it.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-28"
+                  title="The Stone Never Lies"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        A Stone never lies.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        It reflects the truth of the moment without judgment.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-29"
+                  title="About Relationship"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The Stone Forger's Way is not about perfection.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        It is about relationship.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Moment to moment. Stone to Stone.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-30"
+                  title="Every Archetype"
                   format="square"
                   theme={theme}
                   category="quote"
@@ -235,18 +677,27 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        "The backache is the somatic cost of throwing stones while keeping the shield up.
+                        Every archetype carries wisdom.
                       </p>
                       <p className="text-lg md:text-xl font-serif leading-tight">
-                        The sympathetic nervous system in chronic activation."
+                        Carrier :: deep sensing
+                      </p>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        Thrower :: swift release
+                      </p>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        Forger :: intentional shaping
+                      </p>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        The work is never to judge—only to notice.
                       </p>
                     </>
                   }
                 />
 
                 <SocialCard
-                  id="quote-breath-word"
-                  title="Breath Made Word"
+                  id="quote-31"
+                  title="One Stone Well"
                   format="square"
                   theme={theme}
                   category="quote"
@@ -254,10 +705,184 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        "This is not intellectual work.
+                        The world feels heavy until we learn how to hold one Stone well.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-32"
+                  title="Prepare the Conditions"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Forgers do not force flow.
                       </p>
                       <p className="text-2xl md:text-3xl font-serif leading-tight">
-                        This is breath made word."
+                        They prepare the conditions that allow flow to return.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-33"
+                  title="Weight and Time"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        A Stone becomes lighter when it belongs to the moment.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        It becomes heavier when it belongs to the past.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-34"
+                  title="Growth and Recognition"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Growth happens quietly.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Recognition happens suddenly.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Forging happens exactly in between.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-35"
+                  title="The Next Era"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The next era of your life may begin with a single sentence:
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        "I am ready to see the Stone."
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-36"
+                  title="Discernment and Alignment"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Burnout often signals the absence of discernment.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        Forging restores alignment between capacity and truth.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-37"
+                  title="Asks for Honesty"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        The Stone Forger's Way does not ask for devotion.
+                      </p>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        It asks for honesty.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-38"
+                  title="Clear Practice"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-2xl md:text-3xl font-serif leading-tight">
+                        A clear practice, repeated gently, becomes a path.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-39"
+                  title="The First Three"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        The first Stone teaches awareness.
+                      </p>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        The second teaches patience.
+                      </p>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        The third teaches mastery.
+                      </p>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        The Way teaches all three at once.
+                      </p>
+                    </>
+                  }
+                />
+
+                <SocialCard
+                  id="quote-40"
+                  title="Transformation and Rhythm"
+                  format="square"
+                  theme={theme}
+                  category="quote"
+                  onDownload={handleDownload}
+                  content={
+                    <>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        Some transformations arrive not with revelation but with rhythm.
+                      </p>
+                      <p className="text-lg md:text-xl font-serif leading-tight">
+                        The rhythm begins when we choose the next Stone and nothing more.
                       </p>
                     </>
                   }

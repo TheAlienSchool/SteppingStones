@@ -107,13 +107,23 @@ export default function SocialCard({
       {/* Card Preview */}
       <div
         id={id}
-        className={`${formatInfo.width} ${formatInfo.aspect} ${gradient} rounded-lg p-8 flex flex-col items-center justify-center ${textColor} shadow-lg`}
+        className={`${formatInfo.width} ${formatInfo.aspect} ${gradient} rounded-lg p-8 flex flex-col items-center justify-center ${textColor} shadow-lg overflow-hidden`}
       >
-        <div className="space-y-6 text-center max-w-md">
+        <style>{`
+          @supports (font-family: futura-pt) {
+            #${id} p, #${id} h3 {
+              font-family: 'futura-pt', sans-serif;
+              line-height: 1.4;
+              word-spacing: 0.1em;
+              text-rendering: optimizeLegibility;
+            }
+          }
+        `}</style>
+        <div className="space-y-6 text-center max-w-md w-full">
           {content}
 
           {/* Watermark */}
-          <div className={`text-xs ${theme === "dark" ? "text-stone-400" : "text-stone-500"} mt-8`}>
+          <div className={`text-xs ${theme === "dark" ? "text-stone-400" : "text-stone-500"} mt-8 font-serif`}>
             The Stone Forger's Way
           </div>
         </div>

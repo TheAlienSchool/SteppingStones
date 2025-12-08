@@ -779,7 +779,17 @@ export default function CreativeContext() {
                         {Object.entries(designSystem.patterns).map(([name, desc]) => (
                           <div key={name} className="bg-white p-4 rounded-lg border border-stone-200">
                             <p className="font-medium text-stone-800 capitalize">{name}</p>
-                            <p className="text-sm text-stone-600">{desc}</p>
+                            {typeof desc === "string" ? (
+                              <p className="text-sm text-stone-600">{desc}</p>
+                            ) : (
+                              <div className="text-sm text-stone-600 space-y-2">
+                                {Object.entries(desc).map(([key, value]) => (
+                                  <div key={key}>
+                                    <span className="font-medium text-stone-700">{key}:</span> {typeof value === "string" ? value : JSON.stringify(value)}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         ))}
                       </div>

@@ -457,7 +457,7 @@ export default function Home() {
                   "Trust is the cheat code because it bypasses the tyranny of the rational mind that demands proof before it will move... is an insane quote. I'm going to be thinking about that for a while."
                 </p>
                 <p className="text-sm text-stone-500 italic">
-                  — A Stone Thrower recognizing the teaching
+                  — A Stone Forger entering contemplation
                 </p>
               </div>
 
