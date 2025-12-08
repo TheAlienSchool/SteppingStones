@@ -413,27 +413,6 @@ const designSystem = {
       purpose: "For testimonials - slightly warmer, human-centered"
     }
   },
-  typography: {
-    fonts: {
-      serif: "Georgia, Times New Roman, serif (headings, titles)",
-      sans: "System UI, -apple-system, sans-serif (body)"
-    },
-    scale: {
-      "text-sm": "0.875rem (14px) - captions, meta",
-      "text-base": "1rem (16px) - body text",
-      "text-lg": "1.125rem (18px) - lead paragraphs",
-      "text-xl": "1.25rem (20px) - section intros",
-      "text-2xl": "1.5rem (24px) - h3 subheadings",
-      "text-3xl": "1.875rem (30px) - h2 section titles",
-      "text-4xl": "2.25rem (36px) - h1 page titles (mobile)",
-      "text-5xl": "3rem (48px) - h1 page titles (desktop)"
-    },
-    lineHeight: {
-      "leading-tight": "1.25 - headings",
-      "leading-snug": "1.375 - subheadings",
-      "leading-relaxed": "1.625 - body text"
-    }
-  },
   spacing: {
     sections: "py-24 (96px vertical padding)",
     containers: "max-w-3xl mx-auto (prose), max-w-4xl (wider content)",

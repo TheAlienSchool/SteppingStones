@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "wouter";
 import { findGlossaryTerm, termToSlug } from "@/lib/glossaryData";
 import { X } from "lucide-react";
 
@@ -97,6 +96,10 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
     return <span className={className}>{children || term}</span>;
   }
 
+  const handleTooltipClick = () => {
+    window.location.href = `/glossary#${termToSlug(glossaryEntry.term)}`;
+  };
+
   return (
     <span className="relative inline">
       <span
@@ -112,7 +115,8 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
       {isOpen && (
         <div
           ref={tooltipRef}
-          className={`${isMobile ? '' : 'absolute'} z-50 w-80 max-w-[90vw] max-h-[60vh] overflow-y-auto p-4 bg-white rounded-lg shadow-xl border border-stone-200 ${
+          onClick={handleTooltipClick}
+          className={`${isMobile ? '' : 'absolute'} z-50 w-80 max-w-[90vw] max-h-[60vh] overflow-y-auto p-4 bg-white rounded-lg shadow-xl border border-stone-200 cursor-pointer hover:shadow-2xl transition-shadow ${
             position === "top" ? "bottom-full mb-0.5" : "top-full mt-0.5"
           } ${
             !isMobile ? (
@@ -162,19 +166,12 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
             <p className="text-sm text-stone-600 mb-3">
               {glossaryEntry.simple}
             </p>
-            <Link
-              href={`/glossary#${termToSlug(glossaryEntry.term)}`}
-              className="text-xs text-amber-600 hover:text-amber-700 font-medium inline-flex items-center gap-1"
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsOpen(false);
-              }}
-            >
-              Learn more
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="text-xs text-amber-600 font-medium inline-flex items-center gap-1 group">
+              Click to view full entry
+              <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </Link>
+            </div>
           </div>
         </div>
       )}

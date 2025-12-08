@@ -135,7 +135,7 @@ export default function CompleteWorks() {
                         </Link>
                         <button
                           disabled
-                          className="flex-1 bg-stone-300 text-stone-500 px-6 py-3 rounded-lg text-center cursor-not-allowed"
+                          className="flex-1 bg-stone-200 text-stone-400 px-6 py-3 rounded-lg text-center cursor-not-allowed opacity-60"
                         >
                           Download Coming Soon
                         </button>
@@ -144,13 +144,13 @@ export default function CompleteWorks() {
                       <>
                         <button
                           disabled
-                          className="flex-1 bg-stone-300 text-stone-500 px-6 py-3 rounded-lg text-center cursor-not-allowed"
+                          className="flex-1 bg-stone-200 text-stone-400 px-6 py-3 rounded-lg text-center cursor-not-allowed opacity-60"
                         >
                           Coming Soon
                         </button>
                         <button
                           disabled
-                          className="flex-1 bg-stone-300 text-stone-500 px-6 py-3 rounded-lg text-center cursor-not-allowed"
+                          className="flex-1 bg-stone-200 text-stone-400 px-6 py-3 rounded-lg text-center cursor-not-allowed opacity-60"
                         >
                           Download Coming Soon
                         </button>
