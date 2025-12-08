@@ -205,6 +205,13 @@ export default function ThePhysicsOfThought() {
               </div>
             </article>
 
+            {/* Reflection Closure Prompt */}
+            <div className="bg-amber-50/50 p-6 rounded-lg my-12 border border-amber-200/50">
+              <p className="text-lg text-stone-700 italic text-center">
+                If this reflection clarified a Stone for you, honor the moment through the exchange that resonates.
+              </p>
+            </div>
+
             {/* Social Share */}
 
             {/* Newsletter Signup */}

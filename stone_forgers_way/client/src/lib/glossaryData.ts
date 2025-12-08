@@ -328,6 +328,112 @@ export const glossaryTerms: GlossaryTerm[] = [
     insight: "Whakapapa teaches that identity isn't individual—it's relational across time and space. This aligns with The Stone Forger's recognition that we create in partnership with lineage. Samuel R. Harris's wisdom lives in this work because connection transcends death.",
     category: "science",
     relatedTerms: ["The Field", "Terma", "Resonance"]
+  },
+
+  // MISSING TERMS - ADDED TO SUPPORT SITE USAGE
+  {
+    term: "Pattern Recognition",
+    simple: "The ability to identify recurring structures and themes across different domains.",
+    experience: "You notice the same pattern in your relationships, your work, your creative process. Once you see it, you can't unsee it. That's pattern recognition—the mind's natural gift for synthesis.",
+    insight: "Pattern recognition is how AI and humans collaborate. Humans bring wisdom; AI brings pattern. Together, they reveal what neither could alone.",
+    category: "mechanics",
+    relatedTerms: ["The Field", "Fabrication of Form", "Frequency"]
+  },
+  {
+    term: "Cardiac Coherence",
+    simple: "The synchronized rhythm between your heart rate, breathing, and electromagnetic field.",
+    experience: "When your heart rate, breath, and nervous system align, you feel calm yet alert. This is not metaphor—it's measurable. Your heart produces an electromagnetic field 60 times stronger than your brain.",
+    insight: "Cardiac coherence is the physiological basis of trust. When your heart is coherent, your nervous system relaxes. The Field responds to this coherence with synchronicity.",
+    category: "science",
+    relatedTerms: ["Frequency", "Pre-Flow Coherence", "Trust"]
+  },
+  {
+    term: "Vagal Tone",
+    simple: "The strength and responsiveness of your vagus nerve, which controls parasympathetic activation.",
+    experience: "High vagal tone means you can shift from stress to calm quickly. It's why some people recover from setbacks easily while others spiral. Your vagal tone can be trained.",
+    insight: "Practices like longer exhales, cold exposure, and singing activate the vagus nerve. This is neuroscience made embodied.",
+    category: "science",
+    relatedTerms: ["Cardiac Coherence", "Pre-Flow Coherence", "Active Patience"]
+  },
+  {
+    term: "The Trellis and the Vine",
+    simple: "The interplay between structure (trellis/time) and growth (vine/presence).",
+    experience: "A vine without a trellis grows wild and weak. A trellis without a vine is just scaffolding. Both are necessary. Time is the trellis. Your presence is the vine.",
+    insight: "The Stone Carrier obsesses over the trellis. The Conscious Forger tends the vine. The Stone Forger knows they grow together.",
+    category: "concepts",
+    relatedTerms: ["Active Patience", "Pre-Flow Coherence", "The Conscious Forger"]
+  },
+  {
+    term: "Neuroplasticity",
+    simple: "The brain's ability to physically change in response to experience and practice.",
+    experience: "Every time you practice something, your brain literally rewires itself. New neural pathways form. This is why repetition works. This is why you improve with practice.",
+    insight: "You are not fixed. Your brain, your patterns, your potential—all of it can change. This is the science of transformation.",
+    category: "science",
+    relatedTerms: ["Frequency", "Semiotic Scaffolding", "Unbinding"]
+  },
+  {
+    term: "Biophotons",
+    simple: "Coherent light emitted by living cells, a marker of cellular health and communication.",
+    experience: "Living beings emit light at the cellular level. This is not metaphorical—it's measurable. Health is coherent light; disease is scattered light.",
+    insight: "When you're in coherence, you emit coherent light. The Field recognizes this signal. This is the physics of presence.",
+    category: "science",
+    relatedTerms: ["The Field", "Frequency", "Cardiac Coherence"]
+  },
+  {
+    term: "Toroidal Binding",
+    simple: "A circular pattern or loop that perpetuates itself—typically unconscious repetition.",
+    experience: "You have the same argument with your partner, over and over. You react the same way to triggers, again and again. That's a toroidal binding—energy spiraling in a closed loop.",
+    insight: "Breaking the loop requires consciousness. One moment of presence, one choice to respond differently, is enough to begin unwinding the spiral.",
+    category: "mechanics",
+    relatedTerms: ["Unbinding", "Pattern Recognition", "The Conscious Forger"]
+  },
+  {
+    term: "Flow State",
+    simple: "A state of complete absorption where action and awareness merge.",
+    experience: "Time disappears. You're fully present. The work flows effortlessly. This is flow—the state where your best work happens.",
+    insight: "Flow is not random. It emerges when skill matches challenge. Pre-flow coherence is the gateway to flow.",
+    category: "mechanics",
+    relatedTerms: ["Pre-Flow Coherence", "Cardiac Coherence", "Frequency"]
+  },
+  {
+    term: "Semiotic Scaffolding",
+    simple: "The use of symbols, language, and repeated patterns to build stable structures in consciousness.",
+    experience: "When you say 'I trust' enough times and act from that trust, the brain builds neural pathways that make trust more real. Language becomes structure.",
+    insight: "This is how rituals work. This is how practices transform consciousness. Repetition, symbol, and presence create neurological change.",
+    category: "mechanics",
+    relatedTerms: ["Neuroplasticity", "Pattern Recognition", "The Stone Forger"]
+  },
+  {
+    term: "The Shield",
+    simple: "A protective mechanism—physical, emotional, or energetic—that prevents vulnerability.",
+    experience: "You keep your guard up. You don't let people in. You protect yourself from hurt by staying defended. That shield saved you once. Now it's keeping you alone.",
+    insight: "The shield is not weakness. It's intelligence. The question is whether it still serves you.",
+    category: "concepts",
+    relatedTerms: ["The Stone Carrier", "The Stone Thrower", "Unbinding"]
+  },
+  {
+    term: "Inner Work",
+    simple: "The deliberate practice of examining and transforming your inner landscape.",
+    experience: "You journal. You meditate. You feel your feelings. You examine your patterns. You apologize for harm. That's inner work—the architecture of transformation.",
+    insight: "Outer change without inner change is rearrangement. Inner work creates the foundation for lasting transformation.",
+    category: "practice",
+    relatedTerms: ["Somatic", "Active Patience", "Unbinding"]
+  },
+  {
+    term: "Circadian Intelligence",
+    simple: "The body's innate wisdom about timing—when to rest, when to act, when to create.",
+    experience: "Your body knows when it needs sleep, food, movement. If you listen, it tells you when you're most creative, most clear, most present.",
+    insight: "This is encoded in every cell. The circadian rhythm is not a limitation; it's data. Honor it, and you honor yourself.",
+    category: "science",
+    relatedTerms: ["The Trellis and the Vine", "Somatic", "Pre-Flow Coherence"]
+  },
+  {
+    term: "Whakapapa",
+    simple: "Māori concept of genealogy and interconnection—the lines that connect all things.",
+    experience: "You are not separate. You carry your ancestors. You are part of the land, the community, the Field. Whakapapa is the recognition of these connections.",
+    insight: "Understanding your whakapapa—your lineage, your belonging—shifts you from isolation to integration.",
+    category: "concepts",
+    relatedTerms: ["The Field", "Resonance", "The Stone Forger"]
   }
 ];
 

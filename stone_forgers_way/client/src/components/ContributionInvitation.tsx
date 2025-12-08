@@ -76,7 +76,7 @@ export default function ContributionInvitation() {
                 onClick={() => handleContribution(tier.name, tier.amount, tier.stripeUrl)}
                 className="w-full bg-amber-600 hover:bg-amber-700"
               >
-                Contribute
+                {tier.name.includes('Conscious Forger') ? 'Elevate' : tier.name.includes('Stone Forger') ? 'Sustain' : 'Contribute'}
               </Button>
             </div>
           ))}
@@ -98,8 +98,8 @@ export default function ContributionInvitation() {
           </Button>
         </div>
         
-        <p className="text-xs text-stone-500 text-center pt-4">
-          This honors the sacred cycle of value exchange while keeping all wisdom freely accessible.
+        <p className="text-xs text-stone-300 text-center pt-4">
+          Every contribution supports the creation of new practices, reflections, gatherings, and the ongoing stewardship of this freely accessible guidance resource.
         </p>
       </CardContent>
 

@@ -260,6 +260,16 @@ export default function About() {
             </div>
           </section>
 
+          {/* On Access and Generosity */}
+          <section>
+            <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">On Access and Generosity</h2>
+            <div className="bg-stone-100 p-8 rounded-lg">
+              <p className="text-lg leading-relaxed text-stone-700 italic">
+                This work remains freely accessible so all may walk the Way, regardless of circumstance. Those who feel resonance support its continuation through intentional contribution.
+              </p>
+            </div>
+          </section>
+
           {/* The Invitation */}
           <section className="bg-stone-50 p-8 rounded-lg">
             <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-8 leading-tight">The Invitation</h2>
