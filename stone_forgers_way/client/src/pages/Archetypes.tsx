@@ -67,7 +67,8 @@ export default function Archetypes() {
   return (
     <Layout>
       <div className="bg-gradient-to-b from-amber-50 to-white">
-        <section className="py-24">
+        {/* Header - Pause Animation */}
+        <section className="reveal-animate py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center space-y-8">
               <h1 className="text-5xl md:text-6xl font-serif text-stone-800">
@@ -107,7 +108,9 @@ export default function Archetypes() {
           </div>
         </section>
 
-        {archetypes.map((archetype, index) => (
+        {/* Archetypes Container - Pivot Animation */}
+        <div className="pivot-animate">
+          {archetypes.map((archetype, index) => (
           <section 
             key={archetype.name} 
             className={`py-16 ${index % 2 === 0 ? 'bg-white' : 'bg-amber-50/30'}`}
@@ -176,6 +179,7 @@ export default function Archetypes() {
             </p>
           </div>
         </section>
+        </div>
 
         <section className="py-24 bg-gradient-to-b from-white to-amber-50">
           <div className="container mx-auto px-4">

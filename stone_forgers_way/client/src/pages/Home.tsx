@@ -114,7 +114,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-stone-100 via-amber-50 to-stone-50"></div>
 
         <div className="container mx-auto px-4 relative z-10 py-24">
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="reveal-animate max-w-4xl mx-auto space-y-12">
             {/* Image */}
             <div className="flex justify-center">
               <img
@@ -174,6 +174,34 @@ export default function Home() {
           <svg className="w-6 h-6 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
+        </div>
+      </section>
+
+      {/* Priming Section: How This Work Unfolds */}
+      <section className="py-16 bg-stone-50 border-t border-stone-200" aria-label="How to experience this work">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-serif text-stone-800 text-center mb-12 leading-tight">
+              How This Experience Unfolds
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center space-y-3">
+                <div className="text-5xl font-serif text-amber-600">01</div>
+                <h3 className="text-lg font-serif text-stone-800">Pause</h3>
+                <p className="text-sm text-stone-600">Content reveals itself as you scroll. There's no rush. Take time with what resonates.</p>
+              </div>
+              <div className="text-center space-y-3">
+                <div className="text-5xl font-serif text-amber-600">02</div>
+                <h3 className="text-lg font-serif text-stone-800">Pivot</h3>
+                <p className="text-sm text-stone-600">Discover which archetype shows up for you. See yourself reflected in the work.</p>
+              </div>
+              <div className="text-center space-y-3">
+                <div className="text-5xl font-serif text-amber-600">03</div>
+                <h3 className="text-lg font-serif text-stone-800">Merge</h3>
+                <p className="text-sm text-stone-600">Integrate the practices into your daily life. The work becomes yours.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

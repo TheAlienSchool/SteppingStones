@@ -282,8 +282,8 @@ export default function TheJourney() {
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            {/* Header */}
-            <div className="text-center mb-12">
+            {/* Header - Pause Animation */}
+            <div className="reveal-animate text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                 The Journey
               </h1>
@@ -309,8 +309,8 @@ export default function TheJourney() {
               </div>
             </div>
 
-            {/* Journey Phases Accordion */}
-            <div className="space-y-4">
+            {/* Journey Phases Accordion - Pivot Animation */}
+            <div className="pivot-animate space-y-4">
               {journeyPhases.map((phase, index) => (
                 <JourneyAccordion
                   key={phase.id}

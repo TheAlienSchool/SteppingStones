@@ -133,31 +133,16 @@ export default function SamuelRHarris() {
               </h2>
               <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
-  <strong>Raymond Howard Kemp</strong> (1907–2002) was a legend. Born in Cecil, Pennsylvania, 
-                  he worked in the coal mines for a year before enrolling at Duquesne University, where he 
-                  became an All-American football player.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  In 1933, he became one of the first Black players 
-                  in the NFL, playing for the Pittsburgh Pirates (later the Steelers).
-</p>
+                  <strong>Raymond Howard Kemp</strong> (1907–2002) was a legend. Born in Cecil, Pennsylvania, he worked in the coal mines for a year before enrolling at Duquesne University, where he became an All-American football player. In 1933, he became one of the first Black players in the NFL, playing for the Pittsburgh Pirates (later the Steelers).
+                </p>
+
                 <p className="text-lg leading-relaxed text-stone-700">
-  By 1937, Ray was the head coach of football, basketball, and track at Lincoln University 
-                  in Jefferson City, Missouri. That summer, while vacationing at his family home near McDonald, 
-                  Pennsylvania, Ray met Samuel R.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  Harris.
-</p>
+                  By 1937, Ray was the head coach of football, basketball, and track at Lincoln University in Jefferson City, Missouri. That summer, while vacationing at his family home near McDonald, Pennsylvania, Ray met Samuel R. Harris.
+                </p>
+
                 <p className="text-lg leading-relaxed text-stone-700">
-  After "a rather rough game of touch football," Ray offered Samuel an athletic scholarship 
-                  to play football at Lincoln. This was the moment.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  The invisible bridge materialized beneath 
-                  Samuel's feet. Ray Kemp saw something in Samuel that day :: potential, determination, 
-                  intelligence :: and offered him a path out of the mines.
-</p>
+                  After "a rather rough game of touch football," Ray offered Samuel an athletic scholarship to play football at Lincoln. This was the moment. The invisible bridge materialized beneath Samuel's feet. Ray Kemp saw something in Samuel that day—potential, determination, intelligence—and offered him a path out of the mines.
+                </p>
                 <p className="text-lg leading-relaxed text-stone-700">
                   Samuel accepted. He left the coal mines and went to college.
                 </p>

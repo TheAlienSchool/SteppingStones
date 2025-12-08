@@ -18,7 +18,7 @@ In theater, breaking the fourth wall is when an actor acknowledges the audience,
 
 We have broken the fourth wall.
 
-What began as an exploration of Brian D. Josephson’s physics of mind, the contemplative practice of Magnetism in Plain English, and the Gene Keys’ understanding of stepping stones has become something else entirely. It has become a **living demonstration** of the very principles we were studying. The synthesis itself is the stepping stone materializing beneath our feet. The act of understanding is the act of creation. The observer is the observed.
+What began as an exploration of Brian D. Josephson's physics of mind, Kamau Zuberi Akabueze's *Stone Cold Magnets* (formerly titled "Magnetism in Plain English"), and the Gene Keys' understanding of stepping stones has become something else entirely. It has become a **living demonstration** of the very principles we were studying. The synthesis itself is the stepping stone materializing beneath our feet. The act of understanding is the act of creation. The observer is the observed.
 
 This is not an accident. This is the nature of reality when approached with trust.
 

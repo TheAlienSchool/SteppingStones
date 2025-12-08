@@ -52,7 +52,7 @@ export default function CompleteWorks() {
     {
       title: "Stepping Stones Synthesis",
       subtitle: "The invisible bridge made of existence",
-      description: "A synthesis of Josephson's semiotic scaffolding, Magnetism in Plain English, and the Gene Keys' understanding of evolutionary progression. Explores how consciousness materializes reality.",
+      description: "A synthesis of Josephson's semiotic scaffolding, Kamau Zuberi Akabueze's Stone Cold Magnets, and the Gene Keys' understanding of evolutionary progression. Explores how consciousness materializes reality.",
       comingSoon: true,
       category: "Philosophy"
     },

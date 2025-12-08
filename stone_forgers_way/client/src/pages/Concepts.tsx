@@ -8,8 +8,8 @@ export default function Concepts() {
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            {/* Header */}
-            <div className="text-center mb-16">
+            {/* Header - Pause Animation */}
+            <div className="reveal-animate text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                 The Concepts
               </h1>
@@ -25,7 +25,8 @@ export default function Concepts() {
               </p>
             </div>
 
-            {/* The Trellis and the Vine */}
+            {/* Concepts Container - Merge Animation */}
+            <div className="merge-animate">
             <section className="mb-16">
               <div className="flex items-center gap-4 mb-6">
                 <img 
@@ -228,6 +229,7 @@ export default function Concepts() {
                 </div>
               </div>
             </section>
+            </div>
 
             {/* Closing */}
             <section className="mb-16 bg-amber-50 p-8 rounded-lg">

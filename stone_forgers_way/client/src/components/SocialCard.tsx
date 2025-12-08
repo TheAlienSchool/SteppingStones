@@ -67,6 +67,24 @@ export default function SocialCard({
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const handleLongPress = (e: React.TouchEvent) => {
+    const longPressTimer = setTimeout(() => {
+      // Show mobile action sheet
+      const actions = confirm("Download or Share this card?\n\nPress OK to download, or Cancel to copy shareable link.");
+      if (actions) {
+        handleDownload();
+      } else {
+        handleCopyUrl();
+      }
+    }, 500);
+
+    const handleTouchEnd = () => {
+      clearTimeout(longPressTimer);
+      e.currentTarget.removeEventListener('touchend', handleTouchEnd);
+    };
+    e.currentTarget.addEventListener('touchend', handleTouchEnd);
+  };
+
   const handleDownload = () => {
     if (onDownload) {
       onDownload(id, format);
@@ -89,8 +107,8 @@ export default function SocialCard({
             variant="outline"
             size="sm"
             className="h-8 px-2"
-            aria-label={copied ? "Link copied to clipboard" : "Copy card link to clipboard"}
-            title={copied ? "Link copied!" : "Copy link"}
+            aria-label={copied ? "Link copied to clipboard" : "Copy shareable card link"}
+            title={copied ? "Link copied!" : "Copy shareable link to this card"}
           >
             {copied ? <Check className="w-4 h-4" aria-hidden="true" /> : <LinkIcon className="w-4 h-4" aria-hidden="true" />}
           </Button>
@@ -111,25 +129,28 @@ export default function SocialCard({
       {/* Card Preview */}
       <div
         id={id}
-        className={`${formatInfo.width} ${formatInfo.aspect} ${gradient} rounded-lg p-8 flex flex-col items-center justify-center ${textColor} shadow-lg overflow-hidden`}
+        className={`${formatInfo.width} ${formatInfo.aspect} ${gradient} rounded-lg ${format === "landscape" ? "p-4" : "p-6"} flex flex-col items-center justify-center ${textColor} shadow-lg overflow-hidden`}
+        onTouchStart={handleLongPress}
       >
         <style>{`
           @supports (font-family: le-monde-livre) {
             #${id} p {
               font-family: 'le-monde-livre', serif;
-              line-height: 1.5;
+              line-height: ${format === "landscape" ? "1.3" : "1.5"};
               word-spacing: 0.05em;
               text-rendering: optimizeLegibility;
               font-weight: 400;
             }
             #${id} p.text-sm {
               letter-spacing: 0.05em;
+              ${format === "landscape" ? "font-size: 0.85rem;" : ""}
             }
             #${id} h3 {
               font-family: 'le-monde-livre', serif;
               font-weight: 600;
               line-height: 1.4;
               text-rendering: optimizeLegibility;
+              ${format === "landscape" ? "font-size: 1.5rem; margin-bottom: 0.5rem;" : ""}
             }
             #${id} em {
               font-style: italic;
@@ -137,11 +158,11 @@ export default function SocialCard({
             }
           }
         `}</style>
-        <div className="space-y-6 text-center max-w-md w-full">
+        <div className={`text-center max-w-md w-full ${format === "landscape" ? "space-y-2 overflow-y-auto max-h-full" : "space-y-6"}`}>
           {content}
 
           {/* Watermark */}
-          <div className={`text-xs ${theme === "dark" ? "text-stone-400" : "text-stone-500"} mt-8 font-serif tracking-wider`}>
+          <div className={`text-xs ${theme === "dark" ? "text-stone-400" : "text-stone-500"} ${format === "landscape" ? "mt-2" : "mt-8"} font-serif tracking-wider`}>
             The Stone Forger's Way
           </div>
         </div>

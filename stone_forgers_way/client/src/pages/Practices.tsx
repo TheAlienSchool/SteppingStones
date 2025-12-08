@@ -8,8 +8,8 @@ export default function Practices() {
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            {/* Header */}
-            <div className="text-center mb-16">
+            {/* Header - Pause Animation */}
+            <div className="reveal-animate text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                 The Practices
               </h1>
@@ -18,8 +18,8 @@ export default function Practices() {
               </p>
             </div>
 
-            {/* Introduction */}
-            <section className="mb-16 bg-amber-50 p-8 rounded-lg">
+            {/* Introduction - Pivot Animation */}
+            <section className="pivot-animate mb-16 bg-amber-50 p-8 rounded-lg">
               <p className="text-lg leading-relaxed text-stone-700">
                 These are not exercises to complete. They are invitations to presence. Each practice takes less
                 than three minutes, but the effects compound over time. They are designed to be woven into your

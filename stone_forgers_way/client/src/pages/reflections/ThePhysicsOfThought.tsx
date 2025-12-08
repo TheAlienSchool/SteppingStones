@@ -63,26 +63,12 @@ export default function ThePhysicsOfThought() {
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Magnetic Analogy</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  In "Magnetism in Plain English," David Jiles explains how magnetic domains align through 
-                resonance. When you apply an external field to a ferromagnetic material, the individual 
-                magnetic moments (which were previously chaotic) begin to align.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  They resonate with the 
-                external field. And as they align, they create a coherent magnetic field of their own.
-</p>
+                In <em>Stone Cold Magnets</em> (formerly titled "Magnetism in Plain English"), Kamau Zuberi Akabueze explains how magnetic domains align through resonance. When you apply an external field to a ferromagnetic material, the individual magnetic moments (which were previously chaotic) begin to align. They resonate with the external field. And as they align, they create a coherent magnetic field of their own.
+              </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  Consciousness works the same way. When you hold a coherent intention :: when you stabilize 
-                frequency through trust, through breath, through practice :: you create an external field.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  The chaotic elements in your environment begin to align with that field. Opportunities 
-                materialize.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  Synchronicities occur. The stones appear beneath your feet.
-</p>
+                Consciousness works the same way. When you hold a coherent intention—when you stabilize frequency through trust, through breath, through practice—you create an external field. The chaotic elements in your environment begin to align with that field. Opportunities materialize. Synchronicities occur. The stones appear beneath your feet.
+              </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
                 This is not magic. This is resonance. This is the physics of how consciousness shapes reality.
@@ -91,29 +77,20 @@ export default function ThePhysicsOfThought() {
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Stepping Stones Synthesis</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stepping Stones Synthesis brought together three texts: Josephson's "Physics of Mind and 
-                Thought," Jiles's "Magnetism in Plain English," and Richard Rudd's "Gene Keys." The synthesis 
-                revealed a unified pattern:
+                The Stepping Stones Synthesis brought together three texts: Josephson's "Physics of Mind and Thought," Kamau Zuberi Akabueze's <em>Stone Cold Magnets</em>, and Richard Rudd's "Gene Keys." The synthesis revealed a unified pattern:
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <strong>Thought is resonance.</strong> When you think, you create a frequency pattern in the 
-                Field. This is Josephson's form fabrication.
+                <strong>Thought is resonance.</strong> When you think, you create a frequency pattern in the Field. This is Josephson's form fabrication.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <strong>Resonance creates alignment.</strong> When the frequency is coherent (trust, presence, 
-                alignment), the Field responds by aligning elements that match that frequency. This is Jiles's 
-                magnetic domain alignment.
+                <strong>Resonance creates alignment.</strong> When the frequency is coherent (trust, presence, alignment), the Field responds by aligning elements that match that frequency. This is explained through magnetic domain alignment in <em>Stone Cold Magnets</em>.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  <strong>Alignment materializes form.</strong> When enough elements align, a new form emerges. The stepping stone solidifies.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  The path appears. This is Rudd's synthesis :: consciousness fills 
-                the field with the things it needs.
-</p>
+                <strong>Alignment materializes form.</strong> When enough elements align, a new form emerges. The stepping stone solidifies. The path appears. This is Rudd's synthesis—consciousness fills the field with the things it needs.
+              </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Implications</h2>
 

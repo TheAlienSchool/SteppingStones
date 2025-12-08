@@ -2,7 +2,7 @@
 
 ## Introduction: The Convergence of Three Wisdoms
 
-A remarkable pattern has emerged across three seemingly disparate frameworks—Brian D. Josephson's physics of mind, the contemplative practice of Magnetism in Plain English, and the Gene Keys' understanding of human consciousness. All three use the metaphor of **stepping stones** to describe how human beings navigate the landscape of possibility. But this is more than metaphor. It is a description of a fundamental mechanism by which consciousness materializes reality.
+A remarkable pattern has emerged across three seemingly disparate frameworks—Brian D. Josephson's physics of mind, Kamau Zuberi Akabueze's *Stone Cold Magnets* (formerly titled "Magnetism in Plain English"), and the Gene Keys' understanding of human consciousness. All three use the metaphor of **stepping stones** to describe how human beings navigate the landscape of possibility. But this is more than metaphor. It is a description of a fundamental mechanism by which consciousness materializes reality.
 
 This document synthesizes these three perspectives to reveal a unified understanding: **Stepping stones are the invisible bridge made of existence itself—the scaffolding through which Wheeler's "fabrication of form" occurs, materializing world possibilities at a rate that requires human trust and active participation in their emergence.**
 
@@ -20,7 +20,7 @@ Over time, a steadily increasing collection of **reliable stones** emerges. Some
 
 **Key insight:** The stepping stones are not just knowledge; they are **stable attractors** in a semiotic landscape. Once a stone is established through repeated use, it becomes easier to step on it again. This is the physics of habit, the mechanism by which thought-patterns become self-reinforcing.
 
-### Magnetism in Plain English: The Seven Octaves as Stepping Stones
+### Stone Cold Magnets: The Seven Octaves as Stepping Stones
 
 The practice of Magnetism describes the **Seven Octaves of Relational Living** as progressive frequencies of awareness. Each octave is a complete practice in itself, and together they create a multi-dimensional experience of relational living. The practitioner moves through these octaves not linearly, but as a deepening spiral of embodied understanding.
 

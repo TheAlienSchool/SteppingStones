@@ -363,6 +363,24 @@
             }
         }
 
+        @keyframes mergeBend {
+            from {
+                opacity: 0;
+                background-position: 0% 50%;
+            }
+            to {
+                opacity: 1;
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Merge animation for research categories */
+        .research-section {
+            animation: mergeBend 1.4s ease-out !important;
+            background: linear-gradient(135deg, white 0%, rgba(253, 250, 235, 0.5) 50%, white 100%);
+            background-size: 200% 100%;
+        }
+
         @media (max-width: 768px) {
             .forge-header h1 {
                 font-size: 2.5rem;

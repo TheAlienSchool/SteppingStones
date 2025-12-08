@@ -54,8 +54,8 @@ export default function TheGlossary() {
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            {/* Header */}
-            <div className="text-center mb-12">
+            {/* Header - Pause Animation */}
+            <div className="reveal-animate text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4 leading-tight">
                 The Stone Forger's Glossary
               </h1>
@@ -102,8 +102,8 @@ export default function TheGlossary() {
               </div>
             </div>
 
-            {/* Introduction */}
-            <section className="mb-12 bg-amber-50 p-8 rounded-lg">
+            {/* Introduction - Merge Animation */}
+            <section className="merge-animate mb-12 bg-amber-50/50 p-8 rounded-lg bg-gradient-to-r from-amber-50 to-amber-100">
               <h2 className="text-2xl font-serif text-stone-800 mb-4">You Are Already a Stone Forger</h2>
               <p className="text-lg leading-relaxed text-stone-700">
                 This glossary is not a dictionary. It's a bridge between the language of the work and the language
@@ -113,8 +113,8 @@ export default function TheGlossary() {
               </p>
             </section>
 
-            {/* Glossary Terms by Category */}
-            <div className="space-y-12">
+            {/* Glossary Terms by Category - Pause Animations */}
+            <div className="reveal-animate space-y-12">
               {groupedTerms.map(({ category, terms }) => (
                 <div key={category}>
                   {activeCategory === "all" && (
