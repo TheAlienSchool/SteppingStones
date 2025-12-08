@@ -37,21 +37,11 @@ export default function ThePathTo1000WaysToSit() {
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">Brooklyn, 2016</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                I met Aaron Taylor Kuffner's work around 2016 in Brooklyn. At that time in my career, I was a
-                very phygitally oriented mind. I love the interplay of the physical and digital—had been the
-                steward of many phygital projects, even led a Phygital Discovery Lab at Momentum Worldwide
-                from 2005 to 2007.
+                I met Aaron Taylor Kuffner's work around 2016 in Brooklyn. At that time in my career, I was a very phygitally oriented mind. I love the interplay of the physical and digital—had been the steward of many phygital projects, even led a Phygital Discovery Lab at Momentum Worldwide from 2005 to 2007.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                My sensibilities were attuned to amazing phygital projects. Aaron's Gamelatron was one that was
-                so subtle and so beautiful that I knew, in that moment of encounter, that I would work on this
-                project at some point in my life.
-              </p>
-
-              <p className="text-lg leading-relaxed text-stone-700">
-                I took with me a postcard flyer from his show because I wanted to remember the project and the
-                feeling that arose when I saw it.
+                My sensibilities were attuned to amazing phygital projects. Aaron's Gamelatron was one that was so subtle and so beautiful that I knew, in that moment of encounter, that I would work on this project at some point in my life. I took with me a postcard flyer from his show because I wanted to remember the project and the feeling that arose when I saw it.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700 italic">
@@ -61,78 +51,41 @@ export default function ThePathTo1000WaysToSit() {
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Postcard on the Desk</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                That postcard flyer remained on my desk in my home office. Through seasons. Through projects.
-                Through the birth and growth of my son—who has taught me more about Creativity than my entire
-                career in advertising and marketing, a field that capitalizes and awards Creativity while
-                simultaneously squeezing it into a departmental function.
+                That postcard flyer remained on my desk in my home office. Through seasons. Through projects. Through the birth and growth of my son—who has taught me more about Creativity than my entire career in advertising and marketing, a field that capitalizes and awards Creativity while simultaneously squeezing it into a departmental function.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                I call this paradox a <GlossaryTooltip term="Shim Sham">Shim Sham</GlossaryTooltip>—a designation
-                that emerged from me only through experiencing a paradox that shook the term to the surface. When
-                I felt the term resonate in my body through the experiential alignment of that vibration, I knew
-                I was at home in a truth.
+                I call this paradox a <GlossaryTooltip term="Shim Sham">Shim Sham</GlossaryTooltip>—a designation that emerged from me only through experiencing a paradox that shook the term to the surface. When I felt the term resonate in my body through the experiential alignment of that vibration, I knew I was at home in a truth.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Shim Sham was vital to the birth of The Alien School for Creative Thinking. I was experiencing
-                one of my most paradoxical corporate creative experiences—had founded the term in my body as a
-                vibratory truth—and in the process woke up with the words "The Alien School."
-              </p>
-
-              <p className="text-lg leading-relaxed text-stone-700">
-                Many things can happen at once. <GlossaryTooltip term="Terma">Terma</GlossaryTooltip> emerges in
-                the <GlossaryTooltip term="Tertön">tertön</GlossaryTooltip>.
+                The Shim Sham was vital to the birth of The Alien School for Creative Thinking. I was experiencing one of my most paradoxical corporate creative experiences—had founded the term in my body as a vibratory truth—and in the process woke up with the words "The Alien School." Many things can happen at once. <GlossaryTooltip term="Terma">Terma</GlossaryTooltip> emerges in the <GlossaryTooltip term="Tertön">tertön</GlossaryTooltip>.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Magic Hour, 2021</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                I met Aaron in 2021 while I was curating an exhibition called LIGHTwork for a Gallery Walk
-                called The Magic Hour. Aaron's work was featured in that Gallery Walk at the South Street
-                Seaport by the Walk's founder.
-              </p>
-
-              <p className="text-lg leading-relaxed text-stone-700">
-                That fateful meeting gave birth to a fruitful friendship between fathers. A connection that
-                would eventually lead to 1000 Ways to Sit :: A Gamelatron Sonic Sanctuary.
+                I met Aaron in 2021 while I was curating an exhibition called LIGHTwork for a Gallery Walk called The Magic Hour. Aaron's work was featured in that Gallery Walk at the South Street Seaport by the Walk's founder. That fateful meeting gave birth to a fruitful friendship between fathers. A connection that would eventually lead to 1000 Ways to Sit :: A Gamelatron Sonic Sanctuary.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">February 2025: The Move</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                In February 2025, I moved from Jersey City, NJ to Gastonia, North Carolina—into a family home
-                with my brother Omar Luqmaan Harris and my sister Sameerah Harris. We are all children of
-                Samuel Roland Harris. Omar and Sameerah were born from his second marriage, and they would
-                be with us at family gatherings at First Baptist Church of McDonald.
+                In February 2025, I moved from Jersey City, NJ to Gastonia, North Carolina—into a family home with my brother Omar Luqmaan Harris and my sister Sameerah Harris. We are all children of Samuel Roland Harris. Omar and Sameerah were born from his second marriage, and they would be with us at family gatherings at First Baptist Church of McDonald. A powerfully creative home, if you give us a searching.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                A powerfully creative home, if you give us a searching.
-              </p>
-
-              <p className="text-lg leading-relaxed text-stone-700">
-                The postcard flyer came with me. Nine years of holding that feeling. Nine years of knowing
-                something was waiting to materialize.
+                The postcard flyer came with me. Nine years of holding that feeling. Nine years of knowing something was waiting to materialize.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">November 24, 2025: San Francisco</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Today, right now, I am sitting in 1000 Ways to Sit :: A Gamelatron Sonic Sanctuary in
-                San Francisco, California, hosting regular <GlossaryTooltip term="Creative Steeping">Creative
-                Steeping</GlossaryTooltip> events.
+                Today, right now, I am sitting in 1000 Ways to Sit :: A Gamelatron Sonic Sanctuary in San Francisco, California, hosting regular <GlossaryTooltip term="Creative Steeping">Creative Steeping</GlossaryTooltip> events.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The postcard flyer became a path. The feeling remembered became a sanctuary. The nine years
-                were <GlossaryTooltip term="Active Patience">active patience</GlossaryTooltip>—trusting the
-                rate of materialization while tending the connection.
-              </p>
-
-              <p className="text-lg leading-relaxed text-stone-700">
-                This is what it looks like when <GlossaryTooltip term="Trust">trust</GlossaryTooltip> is
-                the cheat code.
+                The postcard flyer became a path. The feeling remembered became a sanctuary. The nine years were <GlossaryTooltip term="Active Patience">active patience</GlossaryTooltip>—trusting the rate of materialization while tending the connection. This is what it looks like when <GlossaryTooltip term="Trust">trust</GlossaryTooltip> is the cheat code.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Context Timeline</h2>
