@@ -118,6 +118,9 @@ export default function SocialCard({
               text-rendering: optimizeLegibility;
               font-weight: 400;
             }
+            #${id} p.text-sm {
+              letter-spacing: 0.05em;
+            }
             #${id} h3 {
               font-family: 'le-monde-livre', serif;
               font-weight: 600;
@@ -134,7 +137,7 @@ export default function SocialCard({
           {content}
 
           {/* Watermark */}
-          <div className={`text-xs ${theme === "dark" ? "text-stone-400" : "text-stone-500"} mt-8 font-serif`}>
+          <div className={`text-xs ${theme === "dark" ? "text-stone-400" : "text-stone-500"} mt-8 font-serif tracking-wider`}>
             The Stone Forger's Way
           </div>
         </div>

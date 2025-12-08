@@ -1242,10 +1242,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
-                        "Money reveals where you don't trust yourself."
+                        "Money reveals where you don't trust&nbsp;yourself."
                       </p>
                       <p className="text-sm opacity-80">
-                        From: Money as Teacher
+                        From: Money as&nbsp;Teacher
                       </p>
                     </>
                   }
@@ -1261,10 +1261,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
-                        "The whale doesn't sing because it has an audience. It sings because that's what whales do."
+                        "The whale doesn't sing because it has an audience. It sings because that's what whales&nbsp;do."
                       </p>
                       <p className="text-sm opacity-80">
-                        From: The Whale's Song
+                        From: The Whale's&nbsp;Song
                       </p>
                     </>
                   }
@@ -1280,10 +1280,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
-                        "What you need is already inside you, waiting for the right moment to be discovered."
+                        "What you need is already inside you, waiting for the right moment to be&nbsp;discovered."
                       </p>
                       <p className="text-sm opacity-80">
-                        From: Terma in Action
+                        From: Terma in&nbsp;Action
                       </p>
                     </>
                   }
@@ -1299,10 +1299,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
-                        "Grace is what happens when you stop fighting the river and learn to navigate it."
+                        "Grace is what happens when you stop fighting the river and learn to navigate&nbsp;it."
                       </p>
                       <p className="text-sm opacity-80">
-                        From: The Gift of Grace
+                        From: The Gift of&nbsp;Grace
                       </p>
                     </>
                   }
@@ -1318,10 +1318,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
-                        "Your creative practice needs protection, not from the world, but from your own patterns."
+                        "Your creative practice needs protection, not from the world, but from your own&nbsp;patterns."
                       </p>
                       <p className="text-sm opacity-80">
-                        From: The Creative Fortress
+                        From: The Creative&nbsp;Fortress
                       </p>
                     </>
                   }
@@ -1337,10 +1337,10 @@ export default function Social() {
                   content={
                     <>
                       <p className="text-xl md:text-2xl font-serif leading-tight mb-4">
-                        "You provided space and runway for wisdom to flow. The container shapes what emerges."
+                        "You provided space and runway for wisdom to flow. The container shapes what&nbsp;emerges."
                       </p>
                       <p className="text-sm opacity-80">
-                        From: The Container
+                        From: The&nbsp;Container
                       </p>
                     </>
                   }
