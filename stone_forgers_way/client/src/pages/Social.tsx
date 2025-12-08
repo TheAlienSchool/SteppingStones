@@ -1,33 +1,52 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import SocialCard from "@/components/SocialCard";
 import SEO from "@/components/SEO";
 import { Sun, Moon, Share2 } from "lucide-react";
 import html2canvas from "html2canvas";
+import { detectDevice, saveCanvasToDevice, getSaveInstructions, type DeviceInfo } from "@/lib/deviceDetection";
 
 type ThemeMode = "light" | "dark";
 
 export default function Social() {
   const [theme, setTheme] = useState<ThemeMode>("light");
+  const [deviceInfo, setDeviceInfo] = useState<DeviceInfo | null>(null);
+
+  useEffect(() => {
+    // Detect device on mount
+    setDeviceInfo(detectDevice());
+  }, []);
 
   const handleDownload = async (id: string, format: string) => {
-    const element = document.getElementById(id);
-    if (!element) {
-      console.error("Element not found:", id);
+    // Get ONLY the card div, not the parent wrapper
+    const cardElement = document.getElementById(id);
+    if (!cardElement) {
+      console.error("Card element not found:", id);
       alert("Could not find card to download. Please refresh and try again.");
       return;
     }
 
     try {
-      // Clone element to ensure clean render
-      const clone = element.cloneNode(true) as HTMLElement;
-      document.body.appendChild(clone);
-      clone.style.position = "absolute";
+      console.log("Starting download for card:", id, "Format:", format);
+      
+      // Clone ONLY the card div
+      const clone = cardElement.cloneNode(true) as HTMLElement;
+      
+      // Position off-screen but in DOM so styles are computed
+      clone.style.position = "fixed";
       clone.style.left = "-9999px";
       clone.style.top = "-9999px";
+      clone.style.visibility = "hidden";
+      clone.style.pointerEvents = "none";
+      
+      document.body.appendChild(clone);
 
+      // Wait for DOM to settle
+      await new Promise(resolve => setTimeout(resolve, 100));
+
+      console.log("Canvas conversion starting...");
       const canvas = await html2canvas(clone, {
-        backgroundColor: null,
+        backgroundColor: "#ffffff",
         scale: 2,
         logging: false,
         useCORS: true,
@@ -37,17 +56,26 @@ export default function Social() {
         height: format === "square" ? 1080 : format === "story" ? 1920 : 675
       });
 
+      console.log("Canvas created successfully, size:", canvas.width, "x", canvas.height);
       document.body.removeChild(clone);
 
-      const link = document.createElement("a");
-      link.download = `stone-forgers-way-${id}-${Date.now()}.png`;
-      link.href = canvas.toDataURL("image/png");
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Use platform-specific save method
+      const filename = `stone-forgers-way-${id}-${Date.now()}.png`;
+      console.log("Attempting to save with device info:", deviceInfo);
+      
+      if (!deviceInfo) {
+        throw new Error("Device info not available");
+      }
+
+      await saveCanvasToDevice(canvas, filename, deviceInfo);
+      
+      console.log("Download completed successfully!");
+      alert("Image downloaded successfully!");
     } catch (error) {
-      console.error("Download failed:", error);
-      alert("Download failed. Please try again or use screenshot functionality.");
+      console.error("Download failed with full details:", error);
+      const errorMsg = error instanceof Error ? error.message : String(error);
+      console.error("Error message:", errorMsg);
+      alert(`Download failed: ${errorMsg}\n\nPlease try screenshot or contact support.`);
     }
   };
 
@@ -1478,36 +1506,71 @@ export default function Social() {
 
             {/* Usage Guide */}
             <section className="bg-amber-50 rounded-xl p-8 mt-16">
-              <h2 className="text-2xl font-serif text-stone-800 mb-4">How to Use</h2>
+              <h2 className="text-2xl font-serif text-stone-800 mb-6">How to Save & Share</h2>
+              
+              {deviceInfo && (
+                <div className="mb-8 p-4 bg-white rounded-lg border-2 border-amber-200">
+                  <p className="text-sm text-stone-600">
+                    <strong>✨ Device Detected:</strong> {deviceInfo.isIOS ? "iPhone/iPad" : deviceInfo.isAndroid ? "Android Device" : "Desktop"} · {deviceInfo.isSafari ? "Safari" : deviceInfo.isChrome ? "Chrome" : "Your Browser"}
+                  </p>
+                  <p className="text-base text-amber-800 font-medium mt-2">
+                    {getSaveInstructions(deviceInfo)}
+                  </p>
+                </div>
+              )}
+
               <div className="grid md:grid-cols-2 gap-6 text-stone-700">
                 <div>
-                  <h3 className="font-semibold mb-2">📱 Mobile Screengrab</h3>
+                  <h3 className="font-semibold mb-2">📱 iPhone Users</h3>
                   <p className="text-sm">
-                    Open this page on your phone, find a card that resonates, take a screenshot.
-                    Perfect for quick Instagram stories or posts.
+                    Click the <strong>"Save"</strong> button, then <strong>long-press</strong> the image that appears.
+                    Select <strong>"Save Image"</strong> to add to your Camera Roll.
+                    This is the native iOS method for saving images.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">💾 Download High Quality</h3>
+                  <h3 className="font-semibold mb-2">🤖 Android Users</h3>
                   <p className="text-sm">
-                    Use the "Save" button to download a high-resolution PNG.
-                    Great for scheduled posts and professional sharing.
+                    Click the <strong>"Save"</strong> button to download the PNG file.
+                    Files go to your Downloads folder or default save location.
+                    Open any gallery app to view and share.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">🖥️ Desktop Users</h3>
+                  <p className="text-sm">
+                    Click the <strong>"Save"</strong> button to download high-resolution PNG.
+                    Choose your save location. Perfect for scheduling posts across platforms.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">📸 Screenshot Alternative</h3>
+                  <p className="text-sm">
+                    You can always take a screenshot of any card directly.
+                    This is reliable across all devices and platforms.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">🔗 Share Direct Links</h3>
                   <p className="text-sm">
-                    Click the link icon to copy a URL to any specific card.
-                    Share directly to drive traffic back to the site.
+                    Click the link icon to copy a shareable URL for any specific card.
+                    Send to friends or share on social media with context.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">🌗 Choose Your Vibe</h3>
+                  <h3 className="font-semibold mb-2">🌗 Light & Dark Themes</h3>
                   <p className="text-sm">
-                    Toggle between light and dark themes to match your feed aesthetic or
-                    create visual variety across posts.
+                    Toggle the theme at the top to match your aesthetic.
+                    Download both versions for variety across your social feeds.
                   </p>
                 </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-stone-100 rounded-lg">
+                <p className="text-xs text-stone-600">
+                  <strong>💡 Pro Tip:</strong> The download feature uses high-resolution rendering to ensure your social posts look crisp and professional.
+                  On iPhone, the native "Save Image" method automatically optimizes for Camera Roll storage.
+                </p>
               </div>
             </section>
 
