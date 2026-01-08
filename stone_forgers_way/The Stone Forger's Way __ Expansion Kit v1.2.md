@@ -19,14 +19,14 @@ All archetypes are presented as "Nameless/Faceless" figures—silhouettes, obscu
 *   **Visual Signature:** A hooded, faceless silhouette examining a floating jade-green cubic stone. The figure is a vessel of focus, obscured in shadow, revealing only the digital wireframe projection of the stone.
 *   **Core Practice:** *The Code Audit* — Identifying the underlying belief structure of a stone before picking it up.
 
-### 1.2 The Invitation
-**The Opener of Ways**
+### 1.2 Walker of The Way
+**The Pathmaker of Ancestral Knowing**
 
-*   **Simple Definition:** The one who creates space for others to enter.
-*   **The Experience:** You are the host, the gatekeeper, the welcomer. You often feel the weight of others' comfort and belonging. Your stones are often the needs and expectations of those you invite in.
-*   **The Insight:** Your gift is **Hospitality** (in the ancient sense). You create the Container where forging can happen. You are the threshold guardian who ensures safety.
-*   **Visual Signature:** A welcoming figure with obscured features, standing on a path of floating square tiles. They extend an open hand, not as a person, but as the embodiment of the gesture itself.
-*   **Core Practice:** *The Threshold Breath* — Consciously opening and closing the energetic gate of your attention.
+*   **Simple Definition:** The one who walks with inner compass, forging paths for others to follow.
+*   **The Experience:** You carry ancestral knowing that a Way exists—not taught, but endowed. You sense your steps before you take them. People walk alongside you because they feel the safety of your inner compass. You build trust through pathmaking, forging forward knowing the Peak is as accessible as the Sun's light from the forthcoming precipice. You are a co-creator with the nature of Life, strolling at the edge of possibility.
+*   **The Insight:** Your gift is **Wayfinding**. You don't need the whole map—you trust the knowing that lives in your bones. You are often unseen in your time, memorialized only after your Way is walked.
+*   **Visual Signature:** A lone figure walking a path of materializing stones, each step solidifying beneath them. The horizon glows with possibility. They are faceless, timeless—a vessel for the Way itself.
+*   **Core Practice:** *The Inner Compass Check* — Trusting the knowing in your bones over external maps.
 
 ### 1.3 The Stone Keeper
 **The Guardian of Lineage**
@@ -94,7 +94,7 @@ To integrate these into the existing quiz, we add a **Secondary Layer** or "Sub-
 
 **Mapping:**
 *   **Jade Hunter** often evolves from *Conscious Forger* or *Stone Carrier* (intellectual burden).
-*   **Invitation** often evolves from *Stone Carrier* (emotional burden).
+*   **Walker of The Way** often evolves from *Conscious Forger* or *Stone Forger* (ancestral knowing awakened).
 *   **Stone Keeper** often evolves from *Stone Carrier* (lineage burden).
 *   **Stone Breaker** often evolves from *Stone Thrower* (reactive energy channeled).
 *   **Stone Caller** often evolves from *Stone Thrower* (creative chaos).
@@ -112,10 +112,10 @@ Once a user identifies their Expanded Archetype, they receive a specific **Progr
 *   **Tool:** *The System Override* (Journaling prompt to rewrite a limiting belief).
 *   **Glossary Lens:** Focus on "Structure," "Pattern," "Algorithm."
 
-### Path of the Threshold (Invitation)
-*   **Goal:** Move from over-giving to selective opening.
-*   **Tool:** *The Gatekeeper's Key* (Visualization of locking/unlocking your energy).
-*   **Glossary Lens:** Focus on "Container," "Boundary," "Hospitality."
+### Path of the Wayfinder (Walker of The Way)
+*   **Goal:** Move from invisible pathmaking to recognized lineage.
+*   **Tool:** *The Map You're Making* (Documenting your journey for those who follow).
+*   **Glossary Lens:** Focus on "Wayfinding," "Ancestral Knowing," "Inner Compass," "Pathmaking," "Lineage."
 
 ### Path of the Archive (Stone Keeper)
 *   **Goal:** Move from hoarding to curating.
@@ -144,7 +144,8 @@ Once a user identifies their Expanded Archetype, they receive a specific **Progr
 Add these terms to the site glossary, tagged with their relevant archetypes.
 
 *   **Code Audit (Jade Hunter):** The act of examining the underlying beliefs that create a stone's weight.
-*   **Threshold (Invitation):** The energetic boundary between self and other; the place of choice.
+*   **Inner Compass (Walker of The Way):** The ancestral knowing that guides your path without needing external validation.
+*   **Pathmaking (Walker of The Way):** The act of forging a way forward for yourself and those who will follow.
 *   **Calcification (Stone Breaker):** When a stone (habit/pattern) hardens and loses its life force, requiring breaking.
 *   **Summoning (Stone Caller):** The often unconscious act of drawing obligations to oneself through language or desire.
 *   **The Archive (Stone Keeper):** The collective weight of ancestral and cultural stones carried by a lineage.
@@ -157,7 +158,7 @@ Add these terms to the site glossary, tagged with their relevant archetypes.
 *   **Location:** `/client/public/images/archetypes/`
 *   **Files:**
     *   `jade_hunter_v5.png` (Nameless/Faceless)
-    *   `the_invitation_v4.png` (Nameless/Faceless)
+    *   `walker_of_the_way_v4.png` (Nameless/Faceless)
     *   `stone_keeper_v5.png` (Nameless/Faceless)
     *   `stone_breaker_v5.png` (Nameless/Faceless)
     *   `stone_caller_v4.png` (Nameless/Faceless)
