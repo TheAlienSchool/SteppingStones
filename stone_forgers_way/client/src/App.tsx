@@ -34,6 +34,8 @@ import MyArchetype from "./pages/MyArchetype";
 import TodaysPracticePage from "./pages/TodaysPracticePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Disclaimer from "./pages/Disclaimer";
+import ArchetypePortal from "./pages/ArchetypePortal";
+import ExpandedQuiz from "./pages/ExpandedQuiz";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 
 // Code splitting for heavy pages (lazy load on route navigation)
@@ -61,7 +63,9 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/journey"} component={TheJourney} />
       <Route path={"/archetypes"} component={Archetypes} />
+      <Route path={"/archetype/:id"} component={ArchetypePortal} />
       <Route path={"/archetype-quiz"} component={ArchetypeQuiz} />
+      <Route path={"/expanded-quiz"} component={ExpandedQuiz} />
       <Route path={"/my-archetype"} component={MyArchetype} />
       <Route path={"/todays-practice"} component={TodaysPracticePage} />
       <Route path={"/concepts"} component={Concepts} />

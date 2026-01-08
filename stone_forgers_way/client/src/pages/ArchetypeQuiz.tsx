@@ -296,6 +296,29 @@ export default function ArchetypeQuiz() {
                 <PracticeReminder practice={getTodaysPractice()} className="mt-4" />
               </Card>
 
+              {/* Expanded Quiz Invitation */}
+              <Card
+                className="p-8 mb-8 bg-gradient-to-br from-amber-600 to-amber-700 text-white opacity-0"
+                style={{ animation: "fadeInUp 0.6s ease-out 1.15s forwards" }}
+              >
+                <h3 className="text-2xl font-serif text-amber-100 mb-4">
+                  Ready to go deeper?
+                </h3>
+                <p className="text-amber-50 leading-relaxed mb-6">
+                  You've discovered your core archetype. Now take Layer 2 of the quiz to reveal your
+                  <strong className="text-white"> expanded archetype</strong> :: the specific way you relate
+                  to stones, knowing, and transformation. This layer reveals practices, gifts, and shadows
+                  unique to your path.
+                </p>
+                <Button
+                  onClick={() => setLocation('/expanded-quiz')}
+                  size="lg"
+                  className="bg-white text-amber-700 hover:bg-stone-50"
+                >
+                  Take Layer 2 :: Expanded Quiz
+                </Button>
+              </Card>
+
               {/* Actions */}
               <div
                 className="flex flex-col sm:flex-row gap-4 justify-center opacity-0"

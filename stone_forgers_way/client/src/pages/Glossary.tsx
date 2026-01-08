@@ -12,6 +12,7 @@ import {
   type GlossaryCategory,
   type GlossaryTerm
 } from "@/lib/glossaryData";
+import { ArchetypeBadges } from "@/components/ArchetypeBadge";
 
 export default function TheGlossary() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -207,6 +208,16 @@ function GlossaryCard({
         <div className="flex-1">
           <h3 className="text-xl font-serif text-stone-800">{term.term}</h3>
           <p className="text-stone-600 mt-1">{term.simple}</p>
+          {(term.coreArchetypeTags || term.expandedArchetypeTags) && (
+            <div className="mt-2">
+              <ArchetypeBadges
+                coreArchetypes={term.coreArchetypeTags}
+                expandedArchetypes={term.expandedArchetypeTags}
+                prefix="Related to:"
+                size="sm"
+              />
+            </div>
+          )}
         </div>
         <svg
           className={`w-5 h-5 text-stone-400 ml-4 mt-1 transition-transform ${isExpanded ? 'rotate-180' : ''}`}

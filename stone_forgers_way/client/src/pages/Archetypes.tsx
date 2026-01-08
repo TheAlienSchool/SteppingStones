@@ -3,6 +3,7 @@ import ContributionInvitation from "@/components/ContributionInvitation";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
+import { getAllExpandedArchetypes } from "@/lib/expandedArchetypes";
 
 const archetypes = [
   {
@@ -181,7 +182,75 @@ export default function Archetypes() {
         </section>
         </div>
 
-        <section className="py-24 bg-gradient-to-b from-white to-amber-50">
+        {/* Expanded Archetypes Section */}
+        <section className="py-24 bg-gradient-to-b from-stone-100 to-amber-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto space-y-12">
+              <div className="text-center space-y-6">
+                <h2 className="text-4xl md:text-5xl font-serif text-stone-800">
+                  The Expanded Archetypes
+                </h2>
+                <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
+                  Go deeper. These six archetypes are the frictional reality states ::
+                  the specific ways you relate to stones, knowing, and transformation.
+                </p>
+                <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+                  Each core archetype can branch into multiple expanded paths.
+                  Discover yours through the two-layer quiz.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {getAllExpandedArchetypes().map((archetype) => (
+                  <Link
+                    key={archetype.id}
+                    href={`/archetype/${archetype.id}`}
+                  >
+                    <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full cursor-pointer group">
+                      <div className="aspect-square overflow-hidden">
+                        <img
+                          src={archetype.imagePath}
+                          alt={`${archetype.name} - ${archetype.subtitle}`}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+
+                      <div className="p-6 space-y-3">
+                        <h3 className="text-2xl font-serif text-stone-800 group-hover:text-amber-700 transition-colors">
+                          {archetype.name}
+                        </h3>
+
+                        <p className="text-amber-700 font-semibold">
+                          {archetype.subtitle}
+                        </p>
+
+                        <p className="text-stone-600 italic">
+                          {archetype.simpleDefinition}
+                        </p>
+
+                        <div className="pt-4">
+                          <span className="text-amber-600 group-hover:text-amber-700 font-medium">
+                            Explore this archetype →
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="text-center pt-8">
+                <Link href="/archetype-quiz">
+                  <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-8 py-6">
+                    Discover Your Expanded Archetype
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 bg-gradient-to-b from-amber-50 to-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <ContributionInvitation />
