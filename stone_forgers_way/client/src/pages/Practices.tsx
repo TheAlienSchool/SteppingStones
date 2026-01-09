@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
-import { Link } from "wouter";
-import { useState } from "react";
+import { Link, useLocation } from "wouter";
+import { useState, useEffect } from "react";
 import {
   getAllPractices,
   getPracticesByArchetype,
@@ -14,8 +14,23 @@ import { ArchetypeBadges } from "@/components/ArchetypeBadge";
 type ArchetypeFilter = 'all' | CoreArchetypeId | ExpandedArchetypeId;
 
 export default function Practices() {
-  const [activeFilter, setActiveFilter] = useState<ArchetypeFilter>('all');
+  const [location] = useLocation();
+
+  // Check for archetype URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const archetypeParam = urlParams.get('archetype') as ArchetypeFilter | null;
+
+  const [activeFilter, setActiveFilter] = useState<ArchetypeFilter>(archetypeParam || 'all');
   const [expandedPractice, setExpandedPractice] = useState<string | null>(null);
+
+  // Update filter if URL parameter changes
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const archetypeParam = urlParams.get('archetype') as ArchetypeFilter | null;
+    if (archetypeParam) {
+      setActiveFilter(archetypeParam);
+    }
+  }, [location]);
 
   // Get all practices
   const allPractices = getAllPractices();

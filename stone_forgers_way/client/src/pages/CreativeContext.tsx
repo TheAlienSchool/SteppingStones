@@ -571,22 +571,25 @@ function buildContextObject() {
       author: "Kamau Zuberi Akabueze",
       url: "https://thestoneforgers.way", // Update with actual URL
       generatedAt: new Date().toISOString(),
-      version: "2.2",
+      version: "2.3",
       updates: {
         "2.0": "Added Cloud Dancer color integration, Social Cards system (35+ cards), Voices from The Way testimonials, /voices page, updated homepage with testimonial section",
         "2.1": "Added Stone Forger's Cohort program (/forgers-cohort), Stone Philosophy (three states), Infographic specifications (6 visual guides), Cohort testimonials, Full funnel architecture with Archetype Quiz gate",
-        "2.2": "COLLECTIVE VOICE TRANSFORMATION - Shifted from prescriptive 'you/your' to inclusive 'we/our' and universal 'one/one's' throughout site. Kamau positioned as fellow-practitioner, not expert above. The Container holds everyone. Invitation to recognition, not diagnosis. Applied to /forgers-cohort as proof of concept."
+        "2.2": "COLLECTIVE VOICE TRANSFORMATION - Shifted from prescriptive 'you/your' to inclusive 'we/our' and universal 'one/one's' throughout site. Kamau positioned as fellow-practitioner, not expert above. The Container holds everyone. Invitation to recognition, not diagnosis. Applied to /forgers-cohort as proof of concept.",
+        "2.3": "EXPANSION KIT V1.2 - Two-layer archetype system: 4 core archetypes branching into 6 expanded archetypes (Jade Hunter, Walker of The Way, Stone Keeper, Stone Breaker, Stone Caller, Stone Witness). Added Layer 2 quiz (8 questions, randomized), dynamic archetype portals (/archetype/:id), 28 practices with archetype tagging, glossary term archetype filtering, bidirectional educational linking, /archetypes discovery hub transformation with branch visualization. Complete ecosystem integration across /archetypes, /practices, /glossary."
       }
     },
     pages: {
       core: [
         { path: "/", name: "Home", description: "Homepage with hero, practices, testimonials, archetype quiz CTA" },
         { path: "/journey", name: "The Journey", description: "The path from Stone Carrier to Stone Forger" },
-        { path: "/archetypes", name: "Archetypes", description: "The four archetypal states of consciousness" },
-        { path: "/archetype-quiz", name: "Archetype Quiz", description: "Discover your current archetype" },
+        { path: "/archetypes", name: "Archetypes", description: "Discovery hub: 4 core archetypes + 6 expanded archetypes with branch visualization and practice counts" },
+        { path: "/archetype-quiz", name: "Layer 1: Core Archetype Quiz", description: "Discover your core archetype (Carrier, Thrower, Conscious Forger, or Forger)" },
+        { path: "/expanded-quiz", name: "Layer 2: Expanded Archetype Quiz", description: "Go deeper to reveal your specific path (requires core quiz completion)" },
+        { path: "/archetype/:id", name: "Archetype Portals", description: "Dynamic portal pages for each of 6 expanded archetypes with gift, shadow, practices, progression path" },
         { path: "/concepts", name: "Concepts & Practices", description: "Core frameworks and actionable practices" },
-        { path: "/practices", name: "Practices", description: "Micro-practices for immediate relief" },
-        { path: "/glossary", name: "Glossary", description: "Complete vocabulary with three-layer definitions" }
+        { path: "/practices", name: "Practices", description: "28 micro-practices with archetype filtering (11 filters: all + 4 core + 6 expanded)" },
+        { path: "/glossary", name: "Glossary", description: "Complete vocabulary with three-layer definitions + archetype tagging" }
       ],
       content: [
         { path: "/reflections", name: "Reflections", description: "11 deep-dive essays on philosophy, practice, science" },
@@ -608,6 +611,116 @@ function buildContextObject() {
     cohortProgram,
     stonePhilosophy,
     infographicSpecs,
+    expandedArchetypes: {
+      overview: "Six frictional reality states :: the specific ways you relate to stones, knowing, and transformation",
+      system: "Two-layer quiz architecture: Core archetype (Layer 1) → Expanded archetype (Layer 2). Each core branches into 2-3 expanded paths.",
+      archetypes: [
+        {
+          id: "jade-hunter",
+          name: "The Jade Hunter",
+          subtitle: "The Investigator of Compressed Knowing",
+          gift: "Distillation",
+          shadow: "The Hoarder",
+          coreAlignment: ["conscious", "carrier"],
+          corePractices: ["Code Audit", "System Override"],
+          description: "The one who seeks condensed truth in dense materials—research papers, technical docs, sacred texts. Masters the art of extracting compressed wisdom."
+        },
+        {
+          id: "walker-of-the-way",
+          name: "Walker of The Way",
+          subtitle: "The Pathmaker of Ancestral Knowing",
+          gift: "Wayfinding",
+          shadow: "The Wanderer",
+          coreAlignment: ["conscious", "forger"],
+          corePractices: ["Inner Compass Check", "Map You're Making"],
+          description: "The one who walks with inner compass, forging paths for others to follow. Often unseen and memorialized well after their Way is walked."
+        },
+        {
+          id: "stone-keeper",
+          name: "The Stone Keeper",
+          subtitle: "The Guardian of Memory and Weight",
+          gift: "Stewardship",
+          shadow: "The Archivist",
+          coreAlignment: ["carrier"],
+          corePractices: ["The Archive Visit", "Unburdening Ritual"],
+          description: "The one who holds stones consciously, not as burden but as trust. Keeper of lineage, memory, and honored weight."
+        },
+        {
+          id: "stone-breaker",
+          name: "The Stone Breaker",
+          subtitle: "The Liberator Through Conscious Destruction",
+          gift: "Liberation",
+          shadow: "The Demolisher",
+          coreAlignment: ["thrower"],
+          corePractices: ["Controlled Break", "The Clean Sweep"],
+          description: "The one who breaks stones with precision and purpose. Not rage-throwing, but conscious deconstruction of what no longer serves."
+        },
+        {
+          id: "stone-caller",
+          name: "The Stone Caller",
+          subtitle: "The Summoner of What's Ready to Emerge",
+          gift: "Summoning",
+          shadow: "The Conjurer",
+          coreAlignment: ["thrower", "conscious"],
+          corePractices: ["The Invitation", "Threshold Waiting"],
+          description: "The one who calls stones forward from the Field. Practices active patience at the threshold of what wants to materialize."
+        },
+        {
+          id: "stone-witness",
+          name: "The Stone Witness",
+          subtitle: "The Observer of Materialization",
+          gift: "Anchoring",
+          shadow: "The Spectator",
+          coreAlignment: ["conscious", "forger"],
+          corePractices: ["Witnessing Practice", "The Anchor Drop"],
+          description: "The one who observes without grasping. Holds presence as stones materialize, stabilizing emergence through conscious attention."
+        }
+      ],
+      quizArchitecture: {
+        layer1: "10 questions, identifies core archetype (Carrier, Thrower, Conscious Forger, Forger)",
+        layer2: "8 questions (randomized), narrows to 1 of 6 expanded archetypes based on core result",
+        storage: "localStorage persistence, results retrievable via getLatestQuizResult()",
+        navigation: "Core quiz → Optional Layer 2 invitation → Expanded quiz → Portal page",
+        features: "Randomized questions, randomized options, scoring algorithm, score breakdown display, social sharing"
+      },
+      portalPages: {
+        route: "/archetype/:id",
+        features: [
+          "Hero image and archetype introduction",
+          "Gift, Shadow, and Experience sections",
+          "Core practice spotlight with instructions",
+          "Progression path (glossary focus, key concepts, evolution trajectory)",
+          "Related practices grid (filtered from 28 total)",
+          "Glossary term recommendations",
+          "Social share functionality"
+        ],
+        design: "Nameless/Faceless visual aesthetic, amber-stone color palette, serif typography, educational yet contemplative"
+      },
+      practiceIntegration: {
+        total: 28,
+        tagging: "Dual archetype tags: coreArchetypeTags (4 possible) + expandedArchetypeTags (6 possible)",
+        filtering: "11-button filter bar on /practices (View All + 4 core + 6 expanded)",
+        display: "Expand/collapse accordion cards with archetype badges, duration, frequency, category",
+        urlSupport: "/practices?archetype=carrier links from archetype pages for pre-filtered view"
+      },
+      glossaryIntegration: {
+        newTerms: ["Inner Compass", "Pathmaking", "Ancestral Knowing", "The Peak", "Wayfinding", "Code Audit", "Calcification", "Summoning", "The Archive", "Anchoring", "Discernment", "Liberation", "Stewardship"],
+        tagging: "Terms tagged with coreArchetypeTags and expandedArchetypeTags for filtered browsing",
+        display: "ArchetypeBadge component shows term relationships, clickable for expanded archetypes"
+      },
+      discoveryHub: {
+        location: "/archetypes page transformation",
+        features: [
+          "4 core archetypes with full prose (unchanged)",
+          "Branch visualization showing 2-3 expanded archetypes per core",
+          "Practice count badges with CTA buttons",
+          "6 expanded archetype cards in bottom grid",
+          "Dual quiz CTAs (core + expanded)",
+          "Complete bidirectional linking ecosystem"
+        ],
+        philosophy: "Transformed from 'cul de sac' to 'superhighway' :: preserve beautiful prose, add utility pathways below"
+      }
+    },
     socialCards: {
       overview: "35+ shareable wisdom cards across 6 categories (quote, reflection, glossary, practice, archetype, voice) in 3 formats (square 1:1, story 9:16, landscape 16:9)",
       location: "/social - Under 'Explore' menu as 'A Way to Share'",
@@ -662,7 +775,7 @@ export default function CreativeContext() {
   // Handle URL hash for direct section linking
   useEffect(() => {
     const hash = window.location.hash.slice(1); // Remove the '#'
-    const validSections = ["overview", "design", "voice", "social", "cohort", "stones", "infographics", "glossary", "reflections", "timeline", "honor", "exchange"];
+    const validSections = ["overview", "design", "voice", "social", "cohort", "stones", "expanded", "infographics", "glossary", "reflections", "timeline", "honor", "exchange"];
     if (hash && validSections.includes(hash)) {
       setActiveSection(hash);
     }
@@ -701,6 +814,7 @@ export default function CreativeContext() {
     { id: "social", label: "Social Cards" },
     { id: "cohort", label: "Cohort Program" },
     { id: "stones", label: "Stone Philosophy" },
+    { id: "expanded", label: "Expanded Archetypes" },
     { id: "infographics", label: "Infographics" },
     { id: "glossary", label: "Glossary" },
     { id: "reflections", label: "Reflections" },
@@ -1320,6 +1434,180 @@ export default function CreativeContext() {
                       <p className="text-xl text-stone-700 leading-relaxed text-center italic">
                         {stonePhilosophy.ultimateTruth}
                       </p>
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* Expanded Archetypes */}
+              {activeSection === "expanded" && (
+                <section>
+                  <h2 className="text-3xl font-serif text-stone-800 mb-6 leading-tight">The Expanded Archetypes</h2>
+                  <p className="text-xl text-stone-600 mb-8">
+                    Six frictional reality states :: the specific ways you relate to stones, knowing, and transformation
+                  </p>
+
+                  <div className="space-y-12">
+                    {/* Overview */}
+                    <div className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-lg border-2 border-amber-200">
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4">Two-Layer System</h3>
+                      <p className="text-stone-700 leading-relaxed mb-4">
+                        <strong>Layer 1 (Core):</strong> 10 questions identify your foundational archetype :: Stone Carrier, Stone Thrower, Conscious Forger, or Stone Forger.
+                      </p>
+                      <p className="text-stone-700 leading-relaxed mb-4">
+                        <strong>Layer 2 (Expanded):</strong> 8 randomized questions reveal your specific path :: one of six expanded archetypes based on your core result.
+                      </p>
+                      <p className="text-stone-600 italic">
+                        Each core archetype branches into 2-3 expanded paths. Take both quizzes to discover your complete archetypal profile.
+                      </p>
+                    </div>
+
+                    {/* The Six Expanded Archetypes */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-6">The Six Archetypes</h3>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div className="bg-white p-6 rounded-lg border-l-4 border-amber-600">
+                          <h4 className="text-xl font-serif text-stone-800 mb-2">The Jade Hunter</h4>
+                          <p className="text-sm text-amber-700 mb-3 italic">The Investigator of Compressed Knowing</p>
+                          <div className="space-y-2 text-sm">
+                            <p><strong>Gift:</strong> Distillation</p>
+                            <p><strong>Shadow:</strong> The Hoarder</p>
+                            <p><strong>Core Alignment:</strong> Conscious Forger, Stone Carrier</p>
+                            <p className="text-stone-600 leading-relaxed">
+                              The one who seeks condensed truth in dense materials—research papers, technical docs, sacred texts. Masters the art of extracting compressed wisdom.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg border-l-4 border-amber-600">
+                          <h4 className="text-xl font-serif text-stone-800 mb-2">Walker of The Way</h4>
+                          <p className="text-sm text-amber-700 mb-3 italic">The Pathmaker of Ancestral Knowing</p>
+                          <div className="space-y-2 text-sm">
+                            <p><strong>Gift:</strong> Wayfinding</p>
+                            <p><strong>Shadow:</strong> The Wanderer</p>
+                            <p><strong>Core Alignment:</strong> Conscious Forger, Stone Forger</p>
+                            <p className="text-stone-600 leading-relaxed">
+                              The one who walks with inner compass, forging paths for others to follow. Often unseen and memorialized well after their Way is walked.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg border-l-4 border-amber-600">
+                          <h4 className="text-xl font-serif text-stone-800 mb-2">The Stone Keeper</h4>
+                          <p className="text-sm text-amber-700 mb-3 italic">The Guardian of Memory and Weight</p>
+                          <div className="space-y-2 text-sm">
+                            <p><strong>Gift:</strong> Stewardship</p>
+                            <p><strong>Shadow:</strong> The Archivist</p>
+                            <p><strong>Core Alignment:</strong> Stone Carrier</p>
+                            <p className="text-stone-600 leading-relaxed">
+                              The one who holds stones consciously, not as burden but as trust. Keeper of lineage, memory, and honored weight.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg border-l-4 border-amber-600">
+                          <h4 className="text-xl font-serif text-stone-800 mb-2">The Stone Breaker</h4>
+                          <p className="text-sm text-amber-700 mb-3 italic">The Liberator Through Conscious Destruction</p>
+                          <div className="space-y-2 text-sm">
+                            <p><strong>Gift:</strong> Liberation</p>
+                            <p><strong>Shadow:</strong> The Demolisher</p>
+                            <p><strong>Core Alignment:</strong> Stone Thrower</p>
+                            <p className="text-stone-600 leading-relaxed">
+                              The one who breaks stones with precision and purpose. Not rage-throwing, but conscious deconstruction of what no longer serves.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg border-l-4 border-amber-600">
+                          <h4 className="text-xl font-serif text-stone-800 mb-2">The Stone Caller</h4>
+                          <p className="text-sm text-amber-700 mb-3 italic">The Summoner of What's Ready to Emerge</p>
+                          <div className="space-y-2 text-sm">
+                            <p><strong>Gift:</strong> Summoning</p>
+                            <p><strong>Shadow:</strong> The Conjurer</p>
+                            <p><strong>Core Alignment:</strong> Stone Thrower, Conscious Forger</p>
+                            <p className="text-stone-600 leading-relaxed">
+                              The one who calls stones forward from the Field. Practices active patience at the threshold of what wants to materialize.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg border-l-4 border-amber-600">
+                          <h4 className="text-xl font-serif text-stone-800 mb-2">The Stone Witness</h4>
+                          <p className="text-sm text-amber-700 mb-3 italic">The Observer of Materialization</p>
+                          <div className="space-y-2 text-sm">
+                            <p><strong>Gift:</strong> Anchoring</p>
+                            <p><strong>Shadow:</strong> The Spectator</p>
+                            <p><strong>Core Alignment:</strong> Conscious Forger, Stone Forger</p>
+                            <p className="text-stone-600 leading-relaxed">
+                              The one who observes without grasping. Holds presence as stones materialize, stabilizing emergence through conscious attention.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Portal Pages */}
+                    <div className="bg-stone-50 p-6 rounded-lg">
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4">Archetype Portal Pages</h3>
+                      <p className="text-stone-700 mb-4">
+                        Each expanded archetype has a dedicated portal page at <code className="bg-white px-2 py-1 rounded text-sm">/archetype/:id</code>
+                      </p>
+                      <div className="space-y-2 text-sm text-stone-600">
+                        <p>• Hero image and archetype introduction (Nameless/Faceless aesthetic)</p>
+                        <p>• Gift, Shadow, and Experience sections</p>
+                        <p>• Core practice spotlight with step-by-step instructions</p>
+                        <p>• Progression path (glossary focus, key concepts, evolution trajectory)</p>
+                        <p>• Related practices grid (filtered from 28 total)</p>
+                        <p>• Glossary term recommendations with bidirectional links</p>
+                        <p>• Social share functionality</p>
+                      </div>
+                    </div>
+
+                    {/* Practice Integration */}
+                    <div>
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4">Practice Integration</h3>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-amber-50 p-4 rounded">
+                          <p className="font-semibold text-stone-800 mb-2">28 Total Practices</p>
+                          <p className="text-sm text-stone-600">
+                            Each practice tagged with both core and expanded archetypes for precise filtering
+                          </p>
+                        </div>
+                        <div className="bg-amber-50 p-4 rounded">
+                          <p className="font-semibold text-stone-800 mb-2">11-Button Filter Bar</p>
+                          <p className="text-sm text-stone-600">
+                            View All + 4 core archetypes + 6 expanded archetypes on /practices page
+                          </p>
+                        </div>
+                        <div className="bg-amber-50 p-4 rounded">
+                          <p className="font-semibold text-stone-800 mb-2">URL Parameter Support</p>
+                          <p className="text-sm text-stone-600">
+                            /practices?archetype=carrier links from archetype pages for pre-filtered views
+                          </p>
+                        </div>
+                        <div className="bg-amber-50 p-4 rounded">
+                          <p className="font-semibold text-stone-800 mb-2">Archetype Badges</p>
+                          <p className="text-sm text-stone-600">
+                            Clickable badges on practices and glossary terms link to portal pages
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Discovery Hub */}
+                    <div className="border-l-4 border-amber-600 pl-6">
+                      <h3 className="text-2xl font-serif text-stone-800 mb-4">The Discovery Hub Transformation</h3>
+                      <p className="text-stone-700 leading-relaxed mb-4">
+                        The <Link href="/archetypes" className="text-amber-700 hover:text-amber-800 underline">/archetypes</Link> page transformed from "cul de sac" to "superhighway" :: beautiful prose preserved, utility pathways added below.
+                      </p>
+                      <div className="space-y-2 text-sm text-stone-600">
+                        <p>• 4 core archetypes with full archetypal prose (unchanged)</p>
+                        <p>• Branch visualization showing 2-3 expanded archetypes per core</p>
+                        <p>• Practice count badges with CTA buttons</p>
+                        <p>• 6 expanded archetype cards in bottom grid</p>
+                        <p>• Dual quiz CTAs (Layer 1: Core + Layer 2: Expanded)</p>
+                        <p>• Complete bidirectional linking ecosystem (practices ↔ portals ↔ glossary ↔ archetypes)</p>
+                      </div>
                     </div>
                   </div>
                 </section>

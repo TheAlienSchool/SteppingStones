@@ -248,7 +248,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Energy Protection</h3>
                 <p className="text-stone-700 leading-relaxed">
-                  Develop discernment. Ask "Is this mine to carry?" before reacting. Protect our creative energy.
+                  Develop <GlossaryTooltip term="Discernment">discernment</GlossaryTooltip>. Ask "Is this mine to carry?" before reacting. Protect our creative energy.
                   Choose our battles consciously.
                 </p>
               </div>

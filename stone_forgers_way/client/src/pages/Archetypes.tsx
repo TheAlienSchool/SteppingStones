@@ -3,10 +3,13 @@ import ContributionInvitation from "@/components/ContributionInvitation";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
-import { getAllExpandedArchetypes } from "@/lib/expandedArchetypes";
+import { getAllExpandedArchetypes, getExpandedArchetypesByCore, type ExpandedArchetypeId } from "@/lib/expandedArchetypes";
+import { getPracticesByArchetype } from "@/lib/practicesData";
+import type { CoreArchetypeId } from "@/lib/archetypeQuiz";
 
 const archetypes = [
   {
+    id: 'carrier' as CoreArchetypeId,
     name: "The Stone Carrier",
     image: "/stone-carrier.png",
     description: "The one who carries the weight of suspended stones",
@@ -21,6 +24,7 @@ The Stone Carrier is aware of weight. Every human knows this experience. The fir
     practiceText: "Pause. Close your eyes. Scan your body. Where do you feel weight? Tension? Heaviness? Name one stone you're carrying. Just name it. You don't have to drop it yet. Just see it."
   },
   {
+    id: 'thrower' as CoreArchetypeId,
     name: "The Stone Thrower",
     image: "/stone-thrower.png",
     description: "The one exhausted by misdirected energy",
@@ -35,6 +39,7 @@ The Stone Thrower is not wrong to see injustice. The Stone Thrower is not wrong 
     practiceText: "Notice when you're about to throw a stone (literal or metaphorical). Pause. Ask: 'Is my shield up? Am I throwing from defense or from purpose?' If the shield is up, take three breaths. Lower it consciously. Then decide: throw, or forge?"
   },
   {
+    id: 'conscious' as CoreArchetypeId,
     name: "The Conscious Forger",
     image: "/active-patience.png",
     description: "The one who brings presence to each stone",
@@ -49,6 +54,7 @@ The Conscious Forger is not perfect. They still feel the pull to rush, to throw,
     practiceText: "Look at your to-do list. Choose one stone. Just one. Bring your full presence to it. No multitasking. No rushing. Forge this one stone with care. When it's done, pause. Breathe. Then choose the next."
   },
   {
+    id: 'forger' as CoreArchetypeId,
     name: "The Stone Forger",
     image: "/stone-forger.png",
     description: "The integrated being who consciously creates their path",
@@ -165,6 +171,48 @@ export default function Archetypes() {
                       </h3>
                       <p className="text-stone-700">{archetype.practiceText}</p>
                     </div>
+
+                    {/* Branch Visualization - Only show for archetypes with IDs */}
+                    {archetype.id && (
+                      <div className="mt-8 pt-8 border-t border-stone-200">
+                        <h3 className="text-lg font-semibold text-stone-800 mb-4">
+                          Pathways from {archetype.name}
+                        </h3>
+                        <p className="text-sm text-stone-600 mb-4">
+                          This archetype can evolve into these expanded states:
+                        </p>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                          {getExpandedArchetypesByCore(archetype.id).map((expanded) => (
+                            <Link
+                              key={expanded.id}
+                              href={`/archetype/${expanded.id}`}
+                            >
+                              <div className="bg-white p-4 rounded-lg border-2 border-stone-200 hover:border-amber-500 transition-all duration-200 cursor-pointer group">
+                                <h4 className="text-lg font-serif text-stone-800 group-hover:text-amber-700 mb-1">
+                                  {expanded.name}
+                                </h4>
+                                <p className="text-sm text-stone-600 italic">
+                                  {expanded.subtitle}
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-3">
+                          <Link href={`/practices?archetype=${archetype.id}`}>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="w-full sm:w-auto border-amber-600 text-amber-700 hover:bg-amber-50"
+                            >
+                              View {getPracticesByArchetype(archetype.id).length} practices for this archetype
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

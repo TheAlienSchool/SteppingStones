@@ -22,6 +22,20 @@ export default function CompleteWorks() {
       category: "Foundation"
     },
     {
+      title: "The Expanded Archetypes",
+      subtitle: "Six frictional reality states of the path",
+      description: "Go deeper into how you relate to stones, knowing, and transformation. Discover The Jade Hunter, Walker of The Way, The Stone Keeper, The Stone Breaker, The Stone Caller, and The Stone Witness—each with practices, glossary focus, and progression paths.",
+      linkTo: "/archetypes",
+      category: "Archetype"
+    },
+    {
+      title: "The Two-Layer Archetype System",
+      subtitle: "From core pattern to specific path",
+      description: "Understand the architecture of transformation: four core archetypes (Carrier, Thrower, Conscious Forger, Forger) branching into six expanded states. Take the quiz to discover both your core and expanded archetype.",
+      linkTo: "/archetype-quiz",
+      category: "Practice"
+    },
+    {
       title: "On Stone Forging",
       subtitle: "Where the idea of productivity meets the nature of presence",
       description: "A synthesis that resolves the false dichotomy between doing and being, revealing that true productivity is not about quantity of stones laid, but quality of presence brought to each stone.",
