@@ -20,6 +20,20 @@ import {
 } from "@/lib/expandedArchetypes";
 import SocialShare from "@/components/SocialShare";
 
+// Animation keyframes for results reveal
+const fadeInUpStyles = `
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
 // Fisher-Yates shuffle
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
@@ -154,12 +168,15 @@ export default function ExpandedQuiz() {
 
     return (
       <Layout>
+        {/* Inject animation styles */}
+        <style dangerouslySetInnerHTML={{ __html: fadeInUpStyles }} />
+
         <div className="min-h-screen py-24 bg-gradient-to-b from-amber-50 to-stone-50">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               {/* Results Header */}
               <div
-                className="text-center mb-12 opacity-0 animate-fade-in"
+                className="text-center mb-12"
                 style={{ animation: "fadeInUp 0.6s ease-out forwards" }}
               >
                 <p className="text-lg text-amber-600 mb-2">You have deepened</p>
@@ -170,7 +187,7 @@ export default function ExpandedQuiz() {
 
               {/* Archetype Reveal */}
               <Card
-                className="p-8 mb-8 bg-white border-2 border-amber-600 opacity-0"
+                className="p-8 mb-8 bg-white border-2 border-amber-600"
                 style={{ animation: "fadeInUp 0.6s ease-out 0.3s forwards" }}
               >
                 <div className="flex flex-col md:flex-row gap-8 items-center mb-6">
@@ -243,7 +260,7 @@ export default function ExpandedQuiz() {
 
               {/* What Now */}
               <Card
-                className="p-8 mb-8 bg-gradient-to-br from-stone-800 to-stone-900 text-stone-100 opacity-0"
+                className="p-8 mb-8 bg-gradient-to-br from-stone-800 to-stone-900 text-stone-100"
                 style={{ animation: "fadeInUp 0.6s ease-out 0.6s forwards" }}
               >
                 <h3 className="text-2xl font-serif mb-4 text-amber-300">
@@ -292,7 +309,7 @@ export default function ExpandedQuiz() {
 
               {/* Action Buttons */}
               <div
-                className="flex flex-col sm:flex-row gap-4 justify-center opacity-0"
+                className="flex flex-col sm:flex-row gap-4 justify-center"
                 style={{ animation: "fadeInUp 0.6s ease-out 0.9s forwards" }}
               >
                 <Link href={`/archetype/${archetype.id}`}>
@@ -313,7 +330,7 @@ export default function ExpandedQuiz() {
 
               {/* Social Share */}
               <div
-                className="mt-12 opacity-0"
+                className="mt-12"
                 style={{ animation: "fadeInUp 0.6s ease-out 1.2s forwards" }}
               >
                 <h3 className="text-2xl font-serif text-stone-800 mb-4 text-center">

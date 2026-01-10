@@ -571,12 +571,13 @@ function buildContextObject() {
       author: "Kamau Zuberi Akabueze",
       url: "https://thestoneforgers.way", // Update with actual URL
       generatedAt: new Date().toISOString(),
-      version: "2.3",
+      version: "2.3.1",
       updates: {
         "2.0": "Added Cloud Dancer color integration, Social Cards system (35+ cards), Voices from The Way testimonials, /voices page, updated homepage with testimonial section",
         "2.1": "Added Stone Forger's Cohort program (/forgers-cohort), Stone Philosophy (three states), Infographic specifications (6 visual guides), Cohort testimonials, Full funnel architecture with Archetype Quiz gate",
         "2.2": "COLLECTIVE VOICE TRANSFORMATION - Shifted from prescriptive 'you/your' to inclusive 'we/our' and universal 'one/one's' throughout site. Kamau positioned as fellow-practitioner, not expert above. The Container holds everyone. Invitation to recognition, not diagnosis. Applied to /forgers-cohort as proof of concept.",
-        "2.3": "EXPANSION KIT V1.2 - Two-layer archetype system: 4 core archetypes branching into 6 expanded archetypes (Jade Hunter, Walker of The Way, Stone Keeper, Stone Breaker, Stone Caller, Stone Witness). Added Layer 2 quiz (8 questions, randomized), dynamic archetype portals (/archetype/:id), 28 practices with archetype tagging, glossary term archetype filtering, bidirectional educational linking, /archetypes discovery hub transformation with branch visualization. Complete ecosystem integration across /archetypes, /practices, /glossary."
+        "2.3": "EXPANSION KIT V1.2 - Two-layer archetype system: 4 core archetypes branching into 6 expanded archetypes (Jade Hunter, Walker of The Way, Stone Keeper, Stone Breaker, Stone Caller, Stone Witness). Added Layer 2 quiz (8 questions, randomized), dynamic archetype portals (/archetype/:id), 28 practices with archetype tagging, glossary term archetype filtering, bidirectional educational linking, /archetypes discovery hub transformation with branch visualization. Complete ecosystem integration across /archetypes, /practices, /glossary. HOME PAGE EDU-ENGAGEMENT ENHANCEMENTS: Added 4th 'Archetype Discovery' card to Go Deeper section, post-testimonial two-layer quiz invitation, updated priming language (Step 02), hero CTA micro-copy, practice card deep-linking to filtered views.",
+        "2.3.1": "CRITICAL MOBILE BUG FIX - Resolved blank screen issue on Layer 2 quiz results (ExpandedQuiz.tsx). Root cause: Missing CSS animation keyframes for fadeInUp animation combined with opacity-0 initial states caused content to remain invisible on mobile devices. Solution: Injected animation styles via dangerouslySetInnerHTML, removed opacity-0 fallback classes. Mobile rendering verified across all breakpoints (md:, sm:, lg:). Build clean, no TypeScript errors."
       }
     },
     pages: {

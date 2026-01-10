@@ -167,6 +167,11 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
+
+            {/* Two-layer system hint */}
+            <p className="text-center text-sm text-stone-500 italic mt-6">
+              Two-layer quiz system :: Core pattern → Specific path
+            </p>
           </div>
         </div>
 
@@ -193,7 +198,7 @@ export default function Home() {
               <div className="text-center space-y-3">
                 <div className="text-5xl font-serif text-amber-600">02</div>
                 <h3 className="text-lg font-serif text-stone-800">Pivot</h3>
-                <p className="text-sm text-stone-600">Discover which archetype shows up for you. See yourself reflected in the work.</p>
+                <p className="text-sm text-stone-600">Discover your core archetype, then go deeper to reveal your expanded path. See your gift, shadow, and specific practices.</p>
               </div>
               <div className="text-center space-y-3">
                 <div className="text-5xl font-serif text-amber-600">03</div>
@@ -409,7 +414,7 @@ export default function Home() {
                   Pause. Acknowledge the weight we carry—the worries, the obligations, the regrets—without trying
                   to fix or judge them. Validation is the first step to freedom.
                 </p>
-                <Link href="/practices">
+                <Link href="/practices?archetype=carrier">
                   <span className="text-sm text-amber-700 hover:text-amber-800 font-medium cursor-pointer">
                     Learn This Practice →
                   </span>
@@ -425,7 +430,7 @@ export default function Home() {
                   Look at our swinging cloud of obligations. Choose just one. Vow to give it full, undivided attention
                   for five minutes. Let the others swing. This is the beginning of mastery.
                 </p>
-                <Link href="/practices">
+                <Link href="/practices?archetype=conscious">
                   <span className="text-sm text-amber-700 hover:text-amber-800 font-medium cursor-pointer">
                     Learn This Practice →
                   </span>
@@ -441,7 +446,7 @@ export default function Home() {
                   Before reacting to any request or obligation, pause and ask: "Is this mine to carry?" This is
                   our shield—the practice of discernment that protects our energy.
                 </p>
-                <Link href="/practices">
+                <Link href="/practices?archetype=carrier">
                   <span className="text-sm text-amber-700 hover:text-amber-800 font-medium cursor-pointer">
                     Learn This Practice →
                   </span>
@@ -457,7 +462,7 @@ export default function Home() {
                   Three breaths to move from fear to presence. Inhale trust. Exhale doubt. <GlossaryTooltip term="Trust">Trust
                   is the cheat code</GlossaryTooltip> that bypasses the tyranny of the rational mind.
                 </p>
-                <Link href="/practices">
+                <Link href="/practices?archetype=forger">
                   <span className="text-sm text-amber-700 hover:text-amber-800 font-medium cursor-pointer">
                     Learn This Practice →
                   </span>
@@ -522,56 +527,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 6: Discover Your Archetype */}
-      <section className="py-24 bg-white">
+      {/* Section 6: Discover Your Path */}
+      <section className="py-16 bg-gradient-to-b from-white to-amber-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-serif text-stone-800 text-center leading-tight mb-6">
-              Which Archetype Are We?
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <h2 className="text-3xl md:text-4xl font-serif text-stone-800 leading-tight">
+              Which Archetype Resonates?
             </h2>
-            <p className="text-xl text-stone-600 text-center max-w-2xl mx-auto mb-12">
-              Take the journey :: Understanding our current archetype helps us see where we are and where we're growing
+            <p className="text-xl text-stone-600 leading-relaxed">
+              Each practitioner walks a specific path. The two-layer quiz reveals both your core pattern
+              (Carrier, Thrower, Conscious Forger, or Forger) and your expanded archetype—one of six
+              frictional reality states with unique gifts, shadows, and practices.
             </p>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-              {[
-                {
-                  name: "The Stone Carrier",
-                  image: "/stone-carrier.png",
-                  description: "Moving through life with invisible weight, exhausted but heroic"
-                },
-                {
-                  name: "The Stone Thrower",
-                  image: "/stone-thrower.png",
-                  description: "Releasing burdens without consciousness, creating chaos"
-                },
-                {
-                  name: "The Conscious Forger",
-                  image: "/active-patience.png",
-                  description: "Beginning to shape stones with intention, learning presence"
-                },
-                {
-                  name: "The Stone Forger",
-                  image: "/stone-forger.png",
-                  description: "Mastering the art of conscious creation, trusting the process"
-                }
-              ].map((archetype) => (
-                <div key={archetype.name} className="text-center space-y-4 p-4 rounded-xl hover:bg-stone-50 transition-colors">
-                  <img
-                    src={archetype.image}
-                    alt={archetype.name}
-                    className="w-56 h-56 mx-auto object-cover rounded-lg shadow-lg"
-                  />
-                  <h3 className="text-xl font-semibold text-stone-800">{archetype.name}</h3>
-                  <p className="text-stone-600 text-sm leading-relaxed">{archetype.description}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Link href="/archetypes">
+                <Button size="lg" variant="outline" className="border-2 border-amber-600 text-amber-700 hover:bg-amber-50 w-full sm:w-auto">
+                  Explore All Archetypes
+                </Button>
+              </Link>
               <Link href="/archetype-quiz">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-10 py-6">
-                  Take the Archetype Quiz
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700 w-full sm:w-auto">
+                  Take the Quiz
                 </Button>
               </Link>
             </div>
@@ -590,7 +566,16 @@ export default function Home() {
               The complete practice
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link href="/archetypes">
+                <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer h-full">
+                  <h3 className="text-2xl font-serif mb-4 leading-tight">Archetype Discovery</h3>
+                  <p className="text-stone-300 leading-relaxed">
+                    Explore the 4 core archetypes and 6 expanded paths. Find your gift, shadow, and practices for your specific journey.
+                  </p>
+                </div>
+              </Link>
+
               <Link href="/reflections">
                 <div className="p-8 bg-stone-700 rounded-lg hover:bg-stone-600 transition-colors cursor-pointer h-full">
                   <h3 className="text-2xl font-serif mb-4 leading-tight">Reflections</h3>
