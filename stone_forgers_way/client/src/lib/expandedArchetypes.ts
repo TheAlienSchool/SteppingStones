@@ -76,7 +76,7 @@ export const expandedArchetypes: Record<ExpandedArchetypeId, ExpandedArchetype> 
     gift: 'Wayfinding',
     shadow: 'Invisible burden :: walking the path alone while others benefit from what you\'ve forged. Becoming so focused on the horizon that you forget to tend your own needs. The loneliness of being seen only in retrospect.',
     visualSignature: 'A lone figure walking a path of materializing stones, each step solidifying beneath them. The horizon glows with possibility. They are faceless, timeless—a vessel for the Way itself.',
-    imagePath: '/images/archetypes/walker_of_the_way_v4.png',
+    imagePath: '/images/archetypes/the_invitation_v4.png',
     corePractice: {
       name: 'The Inner Compass Check',
       description: 'Before making a decision, place your hand on your heart. Ask: "Does this align with the Way I sense?" Wait for the resonance—not thought, but knowing. The compass lives in your body, not your mind. Trust the pull toward the Peak, even when you can\'t see the full path.'
