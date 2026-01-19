@@ -370,16 +370,19 @@ const designSystem = {
       glossary: {
         count: "6 term definitions",
         philosophy: "Key glossary terms presented as cards for learning and reference",
+        typography: "Le Monde Livre 400; term in italic, definition in regular weight",
         content: "Simple Idea + Lived Experience structure; italicized terms for visual distinction"
       },
       practice: {
         count: "4 micro-practice cards",
         philosophy: "Downloadable practice summaries for daily integration",
+        typography: "Le Monde Livre 400 for instructions; practice name in 600 weight",
         content: "One card per archetype practice (Feel the Stones, The Shield Check, The One Stone, Trust Breath)"
       },
       archetype: {
         count: "4 archetype cards",
         philosophy: "Visual introduction to the four archetypal states",
+        typography: "Le Monde Livre 600 for archetype name; 400 for description",
         content: "Stone Carrier, Stone Thrower, Conscious Forger, Stone Forger (integrated shadow)"
       },
       voice: {
