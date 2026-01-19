@@ -76,6 +76,13 @@ const reflections = [
     subtitle: "A postcard flyer, nine years, and the feeling that is the secret",
     category: "Origin",
     excerpt: "From Brooklyn 2016 to San Francisco 2025, through the Shim Sham, The Alien School, and a friendship between fathers."
+  },
+  {
+    slug: "welcome-to-multifaceted-meditation",
+    title: "Welcome to Multifaceted Meditation",
+    subtitle: "On sitting with complexity and breathing into wholeness",
+    category: "Practice",
+    excerpt: "Multifaceted meditation is not about emptying the mind—it's about holding all the facets at once without collapsing into any single one."
   }
 ];
 
@@ -571,13 +578,14 @@ function buildContextObject() {
       author: "Kamau Zuberi Akabueze",
       url: "https://thestoneforgers.way", // Update with actual URL
       generatedAt: new Date().toISOString(),
-      version: "2.3.1",
+      version: "2.3.2",
       updates: {
         "2.0": "Added Cloud Dancer color integration, Social Cards system (35+ cards), Voices from The Way testimonials, /voices page, updated homepage with testimonial section",
         "2.1": "Added Stone Forger's Cohort program (/forgers-cohort), Stone Philosophy (three states), Infographic specifications (6 visual guides), Cohort testimonials, Full funnel architecture with Archetype Quiz gate",
         "2.2": "COLLECTIVE VOICE TRANSFORMATION - Shifted from prescriptive 'you/your' to inclusive 'we/our' and universal 'one/one's' throughout site. Kamau positioned as fellow-practitioner, not expert above. The Container holds everyone. Invitation to recognition, not diagnosis. Applied to /forgers-cohort as proof of concept.",
         "2.3": "EXPANSION KIT V1.2 - Two-layer archetype system: 4 core archetypes branching into 6 expanded archetypes (Jade Hunter, Walker of The Way, Stone Keeper, Stone Breaker, Stone Caller, Stone Witness). Added Layer 2 quiz (8 questions, randomized), dynamic archetype portals (/archetype/:id), 28 practices with archetype tagging, glossary term archetype filtering, bidirectional educational linking, /archetypes discovery hub transformation with branch visualization. Complete ecosystem integration across /archetypes, /practices, /glossary. HOME PAGE EDU-ENGAGEMENT ENHANCEMENTS: Added 4th 'Archetype Discovery' card to Go Deeper section, post-testimonial two-layer quiz invitation, updated priming language (Step 02), hero CTA micro-copy, practice card deep-linking to filtered views.",
-        "2.3.1": "CRITICAL MOBILE BUG FIX - Resolved blank screen issue on Layer 2 quiz results (ExpandedQuiz.tsx). Root cause: Missing CSS animation keyframes for fadeInUp animation combined with opacity-0 initial states caused content to remain invisible on mobile devices. Solution: Injected animation styles via dangerouslySetInnerHTML, removed opacity-0 fallback classes. Mobile rendering verified across all breakpoints (md:, sm:, lg:). Build clean, no TypeScript errors."
+        "2.3.1": "CRITICAL MOBILE BUG FIX - Resolved blank screen issue on Layer 2 quiz results (ExpandedQuiz.tsx). Root cause: Missing CSS animation keyframes for fadeInUp animation combined with opacity-0 initial states caused content to remain invisible on mobile devices. Solution: Injected animation styles via dangerouslySetInnerHTML, removed opacity-0 fallback classes. Mobile rendering verified across all breakpoints (md:, sm:, lg:). Build clean, no TypeScript errors.",
+        "2.3.2": "CREATIVE CONTEXT DOCUMENTATION UPDATE - Fixed Walker of The Way image path (the_invitation_v4.png). Added missing 11th reflection (Welcome to Multifaceted Meditation). Completed comprehensive link audit: added 6 missing routes to pages documentation (/my-archetype, /todays-practice, /works, /thank-you, /privacy-policy, /disclaimer). All internal links verified functional, all reflection slugs match routes, complete ecosystem documentation current."
       }
     },
     pages: {
@@ -588,12 +596,15 @@ function buildContextObject() {
         { path: "/archetype-quiz", name: "Layer 1: Core Archetype Quiz", description: "Discover your core archetype (Carrier, Thrower, Conscious Forger, or Forger)" },
         { path: "/expanded-quiz", name: "Layer 2: Expanded Archetype Quiz", description: "Go deeper to reveal your specific path (requires core quiz completion)" },
         { path: "/archetype/:id", name: "Archetype Portals", description: "Dynamic portal pages for each of 6 expanded archetypes with gift, shadow, practices, progression path" },
+        { path: "/my-archetype", name: "My Archetype", description: "Personalized archetype results page (post-quiz)" },
+        { path: "/todays-practice", name: "Today's Practice", description: "Daily practice suggestion page" },
         { path: "/concepts", name: "Concepts & Practices", description: "Core frameworks and actionable practices" },
         { path: "/practices", name: "Practices", description: "28 micro-practices with archetype filtering (11 filters: all + 4 core + 6 expanded)" },
         { path: "/glossary", name: "Glossary", description: "Complete vocabulary with three-layer definitions + archetype tagging" }
       ],
       content: [
         { path: "/reflections", name: "Reflections", description: "11 deep-dive essays on philosophy, practice, science" },
+        { path: "/works", name: "Complete Works", description: "Comprehensive overview of The Stone Forger's Way ecosystem" },
         { path: "/social", name: "Social Content Arsenal", description: "35+ shareable cards optimized for social media" },
         { path: "/voices", name: "Voices from The Way", description: "Testimonials from practitioners with archetype-aligned attributions" },
         { path: "/forgers-cohort", name: "The Stone Forger's Cohort", description: "7-week intensive for growth-stage founders carrying many stones. January 18, 2026" }
@@ -604,7 +615,10 @@ function buildContextObject() {
         { path: "/about", name: "About", description: "About Kamau and The Stone Forger's Way" }
       ],
       utility: [
-        { path: "/creative-context", name: "Creative Context", description: "Complete DNA for AI collaborators and creators" }
+        { path: "/creative-context", name: "Creative Context", description: "Complete DNA for AI collaborators and creators" },
+        { path: "/thank-you", name: "Thank You", description: "Confirmation page for newsletter signup" },
+        { path: "/privacy-policy", name: "Privacy Policy", description: "Privacy policy and data handling" },
+        { path: "/disclaimer", name: "Disclaimer", description: "Legal disclaimer and terms" }
       ]
     },
     designSystem,
