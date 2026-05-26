@@ -15,6 +15,7 @@ import SocialShare from "@/components/SocialShare";
 import TodaysPractice from "@/components/TodaysPractice";
 import PracticeReminder from "@/components/PracticeReminder";
 import { getTodaysPractice } from "@/lib/todaysPractice";
+import StoneMap from "@/components/StoneMap";
 
 export default function MyArchetype() {
   const [result, setResult] = useState<ReturnType<typeof getLatestQuizResult>>(null);
@@ -74,6 +75,9 @@ export default function MyArchetype() {
               <p className="text-lg text-stone-700 leading-relaxed">
                 {description}
               </p>
+              
+              {/* Dynamic SVG Stone Map of Commitment States */}
+              <StoneMap archetypeId={result.archetype} />
             </div>
 
             <div className="border-t border-stone-200 pt-8">
@@ -150,7 +154,7 @@ export default function MyArchetype() {
               </div>
             )}
 
-            <div className="border-t border-stone-200 pt-8">
+            <div className="border-t border-stone-200 pt-8 no-print">
               <h3 className="text-2xl font-serif text-stone-800 mb-4 text-center">
                 Share Your Archetype
               </h3>
@@ -159,7 +163,27 @@ export default function MyArchetype() {
               />
             </div>
 
-            <div className="text-center pt-8">
+            {/* Print Deskside Postcard Generator (The Somatic Workspace Anchor) */}
+            <div className="border-t border-stone-200 pt-8 text-center no-print">
+              <h3 className="text-2xl font-serif text-stone-800 mb-2">
+                Somatic Workspace Anchor
+              </h3>
+              <p className="text-sm text-stone-600 max-w-md mx-auto mb-6">
+                Print your archetype’s custom 4x6 deskside card. Place it on your physical desk as a quiet reminder to check your breath and choose presence in moments of daily friction.
+              </p>
+              <Button 
+                onClick={() => window.print()} 
+                className="bg-stone-900 hover:bg-stone-800 text-stone-100 flex items-center gap-2 mx-auto"
+                size="lg"
+              >
+                <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+                Print Deskside Postcard (4x6)
+              </Button>
+            </div>
+
+            <div className="text-center pt-8 no-print">
               <Link href="/archetype-quiz">
                 <Button size="lg" variant="outline" className="mr-4">
                   Retake Quiz
@@ -170,6 +194,62 @@ export default function MyArchetype() {
                   Learn About Archetypes
                 </Button>
               </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Hidden Print-Only Postcard Element */}
+      <div className="hidden print:block print:fixed print:inset-0 print:bg-white print:z-[9999] print:p-0 print:m-0">
+        <div className="w-[6in] h-[4in] border-2 border-stone-800 p-6 mx-auto flex flex-col justify-between bg-white text-stone-950 font-serif box-border relative" style={{ pageBreakInside: 'avoid' }}>
+          {/* Postcard Header */}
+          <div className="flex justify-between items-start border-b border-stone-300 pb-2">
+            <div>
+              <span className="text-[10px] uppercase tracking-widest text-stone-500 font-sans">
+                The Stone Forger's Way
+              </span>
+              <h2 className="text-xl text-stone-900 font-bold leading-tight mt-0.5">
+                The {archetypeName}
+              </h2>
+            </div>
+            {/* Small Nameless Star Logo */}
+            <svg className="w-6 h-6 text-amber-700" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C12 2 12.5 8.5 15 11C17.5 13.5 24 14 24 14C24 14 17.5 14.5 15 17C12.5 19.5 12 26 12 26C12 26 11.5 19.5 9 17C6.5 14.5 0 14 0 14C0 14 6.5 13.5 9 11C11.5 8.5 12 2 12 2Z" />
+            </svg>
+          </div>
+
+          {/* Archetype Practice & Lived Sensation */}
+          <div className="flex-1 my-4 flex flex-col justify-center">
+            <p className="text-xs italic text-stone-700 leading-relaxed mb-3">
+              "{description}"
+            </p>
+            <div className="bg-stone-50 border-l-2 border-amber-600 p-3">
+              <h4 className="text-[10px] font-bold uppercase tracking-wider text-stone-800 mb-1">
+                Your Workspace Practice:
+              </h4>
+              <p className="text-[10px] text-stone-700 leading-snug">
+                {practices[0] || "Feel the stones: Pause, check your breath, and decide if this obligation is yours to carry."}
+              </p>
+            </div>
+          </div>
+
+          {/* Experiential Deskside Guidance & Postcard Signatures */}
+          <div className="border-t border-stone-300 pt-2 flex justify-between items-end">
+            <div className="max-w-[70%]">
+              <h5 className="text-[9px] font-sans font-bold uppercase tracking-wider text-stone-500 mb-0.5">
+                Deskside Practice Guidance:
+              </h5>
+              <p className="text-[9px] text-stone-600 leading-normal font-sans">
+                {result.archetype.includes("carrier") && "Place this card under your monitor. When a new request arrives, look at the card, take a slow breath, and ask: Is this mine to carry?"}
+                {result.archetype.includes("thrower") && "Place this card on your keyboard when taking a break. Let frustration dissolve into the paper before speaking a reaction."}
+                {result.archetype.includes("conscious") && "Keep this card flat on your desk. Stand a single physical stone or object on it to lock your attention onto your single active task."}
+                {!result.archetype.includes("carrier") && !result.archetype.includes("thrower") && !result.archetype.includes("conscious") && "Place this card on your desk where it catches morning light. Step forward with trust, knowing the path solidifies beneath you as you step."}
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="text-[9px] font-mono text-stone-400 uppercase tracking-widest">
+                "Trust is the cheat code."
+              </p>
             </div>
           </div>
         </div>

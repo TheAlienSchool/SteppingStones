@@ -37,6 +37,7 @@ import Disclaimer from "./pages/Disclaimer";
 import ArchetypePortal from "./pages/ArchetypePortal";
 import ExpandedQuiz from "./pages/ExpandedQuiz";
 import { useScrollToTop } from "./hooks/useScrollToTop";
+import { SoundProvider } from "./contexts/SoundContext";
 
 // Code splitting for heavy pages (lazy load on route navigation)
 const Social = lazy(() => import("./pages/Social"));
@@ -116,10 +117,12 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+        <SoundProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </SoundProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );

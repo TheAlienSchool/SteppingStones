@@ -237,10 +237,74 @@
     .reveal-animate,
     .pivot-animate,
     .merge-animate,
-    .breath-pulse {
+    .breath-pulse,
+    .star-pulse,
+    .somatic-unfurl {
       animation: none !important;
       opacity: 1 !important;
       transform: none !important;
     }
   }
+
+  /* Pulse and rotate for the Four-Point Star signature */
+  @keyframes star-pulse {
+    0%, 100% {
+      transform: scale(0.9) rotate(0deg);
+      filter: drop-shadow(0 0 4px rgba(217, 119, 6, 0.2));
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.1) rotate(45deg);
+      filter: drop-shadow(0 0 16px rgba(217, 119, 6, 0.6));
+      opacity: 1;
+    }
+  }
+
+  .star-pulse {
+    animation: star-pulse 3.5s ease-in-out infinite;
+  }
+
+  /* Somatic text reveal animation for unfurling paragraphs */
+  @keyframes somatic-unfurl {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .somatic-unfurl {
+    animation: somatic-unfurl 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 }
+
+/* Print Postcard Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  /* Hide standard screen elements during printing */
+  main, nav, footer, button, .fixed, .no-print {
+    display: none !important;
+  }
+  /* Render isolated print element */
+  .print\:block {
+    display: block !important;
+  }
+  .print\:fixed {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999 !important;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+

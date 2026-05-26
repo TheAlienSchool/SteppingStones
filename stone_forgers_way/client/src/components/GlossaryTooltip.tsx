@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { findGlossaryTerm, termToSlug } from "@/lib/glossaryData";
 import { X } from "lucide-react";
+import { useSound } from "@/contexts/SoundContext";
 
 interface GlossaryTooltipProps {
   term: string;
@@ -16,6 +17,7 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
   const tooltipRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLSpanElement>(null);
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+  const { playChime } = useSound();
 
   const glossaryEntry = findGlossaryTerm(term);
 
@@ -104,8 +106,17 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
     <span className="relative inline">
       <span
         ref={triggerRef}
-        onClick={() => setIsOpen(!isOpen)}
-        onMouseEnter={() => !isMobile && setIsOpen(true)}
+        onClick={() => {
+          const nextState = !isOpen;
+          setIsOpen(nextState);
+          if (nextState) playChime(528, "harmonic");
+        }}
+        onMouseEnter={() => {
+          if (!isMobile && !isOpen) {
+            setIsOpen(true);
+            playChime(528, "harmonic");
+          }
+        }}
         onMouseLeave={() => !isMobile && setIsOpen(false)}
         className={`cursor-help border-b border-dotted border-amber-600 text-amber-700 hover:text-amber-800 hover:border-amber-800 transition-colors ${className}`}
       >
