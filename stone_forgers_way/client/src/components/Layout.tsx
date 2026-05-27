@@ -108,22 +108,6 @@ export default function Layout({ children, showNav = true }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navGroups = useNavigation();
   const { isSoundActive, toggleSoundActive } = useSound();
-  
-  const [location] = useLocation();
-  const [isSteeping, setIsSteeping] = useState(false);
-  const prevLocation = useRef(location);
-
-  useEffect(() => {
-    if (location !== prevLocation.current) {
-      setIsSteeping(true);
-      window.scrollTo(0, 0); // Scroll to top instantly
-      prevLocation.current = location;
-      const timer = setTimeout(() => {
-        setIsSteeping(false);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [location]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -139,19 +123,6 @@ export default function Layout({ children, showNav = true }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-stone-100">
-      {isSteeping && (
-        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-stone-950/95 backdrop-blur-md transition-opacity duration-500">
-          <div className="flex flex-col items-center gap-6 max-w-sm text-center px-6">
-            <svg className="w-20 h-20 text-amber-500 star-pulse" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C12 2 12.5 8.5 15 11C17.5 13.5 24 14 24 14C24 14 17.5 14.5 15 17C12.5 19.5 12 26 12 26C12 26 11.5 19.5 9 17C6.5 14.5 0 14 0 14C0 14 6.5 13.5 9 11C11.5 8.5 12 2 12 2Z" />
-            </svg>
-            <p className="text-xl font-serif text-stone-200 tracking-wide font-light">
-              Breathe in... Pivot... Merge.
-            </p>
-            <div className="w-16 h-[1px] bg-amber-500/30 mt-2" />
-          </div>
-        </div>
-      )}
       {showNav && (
         <>
           <nav className="fixed top-0 left-0 right-0 z-50 bg-amber-50/95 backdrop-blur-sm border-b border-amber-200/50">

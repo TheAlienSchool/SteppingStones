@@ -4,6 +4,8 @@ interface SoundContextType {
   isSoundActive: boolean;
   toggleSoundActive: () => void;
   playChime: (frequency?: number, mode?: "harmonic" | "dissonant") => void;
+  isSteeping: boolean;
+  triggerTransition: () => void;
 }
 
 const SoundContext = createContext<SoundContextType | undefined>(undefined);
@@ -22,27 +24,14 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
     return saved === "true";
   });
 
+  const [isSteeping, setIsSteeping] = useState<boolean>(false);
   const audioCtxRef = useRef<AudioContext | null>(null);
 
-  // Toggle sound activation and save in localStorage
-  const toggleSoundActive = () => {
-    setIsSoundActive((prev) => {
-      const next = !prev;
-      localStorage.setItem("tsfw_sound_active", String(next));
-      if (!next && audioCtxRef.current) {
-        audioCtxRef.current.close().catch(() => {});
-        audioCtxRef.current = null;
-      }
-      return next;
-    });
-  };
-
-  // Programmatically synthesize a warm, sustaining micro-tonal bronze chime
+  // Helper to programmatically synthesize a warm bronze chime (0 bytes, zero-latency offline Web Audio API)
   const playChime = (frequency: number = 440, mode: "harmonic" | "dissonant" = "harmonic") => {
-    if (!isSoundActive) return;
+    if (!isSoundActive && !audioCtxRef.current) return;
 
     try {
-      // Lazy initialize AudioContext on user interaction
       if (!audioCtxRef.current) {
         audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
       }
@@ -54,31 +43,29 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
 
       const now = ctx.currentTime;
 
-      // Master Gain Node for smooth exponential volume decay
+      // Master gain node with fast attack and long exponential decay
       const masterGain = ctx.createGain();
       masterGain.gain.setValueAtTime(0, now);
-      masterGain.gain.linearRampToValueAtTime(mode === "dissonant" ? 0.08 : 0.15, now + 0.005); // Fast attack
-      masterGain.gain.exponentialRampToValueAtTime(0.0001, now + (mode === "dissonant" ? 1.0 : 3.0)); // Slow decay
+      masterGain.gain.linearRampToValueAtTime(mode === "dissonant" ? 0.08 : 0.15, now + 0.005);
+      masterGain.gain.exponentialRampToValueAtTime(0.0001, now + (mode === "dissonant" ? 1.0 : 3.0));
 
-      // Resonant Low-Pass Filter to round off harsh digital highs for a warm physical tone
+      // Resonant Low-Pass filter to round off harsh digital highs for a warm physical tone
       const filter = ctx.createBiquadFilterNode();
       filter.type = "lowpass";
       filter.frequency.setValueAtTime(1200, now);
       filter.Q.setValueAtTime(1.5, now);
 
-      // Carrier Oscillator (fundamental tone)
+      // Carrier Oscillator (fundamental frequency)
       const osc1 = ctx.createOscillator();
       osc1.type = "sine";
       osc1.frequency.setValueAtTime(frequency, now);
 
-      // Modulator Oscillator 1 (inharmonic overtone mimicking bell plates)
+      // Modulator Oscillator (overtone ratio for bell-bronze inharmonic spectrum)
       const osc2 = ctx.createOscillator();
       osc2.type = "triangle";
-      // Mixed ratio (bell bronze inharmonic spectrum: 1.5, 2.3, 3.25)
       const ratio = mode === "dissonant" ? 1.414 : 2.312;
       osc2.frequency.setValueAtTime(frequency * ratio, now);
 
-      // Modulator Gain (subtle blend of the overtone)
       const modGain = ctx.createGain();
       modGain.gain.setValueAtTime(mode === "dissonant" ? 0.05 : 0.03, now);
 
@@ -90,19 +77,16 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       const subGain = ctx.createGain();
       subGain.gain.setValueAtTime(mode === "dissonant" ? 0 : 0.04, now);
 
-      // Connections
+      // Node connection path
       osc1.connect(masterGain);
-      
       osc2.connect(modGain);
       modGain.connect(masterGain);
-
       subOsc.connect(subGain);
       subGain.connect(masterGain);
-
       masterGain.connect(filter);
       filter.connect(ctx.destination);
 
-      // Start and Stop
+      // Start/stop timing
       osc1.start(now);
       osc2.start(now);
       subOsc.start(now);
@@ -114,6 +98,45 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
     } catch (e) {
       console.warn("AudioContext chime synthesis failed:", e);
     }
+  };
+
+  // Toggle sound activation and securely unlock AudioContext inside user-click gesture event
+  const toggleSoundActive = () => {
+    setIsSoundActive((prev) => {
+      const next = !prev;
+      localStorage.setItem("tsfw_sound_active", String(next));
+      
+      if (next) {
+        // Initialize AudioContext directly inside click handler to satisfy browser safety constraints
+        try {
+          if (!audioCtxRef.current) {
+            audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+          }
+          if (audioCtxRef.current.state === "suspended") {
+            audioCtxRef.current.resume();
+          }
+          // Play a beautiful, instant confirmation chime (528Hz) to verify the soundscape is active
+          setTimeout(() => {
+            playChime(528, "harmonic");
+          }, 50);
+        } catch (e) {
+          console.warn("Could not initialize AudioContext on activation click:", e);
+        }
+      } else if (audioCtxRef.current) {
+        audioCtxRef.current.close().catch(() => {});
+        audioCtxRef.current = null;
+      }
+      return next;
+    });
+  };
+
+  // Trigger somatic transition overlay globally (persists across unmounting layout containers)
+  const triggerTransition = () => {
+    setIsSteeping(true);
+    window.scrollTo(0, 0); // Scroll to top instantly during transition
+    setTimeout(() => {
+      setIsSteeping(false);
+    }, 1500);
   };
 
   // Global scroll velocity soundscape monitor
@@ -165,8 +188,23 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   }, [isSoundActive]);
 
   return (
-    <SoundContext.Provider value={{ isSoundActive, toggleSoundActive, playChime }}>
+    <SoundContext.Provider value={{ isSoundActive, toggleSoundActive, playChime, isSteeping, triggerTransition }}>
       {children}
+      
+      {/* Global Somatic Pacing Overlay - rendered at app root to prevent remount clipping */}
+      {isSteeping && (
+        <div className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-stone-950/98 backdrop-blur-md transition-opacity duration-500">
+          <div className="flex flex-col items-center gap-6 max-w-sm text-center px-6">
+            <svg className="w-20 h-20 text-amber-500 star-pulse" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C12 2 12.5 8.5 15 11C17.5 13.5 24 14 24 14C24 14 17.5 14.5 15 17C12.5 19.5 12 26 12 26C12 26 11.5 19.5 9 17C6.5 14.5 0 14 0 14C0 14 6.5 13.5 9 11C11.5 8.5 12 2 12 2Z" />
+            </svg>
+            <p className="text-xl font-serif text-stone-200 tracking-wide font-light">
+              Breathe in... Pivot... Merge.
+            </p>
+            <div className="w-16 h-[1px] bg-amber-500/30 mt-2" />
+          </div>
+        </div>
+      )}
     </SoundContext.Provider>
   );
 }

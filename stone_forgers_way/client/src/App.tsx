@@ -1,8 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
-import { lazy, Suspense } from "react";
+import { Route, Switch, useLocation } from "wouter";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -37,7 +37,7 @@ import Disclaimer from "./pages/Disclaimer";
 import ArchetypePortal from "./pages/ArchetypePortal";
 import ExpandedQuiz from "./pages/ExpandedQuiz";
 import { useScrollToTop } from "./hooks/useScrollToTop";
-import { SoundProvider } from "./contexts/SoundContext";
+import { SoundProvider, useSound } from "./contexts/SoundContext";
 
 // Code splitting for heavy pages (lazy load on route navigation)
 const Social = lazy(() => import("./pages/Social"));
@@ -58,6 +58,16 @@ function PageLoader() {
 
 function Router() {
   useScrollToTop();
+  const [location] = useLocation();
+  const { triggerTransition } = useSound();
+  const prevLocation = useRef(location);
+
+  useEffect(() => {
+    if (location !== prevLocation.current) {
+      triggerTransition();
+      prevLocation.current = location;
+    }
+  }, [location, triggerTransition]);
   
   return (
     <Switch>
