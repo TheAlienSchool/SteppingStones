@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Sands of the Signal ∴ Activation Codex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────────── */
+    :root {
+      --soft-gold:       #D4A853;
+      --digital-cyan:    #00B4CC;
+      --ganzfeld-violet: #7B4FA6;
+      --sanctuary-cream: #F5F1E8;
+      --resonance-gray:  #8B7D6B;
+      --deep-black:      #0A0A0A;
+      --near-white:      #E8E4DB;
+      --presence-brown:  #4A3728;
+      --gold-dim:        rgba(212,168,83,0.25);
+      --cyan-dim:        rgba(0,180,204,0.12);
+      --white-rule:      rgba(255,255,255,0.06);
+    }
+
+    /* ─── RESET & BASE ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--deep-black);
+      color: var(--near-white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── GRAIN OVERLAY (always present — the sand beneath) ──────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999; opacity: 0.35;
+    }
+
+    /* ─── SCROLLBAR ──────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--deep-black); }
+    ::-webkit-scrollbar-thumb { background: rgba(139,125,107,0.4); border-radius: 2px; }
+
+    /* ─── LAYOUT ─────────────────────────────────────────────────── */
+    .codex-section {
+      padding: 7rem 6vw;
+      border-bottom: 1px solid var(--white-rule);
+      position: relative;
+    }
+    .codex-section:last-child { border-bottom: none; }
+
+    .section-index {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--soft-gold);
+      opacity: 0.6;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 200;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      letter-spacing: -0.01em;
+      color: var(--near-white);
+      margin-bottom: 2.5rem;
+      line-height: 1.2;
+    }
+    .section-body {
+      max-width: 720px;
+      font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+      color: rgba(232,228,219,0.75);
+      line-height: 1.85;
+    }
+    .section-body p { margin-bottom: 1.4rem; }
+    .section-body strong { color: var(--near-white); font-weight: 400; }
+    .callout {
+      border-left: 2px solid var(--gold-dim);
+      padding: 1.2rem 1.8rem;
+      margin: 2.5rem 0;
+      background: rgba(212,168,83,0.04);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.9;
+      color: rgba(232,228,219,0.6);
+      letter-spacing: 0.02em;
+    }
+    .callout em { color: var(--soft-gold); font-style: italic; }
+
+    /* ─── OPENING GATE ───────────────────────────────────────────── */
+    #gate {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 6rem 6vw;
+      background: var(--deep-black);
+      position: relative;
+      overflow: hidden;
+    }
+    #gate-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      opacity: 0.18;
+    }
+    .gate-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--resonance-gray);
+      margin-bottom: 2rem;
+      position: relative; z-index: 1;
+    }
+    .gate-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 200;
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--near-white);
+      position: relative; z-index: 1;
+      margin-bottom: 1.5rem;
+    }
+    .gate-title span { color: var(--soft-gold); }
+    .gate-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--resonance-gray);
+      position: relative; z-index: 1;
+      margin-bottom: 4rem;
+    }
+    .gate-scroll-hint {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(139,125,107,0.4);
+      position: relative; z-index: 1;
+      animation: pulse-hint 3s ease-in-out infinite;
+    }
+    @keyframes pulse-hint {
+      0%, 100% { opacity: 0.4; } 50% { opacity: 1; }
+    }
+
+    /* ─── PHILOSOPHY SECTION ─────────────────────────────────────── */
+    #philosophy { background: #0c0b0a; }
+    .three-truths {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2px;
+      margin: 3rem 0;
+    }
+    .truth-card {
+      padding: 2.5rem 2rem;
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid var(--white-rule);
+      transition: background 0.4s ease;
+    }
+    .truth-card:hover { background: rgba(212,168,83,0.04); }
+    .truth-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      color: var(--soft-gold);
+      opacity: 0.5;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .truth-label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 1.3rem;
+      letter-spacing: 0.06em;
+      color: var(--near-white);
+      margin-bottom: 0.75rem;
+    }
+    .truth-body {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      line-height: 1.8;
+      color: rgba(139,125,107,0.8);
+    }
+
+    /* ─── COLOR PALETTE SECTION ──────────────────────────────────── */
+    #palette { background: #0e0d0c; }
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1px;
+      margin: 3rem 0;
+    }
+    .palette-swatch {
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      cursor: default;
+    }
+    .swatch-dot {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .swatch-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--resonance-gray);
+    }
+    .swatch-hex {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--near-white);
+      opacity: 0.5;
+    }
+    .swatch-use {
+      font-size: 0.72rem;
+      color: rgba(139,125,107,0.6);
+      line-height: 1.5;
+    }
+
+    /* ─── REGISTER SECTIONS ──────────────────────────────────────── */
+    .register-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .register-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: var(--soft-gold);
+      opacity: 0.5;
+    }
+    .register-name-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--resonance-gray);
+    }
+    .register-state-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      color: var(--digital-cyan);
+      border: 1px solid rgba(0,180,204,0.25);
+      padding: 0.2rem 0.7rem;
+    }
+
+    /* ─── HARRIS SECTION ─────────────────────────────────────────── */
+    #harris { background: #0a0a0a; }
+    .harris-stage {
+      position: relative;
+      padding: 3rem 0;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+    .harris-grid-bg {
+      position: absolute; inset: -1rem;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    .harris-meta-tag {
+      position: absolute; top: 1rem; right: 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      color: rgba(139,125,107,0.3);
+      text-align: right;
+      line-height: 2;
+    }
+    #harris-display {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(3rem, 9vw, 8rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--near-white);
+      line-height: 1;
+      position: relative; z-index: 1;
+    }
+    .register-input-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .register-input-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(139,125,107,0.5);
+      white-space: nowrap;
+    }
+    .register-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: var(--near-white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      outline: none;
+      padding: 0.3rem 0;
+      width: 280px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ─── HBA SECTION ────────────────────────────────────────────── */
+    #hba { background: #0d0c0b; }
+    #hba-display {
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      font-size: clamp(2.5rem, 7vw, 6.5rem);
+      letter-spacing: 0.04em;
+      color: var(--near-white);
+      line-height: 1.1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      margin: 2rem 0;
+    }
+    .hba-char {
+      display: inline-block;
+      animation: hba-breathe var(--dur, 4s) ease-in-out infinite;
+      animation-delay: var(--del, 0s);
+      transform-origin: bottom center;
+    }
+    .hba-char.space { width: 0.35em; }
+    .hba-char:nth-child(odd)  { text-shadow:  0.3px 0 0 rgba(255,255,255,0.05); }
+    .hba-char:nth-child(even) { text-shadow: -0.2px 0 0 rgba(255,255,255,0.03); }
+    @keyframes hba-breathe {
+      0%   { transform: translateY(0)    scaleY(1);    opacity: 0.88; filter: blur(0px); }
+      25%  { transform: translateY(-1px) scaleY(1.01); opacity: 1.00; filter: blur(0px); }
+      50%  { transform: translateY(-2px) scaleY(1.02); opacity: 0.93; filter: blur(0.3px); }
+      75%  { transform: translateY(-1px) scaleY(1.01); opacity: 1.00; filter: blur(0px); }
+      100% { transform: translateY(0)    scaleY(1);    opacity: 0.88; filter: blur(0px); }
+    }
+
+    /* ─── VAPOR SECTION ──────────────────────────────────────────── */
+    #vapor { background: #080808; }
+    .vapor-stage {
+      position: relative;
+      width: 100%;
+      margin: 2rem 0;
+    }
+    #vapor-canvas {
+      display: block;
+      width: 100%;
+      height: 180px;
+    }
+    .vapor-controls {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .vapor-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--soft-gold);
+      background: transparent;
+      border: 1px solid var(--gold-dim);
+      padding: 0.65rem 1.5rem;
+      cursor: pointer;
+      transition: background 0.35s ease, border-color 0.35s ease;
+    }
+    .vapor-btn:hover {
+      background: rgba(212,168,83,0.07);
+      border-color: rgba(212,168,83,0.5);
+    }
+    .vapor-text-input {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: var(--near-white);
+      padding: 0.35rem 0;
+      outline: none;
+      width: 260px;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── AXIS SECTION ───────────────────────────────────────────── */
+    #axis { background: #0b0b0a; }
+    .axis-demo {
+      display: grid;
+      gap: 3rem;
+      margin: 3rem 0;
+    }
+    .axis-row {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .axis-marker {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      color: rgba(139,125,107,0.45);
+      min-width: 90px;
+      line-height: 1.4;
+    }
+    .axis-marker span {
+      display: block;
+      color: var(--soft-gold);
+      font-size: 0.8rem;
+      margin-bottom: 0.2rem;
+      opacity: 0.55;
+    }
+    .axis-harris-text {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1.6rem, 4vw, 3.8rem);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--near-white);
+    }
+    .axis-hba-text {
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      font-size: clamp(1.4rem, 3.5vw, 3.2rem);
+      letter-spacing: 0.06em;
+      color: rgba(232,228,219,0.8);
+      animation: hba-breathe 5.5s ease-in-out infinite;
+      filter: blur(0.2px);
+    }
+    .axis-vapor-canvas { height: 70px; flex: 1; min-width: 200px; }
+
+    /* ─── TUNING SECTION ─────────────────────────────────────────── */
+    #tuning { background: #0f0e0d; }
+    .tuning-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      margin: 3rem 0;
+    }
+    .vector-card {
+      padding: 2.5rem 2rem;
+      background: rgba(255,255,255,0.015);
+      border-top: 1px solid var(--white-rule);
+    }
+    .vector-axis-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      color: var(--digital-cyan);
+      opacity: 0.6;
+      margin-bottom: 0.5rem;
+    }
+    .vector-name {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 1.15rem;
+      color: var(--near-white);
+      margin-bottom: 0.5rem;
+    }
+    .vector-range {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(139,125,107,0.5);
+      margin-bottom: 1.2rem;
+    }
+    .vector-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+      outline: none;
+      cursor: pointer;
+      margin-bottom: 0.75rem;
+    }
+    .vector-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--soft-gold);
+      cursor: pointer;
+    }
+    .vector-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--soft-gold);
+      opacity: 0.7;
+    }
+    .vector-desc {
+      font-size: 0.72rem;
+      color: rgba(139,125,107,0.6);
+      line-height: 1.6;
+      margin-top: 0.75rem;
+    }
+    .tuning-preview {
+      margin-top: 3rem;
+      padding: 3rem 2.5rem;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--white-rule);
+    }
+    .tuning-preview-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      color: rgba(139,125,107,0.4);
+      margin-bottom: 2rem;
+    }
+    #tuning-preview-text {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 4rem);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--near-white);
+      transition: all 0.6s ease;
+      line-height: 1;
+    }
+    .tuning-inquiry {
+      margin-top: 3rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .inquiry-q {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      line-height: 1.8;
+      color: rgba(139,125,107,0.6);
+      padding: 1.2rem 1.5rem;
+      border-left: 1px solid var(--gold-dim);
+    }
+    .inquiry-q strong {
+      display: block;
+      color: var(--near-white);
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── GLYPHS SECTION ─────────────────────────────────────────── */
+    #glyphs { background: #090909; }
+    .glyphs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2px;
+      margin: 3rem 0;
+    }
+    .glyph-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 2.5rem 1rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      cursor: default;
+      transition: border-color 0.4s ease;
+    }
+    .glyph-card:hover { border-color: var(--gold-dim); }
+    .glyph-symbol {
+      font-size: 2.8rem;
+      line-height: 1;
+      color: var(--near-white);
+    }
+    .glyph-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--resonance-gray);
+      text-align: center;
+    }
+    .glyph-use {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      color: rgba(139,125,107,0.45);
+      text-align: center;
+      line-height: 1.65;
+    }
+
+    /* ─── ENVIRONMENT MAP SECTION ────────────────────────────────── */
+    #envmap { background: #0c0b0a; }
+    .env-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 3rem 0;
+      font-size: 0.8rem;
+    }
+    .env-table th {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--resonance-gray);
+      text-align: left;
+      padding: 0.75rem 1.5rem;
+      border-bottom: 1px solid var(--white-rule);
+      font-weight: 400;
+    }
+    .env-table td {
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      color: rgba(232,228,219,0.65);
+      vertical-align: top;
+      line-height: 1.65;
+    }
+    .env-table td:first-child {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--near-white);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .env-table tr:hover td { background: rgba(255,255,255,0.015); }
+    .tag-harris {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      color: var(--near-white);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.15rem 0.5rem;
+      white-space: nowrap;
+    }
+    .tag-hba {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      color: var(--digital-cyan);
+      border: 1px solid rgba(0,180,204,0.25);
+      padding: 0.15rem 0.5rem;
+      white-space: nowrap;
+    }
+    .tag-vapor {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      color: var(--soft-gold);
+      border: 1px solid var(--gold-dim);
+      padding: 0.15rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    /* ─── CODE ANNOTATION ────────────────────────────────────────── */
+    .code-block {
+      margin: 2rem 0;
+      padding: 1.75rem 2rem;
+      background: rgba(255,255,255,0.025);
+      border-left: 2px solid var(--gold-dim);
+      overflow-x: auto;
+    }
+    .code-block pre {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      line-height: 1.9;
+      color: rgba(139,125,107,0.7);
+      white-space: pre;
+    }
+    .c-comment  { color: rgba(139,125,107,0.4); }
+    .c-selector { color: #c9a96e; }
+    .c-property { color: #7ec8e3; }
+    .c-value    { color: var(--soft-gold); }
+
+    /* ─── FINAL SECTION ──────────────────────────────────────────── */
+    #final {
+      padding: 10rem 6vw;
+      text-align: center;
+      background: #060606;
+    }
+    .final-phrase {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 200;
+      font-size: clamp(1.1rem, 2.5vw, 1.9rem);
+      letter-spacing: 0.06em;
+      line-height: 1.75;
+      color: rgba(232,228,219,0.4);
+      max-width: 680px;
+      margin: 0 auto 4rem;
+    }
+    .final-phrase em { font-style: italic; color: rgba(212,168,83,0.55); }
+    #final-canvas { width: 100%; max-width: 900px; height: 90px; display: block; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+<!-- ─── OPENING GATE ──────────────────────────────────────────── -->
+<section id="gate">
+  <canvas id="gate-canvas"></canvas>
+  <p class="gate-eyebrow">A World-Building Activation Codex</p>
+  <h1 class="gate-title">The Sands<br>of the <span>Signal</span></h1>
+  <p class="gate-sub">∴ A Typographic and Environmental Design System for Digital Worlds</p>
+  <p class="gate-scroll-hint">Scroll to begin the initiation ↓</p>
+</section>
+
+<!-- ─── SECTION 0: WHAT IS THIS ──────────────────────────────── -->
+<section class="codex-section" id="what-is-this">
+  <p class="section-index">Before You Begin</p>
+  <h2 class="section-title">What You Are Holding</h2>
+  <div class="section-body">
+    <p>This is not a component library. It is not a theme file. It is not a collection of presets to copy and paste.</p>
+    <p>This is a <strong>design system with a philosophy</strong> — a set of principles, visual rules, and typographic behaviors that together define a specific kind of digital world. You are about to learn how to build inside that world, or how to bring its qualities into a world you are already building.</p>
+    <p>The system has two parts. The first is an environmental design language called <strong>The Sands of the Signal</strong>, which defines how space, light, color, and architecture should feel. The second is a typographic engine called <strong>STEAM SANS</strong>, which defines how text should behave — not just look, but behave — as a living part of the environment.</p>
+    <p>You do not need any prior knowledge of either. This document will teach you both by showing you, not just telling you. Every concept is demonstrated live on this page before you are asked to implement it.</p>
+    <div class="callout">
+      <em>The discipline of a propagator is this:</em> you do not simply apply a style. You understand why the style exists, and then you carry that understanding into every environment you build — whether or not the original assets are present.
+    </div>
+    <p>Scroll through this document in order. By the end, you will have encountered every major concept, tuned the typographic engine with your own hands, and understood the principle that holds the entire system together.</p>
+  </div>
+</section>
+
+<!-- ─── SECTION 1: PHILOSOPHY ─────────────────────────────────── -->
+<section class="codex-section" id="philosophy">
+  <p class="section-index">Section 01</p>
+  <h2 class="section-title">The Core Philosophy: Silicon Erosion</h2>
+  <div class="section-body">
+    <p>Every design system has a material it is made of. This one is made of <strong>sand</strong>.</p>
+    <p>Not sand as decoration. Sand as a philosophical foundation. Before you choose a color or a font weight, you must understand what sand means in this world. Sand is the material that connects the ancient and the digital — it is the hourglass that measures time, the friction that shapes stone, and the silicon that becomes the glass of your screen.</p>
+    <p>This concept is called <strong>Silicon Erosion</strong>. It is the central tension of the system: the ancient tactile history of stone and desert meeting the luminous immediacy of digital light. Every visual decision in this system exists to serve that tension.</p>
+  </div>
+  <div class="three-truths">
+    <div class="truth-card">
+      <span class="truth-number">Truth 01</span>
+      <div class="truth-label">Sand is Time</div>
+      <div class="truth-body">The ancient hourglass. The accumulation of moments. In this world, surfaces carry history — they are worn, porous, and layered with the evidence of time passing.</div>
+    </div>
+    <div class="truth-card">
+      <span class="truth-number">Truth 02</span>
+      <div class="truth-label">Sand is Friction</div>
+      <div class="truth-body">The abrasion that shapes character. Nothing in this world is perfectly smooth. Edges are worn. Transitions are gradual. The world resists, and that resistance gives it texture.</div>
+    </div>
+    <div class="truth-card">
+      <span class="truth-number">Truth 03</span>
+      <div class="truth-label">Sand is Silicon</div>
+      <div class="truth-body">The raw material of the digital world. The glass of the screen you are reading this on was once sand. The digital and the physical share the same origin. This system makes that visible.</div>
+    </div>
+  </div>
+  <div class="section-body">
+    <p>When you build with this system, you are building a space where these three truths are always present. The environment is never static. It is always either eroding or forming — never finished, never empty.</p>
+  </div>
+</section>
+
+<!-- ─── SECTION 2: COLOR PALETTE ─────────────────────────────── -->
+<section class="codex-section" id="palette">
+  <p class="section-index">Section 02</p>
+  <h2 class="section-title">The Color Palette</h2>
+  <div class="section-body">
+    <p>The palette of this world is derived directly from its material: desert sand, digital light, stone shadow, and the void of deep space. There are six primary tokens. Every color decision in your environment should be traceable back to one of these.</p>
+    <p>Use these as CSS custom properties (variables) in your project. Naming them as tokens — rather than using raw hex codes — ensures that the palette can be tuned globally and that every team member is speaking the same color language.</p>
+  </div>
+  <div class="palette-grid">
+    <div class="palette-swatch" style="background: rgba(212,168,83,0.06);">
+      <div class="swatch-dot" style="background:#D4A853;"></div>
+      <div class="swatch-name">--soft-gold</div>
+      <div class="swatch-hex">#D4A853</div>
+      <div class="swatch-use">Desert sand, sunset light, central artifacts, accent marks</div>
+    </div>
+    <div class="palette-swatch" style="background: rgba(0,180,204,0.04);">
+      <div class="swatch-dot" style="background:#00B4CC;"></div>
+      <div class="swatch-name">--digital-cyan</div>
+      <div class="swatch-hex">#00B4CC</div>
+      <div class="swatch-use">Data streams, digital light embedded in stone, active states</div>
+    </div>
+    <div class="palette-swatch" style="background: rgba(123,79,166,0.06);">
+      <div class="swatch-dot" style="background:#7B4FA6;"></div>
+      <div class="swatch-name">--ganzfeld-violet</div>
+      <div class="swatch-hex">#7B4FA6</div>
+      <div class="swatch-use">Interior sanctuary atmosphere, volumetric fog, deep ambience</div>
+    </div>
+    <div class="palette-swatch" style="background: rgba(245,241,232,0.03);">
+      <div class="swatch-dot" style="background:#F5F1E8;"></div>
+      <div class="swatch-name">--sanctuary-cream</div>
+      <div class="swatch-hex">#F5F1E8</div>
+      <div class="swatch-use">Illuminated sand surfaces, primary light sources, paper</div>
+    </div>
+    <div class="palette-swatch">
+      <div class="swatch-dot" style="background:#8B7D6B;"></div>
+      <div class="swatch-name">--resonance-gray</div>
+      <div class="swatch-hex">#8B7D6B</div>
+      <div class="swatch-use">Shadowed stone, earth tones, secondary text, metadata</div>
+    </div>
+    <div class="palette-swatch">
+      <div class="swatch-dot" style="background:#0A0A0A; border: 1px solid rgba(255,255,255,0.08);"></div>
+      <div class="swatch-name">--deep-black</div>
+      <div class="swatch-hex">#0A0A0A</div>
+      <div class="swatch-use">The void, deep space, background canvas, negative space</div>
+    </div>
+  </div>
+  <div class="code-block">
+    <pre><span class="c-comment">/* Drop this into any project's :root to activate the palette */</span>
+<span class="c-selector">:root</span> {
+  <span class="c-property">--soft-gold</span>:       <span class="c-value">#D4A853</span>;
+  <span class="c-property">--digital-cyan</span>:    <span class="c-value">#00B4CC</span>;
+  <span class="c-property">--ganzfeld-violet</span>: <span class="c-value">#7B4FA6</span>;
+  <span class="c-property">--sanctuary-cream</span>: <span class="c-value">#F5F1E8</span>;
+  <span class="c-property">--resonance-gray</span>:  <span class="c-value">#8B7D6B</span>;
+  <span class="c-property">--deep-black</span>:      <span class="c-value">#0A0A0A</span>;
+  <span class="c-property">--near-white</span>:      <span class="c-value">#E8E4DB</span>;
+}</pre>
+  </div>
+</section>
+
+<!-- ─── SECTION 3: STEAM SANS INTRO ──────────────────────────── -->
+<section class="codex-section" id="steam-intro">
+  <p class="section-index">Section 03</p>
+  <h2 class="section-title">STEAM SANS: Typography as Environment</h2>
+  <div class="section-body">
+    <p>In most design systems, typography is a layer on top of the world. You build the environment, then you label it.</p>
+    <p>In this system, typography <strong>is</strong> the environment. Text is made of the same silicon and light as the architecture. It erodes, forms, drifts, and dissolves just as the world does. A word on a wall is not a sign; it is a piece of the wall that has learned to mean something.</p>
+    <p>The typographic engine that makes this possible is called <strong>STEAM SANS</strong>. It is not a single font. It is a system of three behavioral states — called <strong>Registers</strong> — that you choose between based on the stability of the signal the text is carrying.</p>
+    <div class="callout">
+      <em>The central question of STEAM SANS is not "what font should I use?" It is: "how stable is the signal at this moment in the world?"</em>
+    </div>
+    <p>The three registers exist on a single axis called the <strong>Stability Axis</strong>, ranging from 0 (completely resolved and rigid) to 100 (completely dissolved and scattered). The sections that follow will show you each register live, explain when to use it, and give you the code to implement it.</p>
+  </div>
+</section>
+
+<!-- ─── SECTION 4: HARRIS ─────────────────────────────────────── -->
+<section class="codex-section" id="harris">
+  <div class="register-header">
+    <span class="register-num">Register 01</span>
+    <span class="register-name-label">Steam Sans ∴ Harris — Instrumental</span>
+    <span class="register-state-badge">STABILITY 0 — RESOLVED</span>
+  </div>
+  <div class="section-body">
+    <p>Harris is the most stable form of the signal. It is text that has fully resolved — it knows exactly what it is, and it holds that form without wavering. Use it for critical data, structural markers, navigation, and any moment where the user needs absolute clarity.</p>
+    <p><strong>Try it:</strong> Type in the field below. Watch how the text holds its form completely — no drift, no blur, no animation. This is the discipline of Harris.</p>
+  </div>
+  <div class="harris-stage">
+    <div class="harris-grid-bg"></div>
+    <div class="harris-meta-tag">TRACKING +120<br>WEIGHT 300<br>BASELINE STABLE<br>STATE RESOLVED</div>
+    <div id="harris-display">MEASURED</div>
+  </div>
+  <div class="register-input-row">
+    <span class="register-input-label">Edit text →</span>
+    <input class="register-input" id="harris-input" type="text" value="MEASURED" maxlength="14" spellcheck="false" />
+  </div>
+  <div class="code-block" style="margin-top:2.5rem;">
+    <pre><span class="c-comment">/* Register 01: Harris — Instrumental
+   Use for: navigation, critical data, structural labels
+   Stability Axis: 0 (fully resolved, no animation) */</span>
+<span class="c-selector">.steam-sans-harris</span> {
+  <span class="c-property">font-family</span>: <span class="c-value">'DM Sans', sans-serif</span>;
+  <span class="c-property">font-weight</span>: <span class="c-value">300</span>;
+  <span class="c-property">letter-spacing</span>: <span class="c-value">0.12em</span>;
+  <span class="c-property">text-transform</span>: <span class="c-value">uppercase</span>;
+  <span class="c-property">color</span>: <span class="c-value">var(--near-white)</span>;
+  <span class="c-property">opacity</span>: <span class="c-value">1</span>;
+  <span class="c-comment">/* No animation. Harris is resolved. */</span>
+}</pre>
+  </div>
+</section>
+
+<!-- ─── SECTION 5: HBA ─────────────────────────────────────────── -->
+<section class="codex-section" id="hba">
+  <div class="register-header">
+    <span class="register-num">Register 02</span>
+    <span class="register-name-label">Steam Sans ∴ HBA — Witness</span>
+    <span class="register-state-badge">STABILITY 50 — DRIFTING</span>
+  </div>
+  <div class="section-body">
+    <p>HBA is the signal in a state of organic observation. It is not unstable — it is <em>alive</em>. Each character breathes independently, drifting slightly on a slow sine wave, scaling and blurring at the peak of its breath. The effect is subtle but unmistakable: the text feels like it is trying to hold its form.</p>
+    <p>Use HBA for narrative text, environmental dialogue, ambient information, and any moment where the user is meant to feel the world around the words, not just read them.</p>
+    <p><strong>Try it:</strong> Type in the field below. Notice how each character animates with a slightly different timing — this is intentional. The organic variation prevents the text from feeling mechanical.</p>
+  </div>
+  <div id="hba-display" aria-label="WITNESSED"></div>
+  <div class="register-input-row">
+    <span class="register-input-label">Edit text →</span>
+    <input class="register-input" id="hba-input" type="text" value="WITNESSED" maxlength="14" spellcheck="false" />
+  </div>
+  <div class="code-block" style="margin-top:2.5rem;">
+    <pre><span class="c-comment">/* Register 02: HBA — Witness
+   Use for: narrative text, ambient dialogue, lore
+   Stability Axis: 50 (drifting, breathing, organic)
+   Each character is wrapped in a span by JavaScript */</span>
+<span class="c-selector">.hba-char</span> {
+  <span class="c-property">display</span>: <span class="c-value">inline-block</span>;
+  <span class="c-property">animation</span>: <span class="c-value">hba-breathe var(--dur) ease-in-out infinite</span>;
+  <span class="c-property">animation-delay</span>: <span class="c-value">var(--del)</span>;
+}
+<span class="c-comment">/* JS sets --dur and --del per character for organic variation */</span>
+<span class="c-selector">@keyframes hba-breathe</span> {
+  0%   { <span class="c-property">transform</span>: <span class="c-value">translateY(0) scaleY(1)</span>;    <span class="c-property">opacity</span>: <span class="c-value">0.88</span>; }
+  50%  { <span class="c-property">transform</span>: <span class="c-value">translateY(-2px) scaleY(1.02)</span>; <span class="c-property">opacity</span>: <span class="c-value">0.93</span>; <span class="c-property">filter</span>: <span class="c-value">blur(0.3px)</span>; }
+  100% { <span class="c-property">transform</span>: <span class="c-value">translateY(0) scaleY(1)</span>;    <span class="c-property">opacity</span>: <span class="c-value">0.88</span>; }
+}</pre>
+  </div>
+</section>
+
+<!-- ─── SECTION 6: VAPOR ───────────────────────────────────────── -->
+<section class="codex-section" id="vapor">
+  <div class="register-header">
+    <span class="register-num">Register 03</span>
+    <span class="register-name-label">Steam Sans ∴ Vapor — Transmission</span>
+    <span class="register-state-badge">STABILITY 100 — DISSOLVING</span>
+  </div>
+  <div class="section-body">
+    <p>Vapor is the signal returning to the environment. Text is no longer a stable form — it is a temporary gathering of particles that have agreed, briefly, to mean something. When the agreement ends, they scatter back into the sand.</p>
+    <p>Use Vapor for ephemeral messages, transitions, moments of high entropy, and any situation where the act of reading should feel like catching something before it disappears.</p>
+    <p><strong>Try it:</strong> Type a word, then press DISSOLVE to watch it return to sand. Press FORM to call it back.</p>
+  </div>
+  <div class="vapor-stage">
+    <canvas id="vapor-canvas"></canvas>
+  </div>
+  <div class="vapor-controls">
+    <input class="vapor-text-input" id="vapor-input" type="text" value="RELEASED" maxlength="14" placeholder="TYPE TO FORM…" spellcheck="false" />
+    <button class="vapor-btn" id="vapor-form-btn">FORM ∴</button>
+    <button class="vapor-btn" id="vapor-dissolve-btn">DISSOLVE ~</button>
+  </div>
+  <div class="code-block" style="margin-top:2.5rem;">
+    <pre><span class="c-comment">/* Register 03: Vapor — Transmission
+   Use for: transitions, ephemeral messages, atmospheric text
+   Stability Axis: 100 (fully dissolved, particle-based)
+   
+   Technique: render text to hidden canvas → extract pixel data
+   → animate each visible pixel as an independent particle */</span>
+<span class="c-comment">// 1. Render text to offscreen canvas</span>
+offCtx.font = <span class="c-value">'300 120px DM Sans'</span>;
+offCtx.fillText(text, offsetX, offsetY);
+<span class="c-comment">// 2. Sample visible pixels as particle home positions</span>
+<span class="c-property">for</span> (let y = 0; y &lt; H; y += gap) {
+  <span class="c-property">for</span> (let x = 0; x &lt; W; x += gap) {
+    <span class="c-property">if</span> (pixelData[(y * W + x) * 4 + 3] &gt; 128) {
+      particles.push({ homeX: x, homeY: y, <span class="c-comment">/* … */</span> });
+    }
+  }
+}
+<span class="c-comment">// 3. form() → move particles to home; dissolve() → scatter them</span></pre>
+  </div>
+</section>
+
+<!-- ─── SECTION 7: STABILITY AXIS ────────────────────────────── -->
+<section class="codex-section" id="axis">
+  <p class="section-index">Section 07</p>
+  <h2 class="section-title">The Stability Axis</h2>
+  <div class="section-body">
+    <p>The three registers are not separate tools. They are three points on a single continuous axis. Understanding this axis is the key to using STEAM SANS as a living system rather than a collection of styles.</p>
+    <p>The axis runs from <strong>0 (Harris — fully resolved)</strong> through <strong>50 (HBA — drifting)</strong> to <strong>100 (Vapor — dissolved)</strong>. In a future variable font implementation, all three states will collapse into a single CSS property. For now, you choose the register that matches the stability of the signal in your environment.</p>
+  </div>
+  <div class="axis-demo">
+    <div class="axis-row">
+      <div class="axis-marker"><span>0</span>RIGID</div>
+      <div class="axis-harris-text">ATLAS</div>
+    </div>
+    <div class="axis-row">
+      <div class="axis-marker"><span>50</span>DRIFT</div>
+      <div class="axis-hba-text">ATLAS</div>
+    </div>
+    <div class="axis-row">
+      <div class="axis-marker"><span>100</span>DISSOLVE</div>
+      <canvas class="axis-vapor-canvas" id="axis-vapor-canvas"></canvas>
+    </div>
+  </div>
+  <div class="code-block">
+    <pre><span class="c-comment">/* The future: when Steam Sans Atlas ships as a variable font,
+   all three registers collapse into a single CSS rule.
+   The axis values below are the design targets. */</span>
+<span class="c-selector">.steam-sans-atlas</span> {
+  <span class="c-property">font-family</span>: <span class="c-value">'Steam Sans Atlas'</span>, <span class="c-value">'DM Sans'</span>, sans-serif;
+  <span class="c-property">font-variation-settings</span>:
+    <span class="c-value">'STBL'</span> 50,   <span class="c-comment">/* Stability: 0=Harris, 100=Vapor */</span>
+    <span class="c-value">'PRSS'</span> 25,   <span class="c-comment">/* Pressure: stroke density */</span>
+    <span class="c-value">'COHR'</span> 100,  <span class="c-comment">/* Coherence: legibility */</span>
+    <span class="c-value">'DRFT'</span> 10;   <span class="c-comment">/* Drift: baseline instability */</span>
+  <span class="c-property">transition</span>: <span class="c-value">font-variation-settings 0.8s ease-out</span>;
+}</pre>
+  </div>
+</section>
+
+<!-- ─── SECTION 8: TUNING ─────────────────────────────────────── -->
+<section class="codex-section" id="tuning">
+  <p class="section-index">Section 08</p>
+  <h2 class="section-title">Dynamical Tuning: The Developer's Inquiry</h2>
+  <div class="section-body">
+    <p>STEAM SANS is not a static font file you drop into a project and forget. It is an engine that must be tuned to match the personality of the environment you are building. The tuning happens across four vectors.</p>
+    <p>Before you set any values, answer the three questions below. Your answers will tell you where to set each slider. The live preview at the bottom of this section will update as you tune.</p>
+  </div>
+
+  <div class="tuning-inquiry">
+    <div class="inquiry-q">
+      <strong>Question 1: What is the emotional state of the environment?</strong>
+      Is the space calm, resolved, and functional — like a control room or a data terminal? Or is it turbulent, atmospheric, and eroding — like a desert at dusk or a signal fading at the edge of range? Calm environments lean toward low STBL (Harris). Turbulent environments lean toward high STBL (Vapor).
+    </div>
+    <div class="inquiry-q">
+      <strong>Question 2: Is the text meant to be read or felt?</strong>
+      Critical instructions, navigation labels, and data readouts must be read accurately — keep COHR high. Atmospheric lore, environmental poetry, and ambient signals can be felt rather than read — COHR can drop, allowing the text to blur and scatter.
+    </div>
+    <div class="inquiry-q">
+      <strong>Question 3: What is the user's relationship to the signal?</strong>
+      Are they actively forging it — in control, precise, resolved? (Harris) Are they witnessing it — present but not in control, observing the world? (HBA) Or are they losing it — at the edge of range, the signal breaking apart? (Vapor)
+    </div>
+  </div>
+
+  <div class="tuning-grid" style="margin-top:3rem;">
+    <div class="vector-card">
+      <div class="vector-axis-label">AXIS 01</div>
+      <div class="vector-name">Stability (STBL)</div>
+      <div class="vector-range">0 = Harris (Rigid) → 100 = Vapor (Dissolved)</div>
+      <input class="vector-slider" type="range" min="0" max="100" value="0" id="stbl-slider" />
+      <div class="vector-value" id="stbl-val">0</div>
+      <div class="vector-desc">Controls the overall entropy of the text. At 0, text is fully resolved. At 100, it is fully scattered. The register you choose should match this value.</div>
+    </div>
+    <div class="vector-card">
+      <div class="vector-axis-label">AXIS 02</div>
+      <div class="vector-name">Pressure (PRSS)</div>
+      <div class="vector-range">0 = Light as air → 100 = Carved in stone</div>
+      <input class="vector-slider" type="range" min="100" max="900" step="100" value="300" id="prss-slider" />
+      <div class="vector-value" id="prss-val">300</div>
+      <div class="vector-desc">Controls stroke density and weight. High pressure feels carved into stone. Low pressure feels like light passing through glass.</div>
+    </div>
+    <div class="vector-card">
+      <div class="vector-axis-label">AXIS 03</div>
+      <div class="vector-name">Coherence (COHR)</div>
+      <div class="vector-range">0 = Abstracted → 100 = Fully legible</div>
+      <input class="vector-slider" type="range" min="0" max="100" value="100" id="cohr-slider" />
+      <div class="vector-value" id="cohr-val">100</div>
+      <div class="vector-desc">Controls legibility. As Coherence drops, text loses contrast and clarity. Use high Coherence for functional text; lower it for atmospheric or ambient text.</div>
+    </div>
+    <div class="vector-card">
+      <div class="vector-axis-label">AXIS 04</div>
+      <div class="vector-name">Drift (DRFT)</div>
+      <div class="vector-range">0 = Stable baseline → 100 = Characters float</div>
+      <input class="vector-slider" type="range" min="0" max="20" value="0" id="drft-slider" />
+      <div class="vector-value" id="drft-val">0</div>
+      <div class="vector-desc">Controls baseline instability. At high Drift, characters float independently of one another. At 0, the baseline is perfectly stable.</div>
+    </div>
+  </div>
+
+  <div class="tuning-preview">
+    <div class="tuning-preview-label">LIVE PREVIEW — TUNE THE SLIDERS ABOVE</div>
+    <div id="tuning-preview-text">THE SIGNAL</div>
+  </div>
+</section>
+
+<!-- ─── SECTION 9: GLYPHS ─────────────────────────────────────── -->
+<section class="codex-section" id="glyphs">
+  <p class="section-index">Section 09</p>
+  <h2 class="section-title">The Sacred Alphabet</h2>
+  <div class="section-body">
+    <p>Beyond the three registers, this system uses a small set of special marks called the <strong>Sacred Alphabet</strong>. These are not decorative. Each mark carries a specific meaning within the world and should be used deliberately, not as punctuation.</p>
+    <p>Think of these as environmental glyphs — marks that appear on walls, in data streams, at the boundaries between spaces. When a user encounters them, they should feel like they have found something that belongs to the world, not something the designer placed there.</p>
+  </div>
+  <div class="glyphs-grid">
+    <div class="glyph-card">
+      <div class="glyph-symbol" style="color:var(--soft-gold);">∴</div>
+      <div class="glyph-name">Therefore Mark</div>
+      <div class="glyph-use">Primary symbol of transformation. Used as a separator, a threshold marker, or a moment of consequence.</div>
+    </div>
+    <div class="glyph-card">
+      <div class="glyph-symbol" style="animation:hba-breathe 4s ease-in-out infinite;">~</div>
+      <div class="glyph-name">Flow Mark</div>
+      <div class="glyph-use">Indicates continuity or breath. Should always be animated with the HBA breathing rhythm when used in the environment.</div>
+    </div>
+    <div class="glyph-card">
+      <div class="glyph-symbol" style="letter-spacing:0.4em; opacity:0.6;">…</div>
+      <div class="glyph-name">Extended Ellipsis</div>
+      <div class="glyph-use">Represents an extended hold — a pause longer than standard. Render with extreme letter-spacing.</div>
+    </div>
+    <div class="glyph-card">
+      <div class="glyph-symbol" style="color:var(--digital-cyan); font-size:2.4rem;">⟂</div>
+      <div class="glyph-name">Boundary Mark</div>
+      <div class="glyph-use">Marks areas of high tension or transition between environmental layers. Use at thresholds.</div>
+    </div>
+    <div class="glyph-card">
+      <div class="glyph-symbol" style="opacity:0.3; font-size:2.6rem;">◌</div>
+      <div class="glyph-name">Void Glyph</div>
+      <div class="glyph-use">Represents absence and potential. Used sparingly, often floating in Vapor mode. Never use it to fill space.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SECTION 10: ENVIRONMENT MAP ──────────────────────────── -->
+<section class="codex-section" id="envmap">
+  <p class="section-index">Section 10</p>
+  <h2 class="section-title">Augmenting Any Environment</h2>
+  <div class="section-body">
+    <p>This system is designed to be installed into an existing development environment, not only built from scratch. The table below maps common environment types to the recommended integration strategy. Use it as a starting point — the tuning questions in Section 08 will refine your choices further.</p>
+  </div>
+  <table class="env-table">
+    <thead>
+      <tr>
+        <th>Environment Type</th>
+        <th>Entry Point</th>
+        <th>Primary Register</th>
+        <th>Key Augmentation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Game UI (Unity / Unreal)</td>
+        <td>HUD and diegetic text</td>
+        <td><span class="tag-hba">HBA</span></td>
+        <td>Apply sine-wave vertex displacement to text meshes. Use <code>--soft-gold</code> and <code>--digital-cyan</code> as emissive material channels.</td>
+      </tr>
+      <tr>
+        <td>Web Application</td>
+        <td>Navigation, headings, hero sections</td>
+        <td><span class="tag-harris">HARRIS</span></td>
+        <td>Drop the CSS token sheet as a layer. Replace heading fonts with DM Sans weight 300. Add grain overlay.</td>
+      </tr>
+      <tr>
+        <td>Interactive Installation</td>
+        <td>Full-screen environmental canvas</td>
+        <td><span class="tag-vapor">VAPOR</span></td>
+        <td>Use the VaporSystem class on large-format canvases. Trigger dissolve() on inactivity; form() on approach.</td>
+      </tr>
+      <tr>
+        <td>Narrative Game World</td>
+        <td>Environmental signage, lore text</td>
+        <td><span class="tag-hba">HBA</span> → <span class="tag-vapor">VAPOR</span></td>
+        <td>Transition from HBA to Vapor as the player moves away from a text source. The signal weakens with distance.</td>
+      </tr>
+      <tr>
+        <td>Marketing / Landing Page</td>
+        <td>Hero text, section titles</td>
+        <td><span class="tag-harris">HARRIS</span> → <span class="tag-hba">HBA</span></td>
+        <td>Start with Harris for impact on load. Transition to HBA on scroll to signal that the world is alive.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ─── FINAL SECTION ─────────────────────────────────────────── -->
+<section id="final">
+  <p class="final-phrase">
+    The environment is not a container for the signal.<br>
+    The environment <em>is</em> the signal,<br>
+    in a state of partial resolution.<br><br>
+    Every surface, every particle, every typographic choice<br>
+    is either forming or dissolving —<br>
+    <em>never static.</em>
+  </p>
+  <canvas id="final-canvas"></canvas>
+</section>
+
+<!-- ─── JAVASCRIPT ────────────────────────────────────────────── -->
+<script>
+// ═══════════════════════════════════════════════════════════════
+// STEAM SANS ENGINE
+// ═══════════════════════════════════════════════════════════════
+
+// ─── REGISTER 02: HBA — Per-character breathing ───────────────
+function buildHBA(text, container) {
+  container.innerHTML = '';
+  [...text].forEach((char, i) => {
+    if (char === ' ') {
+      const sp = document.createElement('span');
+      sp.className = 'hba-char space';
+      container.appendChild(sp);
+      return;
+    }
+    const span = document.createElement('span');
+    span.className = 'hba-char';
+    span.textContent = char;
+    span.style.setProperty('--dur', `${(3.5 + Math.random() * 2.5).toFixed(2)}s`);
+    span.style.setProperty('--del', `${(i * 0.11 + Math.random() * 0.08).toFixed(2)}s`);
+    container.appendChild(span);
+  });
+}
+
+// ─── REGISTER 03: VAPOR — Particle system ────────────────────
+class VaporSystem {
+  constructor(canvas, opts = {}) {
+    this.canvas = canvas;
+    this.ctx    = canvas.getContext('2d');
+    this.opts   = Object.assign({
+      fontSize: 120, fontFamily: 'DM Sans', fontWeight: '300',
+      gap: 3, speed: 0.07, scatter: 200,
+    }, opts);
+    this.particles = []; this.state = 'scattered'; this.animId = null;
+    this._resize(); this._loop();
+  }
+  _resize() {
+    const r = this.canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    this.canvas.width  = (r.width  || 800) * dpr;
+    this.canvas.height = (r.height || 160) * dpr;
+    this.ctx.scale(dpr, dpr);
+    this.W = r.width  || 800;
+    this.H = r.height || 160;
+  }
+  setText(text) {
+    this.particles = [];
+    const off = document.createElement('canvas');
+    const oc  = off.getContext('2d');
+    off.width = this.W; off.height = this.H;
+    oc.font = `${this.opts.fontWeight} ${this.opts.fontSize}px ${this.opts.fontFamily}`;
+    oc.fillStyle = '#fff'; oc.textBaseline = 'middle';
+    const m = oc.measureText(text);
+    oc.fillText(text, (this.W - m.width) / 2, this.H / 2);
+    const d = oc.getImageData(0, 0, this.W, this.H).data;
+    const g = this.opts.gap;
+    for (let y = 0; y < this.H; y += g) {
+      for (let x = 0; x < this.W; x += g) {
+        if (d[(y * this.W + x) * 4 + 3] > 128) {
+          const sc = this.opts.scatter;
+          this.particles.push({
+            homeX: x, homeY: y,
+            x: x + (Math.random()-.5)*sc, y: y + (Math.random()-.5)*sc,
+            targetX: x, targetY: y,
+            speed: 0.04 + Math.random()*0.06,
+            size:  0.8 + Math.random()*0.8,
+            opacity: 0.6 + Math.random()*0.4,
+          });
+        }
+      }
+    }
+  }
+  form()    { this.state='forming';   this.particles.forEach(p=>{p.targetX=p.homeX;p.targetY=p.homeY;}); }
+  dissolve(){ this.state='dissolving';const sc=this.opts.scatter*3; this.particles.forEach(p=>{p.targetX=p.homeX+(Math.random()-.5)*sc;p.targetY=p.homeY+(Math.random()-.5)*sc;}); }
+  _loop() {
+    this.animId = requestAnimationFrame(()=>this._loop());
+    const ctx = this.ctx;
+    ctx.clearRect(0,0,this.W,this.H);
+    this.particles.forEach(p=>{
+      p.x += (p.targetX-p.x)*p.speed;
+      p.y += (p.targetY-p.y)*p.speed;
+      if(this.state==='forming'||this.state==='formed'){p.x+=(Math.random()-.5)*.3;p.y+=(Math.random()-.5)*.3;}
+      const dist = Math.hypot(p.x-p.targetX,p.y-p.targetY);
+      const alpha = this.state==='dissolving' ? Math.min(1,dist/50)*p.opacity : p.opacity;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fillStyle=`rgba(232,228,219,${alpha})`; ctx.fill();
+    });
+  }
+  destroy(){ cancelAnimationFrame(this.animId); }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// GATE CANVAS — ambient particle field
+// ═══════════════════════════════════════════════════════════════
+(function() {
+  const canvas = document.getElementById('gate-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  for (let i = 0; i < 120; i++) {
+    particles.push({
+      x: Math.random()*1200, y: Math.random()*800,
+      vx: (Math.random()-.5)*.3, vy: (Math.random()-.5)*.3,
+      r: .5+Math.random()*1.2, a: .1+Math.random()*.4
+    });
+  }
+  function loop() {
+    requestAnimationFrame(loop);
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0)p.x=W; if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(212,168,83,${p.a})`; ctx.fill();
+    });
+  }
+  loop();
+})();
+
+// ═══════════════════════════════════════════════════════════════
+// INIT ALL INTERACTIVE ELEMENTS
+// ═══════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+
+  // HARRIS live edit
+  const harrisInput = document.getElementById('harris-input');
+  const harrisDisplay = document.getElementById('harris-display');
+  harrisInput.addEventListener('input', () => {
+    harrisDisplay.textContent = harrisInput.value.toUpperCase() || 'MEASURED';
+  });
+
+  // HBA live edit
+  const hbaInput = document.getElementById('hba-input');
+  const hbaDisplay = document.getElementById('hba-display');
+  buildHBA('WITNESSED', hbaDisplay);
+  hbaInput.addEventListener('input', () => {
+    buildHBA(hbaInput.value.toUpperCase() || 'WITNESSED', hbaDisplay);
+  });
+
+  // VAPOR main
+  const vaporCanvas = document.getElementById('vapor-canvas');
+  const vaporPS = new VaporSystem(vaporCanvas, { fontSize: 110, gap: 3, scatter: 300 });
+  vaporPS.setText('RELEASED');
+  setTimeout(() => vaporPS.form(), 400);
+  document.getElementById('vapor-form-btn').addEventListener('click', () => vaporPS.form());
+  document.getElementById('vapor-dissolve-btn').addEventListener('click', () => vaporPS.dissolve());
+  let vaporDebounce;
+  document.getElementById('vapor-input').addEventListener('input', e => {
+    clearTimeout(vaporDebounce);
+    vaporDebounce = setTimeout(() => {
+      vaporPS.setText(e.target.value.toUpperCase() || 'RELEASED');
+      vaporPS.form();
+    }, 300);
+  });
+
+  // AXIS vapor
+  const axisCanvas = document.getElementById('axis-vapor-canvas');
+  const axisPS = new VaporSystem(axisCanvas, { fontSize: 64, gap: 3, scatter: 220, speed: 0.05 });
+  axisPS.setText('ATLAS');
+  setTimeout(() => axisPS.form(), 800);
+  setInterval(() => { axisPS.dissolve(); setTimeout(() => axisPS.form(), 2500); }, 5500);
+
+  // FINAL vapor
+  const finalCanvas = document.getElementById('final-canvas');
+  const finalPS = new VaporSystem(finalCanvas, { fontSize: 46, fontWeight: '200', gap: 2, scatter: 400, speed: 0.04 });
+  finalPS.setText('SIGNAL ∴ BREATH ∴ SILENCE');
+  setTimeout(() => finalPS.form(), 1200);
+  setInterval(() => { finalPS.dissolve(); setTimeout(() => finalPS.form(), 3500); }, 7000);
+
+  // TUNING SLIDERS
+  const stblSlider = document.getElementById('stbl-slider');
+  const prssSlider = document.getElementById('prss-slider');
+  const cohrSlider = document.getElementById('cohr-slider');
+  const drftSlider = document.getElementById('drft-slider');
+  const previewText = document.getElementById('tuning-preview-text');
+
+  function applyTuning() {
+    const stbl = parseInt(stblSlider.value);
+    const prss = parseInt(prssSlider.value);
+    const cohr = parseInt(cohrSlider.value);
+    const drft = parseInt(drftSlider.value);
+
+    document.getElementById('stbl-val').textContent = stbl;
+    document.getElementById('prss-val').textContent = prss;
+    document.getElementById('cohr-val').textContent = cohr;
+    document.getElementById('drft-val').textContent = drft;
+
+    // Map STBL to visual properties
+    const opacity = 0.3 + (cohr / 100) * 0.7;
+    const blur    = (stbl / 100) * 1.5;
+    const spacing = 0.04 + (stbl / 100) * 0.12;
+    const weight  = prss;
+    const translateY = (drft / 20) * 4;
+
+    previewText.style.opacity       = opacity;
+    previewText.style.filter        = `blur(${blur}px)`;
+    previewText.style.letterSpacing = `${spacing}em`;
+    previewText.style.fontWeight    = weight;
+    previewText.style.transform     = `translateY(-${translateY}px)`;
+
+    // Register hint
+    let register = 'HARRIS (Register 01)';
+    if (stbl >= 70) register = 'VAPOR (Register 03)';
+    else if (stbl >= 30) register = 'HBA (Register 02)';
+    document.querySelector('.tuning-preview-label').textContent =
+      `LIVE PREVIEW — STBL:${stbl} PRSS:${prss} COHR:${cohr} DRFT:${drft} → ${register}`;
+  }
+
+  [stblSlider, prssSlider, cohrSlider, drftSlider].forEach(s => s.addEventListener('input', applyTuning));
+
+  // RESIZE handler
+  window.addEventListener('resize', () => {
+    [vaporPS, axisPS, finalPS].forEach(ps => {
+      ps._resize();
+    });
+    vaporPS.setText(document.getElementById('vapor-input').value.toUpperCase() || 'RELEASED');
+    vaporPS.form();
+    axisPS.setText('ATLAS'); axisPS.form();
+    finalPS.setText('SIGNAL ∴ BREATH ∴ SILENCE'); finalPS.form();
+  });
+
+});
+</script>
+</body>
+</html>
