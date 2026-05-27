@@ -27,25 +27,30 @@ export default function StoneMap({ archetypeId }: StoneMapProps) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          {/* Muted Charcoal Heavy Stone Gradient */}
+          {/* Muted Charcoal Heavy Stone Gradient infused with Silicon Cyan */}
           <linearGradient id="stone-dark" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#57534e" />
-            <stop offset="100%" stopColor="#1c1917" />
+            <stop offset="0%" stopColor="#44403c" />
+            <stop offset="100%" stopColor="var(--digital-cyan)" />
           </linearGradient>
           {/* Hot Amber Dissonant Stone Gradient */}
           <linearGradient id="stone-hot" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#f59e0b" />
             <stop offset="100%" stopColor="#b45309" />
           </linearGradient>
-          {/* Integrated Gold Forged Stone Gradient */}
+          {/* Integrated Gold Forged Stone Gradient infused with Soft Gold & Digital Cyan */}
           <linearGradient id="stone-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#fde68a" />
-            <stop offset="70%" stopColor="#d97706" />
-            <stop offset="100%" stopColor="#78350f" />
+            <stop offset="0%" stopColor="#fffbeb" />
+            <stop offset="60%" stopColor="var(--soft-gold)" />
+            <stop offset="100%" stopColor="var(--digital-cyan)" />
           </linearGradient>
           {/* Golden Glow Filter */}
           <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="6" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+          {/* Cyan Glow Filter */}
+          <filter id="cyan-glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
         </defs>
@@ -155,6 +160,19 @@ export default function StoneMap({ archetypeId }: StoneMapProps) {
 
             {/* Stepping Stone 6 */}
             <rect x="325" y="80" width="20" height="7" rx="2" fill="url(#stone-gold)" filter="url(#gold-glow)" className="animate-path-step" style={{ animationDelay: '1.0s' }} />
+
+            {/* Luminous Silicon Data-Stream Highlight (refining sand into glass) */}
+            <path
+              d="M 120 206 L 173 190.5 L 221 170 L 264 144.5 L 302 116 L 335 83.5"
+              stroke="var(--digital-cyan)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              opacity="0.8"
+              filter="url(#cyan-glow)"
+              strokeDasharray="4 4"
+              className="animate-data-stream"
+            />
           </g>
         )}
       </svg>
@@ -240,6 +258,14 @@ export default function StoneMap({ archetypeId }: StoneMapProps) {
           animation: pathStep 4s ease-in-out infinite;
           transform-origin: center;
         }
+
+        /* Luminous Silicon Data Stream Flow */
+        @keyframes dataStreamFlow {
+          0% { strokeDashoffset: 20; }
+          100% { strokeDashoffset: 0; }
+        }
+        .animate-data-stream {
+          animation: dataStreamFlow 1.5s linear infinite;
       `}</style>
     </div>
   );

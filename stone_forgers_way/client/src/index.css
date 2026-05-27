@@ -4,6 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-soft-gold: var(--soft-gold);
+  --color-digital-cyan: var(--digital-cyan);
+  --color-ganzfeld-violet: var(--ganzfeld-violet);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -43,6 +46,9 @@
 }
 
 :root {
+  --soft-gold: #D4A853;
+  --digital-cyan: #00B4CC;
+  --ganzfeld-violet: #7B4FA6;
   --primary: var(--color-blue-700);
   --primary-foreground: var(--color-blue-50);
   --sidebar-primary: var(--color-blue-600);
@@ -79,6 +85,9 @@
 }
 
 .dark {
+  --soft-gold: #E5C384;
+  --digital-cyan: #26D0E6;
+  --ganzfeld-violet: #956EC2;
   --primary: var(--color-blue-700);
   --primary-foreground: var(--color-blue-50);
   --sidebar-primary: var(--color-blue-500);
@@ -118,7 +127,19 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground relative;
+  }
+  h1, h2, h3, h4, h5, h6, p, li, blockquote, dt, dd {
+    text-wrap: pretty;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.35;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),

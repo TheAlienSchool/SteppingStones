@@ -5,6 +5,7 @@ import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { useSound } from "@/contexts/SoundContext";
+import SteamSans from "@/components/SteamSans";
 import {
   calculateArchetype,
   getArchetypeDescription,
@@ -178,10 +179,12 @@ export default function ArchetypeQuiz() {
     if (!showResult) {
       return (
         <Layout>
-          <div className="min-h-screen py-24 bg-gradient-to-b from-amber-50 to-stone-50 flex items-center justify-center">
-            <div className="text-center space-y-6">
-              <div className="w-16 h-16 mx-auto border-4 border-amber-600 border-t-transparent rounded-full animate-spin" />
-              <p className="text-xl text-stone-600 font-serif">Forging your results...</p>
+          <div className="min-h-screen py-24 bg-gradient-to-br from-stone-900 to-stone-950 flex items-center justify-center">
+            <div className="text-center space-y-8 w-full max-w-lg px-6 flex flex-col items-center">
+              <SteamSans text="FORGING RESULTS..." register="vapor" fontSize={36} className="text-amber-400" />
+              <p className="text-xs text-stone-400 tracking-[0.25em] uppercase font-mono animate-pulse">
+                Aligning Obligation Stones into Crystalline Sand...
+              </p>
             </div>
           </div>
         </Layout>
@@ -209,8 +212,8 @@ export default function ArchetypeQuiz() {
                 className="p-8 mb-8 bg-white border-2 border-amber-600 opacity-0"
                 style={{ animation: "fadeInUp 0.6s ease-out 0.3s forwards" }}
               >
-                <h2 className="text-5xl font-serif text-center text-amber-700 mb-6">
-                  {archetypeName}
+                <h2 className="text-3xl text-center text-amber-700 mb-6 flex justify-center">
+                  <SteamSans text={archetypeName} register="harris" fontSize={32} />
                 </h2>
                 <p className="text-lg leading-relaxed text-stone-700 mb-8 text-center">
                   {description}

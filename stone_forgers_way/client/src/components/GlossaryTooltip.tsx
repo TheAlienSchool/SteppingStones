@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { findGlossaryTerm, termToSlug } from "@/lib/glossaryData";
 import { X } from "lucide-react";
 import { useSound } from "@/contexts/SoundContext";
+import SteamSans from "@/components/SteamSans";
 
 interface GlossaryTooltipProps {
   term: string;
@@ -177,12 +178,12 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
               <X className="w-4 h-4" />
             </button>
 
-            <h4 className="font-serif text-lg text-stone-800 mb-2 pr-6 sm:pr-0">
-              {glossaryEntry.term}
+            <h4 className="text-stone-800 mb-2 pr-6 sm:pr-0 font-medium flex items-center">
+              <SteamSans text={glossaryEntry.term} register="harris" fontSize={16} />
             </h4>
-            <p className="text-sm text-stone-600 mb-3">
-              {glossaryEntry.simple}
-            </p>
+            <div className="text-sm text-stone-600 mb-3 leading-relaxed min-h-[3rem] flex items-center">
+              <SteamSans text={glossaryEntry.simple} register="hba" fontSize={14} />
+            </div>
             <div className="text-xs text-amber-600 font-medium inline-flex items-center gap-1 group">
               Click to view full entry
               <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

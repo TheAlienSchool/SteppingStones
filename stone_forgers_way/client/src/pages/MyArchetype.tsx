@@ -16,6 +16,7 @@ import TodaysPractice from "@/components/TodaysPractice";
 import PracticeReminder from "@/components/PracticeReminder";
 import { getTodaysPractice } from "@/lib/todaysPractice";
 import StoneMap from "@/components/StoneMap";
+import SteamSans from "@/components/SteamSans";
 
 export default function MyArchetype() {
   const [result, setResult] = useState<ReturnType<typeof getLatestQuizResult>>(null);
@@ -34,7 +35,7 @@ export default function MyArchetype() {
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center space-y-6 max-w-md">
             <h1 className="text-4xl font-serif text-stone-800">
-              Discover Your Archetype
+              <SteamSans text="Discover Your Archetype" register="harris" />
             </h1>
             <p className="text-lg text-stone-600">
               You haven't taken the archetype quiz yet. Take it now to discover which archetype you're currently inhabiting.
@@ -60,7 +61,7 @@ export default function MyArchetype() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center space-y-4 mb-12">
             <h1 className="text-5xl font-serif text-stone-800">
-              Your Archetype
+              <SteamSans text="Your Archetype" register="harris" />
             </h1>
             <p className="text-xl text-stone-600">
               Taken on {new Date(result.completedAt).toLocaleDateString()}
@@ -82,7 +83,7 @@ export default function MyArchetype() {
 
             <div className="border-t border-stone-200 pt-8">
               <h3 className="text-2xl font-serif text-stone-800 mb-4">
-                Your Archetype Scores
+                <SteamSans text="Your Archetype Scores" register="harris" />
               </h3>
               <div className="space-y-4">
                 {Object.entries(result.scores).map(([key, score]) => (
@@ -108,7 +109,7 @@ export default function MyArchetype() {
 
             <div className="border-t border-stone-200 pt-8">
               <h3 className="text-2xl font-serif text-stone-800 mb-4">
-                Your Practice
+                <SteamSans text="Your Practice" register="harris" />
               </h3>
               <div className="bg-amber-50 p-6 rounded-lg space-y-4">
                 {practices.map((practice, i) => (
@@ -121,7 +122,7 @@ export default function MyArchetype() {
 
             <div className="border-t border-stone-200 pt-8">
               <h3 className="text-2xl font-serif text-stone-800 mb-4">
-                Today's Practice
+                <SteamSans text="Today's Practice" register="harris" />
               </h3>
               <TodaysPractice variant="full" />
               <PracticeReminder practice={getTodaysPractice()} className="mt-4" />
@@ -130,7 +131,7 @@ export default function MyArchetype() {
             {history.length > 1 && (
               <div className="border-t border-stone-200 pt-8">
                 <h3 className="text-2xl font-serif text-stone-800 mb-4">
-                  Your Archetype Evolution
+                  <SteamSans text="Your Archetype Evolution" register="harris" />
                 </h3>
                 <div className="space-y-4">
                   {history.map((h: QuizResult, index: number) => (
@@ -156,7 +157,7 @@ export default function MyArchetype() {
 
             <div className="border-t border-stone-200 pt-8 no-print">
               <h3 className="text-2xl font-serif text-stone-800 mb-4 text-center">
-                Share Your Archetype
+                <SteamSans text="Share Your Archetype" register="harris" className="w-full text-center" />
               </h3>
               <SocialShare 
                 title={`I discovered my archetype :: ${archetypeName}`}
@@ -166,7 +167,7 @@ export default function MyArchetype() {
             {/* Print Deskside Postcard Generator (The Somatic Workspace Anchor) */}
             <div className="border-t border-stone-200 pt-8 text-center no-print">
               <h3 className="text-2xl font-serif text-stone-800 mb-2">
-                Somatic Workspace Anchor
+                <SteamSans text="Somatic Workspace Anchor" register="harris" />
               </h3>
               <p className="text-sm text-stone-600 max-w-md mx-auto mb-6">
                 Print your archetype’s custom 4x6 deskside card. Place it on your physical desk as a quiet reminder to check your breath and choose presence in moments of daily friction.
@@ -209,7 +210,7 @@ export default function MyArchetype() {
                 The Stone Forger's Way
               </span>
               <h2 className="text-xl text-stone-900 font-bold leading-tight mt-0.5">
-                The {archetypeName}
+                The <SteamSans text={archetypeName} register="harris" className="text-xl inline font-bold" />
               </h2>
             </div>
             {/* Small Nameless Star Logo */}
