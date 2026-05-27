@@ -27,7 +27,7 @@ export default function MoneyAsTeacher() {
             <article className="space-y-8">
               <div className="bg-amber-50 p-8 rounded-lg mb-8 space-y-4">
                 <p className="text-lg leading-relaxed text-stone-700">
-                  Money is not the enemy. Money is the teacher. It reveals where we trust and where we doubt, where we flow and where we hoard, where we give freely and where we grasp tightly. The question is not whether to charge for our work—the question is whether we can hold the paradox of giving freely while honoring conscious value exchange.
+                  Money acts as a clear teacher. It illuminates where we trust and where we doubt, where we flow and where we hoard, where we give freely and where we grasp tightly. Our opportunity lies in holding the paradox: offering our insights freely while fully honoring a conscious exchange of value.
                 </p>
               </div>
 
@@ -38,53 +38,45 @@ export default function MoneyAsTeacher() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                But what if money is simply energy? What if exchange is simply resonance? What if the act of receiving payment is not extraction, but acknowledgment? Not taking, but allowing?
+                But what if money is simply energy? What if exchange is simply resonance? The act of receiving payment functions as a clear acknowledgment of value—allowing the work to be sustained and honored.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Forger does not hoard wealth. But neither do they give it away recklessly. They understand that value exchange is part of the ecosystem. When someone pays for your work, they are not being exploited—they are participating in the Field. They are saying, "This resonates. I want to amplify this signal."
+                The Stone Forger circulates wealth with wisdom. They understand value exchange as a vital ecosystem. When someone pays for your work, they participate directly in this shared field, saying, "This resonates. I want to amplify this signal."
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Hoarded Wealth</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                For years, I hoarded wealth. Not money—insights. I carried notebooks full of revelations, hard drives full of syntheses, conversations full of breakthroughs. And I kept them to myself. Why? Because I didn't trust that they had value. Because I didn't trust that anyone would care.
+                For years, I hoarded wealth. Not money—insights. I carried notebooks full of revelations, hard drives full of syntheses, conversations full of breakthroughs. And I kept them to myself. Why? Because my trust in their value was still solidifying. Because I wondered if anyone would care.
               </p>
-<p className="text-lg leading-relaxed text-stone-700">
-  Because I didn't trust that I was allowed to share them.
-</p>
+              <p className="text-lg leading-relaxed text-stone-700">
+                Because I questioned my permission to share them.
+              </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  The hoarding was not humility. It was fear.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  It was the Stone Carrier's burden: "These stones 
-                are too heavy to share. No one will understand.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  I must carry them alone."
-</p>
+                Hoarding is the direct expression of fear.
+              </p>
+              <p className="text-lg leading-relaxed text-stone-700">
+                It was the Stone Carrier's burden: "These stones are too heavy to share. I must carry them alone."
+              </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  But hoarded wealth does not serve the Field. It stagnates.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  It becomes dead weight. The only 
-                way for wealth to flow is to release it.
-</p>
+                Wealth flows only through release; withheld, it stagnates and grows heavy, becoming dead weight. The only way for wealth to flow is to release it.
+              </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Conscious Exchange</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This website is an experiment in conscious value exchange. Everything here is free. You can read every word, download every text, absorb every insight without paying a cent. This is not a paywall. This is not a transaction.
+                This website is an experiment in conscious value exchange. Everything here is offered freely. You can read every word, download every text, absorb every insight without paying a cent. This operates as an open doorway and a space of generative sharing.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                But if something resonates—if a concept clicks, if a practice shifts something in you, if an archetype helps you see yourself more clearly—you are invited to contribute. Not because you owe me. Not because I'm demanding payment. But because conscious value exchange is part of the practice.
+                If a concept clicks, if a practice shifts something in you, if an archetype helps you see yourself more clearly—you are invited to contribute. This contribution is a voluntary act of resonance, a practice of honoring what supports you.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                When you pay for something that has value, you are not being exploited. You are participating in the Field. You are saying, "I see this. I value this. I want this to continue existing."
+                When you pay for something that has value, you participate directly in this shared field. You are saying, "I see this. I value this. I want this to continue existing."
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Three Tiers</h2>
@@ -98,7 +90,7 @@ export default function MoneyAsTeacher() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <strong>$33 — The Amplification.</strong> This says, "This resonates deeply. I want to support this work continuing." It is not just acknowledgment—it is investment. It is the choice to amplify the signal.
+                <strong>$33 — The Amplification.</strong> This says, "This resonates deeply. I want to support this work continuing." This level represents both acknowledgment and active investment—a conscious choice to amplify the signal.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -108,28 +100,25 @@ export default function MoneyAsTeacher() {
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Practice</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Money as Teacher is a practice. It is the practice of noticing where you tighten around exchange. Where you feel resentment when someone charges for their work. Where you feel guilt when you charge for yours. Where you hoard because you don't trust the Field to provide.
+                Money as Teacher is a practice. It is the practice of noticing where you tighten around exchange—where you feel friction when someone charges for their work, where you feel hesitation when you charge for yours, or where you hoard out of a temporary lapse of trust in the Field's provision.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  The Stone Forger does not hoard. The Stone Forger does not extract.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  The Stone Forger places 
-                stones in the path and trusts that the Field will respond. Sometimes the response is financial.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  Sometimes it is relational. Sometimes it is simply the deep knowing that the work is landing 
-                where it needs to land.
-</p>
-
+                The Stone Forger operates through circulation and contribution.
+              </p>
+              <p className="text-lg leading-relaxed text-stone-700">
+                They place stones in the path, trusting the field to respond in resonance. Sometimes the response is financial.
+              </p>
+              <p className="text-lg leading-relaxed text-stone-700">
+                Sometimes it is relational. Sometimes it is simply the deep knowing that the work is landing where it needs to land.
+              </p>
               <p className="text-lg leading-relaxed text-stone-700">
                 Trust the exchange. Trust the flow. Trust that when you give freely, the Field provides.
               </p>
 
               <div className="bg-stone-50 p-8 rounded-lg mt-12 space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700 italic mb-0">
-  "The hoarded wealth is not money. It is the insights we carry alone, the breakthroughs we 
+                  "The hoarded wealth is not money. It is the insights we carry alone, the breakthroughs we 
                   keep to ourselves, the stepping stones we refuse to place in the path.
 </p>
 <p className="text-lg leading-relaxed text-stone-700 italic mb-0">

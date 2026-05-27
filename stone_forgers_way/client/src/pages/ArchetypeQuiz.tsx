@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
+import { useSound } from "@/contexts/SoundContext";
 import {
   calculateArchetype,
   getArchetypeDescription,
@@ -30,6 +31,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function ArchetypeQuiz() {
   const [, setLocation] = useLocation();
+  const { playChime } = useSound();
 
   // Randomize questions and options on mount
   const [randomizedQuestions, setRandomizedQuestions] = useState(() => {
@@ -54,6 +56,11 @@ export default function ArchetypeQuiz() {
   const handleAnswer = (optionIndex: number) => {
     if (isTransitioning) return;
 
+    // Play active user chime on answer selection
+    const scale = [528, 594, 660, 792, 880];
+    const freq = scale[Math.floor(Math.random() * scale.length)];
+    playChime(freq, "harmonic");
+
     setSelectedOption(optionIndex);
     setIsTransitioning(true);
 
@@ -67,6 +74,7 @@ export default function ArchetypeQuiz() {
       if (currentQuestion < randomizedQuestions.length - 1) {
         // Check for halfway milestone
         if (currentQuestion + 1 === halfwayPoint) {
+          playChime(220, "harmonic"); // Deep grounding bell for milestone
           setShowMilestone(true);
           setTimeout(() => {
             setShowMilestone(false);
@@ -110,6 +118,21 @@ export default function ArchetypeQuiz() {
 
         saveQuizResult(quizResult);
         setResult(quizResult);
+
+        // Play a beautiful, multi-layered celebratory arpeggio for quiz completion!
+        setTimeout(() => {
+          playChime(440, "harmonic");
+        }, 0);
+        setTimeout(() => {
+          playChime(554, "harmonic");
+        }, 100);
+        setTimeout(() => {
+          playChime(659, "harmonic");
+        }, 200);
+        setTimeout(() => {
+          playChime(880, "harmonic");
+        }, 300);
+
         // Delay showing result for dramatic reveal
         setTimeout(() => {
           setShowResult(true);

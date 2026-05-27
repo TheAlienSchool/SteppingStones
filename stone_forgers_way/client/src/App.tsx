@@ -39,35 +39,6 @@ import ExpandedQuiz from "./pages/ExpandedQuiz";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 import { SoundProvider, useSound } from "./contexts/SoundContext";
 
-// Custom hook to delay route transitions for somatic pacing in the Dojo
-function useSomaticLocation() {
-  const [location, setLocation] = useLocation();
-  const { triggerTransition } = useSound();
-  const [visibleLocation, setVisibleLocation] = useState(location);
-  const isTransitioning = useRef(false);
-
-  useEffect(() => {
-    if (location !== visibleLocation && !isTransitioning.current) {
-      isTransitioning.current = true;
-      triggerTransition(); // Trigger the 1.5s somatic overlay instantly
-      
-      // Delay updating the visible location so the routes change at the peak opacity (750ms)
-      const timer = setTimeout(() => {
-        setVisibleLocation(location);
-        isTransitioning.current = false;
-      }, 750);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [location, visibleLocation, triggerTransition]);
-
-  const setLocationWithTransition = (to: string, options?: any) => {
-    setLocation(to, options);
-  };
-
-  return [visibleLocation, setLocationWithTransition] as [string, (to: string, options?: any) => void];
-}
-
 // Code splitting for heavy pages (lazy load on route navigation)
 const Social = lazy(() => import("./pages/Social"));
 const CompleteWorks = lazy(() => import("./pages/CompleteWorks"));
@@ -85,60 +56,67 @@ function PageLoader() {
   );
 }
 
+function useSomaticLocation() {
+  const { visibleLocation, setLocation } = useSound();
+  return [visibleLocation, setLocation] as [string, typeof setLocation];
+}
+
 function Router() {
   useScrollToTop();
   
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/journey"} component={TheJourney} />
-      <Route path={"/archetypes"} component={Archetypes} />
-      <Route path={"/archetype/:id"} component={ArchetypePortal} />
-      <Route path={"/archetype-quiz"} component={ArchetypeQuiz} />
-      <Route path={"/expanded-quiz"} component={ExpandedQuiz} />
-      <Route path={"/my-archetype"} component={MyArchetype} />
-      <Route path={"/todays-practice"} component={TodaysPracticePage} />
-      <Route path={"/concepts"} component={Concepts} />
-      <Route path={"/practices"} component={Practices} />
-      <Route path={"/glossary"} component={Glossary} />
-      <Route path={"/works"} component={() => (
-        <Suspense fallback={<PageLoader />}>
-          <CompleteWorks />
-        </Suspense>
-      )} />
-      <Route path="/about" component={About} />
-      <Route path="/social" component={() => (
-        <Suspense fallback={<PageLoader />}>
-          <Social />
-        </Suspense>
-      )} />
-      <Route path="/voices" component={Voices} />
-      <Route path="/forgers-cohort" component={ForgersCohort} />
-      <Route path="/creative-context" component={() => (
-        <Suspense fallback={<PageLoader />}>
-          <CreativeContext />
-        </Suspense>
-      )} />
-      <Route path="/samuel-r-harris" component={SamuelRHarris} />
-      <Route path="/the-container" component={TheContainer} />
-      <Route path="/reflections" component={Reflections} />
-      <Route path="/reflections/the-question-that-started-it-all" component={TheQuestionThatStartedItAll} />
-      <Route path="/reflections/trust-is-the-cheat-code" component={TrustIsTheCheatCode} />
-      <Route path="/reflections/money-as-teacher" component={MoneyAsTeacher} />
-      <Route path="/reflections/the-whales-song" component={TheWhalesSong} />
-      <Route path="/reflections/the-physics-of-thought" component={ThePhysicsOfThought} />
-      <Route path="/reflections/stone-throwing-vs-stone-forging" component={StoneThrowingVsStoneForging} />
-      <Route path="/reflections/the-gift-of-grace" component={TheGiftOfGrace} />
-      <Route path="/reflections/terma-in-action" component={TermaInAction} />
-      <Route path="/reflections/the-creative-fortress" component={TheCreativeFortress} />
-      <Route path="/reflections/the-path-to-1000-ways-to-sit" component={ThePathTo1000WaysToSit} />
-      <Route path="/reflections/welcome-to-multifaceted-meditation" component={WelcomeToMultifacetedMeditation} />
-      <Route path={"/thank-you"} component={ThankYou} />
-      <Route path={"/privacy-policy"} component={PrivacyPolicy} />
-      <Route path={"/disclaimer"} component={Disclaimer} />
-      <Route path={"/404"} component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
+    <WouterRouter hook={useSomaticLocation}>
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/journey"} component={TheJourney} />
+        <Route path={"/archetypes"} component={Archetypes} />
+        <Route path={"/archetype/:id"} component={ArchetypePortal} />
+        <Route path={"/archetype-quiz"} component={ArchetypeQuiz} />
+        <Route path={"/expanded-quiz"} component={ExpandedQuiz} />
+        <Route path={"/my-archetype"} component={MyArchetype} />
+        <Route path={"/todays-practice"} component={TodaysPracticePage} />
+        <Route path={"/concepts"} component={Concepts} />
+        <Route path={"/practices"} component={Practices} />
+        <Route path={"/glossary"} component={Glossary} />
+        <Route path={"/works"} component={() => (
+          <Suspense fallback={<PageLoader />}>
+            <CompleteWorks />
+          </Suspense>
+        )} />
+        <Route path="/about" component={About} />
+        <Route path="/social" component={() => (
+          <Suspense fallback={<PageLoader />}>
+            <Social />
+          </Suspense>
+        )} />
+        <Route path="/voices" component={Voices} />
+        <Route path="/forgers-cohort" component={ForgersCohort} />
+        <Route path="/creative-context" component={() => (
+          <Suspense fallback={<PageLoader />}>
+            <CreativeContext />
+          </Suspense>
+        )} />
+        <Route path="/samuel-r-harris" component={SamuelRHarris} />
+        <Route path="/the-container" component={TheContainer} />
+        <Route path="/reflections" component={Reflections} />
+        <Route path="/reflections/the-question-that-started-it-all" component={TheQuestionThatStartedItAll} />
+        <Route path="/reflections/trust-is-the-cheat-code" component={TrustIsTheCheatCode} />
+        <Route path="/reflections/money-as-teacher" component={MoneyAsTeacher} />
+        <Route path="/reflections/the-whales-song" component={TheWhalesSong} />
+        <Route path="/reflections/the-physics-of-thought" component={ThePhysicsOfThought} />
+        <Route path="/reflections/stone-throwing-vs-stone-forging" component={StoneThrowingVsStoneForging} />
+        <Route path="/reflections/the-gift-of-grace" component={TheGiftOfGrace} />
+        <Route path="/reflections/terma-in-action" component={TermaInAction} />
+        <Route path="/reflections/the-creative-fortress" component={TheCreativeFortress} />
+        <Route path="/reflections/the-path-to-1000-ways-to-sit" component={ThePathTo1000WaysToSit} />
+        <Route path="/reflections/welcome-to-multifaceted-meditation" component={WelcomeToMultifacetedMeditation} />
+        <Route path={"/thank-you"} component={ThankYou} />
+        <Route path={"/privacy-policy"} component={PrivacyPolicy} />
+        <Route path={"/disclaimer"} component={Disclaimer} />
+        <Route path={"/404"} component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </WouterRouter>
   );
 }
 
@@ -149,9 +127,7 @@ function App() {
         <SoundProvider>
           <TooltipProvider>
             <Toaster />
-            <WouterRouter hook={useSomaticLocation}>
-              <Router />
-            </WouterRouter>
+            <Router />
           </TooltipProvider>
         </SoundProvider>
       </ThemeProvider>

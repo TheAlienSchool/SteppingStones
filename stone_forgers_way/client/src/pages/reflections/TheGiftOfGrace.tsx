@@ -34,21 +34,21 @@ export default function TheGiftOfGrace() {
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">Grace as Person, Grace as Quality</h2>
               
               <p className="text-lg leading-relaxed text-stone-700">
-                My grandmother Mabel Carter Harris had a sister named Grace. Aunt Grace was one of those people whose name perfectly matched their essence. To be in her presence was to experience grace :: the quality of unearned kindness, the gift freely given, the love that does not demand anything in return.
+                My grandmother Mabel Carter Harris had a sister named Grace. Aunt Grace was one of those people whose name perfectly matched their essence. To be in her presence was to experience grace :: the quality of unearned kindness, the gift freely given, and love offered without condition.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                As a child, I did not understand the significance of this. I just knew that family reunions near the church in McDonald, Pennsylvania, meant warmth, laughter, connection. I knew that Aunt Grace and Uncle Jerry were constants in a world that often felt uncertain. I knew that Aunt Janis was the warm hug I needed when the world felt cold and stone-faced.
+                As a child, the deeper significance matured quietly beneath my awareness. I simply knew that family reunions near the church in McDonald, Pennsylvania, meant warmth, laughter, connection. I knew that Aunt Grace and Uncle Jerry were constants in a world that often felt uncertain. I knew that Aunt Janis was the warm hug I needed when the world felt cold and stone-faced.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                But now, decades later, I see the pattern. I see the lineage. I see that grace :: both the person and the quality :: was woven into my childhood in ways I could not have recognized at the time.
+                But now, decades later, I see the pattern. I see the lineage. I see that grace :: both the person and the quality :: was woven into my childhood in ways that are now fully visible to me.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Lineage of Love</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Samuel R. Harris, my grandfather, lived by the principle: "It is better to light a candle than to curse the darkness." This was not just philosophy. This was practice. This was the way he moved through the world.
+                Samuel R. Harris, my grandfather, lived by the principle: "It is better to light a candle than to curse the darkness." This stood as both his philosophy and his daily practice. This was the way he moved through the world.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -60,13 +60,13 @@ export default function TheGiftOfGrace() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Aunt Janis was the warm hug. In a world that often felt harsh, that often demanded toughness, that often punished vulnerability, Aunt Janis was the reminder that softness is not weakness. That warmth is not naivety. That love is not a luxury :: it is the foundation.
+                Aunt Janis offered a warm hug. In a world that often demanded toughness and corrected vulnerability, Aunt Janis demonstrated that softness is strength, warmth is wisdom, and love stands as the absolute foundation.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Warm Hug in a Stone-Faced World</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Growing up, I learned to carry stones. I learned to hold up shields. I learned to navigate a world that often felt hostile, that often demanded I prove my worth, that often punished me for being different.
+                Growing up, I learned to carry stones. I learned to hold up shields. I learned to navigate a world focused on performance, constant proof of worth, and friction around difference.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -80,15 +80,15 @@ export default function TheGiftOfGrace() {
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Practice of Grace</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Grace is not just a quality you receive. It is a practice you embody. It is the choice to offer warmth in a cold world. It is the choice to offer softness in a hard world. It is the choice to offer love when the world demands toughness.
+                Grace represents a quality both received and actively embodied. It is the choice to offer warmth in a cold world. It is the choice to offer softness in a hard world. It is the choice to offer love when the world demands toughness.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Carrier does not practice grace. They carry the stones of resentment, of proof that the world is unsafe, of evidence that love is dangerous.
+                The Stone Carrier holds the heavy weight of resentment, carrying proof that the world is unsafe and love is dangerous.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Thrower does not practice grace. They throw stones at the world, demanding that it change before they will soften.
+                The Stone Thrower projects demands outward, insisting the world change before they will soften.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">

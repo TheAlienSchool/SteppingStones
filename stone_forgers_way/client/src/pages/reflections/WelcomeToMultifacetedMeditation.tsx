@@ -28,88 +28,96 @@ export default function WelcomeToMultifacetedMeditation() {
             <article className="space-y-8">
               {/* Opening */}
               <p className="text-lg leading-relaxed text-stone-700">
-                We have been taught that meditation is stillness—the cessation of thought, the quieting of mind, the discipline of sitting zazen until the legs go numb and the breath becomes the only rhythm that matters. This is true. And it is also incomplete.
+                We have been taught that meditation is stillness—the quiet cessation of thought, the discipline of sitting zazen until the legs go numb and the breath becomes a steady anchor. This is a powerful, foundational coordinate. And there is a wider field of practice.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                What if meditation is not merely one posture, one breath pattern, one path to presence—but a multifaceted practice for beings who exist across multiple dimensions simultaneously?
+                Multifaceted meditation welcomes the whole spectrum of our biology. It is an active training ground for practitioners who inhabit multiple planes of experience simultaneously, offering a direct path to full-spectrum awareness.
               </p>
 
               {/* Section: The Multi-Dimensional Human */}
-              <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Multi-Dimensional Human</h2>
+              <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Multi-Dimensional Practitioner</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                You are not one thing. You are electromagnetic field and microtubule orchestration. You are quantum coherence collapsing into classical experience every millisecond. You are ancestor memory encoded in mitochondrial DNA. You are the weight of stones collected across years of creative labor. You are the vibratory recognition of truth before language can name it.
+                We exist as vast systems of energy and physical form. When we stand on the training floor, we bring the entirety of our coordinates: the somatic weight of stones we carry, the cell-level memories of our ancestors, and the deep vibratory recognition of truth that precedes language. 
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                To meditate as a multi-dimensional being is to acknowledge all of these layers at once—not to transcend them, but to <em>be present with them</em>. This is not escapism. This is full-spectrum awareness.
+                Only when we ground ourselves in these bodily layers do we open the door to the deeper physics of our biology. Underneath the surface, we are an active coordination of electromagnetic fields and microscopic structures. Our consciousness operates as a precise bridge, where quantum coherence organizes classical physical experience every millisecond, and cellular systems align in absolute unison.
+              </p>
+
+              <p className="text-lg leading-relaxed text-stone-700">
+                To train as a multi-dimensional practitioner is to acknowledge and integrate all of these layers at once. We choose to remain fully present with each coordinate, bringing our complete biological inheritance into the active field of practice. This is full-spectrum awareness.
               </p>
 
               {/* Section: The Physics of Sitting */}
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Physics of Sitting</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                At <strong>1000 Ways to Sit</strong> in San Francisco, the practice becomes literal. There are, in fact, one thousand ways to arrange your body in relationship to gravity, to breath, to the magnetic field of Earth beneath you. Each sitting is a meditation. Each posture is a prayer. Each adjustment of weight distribution is a conversation with the physics that govern your flesh and the metaphors that organize your meaning.
+                At <strong>1000 Ways to Sit</strong> in San Francisco, this practice becomes physical. There are one thousand ways to arrange your body in relationship to gravity, breath, and the earth beneath you. Every posture serves as an active coordinate of training. Each adjustment of weight distribution operates as an ongoing dialogue between the physics governing your flesh and the meaning organizing your focus.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                When you sit on stone, you are not separate from it. Stone is 4.5 billion years of geological memory, pressure transformed into permanence—teacher and ally. To sit <em>with</em> stone is to meditate across the dimension of deep time.
+                When you sit on stone, you enter into direct union with it. Stone represents billions of years of geological memory—immense pressure stabilized into permanent form. It stands as a physical teacher and a somatic ally. Sitting with stone allows you to coordinate your presence with the vast dimension of deep time.
               </p>
 
               {/* Section: Creative Steeping as Dimensional Practice */}
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">Creative Steeping as Dimensional Practice</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <GlossaryTooltip term="Creative Steeping"><strong>Creative Steeping</strong></GlossaryTooltip>—the product of The Alien School—recognizes that ideas need time and heat to release their essence. Just as tea leaves unfurl in hot water, creative possibility unfurls when given the proper conditions for emergence. This is meditation in the dimension of becoming—not stillness, but steeping. Not silence, but the quiet hum of transformation happening beneath perception's threshold.
+                <GlossaryTooltip term="Creative Steeping"><strong>Creative Steeping</strong></GlossaryTooltip>—the product of THE ÅLïEN SCõÖL—recognizes that ideas need time and heat to release their essence. Just as tea leaves unfurl in hot water, creative possibility unfurls when given the proper conditions for emergence. This is meditation in the dimension of becoming—not stillness, but steeping. Not silence, but the quiet hum of transformation happening beneath perception's threshold.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                You do not force the insight. You create the conditions for it to steep into clarity.
+                We bypass forcing the insight, choosing instead to establish the perfect conditions for it to steep into clarity.
               </p>
 
               {/* Section: The Shim Sham Paradox */}
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Shim Sham Paradox and Dimensional Friction</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                When you exist in systems that simultaneously celebrate and departmentalize creativity—when you feel the dissonance in your body before you can name it—you are experiencing dimensional friction. The <GlossaryTooltip term="Shim Sham"><strong>Shim Sham</strong></GlossaryTooltip> is the vibratory truth that emerges from this friction. It is the term that shakes to the surface when two incompatible realities try to occupy the same space.
+                When you operate within structures that celebrate creative spark in name while constraining it in practice, you feel a distinct dissonance—an institutional friction felt directly inside the body. This is dimensional friction. The <GlossaryTooltip term="Shim Sham"><strong>Shim Sham</strong></GlossaryTooltip> is the vibratory signal that emerges from this exact somatic tension. It is a precise bodily coordinate shaking to the surface when incompatible systems collide.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                To meditate with this friction is not to resolve it, but to <em>feel</em> it fully. To let it forge something new. This is meditation in the dimension of paradox—where opposing truths can both be held without collapse. The heat can burn you, or it can forge you. The choice is in your awareness.
+                In our Dojo, we meet this friction head-on. Rather than rushing to resolve the tension, we train to feel it completely, utilizing the heat of the paradox to forge a new, stronger vessel. This is the discipline of holding opposing forces in perfect balance without collapsing. You can allow the friction to consume your energy, or you can channel it to forge your stone. The capacity to choose is developed through practice.
               </p>
 
               {/* Section: Quantum Coherence and the Observer */}
-              <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">Quantum Coherence and the Meditating Observer</h2>
+              <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">Quantum Coherence and the Practicing Observer</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                In quantum biology, consciousness emerges from coherent quantum states in microtubules—orchestrated reduction of possibility into actuality. Every moment of awareness is a collapse of the wave function. When you meditate, you are not escaping the quantum. You are <em>participating</em> in it more deliberately. You are choosing which possibilities to collapse into experience.
+                Every breath is a selection. When you settle into focus, you are actively organizing the possibilities of your life. 
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This is meditation in the dimension of potentiality. You sit with all possible futures vibrating in superposition, and through your presence, you select. Physics and metaphor dance together here :: the observer shapes the observed, and the practice shapes the practitioner.
+                From this somatic stillness, you can access the quantum foundation of biology. Consciousness operates through coherent states within cellular microtubules, translating raw potential into actual, physical events. Every moment of focused awareness coordinates a collapse of the wave function. Through our training, we participate in this quantum coordination more deliberately. We consciously select the potential we choose to materialize into form.
+              </p>
+
+              <p className="text-lg leading-relaxed text-stone-700">
+                This is training in the dimension of potentiality. As you sit, you remain aware of the vast array of possible futures vibrating in superposition. Through the stability of your presence, you select your coordinate. Physics and metaphor align: the observer actively structures the observed, and the practice shapes the practitioner.
               </p>
 
               {/* Section: The Archetypes as Dimensional Positions */}
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Archetypes as Dimensional Positions</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <strong>The Stone Carrier</strong> meditates in the dimension of weight. Every human knows this experience—the accumulation of responsibility, criticism, unfinished work. To sit with this weight without shame is its own profound practice.
+                <strong>The Stone Carrier</strong> trains in the dimension of weight. Every practitioner knows this experience—the accumulation of responsibility, structural load, and creative friction. Sensation-focused presence with this weight, without self-judgment, is a profound and essential discipline.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <strong>The Stone Skipper</strong> meditates in the dimension of momentum. The practice is not stillness but strategic motion—finding the angle, releasing at the right moment, trusting the physics of forward movement. <strong>The Stone Stacker</strong> meditates in the dimension of balance. Each stone placed is a negotiation with gravity, breath, patience. The practice is precarious by design.
+                <strong>The Stone Skipper</strong> trains in the dimension of momentum. The focus shifts to strategic movement—finding the exact angle, releasing with precision, and trusting the physics of forward velocity. <strong>The Stone Stacker</strong> trains in the dimension of balance. Each stone placed is a delicate coordination of gravity, breath, and absolute stability. The practice is precarious by design, requiring total presence.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <strong>The Stone Forger</strong> meditates in the dimension of transformation. Heat. Pressure. Time. The practice is alchemical—taking the raw material of experience and shaping it into something that can bear weight, cut through resistance, reflect light. You are not limited to one archetype, one dimension, one way of sitting with what is.
+                <strong>The Stone Forger</strong> trains in the dimension of transformation. Utilizing heat, pressure, and time, the practitioner engages in an alchemical process—taking the raw material of experience and forging it into form that bears weight, cuts through resistance, and radiates light. In this Dojo, you are free to navigate all archetypes and dimensions, fluidly choosing the position your practice requires.
               </p>
 
               {/* Section: The Gamelatron and Vibratory Presence */}
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Gamelatron and Vibratory Presence</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                In 2016, a postcard flyer from Brooklyn carried the frequency of future possibility. Aaron Taylor Kuffner's <strong>Gamelatron</strong>—a robotic orchestra of Indonesian gamelan instruments—offered a different kind of meditation: presence through <em>listening</em> across years. The postcard stayed. Not in a file or a folder, but in the field of attention. It waited nine years to become actionable. This is meditation in the dimension of patience—trusting that what <GlossaryTooltip term="Resonance">resonates</GlossaryTooltip> will return when the conditions are right.
+                In 2016, a postcard flyer from Brooklyn carried the frequency of future possibility. Aaron Taylor Kuffner's <strong>Gamelatron</strong>—a robotic orchestra of Indonesian gamelan instruments—offered a different kind of meditation: presence through deep listening across years. The postcard flyer stayed active within the field of attention, bypassing folders or files. It waited nine years to become actionable. This represents training in the dimension of <GlossaryTooltip term="Active Patience">Active Patience</GlossaryTooltip>—trusting that what <GlossaryTooltip term="Resonance">resonates</GlossaryTooltip> will materialize as the conditions align.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -120,37 +128,35 @@ export default function WelcomeToMultifacetedMeditation() {
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">Earth's Magnetic Forces and Grounded Presence</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <strong>The Stone Forger's Way</strong> is grounded in Earth's abundant magnetic forces. This is not metaphor. Your body responds to geomagnetic fields. Migratory birds use it for navigation. Your circadian rhythms entrain to it. Your cells orient within it. When you sit, you align. When you breathe, you synchronize. When you place your attention on the sensation of weight pulling you toward Earth's core, you are meditating in the dimension of <em>planetary relationship</em>.
+                <strong>The Stone Forger's Way</strong> is grounded in Earth's abundant magnetic forces. This stands as a direct physical reality. Your biology responds actively to geomagnetic fields; migratory birds navigate by them, your circadian rhythms entrain to them, and your cells physically orient within them. When you sit, you align. When you breathe, you synchronize. When you place your attention on the sensation of weight pulling you toward the Earth's core, you coordinate your presence with the planetary field.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                You are not separate from the planet. You are an expression of it. To meditate is to remember this.
+                You exist as a direct expression of the planet, entirely unified with its systems. To meditate is to embody this active, living connection.
               </p>
 
               {/* Section: The Invitation */}
-              <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Invitation to Multifaceted Practice</h2>
+              <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Invitation to the Dojo</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                So welcome. Welcome to a practice that honors all of you—quantum and classical, electromagnetic and emotional, ancestor-guided and future-becoming. Welcome to meditation that happens in motion and in stillness, in friction and in flow, in the physics of stone and the metaphor of weight.
+                Welcome to a practice that honors the full spectrum of your existence—quantum and classical, electromagnetic and emotional, ancestor-guided and future-becoming. Welcome to a Dojo of presence that lives in motion and in stillness, in friction and in flow, in the physics of stone and the weight of your experience.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Welcome to <strong>1000 Ways to Sit</strong>—not because there is one correct posture, but because you are multidimensional enough to need one thousand points of entry. Welcome to <strong>The Stone Forger's Way</strong>—where you learn to transform the weight you carry into the tools you wield.
+                Welcome to <strong>1000 Ways to Sit</strong>—offering a thousand unique coordinates of entry for the multi-dimensional practitioner. Welcome to <strong>The Stone Forger's Way</strong>—where you train to transform the somatic weight you carry into the tools you wield.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Are you aware of how many stones you are carrying? Their weight is your opportunity.
+                Identify the stones you are carrying. In this Dojo, their weight becomes your primary opportunity.
               </p>
 
               {/* Closing Reflection */}
               <div className="bg-amber-50 p-8 rounded-lg my-12 space-y-4">
                 <p className="text-lg leading-relaxed text-stone-700 italic">
-                  Meditation is not one thing. It is the practice of being present across all the dimensions you simultaneously
-                  inhabit. It is quantum coherence and gravitational pull. It is vibratory recognition and deliberate breath.
-                  It is the physics of sitting and the metaphor of forging.
+                  Meditation is a multifaceted discipline. It is the active practice of being present across all the dimensions you simultaneously inhabit—uniting quantum coherence and gravitational pull, vibratory recognition and deliberate breath. It is the physics of sitting and the art of forging.
                 </p>
                 <p className="text-lg leading-relaxed text-stone-700 italic">
-                  You do not need to choose one dimension. You need to practice moving fluidly between them all.
+                  You are free to inhabit all dimensions simultaneously, training to move fluidly between them all.
                 </p>
               </div>
             </article>

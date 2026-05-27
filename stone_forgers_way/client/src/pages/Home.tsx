@@ -193,7 +193,7 @@ export default function Home() {
               <div className="text-center space-y-3">
                 <div className="text-5xl font-serif text-amber-600">01</div>
                 <h3 className="text-lg font-serif text-stone-800">Pause</h3>
-                <p className="text-sm text-stone-600">Content reveals itself as you scroll. There's no rush. Take time with what resonates.</p>
+                <p className="text-sm text-stone-600">Content reveals itself as you scroll. Time is a generous container. Take your own pace with what resonates.</p>
               </div>
               <div className="text-center space-y-3">
                 <div className="text-5xl font-serif text-amber-600">02</div>
@@ -355,7 +355,7 @@ export default function Home() {
               <div className="bg-stone-50 p-6 rounded-xl">
                 <h4 className="text-lg font-medium text-stone-800 mb-2">Relationships & Boundaries</h4>
                 <p className="text-sm text-stone-600 leading-relaxed">
-                  Practice discernment. Protect our energy. Recognize what's ours to carry and what isn't. Create healthy containers.
+                  Practice discernment. Protect our energy. Recognize what is ours to carry, choosing what to hold and what to let rest. Create healthy containers.
                 </p>
               </div>
 
@@ -411,8 +411,7 @@ export default function Home() {
                 </div>
                 <h4 className="text-lg font-medium text-stone-800 mb-3">Feel the Stones</h4>
                 <p className="text-sm text-stone-600 leading-relaxed mb-4">
-                  Pause. Acknowledge the weight we carry—the worries, the obligations, the regrets—without trying
-                  to fix or judge them. Validation is the first step to freedom.
+                  Pause. Acknowledge the weight we carry—the worries, the obligations, the regrets—simply allowing them to exist as they are. Validation is the first step to freedom.
                 </p>
                 <Link href="/practices?archetype=carrier">
                   <span className="text-sm text-amber-700 hover:text-amber-800 font-medium cursor-pointer">
@@ -505,7 +504,7 @@ export default function Home() {
 
               <div className="bg-gradient-to-br from-amber-50/30 via-white to-stone-50/20 p-8 rounded-xl shadow-lg border border-stone-200">
                 <p className="text-lg text-stone-700 leading-relaxed mb-6">
-                  "This feels like a whole book spread across a website. The practices and prompts make it real—it's not just philosophy floating in space."
+                  "This feels like a whole book spread across a website. The practices and prompts make it real—it translates philosophy into concrete, lived action."
                 </p>
                 <p className="text-sm text-stone-500 italic">
                   — A Conscious Forger using the tools

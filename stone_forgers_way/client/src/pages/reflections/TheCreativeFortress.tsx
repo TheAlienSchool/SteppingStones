@@ -78,8 +78,7 @@ export default function TheCreativeFortress() {
                 <p className="text-stone-700">
                   Before anything can be forged, it must be felt. The weight must be acknowledged.
                   The vision must move from the abstract to the concrete :: from floating possibility
-                  to felt reality. This is the first act of creation. Not performing the vision, but
-                  <em>writing it plain</em>. Feeling its mass. Knowing what you carry.
+                  to felt reality. This is the first act of creation: writing the vision plain and feeling its mass, rather than performing it prematurely.
                 </p>
               </div>
 
@@ -88,10 +87,9 @@ export default function TheCreativeFortress() {
                   "Shut it in your bolted drawer" :: The Shield
                 </h3>
                 <p className="text-stone-700">
-                  The Shield is not aggression. It is architecture. It is the conscious creation of
-                  protected space where transformation can occur undisturbed. Boseman knew: ideas are
-                  fragile in the beginning. They need darkness to root. The drawer is not hiding ::
-                  it is <em>housing</em>. The fortress is not fear :: it is <em>stewardship</em>.
+                  The Shield operates as architecture. It is the conscious creation of
+                  protected space where transformation occurs undisturbed. Boseman recognized that early
+                  ideas are fragile, requiring darkness to root. The drawer houses the vision; the fortress stewards it.
                 </p>
               </div>
 
@@ -102,8 +100,8 @@ export default function TheCreativeFortress() {
                 <p className="text-stone-700">
                   Active Patience is not passive waiting. It is intentional incubation. The slow burn
                   that refines. The internal dialogue that deepens. Boseman let concepts "turn over in
-                  the mind, expand, twist, deepen, and evolve." This is not delay :: it is <em>development</em>.
-                  The stone is being forged in the fire of sustained attention.
+                  the mind, expand, twist, deepen, and evolve." This intentional incubation marks true development,
+                  forging the stone in the fire of sustained attention.
                 </p>
               </div>
 
@@ -114,8 +112,7 @@ export default function TheCreativeFortress() {
                 <p className="text-stone-700">
                   The overflowing is not random. It is the signal that the infrastructure is complete.
                   When trust has been built :: in the vision, in the timing, in yourself :: the work
-                  can no longer be contained. This is not urgency born of anxiety. It is urgency born
-                  of <em>readiness</em>. The future has become irresistible.
+                  can no longer be contained. This urgency arises from absolute readiness. The future has become irresistible.
                 </p>
               </div>
 
@@ -124,8 +121,8 @@ export default function TheCreativeFortress() {
                   "Forget the self that entered" :: Conscious Forging
                 </h3>
                 <p className="text-stone-700">
-                  The Conscious Forger knows: you do not simply <em>make</em> the work. The work <em>makes you</em>.
-                  By the time you emerge, you are not the same person who began. This is the transformation
+                  The Conscious Forger knows: you do not simply <em>make</em> the work. The work shapes you in return.
+                  By the time you emerge, you stand as a new creative being. This is the transformation
                   that distinguishes creation from production. The stone is forged, and so is the forger.
                 </p>
               </div>
@@ -145,7 +142,7 @@ export default function TheCreativeFortress() {
               Both understood: transformation happens through practice, not performance.
             </p>
             <p className="text-lg leading-relaxed">
-              Both refused to let the world's timeline dictate divine timing.
+              Both chose to protect their alignment rather than letting the world's timeline dictate divine timing.
             </p>
             <p className="text-lg leading-relaxed">
               Both created from a place of trust :: trust in the vision, trust in the process,
@@ -165,8 +162,8 @@ export default function TheCreativeFortress() {
                 seek validation :: write the vision for yourself. Make it concrete. Feel its weight.
               </p>
               <p>
-                <strong>2. Build the fortress.</strong> Not everything sacred should be spoken too soon.
-                Protect the seed. Let it root in darkness. The Shield is an act of love, not fear.
+                <strong>2. Build the fortress.</strong> We hold sacred visions close, letting them mature in silence.
+                Protect the seed. Let it root in darkness. The Shield operates as an act of profound love and stewardship.
               </p>
               <p>
                 <strong>3. Practice Active Patience.</strong> Let the work develop in you as you develop
@@ -198,14 +195,13 @@ export default function TheCreativeFortress() {
               The well that says: <em>timing is divine</em>.
             </p>
             <p className="text-lg leading-relaxed">
-              The well that says: <em>protection is not hiding, it is honoring</em>.
+              The well that says: <em>protection honors the seed until it is fully ready</em>.
             </p>
             <p className="text-lg leading-relaxed">
               The well that says: <em>the work will change you if you let it</em>.
             </p>
             <p className="text-lg leading-relaxed mt-8">
-              This is the lineage The Stone Forger's Way inherits. Not by blood, but by resonance.
-              Not by teaching, but by recognition.
+              This is the lineage The Stone Forger's Way inherits—forged by resonance and confirmed through deep recognition.
             </p>
             <p className="text-lg leading-relaxed">
               Harris and Boseman :: two candles, burning in different rooms, casting the same light.

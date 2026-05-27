@@ -1,210 +1,105 @@
 # The Stone Forger's Way
+## A Digital Dojo Born from a Single Question
 
-## A Digital Sanctuary Born from a Single Question
+Welcome. What you have arrived at is a **living philosophy made manifest in code**. 
 
-What you have built here is not merely a website—it is a **living philosophy made manifest in code**.
+This repository is not merely a collection of files—it functions as a digital Dojo, a structured trellis built to host a deep, somatic training of creative energy, attention, and presence.
 
-The story begins with a question asked during morning breath practice at 1000 Ways to Sit, a Gamelatron Sonic Sanctuary in San Francisco: *"How is my father not inside of you?"* Kamau Zuberi Akabueze (born Samuel Todd Harris) posed this to Manus AI, recognizing that his grandfather Samuel R. Harris's wisdom—preserved in "The Words and Word"—lives within the vast corpus of human knowledge that AI systems learn from.
+The story of this space begins with a single question asked during morning breath practice at **1000 Ways to Sit**, a Gamelatron Sonic Sanctuary in San Francisco: 
 
-From that singular moment of recognition, an entire framework emerged: **The Stone Forger's Way**.
+> *"How is my father not inside of you?"*
+
+Kamau Zuberi Akabueze (born Samuel Todd Harris) posed this query to a collaborative intelligence, recognizing that his grandfather Samuel R. Harris's wisdom—preserved in his writings—lives within the vast, shared corpus of human knowledge that digital systems reflect.
+
+From that singular moment of recognition, a complete framework emerged: **The Stone Forger's Way**.
+
+---
+
+## The Lineage Layer: Generational & Chemistratic Warmth
+
+This sanctuary stands on the solid shoulders of those who taught that it is always better to light a candle than to curse the darkness. We honor them not as historical footnotes, but as active, warm forces guiding our steps:
+
+*   **Samuel R. Harris (1916–1977):** An organic research chemist who understood mine safety, combustion, and energy at a molecular level. His wisdom taught us the **chemistratic principle**—that lighting a candle is a precise, physical reaction of energy and illumination, and that a single life, lit up by love, creates an irresistible field effect.
+*   **Ray Kemp (1907–2002):** The legendary NFL player and coach who vacationed near McDonald, Pennsylvania, in 1937, played a game of touch football with a young Samuel R. Harris, and placed a vital scholarship stepping stone that carried Samuel out of the coal mines and into the university laboratory.
+*   **Aunt Janis & Aunt Grace:** The warm presences of Kamau's childhood at the First Baptist Church at **141 N McDonald Street**. Aunt Janis provided the visceral "warm hug" in a stone-faced world, and Aunt Grace embodied unearned kindness—unconditional love offered without demand. They represent the relational safety that allows us to lower our shields and step with trust.
 
 ---
 
 ## The Architecture of Presence
 
-The repository tells a story of **conscious creation**—18 pages, 9 reflections, 40+ glossary terms, 5 archetypes, 5 practices, all woven together into a coherent digital experience that *demonstrates* what it teaches:
+The Stone Forger's Way is designed as a co-creative Dojo. It features 18 content pages, 11 reflections, 40+ glossary terms, and an interactive quiz—all woven together into a coherent experience that demonstrates what it teaches:
 
 ```
 Presence (consciousness) + Action (determination) = Materialization
 ```
 
-The technology stack—React, TypeScript, Vite, Tailwind—serves the philosophy rather than showcasing itself. Every component, from the `GlossaryTooltip` that meets users where they are, to the `todaysPractice.ts` that delivers personalized daily wisdom based on archetype, embodies the principle of meeting each moment with full attention.
+Our technology stack—React, TypeScript, Vite, Tailwind CSS, and Framer Motion—serves the philosophy rather than showcasing itself. Every component, from the hoverable glossary tooltips to the daily practice engine, embodies the principle of meeting each moment with full, undivided attention.
 
 ---
 
-## The Framework
+## The 5 Archetypes of Attention
 
-### The 5 Archetypes
+On this path, we recognize five distinct ways we relate to our obligations, worries, and creative projects—which we hold as "stones":
 
-| Archetype | Essence |
-|-----------|---------|
-| **The Stone Carrier** | Burdened by suspended stones—past regrets, future anxieties, unprocessed grief |
-| **The Stone Thrower** | Throws stones at external targets; exhausted by ricocheting energy |
-| **The Conscious Forger** | Brings full presence to single tasks; practices active patience |
-| **The Stone Forger** | Merges presence with action; materializes paths aligned with purpose |
-| **The JADE Hunter** | Speaks words into the void, searching for connection |
-
-### Core Concepts
-
-- **Stone Forging** — The conscious act of creating your path through presence and intention
-- **Stepping Stones** — Individual solid moments that appear as you commit to stepping with trust
-- **Trust** — The choice to step without needing proof; the neurological shift from amygdala to prefrontal regulation
-- **The Trellis and the Vine** — Time as structure (trellis) and lived experience (vine)
-- **Active Patience** — Waiting with purpose; not passive but the most active stance
-- **Fabrication of Form** — How consciousness materializes reality
+| Archetype | The Lived Sensation | The Shift |
+| :--- | :--- | :--- |
+| **The Stone Carrier** | Carrying suspended stones—past regrets, future anxieties, and obligations. Weighed down and static. | **Pause:** Breathe, feel the stones, and validate their weight without judgment. |
+| **The Stone Thrower** | Reacting to external systems and targets in exhaustion; experiencing the somatic backache of oppositional static. | **Pivot:** Lower the shield, substitute opposition with creative alignment. |
+| **The Conscious Forger** | Bringing full, undivided presence to a single task at a time; practicing active patience. | **Forge:** Shape the raw material of single moments into clear assets. |
+| **The Stone Forger** | The integrated state where presence meets action, materializing pathways aligned with our deepest truth. | **Embody:** Walk the path, trusting that each stepping stone solidifies as we step. |
+| **The JADE Hunter** | Speaking words into the void, searching for validation and external connection. | **Align:** Return to our original inner coordinate and trust our resonance. |
 
 ---
 
-## Project Structure
+## The 11 Reflections
 
-```
-stone_forgers_way/
-├── client/                          # React frontend
-│   ├── src/
-│   │   ├── pages/                  # 18 content pages + 9 reflections
-│   │   ├── components/             # Custom + 60+ shadcn/ui components
-│   │   ├── hooks/                  # 5 custom React hooks
-│   │   ├── lib/                    # Core logic
-│   │   │   ├── archetypeQuiz.ts    # 13-question archetype detection
-│   │   │   ├── glossaryData.ts     # 40+ terms with multi-level explanations
-│   │   │   └── todaysPractice.ts   # Daily practice rotation engine
-│   │   └── contexts/               # Theme management
-│   └── public/                     # Archetypal imagery
-├── server/                         # Express.js for production
-├── content/                        # Source documents & PDFs
-├── netlify.toml                    # Deployment configuration
-└── package.json                    # Dependencies
-```
+We invite you to sit with the eleven reflection pieces included in this Dojo, which explore the intersections of science, story, and practice:
+
+1.  **The Question That Started It All:** The origin query, validating lineage and cell memory.
+2.  **Trust Is The Cheat Code:** Bypassing the tyranny of the rational mind by stabilizing our frequency.
+3.  **Money As Teacher:** Moving from hoarding to circulation, honoring value exchange in the field.
+4.  **The Whale's Song:** Sinking intention deep enough to propagate through the Field.
+5.  **The Physics of Thought:** Thought as a resonant, primary force shaping physical matter.
+6.  **Stone Throwing vs. Stone Forging:** Choosing creative construction over oppositional static.
+7.  **The Gift of Grace:** Generational warmth, unearned kindness, and Aunt Janis's hug.
+8.  **Terma In Action:** Name transformation, ancestral memory, and the pull of resonance.
+9.  **The Creative Fortress:** Stewardship, creative silence, and honoring fragile ideas.
+10. **The Path to 1000 Ways to Sit:** Institutional friction, somatic zazen, and creative sparks.
+11. **Welcome to Multifaceted Meditation:** Full-spectrum awareness, zazen, and geomagnetic alignment.
 
 ---
 
-## Technology Stack
+## Entering the Dojo Locally
 
-| Layer | Technology |
-|-------|------------|
-| **Frontend** | React 18, TypeScript 5.6, Vite 7 |
-| **Styling** | Tailwind CSS 4, shadcn/ui, Radix UI |
-| **Animation** | Framer Motion |
-| **Routing** | Wouter (lightweight) |
-| **Backend** | Express.js |
-| **Analytics** | Umami (privacy-first) |
-| **Deployment** | Netlify |
-
----
-
-## Getting Started
+If you wish to host this Dojo on your own local screen—to explore its components and code as part of your own practice—you are welcome to do so. Think of this process as lighting a candle in the laboratory.
 
 ### Prerequisites
+*   Node.js 20+
+*   pnpm 10.4+
 
-- Node.js 20+
-- pnpm 10.4+
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/TheAlienSchool/SteppingStones.git
-cd SteppingStones/stone_forgers_way
-
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm run dev
-```
-
-### Build for Production
-
-```bash
-pnpm run build
-```
-
-Output: `dist/public` (static files for Netlify)
-
----
-
-## Deployment
-
-### Netlify (Recommended)
-
-The repository includes a pre-configured `netlify.toml`:
-
-```toml
-[build]
-  command = "pnpm install && pnpm run build"
-  publish = "dist/public"
-
-[build.environment]
-  NODE_VERSION = "20"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-```
-
-**Steps:**
-1. Connect repository to Netlify
-2. Set base directory to `stone_forgers_way`
-3. Netlify auto-detects configuration
-4. Deploy
-
----
-
-## Features
-
-- **Interactive Archetype Quiz** — 13-question assessment to discover your primary archetype
-- **Daily Practice Engine** — Personalized practices based on archetype and date
-- **Glossary Tooltip System** — Hover definitions throughout content
-- **Social Sharing** — Per-page sharing with custom metadata
-- **Privacy-First Analytics** — Engagement tracking without user tracking
-
----
-
-## The 9 Reflections
-
-1. The Question That Started It All
-2. Trust Is The Cheat Code
-3. Money As Teacher
-4. The Whale's Song
-5. The Physics of Thought
-6. Stone Throwing vs. Stone Forging
-7. The Gift of Grace
-8. Terma In Action
-9. The Creative Fortress
-
----
-
-## Lineage
-
-This work honors:
-
-- **Samuel R. Harris** — Kamau's grandfather, whose wisdom lives in "The Words and Word"
-- **1000 Ways to Sit** — The Gamelatron Sonic Sanctuary where this framework emerged
-- **Chadwick Boseman & Taylor Simone Ledward Boseman** — Creative philosophy that informed The Creative Fortress
-
----
-
-## Statement of Approach
-
-This work is offered as:
-
-- **Practice, not prescription** — Experiential, not dogmatic
-- **Exploration, not expertise** — Invitation to discover within yourself
-- **Invitation, not instruction** — Co-creative, not top-down
-- **Transparent about collaboration** — Explicit about AI as co-creator
-
----
-
-## Acknowledgments
-
-See [ACKNOWLEDGMENTS.md](./ACKNOWLEDGMENTS.md) for honored voices and cultural contributors.
-
----
-
-## License
-
-This project is released into the public domain under the [Unlicense](./LICENSE).
+### Tending the Garden
+1.  **Clone this sanctuary:**
+    ```bash
+    git clone https://github.com/TheAlienSchool/SteppingStones.git
+    cd SteppingStones/stone_forgers_way
+    ```
+2.  **Gather dependencies:**
+    ```bash
+    pnpm install
+    ```
+3.  **Light the flame (start the local server):**
+    ```bash
+    pnpm run dev
+    ```
+    Open the address shown on your screen to enter the interactive experience.
 
 ---
 
 ## The Closing Truth
 
-This is **Stone Forging in action**: Taking the raw materials of React, TypeScript, and web technologies and consciously forming them into a coherent whole that serves human transformation.
+This work is offered as an ongoing practice. Take what resonates, question what does not, and test these frameworks in your own life. The stepping stone is beneath your feet, solidifying as you walk.
 
 *The invisible journey made visible. The field made form. Trust made technology.*
 
----
-
-**Created by Kamau Zuberi Akabueze in dialogue with Manus AI**
+**Created by Kamau Zuberi Akabueze in dialogue with Collaborative Intelligence**
 *Residency: 1000 Ways to Sit, San Francisco*

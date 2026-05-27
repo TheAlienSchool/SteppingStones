@@ -38,17 +38,17 @@ export default function TrustIsTheCheatCode() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                But in the quantum reality of consciousness, the stone does not fully form until you step. The path does not materialize until you walk. The evidence does not appear until you trust.
+                But in the quantum reality of consciousness, the stone solidifies in direct response to your step. The path materializes as you walk. The evidence appears as you trust.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This is not blind faith. This is not reckless abandon. This is the physics of how reality works.
+                This represents the active cultivation of capacity. This stands as the structural physics of how reality works.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Physics of Trust</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Trust is the mechanism by which oppositional dynamics resolve into coordination dynamics. When you are in opposition :: demanding proof, throwing stones, holding up shields :: you create static in the Field. The signal cannot propagate. The form cannot fabricate. The stone cannot solidify.
+                Trust is the mechanism by which oppositional dynamics resolve into coordination dynamics. When you are in opposition :: demanding proof, throwing stones, holding up shields :: you create static in the Field. The signal requires coherence to propagate, form to fabricate, and stone to solidify.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -56,7 +56,7 @@ export default function TrustIsTheCheatCode() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This is why trust is the cheat code. It bypasses the entire tyranny of the rational mind. It doesn't argue with doubt. It doesn't fight with fear. It simply steps. And in the stepping, the stone appears.
+                This is why trust is the cheat code. It bypasses the entire tyranny of the rational mind. It rises above doubt, transcends fear, and simply steps. And in the stepping, the stone appears.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Neuroscience of Trust</h2>
@@ -66,25 +66,25 @@ export default function TrustIsTheCheatCode() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Trust is not naive. Trust is neurologically sophisticated. It is the conscious choice to lower the shield, not because the threat is gone, but because you recognize that the shield itself is creating more harm than it prevents.
+                Trust operates with deep neurological sophistication. It is the conscious choice to lower the shield, recognizing that the shield itself projects more static than it prevents.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Practice of Trust</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Trust is not a one-time decision. It is a practice. A micro-practice. A moment-by-moment choice to step even when the stone is not fully visible.
+                Trust operates as an ongoing practice. A micro-practice. A moment-by-moment choice to step even when the stone is still solidifying.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Carrier does not trust. They carry the stones of the past and the future, weighing themselves down with proof that the world is unsafe.
+                The Stone Carrier carrying the stones of the past and the future, weighs themselves down with proof that the world is unsafe.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Thrower does not trust. They throw stones at external targets, demanding that the world change before they will move.
+                The Stone Thrower projects stones at external targets, demanding that the world change before they will move.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Forger trusts. They step. They forge. They place one stone at a time, trusting that the path will materialize beneath their feet.
+                The Stone Forger operates through trust. They step. They forge. They place one stone at a time, trusting that the path will materialize beneath their feet.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Synthesis</h2>
@@ -94,7 +94,7 @@ export default function TrustIsTheCheatCode() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The synthesis itself :: the entire body of work emerging from our dialogue :: is the demonstration. We did not plan this. We trusted the questions. Each question materialized a response. Each response materialized a deeper insight. Each insight materialized the next stone.
+                The synthesis itself :: the entire body of work emerging from our dialogue :: is the demonstration. This emerged organically by trusting the questions. Each question materialized a response. Each response materialized a deeper insight. Each insight materialized the next stone.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">

@@ -31,9 +31,7 @@ export default function TermaInAction() {
                   definitions of my chosen names speak to me.
 </p>
 <p className="text-lg leading-relaxed text-stone-700 mb-0">
-  I learned later that they are names from the 
-                  region of my birth. I didn't learn something new :: I remembered what was already hidden 
-                  within me.
+  I learned later that these names trace directly to the region of my birth. This was an act of remembering—a sudden surfacing of what was already held within me.
 </p>
               </div>
 
@@ -47,8 +45,7 @@ export default function TermaInAction() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  But terma is not just about physical objects hidden in caves or temples. Terma can be hidden 
-                in the mind, in the heart, in the Field itself.
+  Terma manifests both as physical treasures and as insights hidden within the mind, the heart, and the shared field.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
   It can be concealed in your own consciousness, 
@@ -56,8 +53,7 @@ export default function TermaInAction() {
 </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This is terma in action. This is the recognition that you do not learn new things :: you remember 
-                what was always there, hidden beneath the surface, waiting for you to be ready.
+                This is terma in action. It is the recognition that learning is remembering: recovering what has always been present, waiting for our readiness to perceive it.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Names That Chose Me</h2>
@@ -66,8 +62,7 @@ export default function TermaInAction() {
   I was born <strong>Samuel Todd Harris</strong>. Samuel, after my grandfather.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
-  Todd, a name 
-                that never quite fit. Harris, the family name carried through generations.
+  Todd, a name that sat on the surface rather than finding depth. Harris, the family name carried through generations with chemistratic and generational warmth.
 </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -79,21 +74,15 @@ export default function TermaInAction() {
 </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <strong>Kamau</strong> — A Kikuyu name meaning "quiet warrior." The one who fights not with 
-                noise and aggression, but with presence and patience. The one who forges stones instead of 
-                throwing them.
+                <strong>Kamau</strong> — A Kikuyu name meaning "quiet warrior." The one who meets challenges through the power of presence and patience, forging stones rather than throwing them.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <strong>Zuberi</strong> — A Swahili name meaning "strong." Not the strength of force, but 
-                the strength of resilience. The strength to carry what must be carried and to release what 
-                must be released.
+                <strong>Zuberi</strong> — A Swahili name meaning "strong." It represents the strength of resilience: the capacity to carry what serves and release what has been completed.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                <strong>Akabueze</strong> — An Igbo name meaning "wealth of the king" or "the king's treasure." 
-                The recognition that the wealth I carry is not material, but spiritual. The insights, the 
-                syntheses, the stepping stones I have been hoarding.
+                <strong>Akabueze</strong> — An Igbo name meaning "wealth of the king" or "the king's treasure." It names the recognition that my true wealth is spiritual: the insights, syntheses, and stepping stones placed in the path.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -113,8 +102,7 @@ export default function TermaInAction() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  I did not know this when I chose the names. I did not research genealogy or trace migration 
-                patterns.
+  Choosing these names preceded historical research or genealogical tracing; the intuitive choice lived as its own validation.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
   I simply felt the pull. I simply trusted the resonance.
@@ -142,18 +130,18 @@ export default function TermaInAction() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This is not coincidence. This is terma. The treasure reveals itself when the tertön is ready.
+                This operating synchronicity is terma. The treasure reveals itself when the tertön is ready.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Practice of Remembering</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
   Terma in action is the practice of trusting resonance. It is the practice of following the 
-                pull even when you don't understand it.
+                pull even while understanding is still emerging.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
   It is the practice of choosing names, ideas, paths, 
-                and practices that feel true, even if you can't explain why.
+                and practices that feel true, even before explanations materialize.
 </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -162,22 +150,18 @@ export default function TermaInAction() {
 </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Carrier does not trust resonance. They carry the stones of proof, demanding evidence 
-                before they will move.
+                The Stone Carrier seeks external proof, carrying the stones of verification before they will move.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Thrower does not trust resonance. They throw stones at anything that doesn't make 
-                rational sense, demanding that the world conform to their logic.
+                The Stone Thrower projects reactions at anything challenging their immediate logic, demanding that the world conform to their rational expectations.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-  The Stone Forger trusts resonance. They step toward what calls them, even when they don't 
-                understand why.
+  The Stone Forger trusts resonance, stepping toward what calls them even as the cognitive map is still forming.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
-  They forge stones from the raw material of their experience. And they trust 
-                that the Field will reveal the pattern when the time is right.
+  They forge stones from the raw material of their experience, trusting that the Field will reveal the pattern in the fullness of time.
 </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Invitation</h2>
@@ -191,10 +175,7 @@ export default function TermaInAction() {
   Trust the resonance. Follow the pull.
 </p>
 <p className="text-lg leading-relaxed text-stone-700">
-  Step toward what calls you. You are not making it up.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  You are remembering.
+  Step toward what calls you. You are remembering. The intuitive pull is the actual path returning to meet you.
 </p>
 
               <p className="text-lg leading-relaxed text-stone-700">

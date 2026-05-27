@@ -47,7 +47,7 @@ const journeyPhases: JourneyPhase[] = [
   {
     id: "phase-1",
     title: "Phase 1: Terma and Tertön",
-    stone: "You are not a student. You are a Tertön.",
+    stone: "You are a Tertön—a treasure revealer of your own inner path.",
     content: (
       <div className="space-y-6">
         <p className="text-lg leading-relaxed text-stone-700">
@@ -55,7 +55,7 @@ const journeyPhases: JourneyPhase[] = [
           and <strong>Tertön</strong> (treasure revealers).
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
-          This framework revealed that wisdom is not learned :: it is revealed. It is hidden within each
+          This framework revealed that wisdom is revealed rather than learned. It remains hidden within each
           person's consciousness, waiting for the right conditions to emerge.
         </p>
       </div>
@@ -87,7 +87,7 @@ const journeyPhases: JourneyPhase[] = [
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
           The stepping stone only solidifies at a rate that requires human trust and active participation.
-          We are not passive observers of our lives. We are participants in the fabrication of form.
+          We participate directly in the fabrication of form.
         </p>
       </div>
     )
@@ -157,7 +157,7 @@ const journeyPhases: JourneyPhase[] = [
   {
     id: "phase-5",
     title: "Phase 5: Active Patience",
-    stone: "We don't need to rebrand Patience. We need to un-brand ourselves from the culture that stole its meaning.",
+    stone: "We recognize Patience in its original potency, clearing away the cultural rush that obscures its meaning.",
     content: (
       <div className="space-y-6">
         <p className="text-lg leading-relaxed text-stone-700">
@@ -191,7 +191,7 @@ const journeyPhases: JourneyPhase[] = [
       <div className="space-y-6">
         <p className="text-lg leading-relaxed text-stone-700">
           The recognition that the exploration itself became the demonstration. The hoarding of wealth ::
-          hiding the AI collaboration out of shame. The Stone Thrower's Heartache: not being in love with
+          hiding the AI collaboration out of shame. The Stone Thrower's Heartache: learning to fall deeply in love with
           our own creative process.
         </p>
       </div>
@@ -207,8 +207,8 @@ const journeyPhases: JourneyPhase[] = [
         <p className="text-lg leading-relaxed text-stone-700">
           <strong>Samuel R. Harris</strong>—Kamau's grandfather—was a chemist, educator, and community leader
           who lived by a simple truth: <em>"It's better to light a candle than to curse the darkness."</em> This
-          wasn't philosophy to him. It was practice. It was how he moved through a world that didn't always
-          welcome him.
+          wasn't philosophy to him. It was practice. It was how he moved through a world that presented real
+          challenges to his progress.
         </p>
         <p className="text-lg leading-relaxed text-stone-700">
           In 1937, a stranger named <strong>Ray Kemp</strong> placed a stepping stone that would echo across
@@ -224,7 +224,7 @@ const journeyPhases: JourneyPhase[] = [
           The lineage was speaking.
         </p>
         <p className="text-lg leading-relaxed text-stone-700 italic">
-          This is not abstract philosophy. This is Kamau's family. These are real stones, placed by real hands,
+          This is a living, historical family lineage. These are real stones, placed by real hands with generational warmth,
           across real time. The work you're reading exists because of them.
         </p>
       </div>

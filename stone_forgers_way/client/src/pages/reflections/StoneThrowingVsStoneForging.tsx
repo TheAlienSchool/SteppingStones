@@ -27,7 +27,7 @@ export default function StoneThrowingVsStoneForging() {
             <article className="space-y-8">
               <div className="bg-amber-50 p-8 rounded-lg mb-8 space-y-4">
                 <p className="text-lg leading-relaxed text-stone-700">
-                  The Stone Thrower and the Stone Forger both work with stones. But the difference between them is the difference between destruction and creation, between opposition and alignment, between force and resonance. One throws stones at what they don't want. The other forges stones into what they do.
+                  The Stone Thrower and the Stone Forger both work with stones. But the difference between them is the difference between destruction and creation, between opposition and alignment, between force and resonance. One spends energy opposing what blocks them. The other shapes raw experience into what they choose to build.
                 </p>
               </div>
 
@@ -38,7 +38,7 @@ export default function StoneThrowingVsStoneForging() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This is not inherently bad. Sometimes systems need to be challenged. Sometimes injustices need to be named. Sometimes the old must be broken down before the new can emerge.
+                Challenging systems and naming injustices carries clear purpose. The dissolution of old patterns naturally precedes the emergence of the new.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -46,7 +46,7 @@ export default function StoneThrowingVsStoneForging() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                It doesn't. Destruction creates rubble. Creation requires forging.
+                Destruction creates rubble, whereas creation requires forging.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Stone Thrower's Backache</h2>
@@ -56,29 +56,29 @@ export default function StoneThrowingVsStoneForging() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The backache is the body's way of saying, "This is not sustainable. You cannot live in opposition forever. You are carrying stones that are not yours to carry."
+                The backache operates as the body's warning system: carrying stones belonging to others exhausts your natural capacity.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                But the Stone Thrower does not listen. They take painkillers. They push through. They tell themselves that the pain is worth it, that the fight is necessary, that someone has to throw the stones.
+                Yet the Stone Thrower pushes past this somatic feedback, taking temporary remedies and telling themselves that the pain is worth it, that the fight is necessary, that someone has to throw the stones.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                And the backache gets worse.
+                And the backache grows heavy.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Stone Forger's Approach</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Forger does not throw stones. They forge them. They take the raw material of their experience—the pain, the confusion, the injustice, the longing—and they shape it into something useful. A stepping stone. A pathway. A bridge.
+                The Stone Forger shapes stones. They take the raw material of their experience—the pain, the confusion, the injustice, the longing—and they shape it into structural assets: a stepping stone, a pathway, a bridge.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Forger is not passive. They are not avoiding conflict. They are not pretending that everything is fine. They see the same injustices the Stone Thrower sees. But they respond differently.
+                The Stone Forger remains active and fully engaged. Acknowledging the same systemic friction as the Stone Thrower, they respond through a different geometry of action.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Instead of throwing stones at the system, they build an alternative. Instead of attacking what they don't want, they create what they do. Instead of opposition, they practice alignment.
+                They build alternatives that make old systems obsolete. They direct their focus toward creating the future, substituting opposition with creative alignment.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Physics of Opposition vs Alignment</h2>
@@ -92,7 +92,7 @@ export default function StoneThrowingVsStoneForging() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Thrower creates opposition. They push against the system. The system pushes back. Energy is dissipated. Nothing changes.
+                The Stone Thrower's oppositional posture generates static, disrupting the resonant field. Energy is dissipated, keeping the pattern fixed.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -106,11 +106,11 @@ export default function StoneThrowingVsStoneForging() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                But at some point, the backache becomes unbearable. At some point, we realize that throwing stones is not creating the world we want. At some point, we ask: What if I stopped throwing and started forging?
+                But at some point, the backache becomes unbearable. At some point, we realize that throwing stones delays the creation of the world we want. We ask: What if I start forging instead?
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This is the transition. This is the moment when the Stone Thrower becomes the Stone Forger. It is not a rejection of the fight. It is a recognition that creation is more powerful than destruction.
+                This is the transition. This is the moment when the Stone Thrower becomes the Stone Forger. This transition represents a deeper commitment to creation, recognizing that building is more powerful than dismantling.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Practice</h2>
@@ -124,7 +124,7 @@ export default function StoneThrowingVsStoneForging() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This is not about being nice. This is not about avoiding conflict. This is about recognizing that you have a choice. You can spend your energy throwing stones at what you don't want. Or you can spend it forging stones into what you do.
+                This practice demands courage and clarity. You hold a powerful choice: invest your vital energy in opposing the old, or direct it entirely toward forging the structures of the new.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">

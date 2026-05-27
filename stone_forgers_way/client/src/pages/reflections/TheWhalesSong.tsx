@@ -18,7 +18,7 @@ export default function TheWhalesSong() {
                 The Whale's Song
               </h1>
               <p className="text-2xl text-amber-700 italic mb-4">
-                When intention sinks deep enough, it doesn't drown :: it echoes forever
+                When intention sinks deep enough :: it echoes forever in the Field
               </p>
               <p className="text-sm text-stone-500">2025 • Kamau Zuberi Akabueze</p>
             </div>
@@ -34,21 +34,21 @@ export default function TheWhalesSong() {
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Depth of Intention</h2>
               
               <p className="text-lg leading-relaxed text-stone-700">
-                Whales sing across oceans. Their songs travel thousands of miles through water, reaching other whales they will never meet. The songs do not dissipate. They do not fade. They propagate through the medium, carried by the Field itself.
+                Whales sing across oceans. Their songs travel thousands of miles through water, reaching other whales they will meet only in vibration. The songs propagate indefinitely through the medium, expanding and remaining carried by the Field itself.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This is the physics of intention. When you set an intention from the surface :: from the rational mind, from the grasping ego, from the place of demand :: it does not propagate. It splashes. It creates ripples that quickly fade. It does not reach the depths where the Field responds.
+                This is the physics of intention. When you set an intention from the surface :: from the rational mind, from the grasping ego, from the place of demand :: it splashes, creating ripples that quickly fade. Surface intention remains localized, while the deep Field responds only to aligned coordinates.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                But when your intention sinks deep enough :: when it comes from the place of trust, from the place of surrender, from the place of alignment with what wants to emerge :: it does not drown. It echoes. It propagates. It reaches across distances you cannot see.
+                But when your intention sinks deep enough :: when it comes from the place of trust, from the place of surrender, from the place of alignment with what wants to emerge :: it propagates with infinite echo, reaching across vast, unseen distances.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Difference Between Demand and Invitation</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The Stone Thrower demands. "I want this. Give it to me. Make it happen now." This is surface intention. This is the splash. It creates noise, but it does not propagate. The Field does not respond to demands.
+                The Stone Thrower demands. "I want this. Give it to me. Make it happen now." This is surface intention. This is the splash. It creates noise that remains at the boundary. The Field responds exclusively to alignment, bypassing demand.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
@@ -56,7 +56,7 @@ export default function TheWhalesSong() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                The difference is not in what you want. The difference is in how you hold the wanting. Do you hold it with grasping? Or do you hold it with trust?
+                The difference lies entirely in how you hold the wanting. Do you hold it with grasping? Or do you hold it with trust?
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Practice of Sinking</h2>
@@ -70,21 +70,21 @@ export default function TheWhalesSong() {
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Second, you feel. You do not think your intention. You feel it. Where does it live in your body? What does it want to become? What is the felt sense of this intention when it is fully realized?
+                Second, you feel. You feel your intention directly from the body, letting intellectual analysis rest. Where does it live in your body? What does it want to become? What is the felt sense of this intention when it is fully realized?
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                Third, you release. You do not hold the intention with a clenched fist. You hold it with an open palm. You say, "This, or something better. This, or what wants to emerge. This, in the timing that serves the whole."
+                Third, you release. You hold the intention with an open palm rather than a clenched fist. You say, "This, or something better. This, or what wants to emerge. This, in the timing that serves the whole."
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Echo</h2>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                When your intention sinks deep enough, it echoes. You may not hear the echo immediately. You may not see the response right away. But the Field is responding. The stones are materializing. The path is forming beneath your feet.
+                When your intention sinks deep enough, it echoes. The response matures at its own pace within the Field, even as the stones materialize and the path forms steadily beneath your feet.
               </p>
 
               <p className="text-lg leading-relaxed text-stone-700">
-                This entire body of work—The Stone Forger's Way :: is the echo of a single question. "How is my father not inside of you?" That question sank deep. It did not demand an answer. It invited one. And the answer has been echoing ever since. The synthesis emerged. The archetypes revealed themselves. The practices crystallized. The glossary wrote itself. The website materialized. All from one question, held with trust, allowed to sink.
+                This entire body of work—The Stone Forger's Way :: is the echo of a single question. "How is my father not inside of you?" That question sank deep. Bypassing demand, it invited a response. And the answer has been echoing ever since. The synthesis emerged, the archetypes revealed themselves, the practices crystallized, and the sanctuary materialized—all from one question, held with trust, allowed to sink.
               </p>
 
               <h2 className="text-3xl font-serif text-stone-800 mt-12 mb-6">The Invitation</h2>

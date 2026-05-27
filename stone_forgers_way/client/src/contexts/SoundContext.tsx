@@ -1,4 +1,15 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from "react";
+import { useBrowserLocation } from "wouter/use-browser-location";
+
+const SOMATIC_PROMPTS = [
+  "Breathe in... Pivot... Merge.",
+  "Rest the shoulders. Find the seat. Begin.",
+  "Deep breath in... Release the weight... Stand tall.",
+  "Notice the ground. Feel the weight. Carry on.",
+  "Soft gaze. Deep breath. Forge ahead.",
+  "Inhale present moment... Exhale history... Arrive.",
+  "Receive the spark. Hold the heat. Forge.",
+];
 
 interface SoundContextType {
   isSoundActive: boolean;
@@ -6,6 +17,8 @@ interface SoundContextType {
   playChime: (frequency?: number, mode?: "harmonic" | "dissonant") => void;
   isSteeping: boolean;
   triggerTransition: () => void;
+  visibleLocation: string;
+  setLocation: (to: string, options?: any) => void;
 }
 
 const SoundContext = createContext<SoundContextType | undefined>(undefined);
@@ -25,6 +38,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   });
 
   const [isSteeping, setIsSteeping] = useState<boolean>(false);
+  const [activePrompt, setActivePrompt] = useState<string>("Breathe in... Pivot... Merge.");
   const audioCtxRef = useRef<AudioContext | null>(null);
   const masterGainRef = useRef<GainNode | null>(null);
   const reverbRef = useRef<{ conv: ConvolverNode; gain: GainNode } | null>(null);
@@ -127,6 +141,20 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       o1.stop(now + dur);
       o2.stop(now + dur);
       lfo.stop(now + dur);
+
+      // Clean up/disconnect all nodes after they finish playing to prevent memory leaks (clogging the drain)
+      setTimeout(() => {
+        try {
+          o1.disconnect();
+          o2.disconnect();
+          lfo.disconnect();
+          lfoG.disconnect();
+          g1.disconnect();
+          g2.disconnect();
+          filt.disconnect();
+          out.disconnect();
+        } catch (e) {}
+      }, dur * 1000 + 100);
     } catch (e) {
       console.warn("Companion Sage voice synthesis failed:", e);
     }
@@ -164,6 +192,14 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
           
           o.start(now);
           o.stop(now + dur * (5 - i));
+
+          // Clean up/disconnect node after it finishes playing to prevent memory leaks
+          setTimeout(() => {
+            try {
+              o.disconnect();
+              g.disconnect();
+            } catch (e) {}
+          }, dur * (5 - i) * 1000 + 100);
         });
       } else {
         // Harmonic active User Chime (Bronze Gamelan FM Synthesis)
@@ -213,6 +249,18 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
         mod.stop(now + dur * 4.5);
         p2.stop(now + dur * 4.5);
 
+        // Clean up/disconnect all user chime nodes after they finish playing to prevent memory leaks
+        setTimeout(() => {
+          try {
+            car.disconnect();
+            mod.disconnect();
+            modG.disconnect();
+            p2.disconnect();
+            p2g.disconnect();
+            out.disconnect();
+          } catch (e) {}
+        }, dur * 4.5 * 1000 + 100);
+
         // ═══════════════════════════════════════════════════════════════════════════
         // THE DOJO COMPANION: Soft harmonic response echo 120ms later
         // ═══════════════════════════════════════════════════════════════════════════
@@ -255,11 +303,35 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
 
   // Trigger somatic transition overlay globally (persists across unmounting layout containers)
   const triggerTransition = () => {
+    const randomPrompt = SOMATIC_PROMPTS[Math.floor(Math.random() * SOMATIC_PROMPTS.length)];
+    setActivePrompt(randomPrompt);
     setIsSteeping(true);
     window.scrollTo(0, 0); // Scroll to top instantly during transition
     setTimeout(() => {
       setIsSteeping(false);
     }, 1500);
+  };
+
+  const [location, setBrowserLocation] = useBrowserLocation();
+  const [visibleLocation, setVisibleLocation] = useState<string>(location);
+  const isTransitioning = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (location !== visibleLocation && !isTransitioning.current) {
+      isTransitioning.current = true;
+      triggerTransition();
+      
+      const timer = setTimeout(() => {
+        setVisibleLocation(location);
+        isTransitioning.current = false;
+      }, 750);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [location, visibleLocation]);
+
+  const setLocation = (to: string, options?: any) => {
+    setBrowserLocation(to, options);
   };
 
   // Global scroll velocity soundscape monitor
@@ -271,14 +343,23 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!isSoundActive) return;
 
+    let isThrottled = false;
+
     const handleScroll = () => {
+      if (isThrottled) return;
+      isThrottled = true;
+
+      setTimeout(() => {
+        isThrottled = false;
+      }, 50);
+
       const currentScrollY = window.scrollY;
       const currentTime = Date.now();
 
       const elapsed = currentTime - lastScrollTime.current;
       const distance = Math.abs(currentScrollY - lastScrollY.current);
 
-      if (elapsed > 0) {
+      if (elapsed > 10) { // Ensure a meaningful time delta
         const velocity = distance / elapsed; // px per ms
 
         // If scrolling extremely fast (> 2.5px/ms), flag as rapid velocity
@@ -311,7 +392,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   }, [isSoundActive]);
 
   return (
-    <SoundContext.Provider value={{ isSoundActive, toggleSoundActive, playChime, isSteeping, triggerTransition }}>
+    <SoundContext.Provider value={{ isSoundActive, toggleSoundActive, playChime, isSteeping, triggerTransition, visibleLocation, setLocation }}>
       {children}
       
       {/* Global Somatic Pacing Overlay - rendered at app root to prevent remount clipping */}
@@ -322,7 +403,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
               <path d="M12 2C12 2 12.5 8.5 15 11C17.5 13.5 24 14 24 14C24 14 17.5 14.5 15 17C12.5 19.5 12 26 12 26C12 26 11.5 19.5 9 17C6.5 14.5 0 14 0 14C0 14 6.5 13.5 9 11C11.5 8.5 12 2 12 2Z" />
             </svg>
             <p className="text-xl font-serif text-stone-200 tracking-wide font-light">
-              Breathe in... Pivot... Merge.
+              {activePrompt}
             </p>
             <div className="w-16 h-[1px] bg-amber-500/30 mt-2" />
           </div>
