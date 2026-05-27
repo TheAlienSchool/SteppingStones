@@ -26,108 +26,231 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
 
   const [isSteeping, setIsSteeping] = useState<boolean>(false);
   const audioCtxRef = useRef<AudioContext | null>(null);
+  const masterGainRef = useRef<GainNode | null>(null);
+  const reverbRef = useRef<{ conv: ConvolverNode; gain: GainNode } | null>(null);
 
-  // Helper to programmatically synthesize a warm bronze chime (0 bytes, zero-latency offline Web Audio API)
-  const playChime = (frequency: number = 440, mode: "harmonic" | "dissonant" = "harmonic") => {
-    if (!isSoundActive && !audioCtxRef.current) return;
+  // Initialize AudioContext, Master Gain, and algorithmic convolver reverb
+  const initAudio = (): AudioContext => {
+    if (audioCtxRef.current) return audioCtxRef.current;
+
+    const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    audioCtxRef.current = ctx;
+
+    // Master volume node
+    const master = ctx.createGain();
+    master.gain.setValueAtTime(0.5, ctx.currentTime);
+    master.connect(ctx.destination);
+    masterGainRef.current = master;
+
+    // Construct 3D algorithmic convolver reverb (zero external asset footprint)
+    try {
+      const conv = ctx.createConvolver();
+      const len = ctx.sampleRate * 3.5; // 3.5 seconds decay length
+      const imp = ctx.createBuffer(2, len, ctx.sampleRate);
+      
+      // Fill left and right channels with decaying Gaussian noise
+      for (let ch = 0; ch < 2; ch++) {
+        const d = imp.getChannelData(ch);
+        for (let i = 0; i < len; i++) {
+          d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.8);
+        }
+      }
+      conv.buffer = imp;
+
+      const revGain = ctx.createGain();
+      revGain.gain.setValueAtTime(0.38, ctx.currentTime); // Wet blend ratio
+      
+      conv.connect(revGain);
+      revGain.connect(master);
+      reverbRef.current = { conv, gain: revGain };
+    } catch (e) {
+      console.warn("Algorithmic convolver reverb initialization failed:", e);
+    }
+
+    return ctx;
+  };
+
+  // Play detuned warm vibrato Sage voice for the Dojo Companion
+  const playSageVoice = (ctx: AudioContext, freq: number, dur: number, vel: number, now: number) => {
+    if (!masterGainRef.current) return;
 
     try {
-      if (!audioCtxRef.current) {
-        audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const o1 = ctx.createOscillator();
+      const o2 = ctx.createOscillator();
+      const lfo = ctx.createOscillator();
+      const lfoG = ctx.createGain();
+      const out = ctx.createGain();
+      const filt = ctx.createBiquadFilter();
+
+      o1.type = "sine";
+      o2.type = "triangle";
+      
+      o1.frequency.setValueAtTime(freq, now);
+      o2.frequency.setValueAtTime(freq * 1.003, now); // Soft analog detuning
+      
+      lfo.frequency.setValueAtTime(2.8, now); // Vibrato speed
+      lfoG.gain.setValueAtTime(1.8, now); // Vibrato depth
+
+      lfo.connect(lfoG);
+      lfoG.connect(o1.frequency);
+
+      filt.type = "lowpass";
+      filt.frequency.setValueAtTime(freq * 2.2, now);
+      filt.Q.setValueAtTime(1.2, now);
+
+      const g1 = ctx.createGain();
+      g1.gain.setValueAtTime(vel * 0.22, now);
+      const g2 = ctx.createGain();
+      g2.gain.setValueAtTime(vel * 0.12, now);
+
+      o1.connect(g1);
+      o2.connect(g2);
+      g1.connect(filt);
+      g2.connect(filt);
+      filt.connect(out);
+
+      // Amplitude envelope
+      out.gain.setValueAtTime(0.001, now);
+      out.gain.exponentialRampToValueAtTime(vel * 0.35, now + 0.15); // soft attack
+      out.gain.setValueAtTime(vel * 0.35, now + dur * 0.5);
+      out.gain.exponentialRampToValueAtTime(0.001, now + dur); // smooth release
+
+      out.connect(masterGainRef.current);
+      if (reverbRef.current) {
+        out.connect(reverbRef.current.conv);
       }
 
-      const ctx = audioCtxRef.current;
+      o1.start(now);
+      o2.start(now);
+      lfo.start(now);
+
+      o1.stop(now + dur);
+      o2.stop(now + dur);
+      lfo.stop(now + dur);
+    } catch (e) {
+      console.warn("Companion Sage voice synthesis failed:", e);
+    }
+  };
+
+  // Helper to programmatically synthesize a warm bronze chime (responsive user FM and delayed companion echo)
+  const playChime = (frequency: number = 440, mode: "harmonic" | "dissonant" = "harmonic") => {
+    if (!isSoundActive) return;
+
+    try {
+      const ctx = initAudio();
       if (ctx.state === "suspended") {
         ctx.resume();
       }
 
       const now = ctx.currentTime;
 
-      // Master gain node with fast attack and long exponential decay
-      const masterGain = ctx.createGain();
-      masterGain.gain.setValueAtTime(0, now);
-      masterGain.gain.linearRampToValueAtTime(mode === "dissonant" ? 0.08 : 0.15, now + 0.005);
-      masterGain.gain.exponentialRampToValueAtTime(0.0001, now + (mode === "dissonant" ? 1.0 : 3.0));
+      if (mode === "dissonant") {
+        // Dissonant Dojo bell synthesis (warning scroll friction)
+        const vel = 0.28;
+        const dur = 0.6;
+        
+        [1, 1.414, 2.756, 4.2].forEach((r, i) => {
+          const o = ctx.createOscillator();
+          const g = ctx.createGain();
+          o.frequency.setValueAtTime(frequency * r, now);
+          g.gain.setValueAtTime(vel * [0.4, 0.2, 0.12, 0.08][i], now);
+          g.gain.exponentialRampToValueAtTime(0.0001, now + dur * (5 - i));
+          
+          o.connect(g);
+          g.connect(masterGainRef.current!);
+          if (reverbRef.current) {
+            g.connect(reverbRef.current.conv);
+          }
+          
+          o.start(now);
+          o.stop(now + dur * (5 - i));
+        });
+      } else {
+        // Harmonic active User Chime (Bronze Gamelan FM Synthesis)
+        const vel = 0.42;
+        const dur = 0.8;
 
-      // Resonant Low-Pass filter to round off harsh digital highs for a warm physical tone
-      const filter = ctx.createBiquadFilterNode();
-      filter.type = "lowpass";
-      filter.frequency.setValueAtTime(1200, now);
-      filter.Q.setValueAtTime(1.5, now);
+        const car = ctx.createOscillator();
+        const mod = ctx.createOscillator();
+        const modG = ctx.createGain();
+        const out = ctx.createGain();
 
-      // Carrier Oscillator (fundamental frequency)
-      const osc1 = ctx.createOscillator();
-      osc1.type = "sine";
-      osc1.frequency.setValueAtTime(frequency, now);
+        car.type = "sine";
+        mod.type = "triangle";
 
-      // Modulator Oscillator (overtone ratio for bell-bronze inharmonic spectrum)
-      const osc2 = ctx.createOscillator();
-      osc2.type = "triangle";
-      const ratio = mode === "dissonant" ? 1.414 : 2.312;
-      osc2.frequency.setValueAtTime(frequency * ratio, now);
+        car.frequency.setValueAtTime(frequency, now);
+        mod.frequency.setValueAtTime(frequency * 1.414, now); // Inharmonic FM modulator ratio
+        modG.gain.setValueAtTime(frequency * 1.2, now); // Modulator depth index
 
-      const modGain = ctx.createGain();
-      modGain.gain.setValueAtTime(mode === "dissonant" ? 0.05 : 0.03, now);
+        mod.connect(modG);
+        modG.connect(car.frequency); // Modulate carrier frequency directly
+        car.connect(out);
 
-      // Sub Oscillator (deep body resonance)
-      const subOsc = ctx.createOscillator();
-      subOsc.type = "sine";
-      subOsc.frequency.setValueAtTime(frequency * 0.5, now);
-      
-      const subGain = ctx.createGain();
-      subGain.gain.setValueAtTime(mode === "dissonant" ? 0 : 0.04, now);
+        // Overtone resonance multiplier
+        const p2 = ctx.createOscillator();
+        const p2g = ctx.createGain();
+        p2.frequency.setValueAtTime(frequency * 2.756, now);
+        p2g.gain.setValueAtTime(vel * 0.15, now);
+        
+        p2.connect(p2g);
+        p2g.connect(out);
 
-      // Node connection path
-      osc1.connect(masterGain);
-      osc2.connect(modGain);
-      modGain.connect(masterGain);
-      subOsc.connect(subGain);
-      subGain.connect(masterGain);
-      masterGain.connect(filter);
-      filter.connect(ctx.destination);
+        // Core chime amplitude envelope
+        out.gain.setValueAtTime(vel * 0.65, now);
+        out.gain.exponentialRampToValueAtTime(vel * 0.28, now + 0.15);
+        out.gain.exponentialRampToValueAtTime(0.0001, now + dur * 4.5);
 
-      // Start/stop timing
-      osc1.start(now);
-      osc2.start(now);
-      subOsc.start(now);
+        out.connect(masterGainRef.current!);
+        if (reverbRef.current) {
+          out.connect(reverbRef.current.conv);
+        }
 
-      const duration = mode === "dissonant" ? 1.2 : 3.2;
-      osc1.stop(now + duration);
-      osc2.stop(now + duration);
-      subOsc.stop(now + duration);
+        car.start(now);
+        mod.start(now);
+        p2.start(now);
+
+        car.stop(now + dur * 4.5);
+        mod.stop(now + dur * 4.5);
+        p2.stop(now + dur * 4.5);
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // THE DOJO COMPANION: Soft harmonic response echo 120ms later
+        // ═══════════════════════════════════════════════════════════════════════════
+        const companionDelay = 0.12; // 120ms offset
+        const companionFreq = frequency * (Math.random() > 0.5 ? 1.498 : 2.0); // Perfect fifth or octave above
+        playSageVoice(ctx, companionFreq, 1.2, vel * 0.35, now + companionDelay);
+      }
     } catch (e) {
       console.warn("AudioContext chime synthesis failed:", e);
     }
   };
 
-  // Toggle sound activation and securely unlock AudioContext inside user-click gesture event
+  // Toggle sound activation and SECURELY unlock AudioContext synchronously inside user-click event thread
   const toggleSoundActive = () => {
-    setIsSoundActive((prev) => {
-      const next = !prev;
-      localStorage.setItem("tsfw_sound_active", String(next));
-      
-      if (next) {
-        // Initialize AudioContext directly inside click handler to satisfy browser safety constraints
-        try {
-          if (!audioCtxRef.current) {
-            audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
-          }
-          if (audioCtxRef.current.state === "suspended") {
-            audioCtxRef.current.resume();
-          }
-          // Play a beautiful, instant confirmation chime (528Hz) to verify the soundscape is active
-          setTimeout(() => {
-            playChime(528, "harmonic");
-          }, 50);
-        } catch (e) {
-          console.warn("Could not initialize AudioContext on activation click:", e);
+    const nextActive = !isSoundActive;
+    setIsSoundActive(nextActive);
+    localStorage.setItem("tsfw_sound_active", String(nextActive));
+    
+    if (nextActive) {
+      // Synchronous, direct creation of AudioContext inside the user interaction click call stack
+      try {
+        const ctx = initAudio();
+        if (ctx.state === "suspended") {
+          ctx.resume();
         }
-      } else if (audioCtxRef.current) {
+        // Play instant beautiful, multi-layered chime to verify the audio field is fully active
+        playChime(528, "harmonic");
+      } catch (e) {
+        console.warn("Could not synchronously initialize AudioContext on click event:", e);
+      }
+    } else {
+      if (audioCtxRef.current) {
         audioCtxRef.current.close().catch(() => {});
         audioCtxRef.current = null;
+        masterGainRef.current = null;
+        reverbRef.current = null;
       }
-      return next;
-    });
+    }
   };
 
   // Trigger somatic transition overlay globally (persists across unmounting layout containers)
@@ -161,7 +284,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
         // If scrolling extremely fast (> 2.5px/ms), flag as rapid velocity
         if (velocity > 2.5 && !isScrollingFast.current) {
           isScrollingFast.current = true;
-          // Play warning dissonant chime (slightly higher, metallic)
+          // Play warning dissonant chime
           playChime(320, "dissonant");
         }
 

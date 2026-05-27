@@ -1180,16 +1180,19 @@ export default function CreativeContext() {
                     <div>
                       <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Card Categories</h3>
                       <div className="space-y-4">
-                        {Object.entries(designSystem.socialCardSystem.categories).map(([category, data]) => (
-                          <div key={category} className="bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <div className="flex items-start justify-between mb-2">
-                              <h4 className="font-semibold text-stone-800 capitalize">{category}</h4>
-                              <span className="inline-block px-2 py-1 bg-amber-100 text-amber-800 text-xs rounded-full">{data.count}</span>
+                        {Object.entries(designSystem.socialCardSystem.categories).map(([category, data]) => {
+                          const d = data as any;
+                          return (
+                            <div key={category} className="bg-stone-50 p-4 rounded-lg border border-stone-200">
+                              <div className="flex items-start justify-between mb-2">
+                                <h4 className="font-semibold text-stone-800 capitalize">{category}</h4>
+                                <span className="inline-block px-2 py-1 bg-amber-100 text-amber-800 text-xs rounded-full">{d.count}</span>
+                              </div>
+                              <p className="text-sm text-stone-600 mb-2"><strong>Philosophy:</strong> {d.philosophy}</p>
+                              <p className="text-sm text-stone-600"><strong>Typography:</strong> {d.typography}</p>
                             </div>
-                            <p className="text-sm text-stone-600 mb-2"><strong>Philosophy:</strong> {data.philosophy}</p>
-                            <p className="text-sm text-stone-600"><strong>Typography:</strong> {data.typography}</p>
-                          </div>
-                        ))}
+                          );
+                        })}
                       </div>
                     </div>
 
@@ -1197,44 +1200,47 @@ export default function CreativeContext() {
                     <div>
                       <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Card Gradients & Theming</h3>
                       <div className="space-y-3">
-                        {Object.entries(designSystem.socialCardGradients).map(([category, data]) => (
-                          <div key={category} className="bg-white p-4 rounded-lg border border-stone-200">
-                            <p className="font-semibold text-stone-800 capitalize mb-2">{category}</p>
-                            <div className="text-sm space-y-2">
-                              <div className="flex gap-2">
-                                <div className="w-20 h-20 rounded" style={{backgroundImage: "linear-gradient(to bottom right, white, #f5f5f4, rgba(254, 243, 199, 0.3))"}}></div>
-                                <div>
-                                  <p className="text-stone-600"><strong>Light Theme:</strong></p>
-                                  <code className="bg-stone-100 px-2 py-1 rounded text-xs">{data.light}</code>
+                        {Object.entries(designSystem.socialCardGradients).map(([category, data]) => {
+                          const d = data as any;
+                          return (
+                            <div key={category} className="bg-white p-4 rounded-lg border border-stone-200">
+                              <p className="font-semibold text-stone-800 capitalize mb-2">{category}</p>
+                              <div className="text-sm space-y-2">
+                                <div className="flex gap-2">
+                                  <div className="w-20 h-20 rounded" style={{backgroundImage: "linear-gradient(to bottom right, white, #f5f5f4, rgba(254, 243, 199, 0.3))"}}></div>
+                                  <div>
+                                    <p className="text-stone-600"><strong>Light Theme:</strong></p>
+                                    <code className="bg-stone-100 px-2 py-1 rounded text-xs">{d.light}</code>
+                                  </div>
                                 </div>
+                                <p className="text-stone-500 italic">{d.philosophy || d.purpose}</p>
                               </div>
-                              <p className="text-stone-500 italic">{data.philosophy || data.purpose}</p>
                             </div>
-                          </div>
-                        ))}
+                          );
+                        })}
                       </div>
                     </div>
 
                     {/* Voices from The Way */}
                     <div className="border-l-4 border-amber-600 pl-6">
                       <h3 className="text-2xl font-serif text-stone-800 mb-4 leading-snug">Voices from The Way</h3>
-                      <p className="text-stone-700 mb-4">{voiceGuidelines.testimonials.philosophy}</p>
+                      <p className="text-stone-700 mb-4">{(voiceGuidelines as any).testimonials.philosophy}</p>
                       <p className="text-stone-700 mb-4">
-                        <strong>Attribution approach:</strong> {voiceGuidelines.testimonials.attribution}
+                        <strong>Attribution approach:</strong> {(voiceGuidelines as any).testimonials.attribution}
                       </p>
 
                       <div className="bg-stone-50 p-4 rounded mb-4">
                         <p className="text-sm font-medium text-stone-600 mb-2">Three-channel distribution:</p>
                         <ul className="text-sm text-stone-700 space-y-1">
-                          <li>• <strong>{voiceGuidelines.testimonials.channels.social}</strong></li>
-                          <li>• <strong>{voiceGuidelines.testimonials.channels.homepage}</strong></li>
-                          <li>• <strong>{voiceGuidelines.testimonials.channels.voices}</strong></li>
+                          <li>• <strong>{(voiceGuidelines as any).testimonials.channels.social}</strong></li>
+                          <li>• <strong>{(voiceGuidelines as any).testimonials.channels.homepage}</strong></li>
+                          <li>• <strong>{(voiceGuidelines as any).testimonials.channels.voices}</strong></li>
                         </ul>
                       </div>
 
                       <div className="space-y-3">
                         <p className="text-sm font-medium text-stone-600">Example testimonials:</p>
-                        {voiceGuidelines.testimonials.examples.map((example, i) => (
+                        {((voiceGuidelines as any).testimonials.examples as any[]).map((example: any, i: number) => (
                           <p key={i} className="text-stone-600 italic text-sm pl-4 border-l-2 border-stone-300">
                             {example}
                           </p>

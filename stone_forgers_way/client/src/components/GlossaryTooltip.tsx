@@ -102,6 +102,12 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
     window.location.href = `/glossary#${termToSlug(glossaryEntry.term)}`;
   };
 
+  const playRandomChime = () => {
+    const scale = [528, 594, 660, 792, 880];
+    const freq = scale[Math.floor(Math.random() * scale.length)];
+    playChime(freq, "harmonic");
+  };
+
   return (
     <span className="relative inline">
       <span
@@ -109,12 +115,12 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
         onClick={() => {
           const nextState = !isOpen;
           setIsOpen(nextState);
-          if (nextState) playChime(528, "harmonic");
+          if (nextState) playRandomChime();
         }}
         onMouseEnter={() => {
           if (!isMobile && !isOpen) {
             setIsOpen(true);
-            playChime(528, "harmonic");
+            playRandomChime();
           }
         }}
         onMouseLeave={() => !isMobile && setIsOpen(false)}

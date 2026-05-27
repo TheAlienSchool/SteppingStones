@@ -6,9 +6,10 @@ import { analytics } from "@/lib/analytics";
 interface SocialShareProps {
   title: string;
   url?: string;
+  description?: string;
 }
 
-export default function SocialShare({ title, url }: SocialShareProps) {
+export default function SocialShare({ title, url, description }: SocialShareProps) {
   const [copied, setCopied] = useState(false);
   const shareUrl = url || window.location.href;
   const shareText = `${title} - The Stone Forger's Way`;

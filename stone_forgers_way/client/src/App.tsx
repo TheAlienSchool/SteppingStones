@@ -1,8 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch, useLocation } from "wouter";
-import { lazy, Suspense, useEffect, useRef } from "react";
+import { Route, Switch, useLocation, Router as WouterRouter } from "wouter";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -39,6 +39,35 @@ import ExpandedQuiz from "./pages/ExpandedQuiz";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 import { SoundProvider, useSound } from "./contexts/SoundContext";
 
+// Custom hook to delay route transitions for somatic pacing in the Dojo
+function useSomaticLocation() {
+  const [location, setLocation] = useLocation();
+  const { triggerTransition } = useSound();
+  const [visibleLocation, setVisibleLocation] = useState(location);
+  const isTransitioning = useRef(false);
+
+  useEffect(() => {
+    if (location !== visibleLocation && !isTransitioning.current) {
+      isTransitioning.current = true;
+      triggerTransition(); // Trigger the 1.5s somatic overlay instantly
+      
+      // Delay updating the visible location so the routes change at the peak opacity (750ms)
+      const timer = setTimeout(() => {
+        setVisibleLocation(location);
+        isTransitioning.current = false;
+      }, 750);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [location, visibleLocation, triggerTransition]);
+
+  const setLocationWithTransition = (to: string, options?: any) => {
+    setLocation(to, options);
+  };
+
+  return [visibleLocation, setLocationWithTransition] as [string, (to: string, options?: any) => void];
+}
+
 // Code splitting for heavy pages (lazy load on route navigation)
 const Social = lazy(() => import("./pages/Social"));
 const CompleteWorks = lazy(() => import("./pages/CompleteWorks"));
@@ -58,16 +87,6 @@ function PageLoader() {
 
 function Router() {
   useScrollToTop();
-  const [location] = useLocation();
-  const { triggerTransition } = useSound();
-  const prevLocation = useRef(location);
-
-  useEffect(() => {
-    if (location !== prevLocation.current) {
-      triggerTransition();
-      prevLocation.current = location;
-    }
-  }, [location, triggerTransition]);
   
   return (
     <Switch>
@@ -82,22 +101,22 @@ function Router() {
       <Route path={"/concepts"} component={Concepts} />
       <Route path={"/practices"} component={Practices} />
       <Route path={"/glossary"} component={Glossary} />
-      <Route path={"/works"} component={(props) => (
+      <Route path={"/works"} component={() => (
         <Suspense fallback={<PageLoader />}>
-          <CompleteWorks {...props} />
+          <CompleteWorks />
         </Suspense>
       )} />
       <Route path="/about" component={About} />
-      <Route path="/social" component={(props) => (
+      <Route path="/social" component={() => (
         <Suspense fallback={<PageLoader />}>
-          <Social {...props} />
+          <Social />
         </Suspense>
       )} />
       <Route path="/voices" component={Voices} />
       <Route path="/forgers-cohort" component={ForgersCohort} />
-      <Route path="/creative-context" component={(props) => (
+      <Route path="/creative-context" component={() => (
         <Suspense fallback={<PageLoader />}>
-          <CreativeContext {...props} />
+          <CreativeContext />
         </Suspense>
       )} />
       <Route path="/samuel-r-harris" component={SamuelRHarris} />
@@ -130,7 +149,9 @@ function App() {
         <SoundProvider>
           <TooltipProvider>
             <Toaster />
-            <Router />
+            <WouterRouter hook={useSomaticLocation}>
+              <Router />
+            </WouterRouter>
           </TooltipProvider>
         </SoundProvider>
       </ThemeProvider>

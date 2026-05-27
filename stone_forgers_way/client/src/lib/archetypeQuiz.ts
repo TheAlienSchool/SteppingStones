@@ -1,4 +1,5 @@
 export type ArchetypeType = 'carrier' | 'thrower' | 'conscious' | 'forger';
+export type CoreArchetypeId = ArchetypeType;
 
 export interface QuizQuestion {
   id: number;
