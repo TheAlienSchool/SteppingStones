@@ -20,6 +20,8 @@ interface SoundContextType {
   triggerTransition: () => void;
   visibleLocation: string;
   setLocation: (to: string, options?: any) => void;
+  play1937Suture: () => void;
+  playWhakapapaChord: (index: number) => void;
 }
 
 const SoundContext = createContext<SoundContextType | undefined>(undefined);
@@ -367,6 +369,140 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const playWhakapapaChord = (index: number) => {
+    if (!isSoundActive) return;
+    try {
+      const ctx = initAudio();
+      if (ctx.state === "suspended") {
+        ctx.resume();
+      }
+      const now = ctx.currentTime;
+      const freqs = [264, 396, 528, 792];
+      const freq = freqs[index % freqs.length];
+      
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      const filter = ctx.createBiquadFilter();
+      
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, now);
+      
+      filter.type = "lowpass";
+      filter.frequency.setValueAtTime(freq * 3.5, now);
+      filter.frequency.exponentialRampToValueAtTime(freq * 1.15, now + 1.2);
+      filter.Q.setValueAtTime(1.0, now);
+      
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.18, now + 0.015);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.0);
+      
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(masterGainRef.current!);
+      if (reverbRef.current) {
+        gain.connect(reverbRef.current.conv);
+      }
+      
+      osc.start(now);
+      osc.stop(now + 2.0);
+      
+      setTimeout(() => {
+        try {
+          osc.disconnect();
+          filter.disconnect();
+          gain.disconnect();
+        } catch (e) {}
+      }, 2150);
+    } catch (e) {
+      console.warn("Whakapapa chord synthesis failed:", e);
+    }
+  };
+
+  const play1937Suture = () => {
+    if (!isSoundActive) return;
+    try {
+      const ctx = initAudio();
+      if (ctx.state === "suspended") {
+        ctx.resume();
+      }
+      const now = ctx.currentTime;
+      
+      // 1. Synthesize tape hiss / vinyl crackle dynamically
+      const bufferSize = ctx.sampleRate * 2.5; 
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        const crackle = Math.random() > 0.985 ? (Math.random() * 2 - 1) : 0;
+        data[i] = white * 0.02 + crackle * 0.15;
+      }
+      
+      const noiseNode = ctx.createBufferSource();
+      noiseNode.buffer = buffer;
+      
+      const noiseFilter = ctx.createBiquadFilter();
+      noiseFilter.type = "bandpass";
+      noiseFilter.frequency.setValueAtTime(300, now);
+      noiseFilter.frequency.exponentialRampToValueAtTime(3000, now + 2.0); 
+      noiseFilter.Q.setValueAtTime(1.0, now);
+      
+      const noiseGain = ctx.createGain();
+      noiseGain.gain.setValueAtTime(0.06, now);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 2.5);
+      
+      noiseNode.connect(noiseFilter);
+      noiseFilter.connect(noiseGain);
+      noiseGain.connect(masterGainRef.current!);
+      
+      // 2. Synthesize the 1937 hum (193.7 Hz & 387.4 Hz sines)
+      const o1 = ctx.createOscillator();
+      const o2 = ctx.createOscillator();
+      const humGain = ctx.createGain();
+      
+      o1.type = "sine";
+      o1.frequency.setValueAtTime(193.7, now);
+      
+      o2.type = "sine";
+      o2.frequency.setValueAtTime(387.4, now);
+      
+      humGain.gain.setValueAtTime(0.001, now);
+      humGain.gain.linearRampToValueAtTime(0.12, now + 0.3); 
+      humGain.gain.setValueAtTime(0.12, now + 1.2);
+      humGain.gain.exponentialRampToValueAtTime(0.001, now + 2.5); 
+      
+      o1.connect(humGain);
+      o2.connect(humGain);
+      humGain.connect(masterGainRef.current!);
+      
+      // Start sources
+      noiseNode.start(now);
+      o1.start(now);
+      o2.start(now);
+      
+      noiseNode.stop(now + 2.5);
+      o1.stop(now + 2.5);
+      o2.stop(now + 2.5);
+      
+      // 3. Play the 639 Hz Solfeggio FA resolving chime at t = 1.0 (generational bridge)
+      setTimeout(() => {
+        playChime(639, "harmonic");
+      }, 1000);
+      
+      setTimeout(() => {
+        try {
+          noiseNode.disconnect();
+          noiseFilter.disconnect();
+          noiseGain.disconnect();
+          o1.disconnect();
+          o2.disconnect();
+          humGain.disconnect();
+        } catch (e) {}
+      }, 2750);
+    } catch (e) {
+      console.warn("1937 Vector suture audio failed:", e);
+    }
+  };
+
   // Synthesize a soft, organic wind-swish representing the shifting sands of change
   // Driven by dual-band filters and a fast amplitude-modulating grain rate that scales with velocity
   const playSandSwish = (velocity: number) => {
@@ -572,116 +708,121 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       }
 
       const now = ctx.currentTime;
-      const dur = 1.8; // Extends slightly past the 1.5s screen overlay for smooth spillover
+      const dur = 2.2; // Silky decay spillover
 
       // ───────────────────────────────────────────────────────────────────────
-      // 1. DEEP SOMATIC GROUNDING DRONE (Cradling the nervous system)
+      // 1. POINT 01: THE STRIKE (High Register Peking Chime - 1056Hz)
       // ───────────────────────────────────────────────────────────────────────
-      // Fundamental 132Hz (Pure somatic octave anchor, 528 / 4)
-      // Fifth 198Hz (Pythagorean 3:2 fifth above 132Hz)
+      const sOsc = ctx.createOscillator();
+      const sFilter = ctx.createBiquadFilter();
+      const sGain = ctx.createGain();
+
+      sOsc.type = "sine";
+      sOsc.frequency.setValueAtTime(1056, now);
+      sOsc.frequency.exponentialRampToValueAtTime(528, now + 1.2); // Glide down to root
+
+      sFilter.type = "lowpass";
+      sFilter.frequency.setValueAtTime(3000, now);
+      sFilter.frequency.exponentialRampToValueAtTime(1056, now + 0.8);
+      sFilter.Q.setValueAtTime(1.5, now);
+
+      sGain.gain.setValueAtTime(0.001, now);
+      sGain.gain.linearRampToValueAtTime(0.045, now + 0.015); // Cosine-like attack spark
+      sGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.8);
+
+      sOsc.connect(sFilter);
+      sFilter.connect(sGain);
+      sGain.connect(masterGainRef.current!);
+      if (reverbRef.current) {
+        sGain.connect(reverbRef.current.conv);
+      }
+
+      sOsc.start(now);
+      sOsc.stop(now + 1.8);
+
+      // ───────────────────────────────────────────────────────────────────────
+      // 2. POINT 02 & 03: THE SWELL & ROTATION (Low & Middle Registers)
+      // ───────────────────────────────────────────────────────────────────────
       const d1 = ctx.createOscillator();
       const d2 = ctx.createOscillator();
       const droneFilter = ctx.createBiquadFilter();
       const droneGain = ctx.createGain();
 
-      d1.type = "sine";
-      d1.frequency.setValueAtTime(132, now);
+      // Spatial stereo panner for volumetric 3D drift
+      let panner: StereoPannerNode | null = null;
+      if (ctx.createStereoPanner) {
+        panner = ctx.createStereoPanner();
+        panner.pan.setValueAtTime(-0.5, now);
+        panner.pan.linearRampToValueAtTime(0.5, now + dur); // Soft structural sweep across the stereo field
+      }
 
-      d2.type = "triangle"; // Warm throat overtones
-      d2.frequency.setValueAtTime(198, now);
+      d1.type = "sine";
+      d1.frequency.setValueAtTime(52.8, now + 0.2); // Low sub-octave of root
+      d1.frequency.exponentialRampToValueAtTime(105.6, now + dur); // Upward sub-bass swell
+
+      d2.type = "triangle"; // Warm throat overtone
+      d2.frequency.setValueAtTime(132, now + 0.2);
 
       droneFilter.type = "lowpass";
-      droneFilter.frequency.setValueAtTime(320, now);
+      droneFilter.frequency.setValueAtTime(220, now);
       droneFilter.Q.setValueAtTime(1.0, now);
 
-      // Theta wave amplitude modulator (5.0Hz) to drive autonomic resonance
+      // Point 03: Theta wave LFO (4.5Hz) for autonomic spin modulation
       const thetaLfo = ctx.createOscillator();
       const thetaLfoG = ctx.createGain();
       thetaLfo.type = "sine";
-      thetaLfo.frequency.setValueAtTime(5.0, now);
-      thetaLfoG.gain.setValueAtTime(0.06, now); // Modulate volume gently by 6%
+      thetaLfo.frequency.setValueAtTime(4.5, now);
+      thetaLfoG.gain.setValueAtTime(0.08, now); // Modulate volume gently by 8%
 
       thetaLfo.connect(thetaLfoG);
       thetaLfoG.connect(droneGain.gain);
 
-      // Drone Volume envelope (Slow, pillowy breath)
-      const baseDroneVol = 0.16;
+      // Swell Volume Envelope (Slow, pillowy breath)
+      const baseDroneVol = 0.22;
       droneGain.gain.setValueAtTime(0.001, now);
-      droneGain.gain.exponentialRampToValueAtTime(baseDroneVol, now + 0.4); // Slow attack
-      droneGain.gain.setValueAtTime(baseDroneVol, now + 1.0);
-      droneGain.gain.exponentialRampToValueAtTime(0.001, now + dur); // Gentle decay
+      droneGain.gain.setValueAtTime(0.001, now + 0.2);
+      droneGain.gain.exponentialRampToValueAtTime(baseDroneVol, now + 0.6); // Slow rise
+      droneGain.gain.setValueAtTime(baseDroneVol, now + 1.2);
+      droneGain.gain.exponentialRampToValueAtTime(0.001, now + dur); // Smooth release
 
       d1.connect(droneFilter);
       d2.connect(droneFilter);
-      droneFilter.connect(droneGain);
+      
+      if (panner) {
+        droneFilter.connect(panner);
+        panner.connect(droneGain);
+      } else {
+        droneFilter.connect(droneGain);
+      }
+      
       droneGain.connect(masterGainRef.current!);
       if (reverbRef.current) {
         droneGain.connect(reverbRef.current.conv);
       }
 
-      d1.start(now);
-      d2.start(now);
+      d1.start(now + 0.2);
+      d2.start(now + 0.2);
       thetaLfo.start(now);
 
       d1.stop(now + dur);
       d2.stop(now + dur);
       thetaLfo.stop(now + dur);
 
-      // ───────────────────────────────────────────────────────────────────────
-      // 2. SILICON LIGHT TRANSITION CHIMES (Clear spark of presence)
-      // ───────────────────────────────────────────────────────────────────────
-      // Plays two high, sparkling Pythagorean fifths that glide down like light refracting
-      const sparkRatios = [2.0, 3.0]; // Octave and high fifth (1056Hz and 1584Hz relative to 528Hz root)
-      sparkRatios.forEach((r, idx) => {
-        const sFreq = 528 * r;
-        const sOsc = ctx.createOscillator();
-        const sFilter = ctx.createBiquadFilter();
-        const sGain = ctx.createGain();
-
-        sOsc.type = "sine";
-        sOsc.frequency.setValueAtTime(sFreq, now + idx * 0.15); // Staggered arpeggio attack
-        sOsc.frequency.exponentialRampToValueAtTime(sFreq * 0.85, now + idx * 0.15 + 0.6); // Gentle downward pitch slide
-
-        sFilter.type = "bandpass";
-        sFilter.frequency.setValueAtTime(sFreq, now + idx * 0.15);
-        sFilter.frequency.exponentialRampToValueAtTime(sFreq * 0.7, now + idx * 0.15 + 0.6);
-        sFilter.Q.setValueAtTime(4.0, now);
-
-        sGain.gain.setValueAtTime(0.001, now);
-        sGain.gain.setValueAtTime(0.001, now + idx * 0.15);
-        sGain.gain.linearRampToValueAtTime(0.035, now + idx * 0.15 + 0.05); // Tiny crystalline spark
-        sGain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.15 + 0.8);
-
-        sOsc.connect(sFilter);
-        sFilter.connect(sGain);
-        sGain.connect(masterGainRef.current!);
-        if (reverbRef.current) {
-          sGain.connect(reverbRef.current.conv);
-        }
-
-        sOsc.start(now + idx * 0.15);
-        sOsc.stop(now + idx * 0.15 + 0.8);
-
-        setTimeout(() => {
-          try {
-            sOsc.disconnect();
-            sFilter.disconnect();
-            sGain.disconnect();
-          } catch (e) {}
-        }, (idx * 0.15 + 0.8) * 1000 + 150);
-      });
-
-      // Cleanup drone nodes
+      // Clean nodes
       setTimeout(() => {
         try {
+          sOsc.disconnect();
+          sFilter.disconnect();
+          sGain.disconnect();
           d1.disconnect();
           d2.disconnect();
           droneFilter.disconnect();
           thetaLfo.disconnect();
           thetaLfoG.disconnect();
+          if (panner) panner.disconnect();
           droneGain.disconnect();
         } catch (e) {}
-      }, dur * 1000 + 150);
+      }, dur * 1000 + 250);
 
     } catch (e) {
       console.warn("Somatic transition audio failed:", e);
@@ -825,7 +966,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   }, [isSoundActive]);
 
   return (
-    <SoundContext.Provider value={{ isSoundActive, toggleSoundActive, playChime, isSteeping, triggerTransition, visibleLocation, setLocation }}>
+    <SoundContext.Provider value={{ isSoundActive, toggleSoundActive, playChime, isSteeping, triggerTransition, visibleLocation, setLocation, play1937Suture, playWhakapapaChord }}>
       {children}
       
       {/* Global Somatic Pacing Overlay - rendered at app root to prevent remount clipping */}

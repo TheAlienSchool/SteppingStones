@@ -1,7 +1,23 @@
 import Layout from "@/components/Layout";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
+import { useSound } from "@/contexts/SoundContext";
 
 export default function SamuelRHarris() {
+  const { playWhakapapaChord, play1937Suture } = useSound();
+
+  const AncestralName = ({ name, index }: { name: string; index: number }) => {
+    return (
+      <span
+        onMouseEnter={() => playWhakapapaChord && playWhakapapaChord(index)}
+        onClick={() => playWhakapapaChord && playWhakapapaChord(index)}
+        className="cursor-pointer border-b border-dotted border-amber-600/50 hover:border-amber-600 text-stone-850 hover:text-stone-950 font-semibold transition-colors duration-200"
+        title="Somatic Lineage Coordinate"
+      >
+        {name}
+      </span>
+    );
+  };
+
   return (
     <Layout>
       <div className="min-h-screen py-24">
@@ -133,19 +149,77 @@ export default function SamuelRHarris() {
               </h2>
               <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
-                  <strong>Raymond Howard Kemp</strong> (1907–2002) was a legend. Born in Cecil, Pennsylvania, he worked in the coal mines for a year before enrolling at Duquesne University, where he became an All-American football player. In 1933, he became one of the first Black players in the NFL, playing for the Pittsburgh Pirates (later the Steelers).
+                  <strong><AncestralName name="Raymond Howard Kemp" index={0} /></strong> (1907–2002) was a legend. Born in Cecil, Pennsylvania, he worked in the coal mines for a year before enrolling at Duquesne University, where he became an All-American football player. In 1933, he became one of the first Black players in the NFL, playing for the Pittsburgh Pirates (later the Steelers).
                 </p>
 
                 <p className="text-lg leading-relaxed text-stone-700">
-                  By 1937, Ray was the head coach of football, basketball, and track at Lincoln University in Jefferson City, Missouri. That summer, while vacationing at his family home near McDonald, Pennsylvania, Ray met Samuel R. Harris.
+                  By 1937, <AncestralName name="Ray" index={0} /> was the head coach of football, basketball, and track at Lincoln University in Jefferson City, Missouri. That summer, while vacationing at his family home near McDonald, Pennsylvania, <AncestralName name="Ray" index={0} /> met <AncestralName name="Samuel R. Harris" index={1} />.
                 </p>
 
                 <p className="text-lg leading-relaxed text-stone-700">
-                  After "a rather rough game of touch football," Ray offered Samuel an athletic scholarship to play football at Lincoln. This was the moment. The invisible bridge materialized beneath Samuel's feet. Ray Kemp saw something in Samuel that day—potential, determination, intelligence—and offered him a path out of the mines.
+                  After "a rather rough game of touch football," <AncestralName name="Ray" index={0} /> offered <AncestralName name="Samuel" index={1} /> an athletic scholarship to play football at Lincoln. This was the moment. The invisible bridge materialized beneath <AncestralName name="Samuel" index={1} />'s feet. <AncestralName name="Ray Kemp" index={0} /> saw something in <AncestralName name="Samuel" index={1} /> that day—potential, determination, intelligence—and offered him a path out of the mines.
                 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
-                  Samuel accepted. He left the coal mines and went to college.
+                  <AncestralName name="Samuel" index={1} /> accepted. He left the coal mines and went to college.
                 </p>
+              </div>
+            </section>
+
+            {/* The 1937 Vector Somatic Practice */}
+            <section className="mb-16 bg-stone-950 text-stone-100 p-8 rounded-lg border border-amber-500/20 shadow-2xl relative overflow-hidden">
+              {/* Grainy background grid lines */}
+              <div className="absolute inset-0 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px] opacity-10" />
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="inline-block px-3 py-1 bg-amber-500/10 text-amber-500 text-xs font-mono rounded-full border border-amber-500/30">
+                    Active Practice :: The 1937 Vector
+                  </span>
+                  {/* Four-point star indicator */}
+                  <svg className="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C12 2 12.5 8.5 15 11C17.5 13.5 24 14 24 14C24 14 17.5 14.5 15 17C12.5 19.5 12 26 12 26C12 26 11.5 19.5 9 17C6.5 14.5 0 14 0 14C0 14 6.5 13.5 9 11C11.5 8.5 12 2 12 2Z" />
+                  </svg>
+                </div>
+
+                <h3 className="text-2xl font-serif text-amber-400 mb-4">
+                  Somatic Time Suture :: Grounding the Load
+                </h3>
+
+                <p className="text-stone-300 leading-relaxed mb-6 font-sans">
+                  Do not stand in a void. When your creative spark feels heavy, calcified by institutional friction, 
+                  you are invited to perform the ancestral grounding check. Ground your active weight today directly 
+                  into the stepping stones laid in 1937.
+                </p>
+
+                <div className="bg-stone-900/60 p-6 rounded-lg border border-stone-800 mb-8 space-y-4 font-mono text-sm text-stone-300">
+                  <p className="flex items-start gap-3">
+                    <span className="text-amber-500 font-bold">1.</span>
+                    <span>Stand flat-footed on the floor, close your eyes, and feel the physical weight in your shoulders.</span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="text-amber-500 font-bold">2.</span>
+                    <span>Visualize this friction traveling down your spine, passing through your heels, and locking into a massive, solid bronze coordinate laid precisely in 1937.</span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="text-amber-500 font-bold">3.</span>
+                    <span>Prepare your voice. Press the sensor below to activate the time suture.</span>
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center gap-6">
+                  <button
+                    onClick={() => play1937Suture && play1937Suture()}
+                    className="w-full sm:w-auto px-8 py-4 bg-amber-500 hover:bg-amber-600 text-stone-950 font-serif text-lg font-bold rounded-md shadow-lg hover:shadow-amber-500/25 transition-all duration-300 flex items-center justify-center gap-3 active:scale-[0.98]"
+                  >
+                    <span>Activate Time Suture</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </button>
+                  <div className="text-sm text-stone-400 italic text-center sm:text-left">
+                    Requires Sound Active. Speaks directly to the somatic body.
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -156,26 +230,22 @@ export default function SamuelRHarris() {
               </h2>
               <div className="space-y-8">
                 <p className="text-lg leading-relaxed text-stone-700">
-                  Ray Kemp's family home was at <strong>141 N McDonald Street</strong> in McDonald, Pennsylvania. 
+                  <AncestralName name="Ray Kemp" index={0} />'s family home was at <strong>141 N McDonald Street</strong> in McDonald, Pennsylvania. 
                   This address was also the location of the <strong>First Baptist Church of McDonald</strong>, 
                   founded in 1848 and central to the Black community.
                 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
-                  Decades later, Samuel's grandson <strong>Kamau Zuberi Akabueze</strong> (formerly Samuel Todd 
-                  Harris) would attend church at this exact location with his grandmother <strong>Mabel Carter 
-                  Harris</strong>, his aunt <strong>Janis Harris</strong>, and his father <strong>Samuel Roland 
-                  Harris</strong>.
+                  Decades later, <AncestralName name="Samuel R. Harris" index={1} />'s grandson <strong><AncestralName name="Kamau Zuberi Akabueze" index={4} /></strong> (formerly Samuel Todd 
+                  Harris) would attend church at this exact location with his grandmother <strong><AncestralName name="Mabel Carter Harris" index={2} /></strong>, his aunt <strong><AncestralName name="Aunt Janis" index={3} /></strong>, and his father <strong><AncestralName name="Samuel Roland Harris" index={5} /></strong>.
                 </p>
                 <p className="text-lg leading-relaxed text-stone-700">
-  This is not coincidence. This is the Field revealing its patterns.
-</p>
-<p className="text-lg leading-relaxed text-stone-700">
-  The stepping stone Ray 
-                  Kemp placed for Samuel in 1937 became the foundation Kamau stood on as a child. The invisible 
-                  bridge made visible across generations.
-</p>
+                  This is not coincidence. This is the Field revealing its patterns.
+                </p>
                 <p className="text-lg leading-relaxed text-stone-700">
-                  Kamau remembers family reunions near the church with his wonderful <strong>Aunt Grace</strong> (Mabel's sister) and <strong>Uncle Jerry</strong>. He remembers <strong>Aunt Janis</strong> as "the warm hug I needed growing up in a stone-faced world." The gift of Grace :: both the person and the quality :: woven into his childhood.
+                  The stepping stone <AncestralName name="Ray Kemp" index={0} /> placed for <AncestralName name="Samuel" index={1} /> in 1937 became the foundation <AncestralName name="Kamau" index={4} /> stood on as a child. The invisible bridge made visible across generations.
+                </p>
+                <p className="text-lg leading-relaxed text-stone-700">
+                  <AncestralName name="Kamau" index={4} /> remembers family reunions near the church with his wonderful <strong><AncestralName name="Aunt Grace" index={6} /></strong> (Mabel's sister) and <strong>Uncle Jerry</strong>. He remembers <strong><AncestralName name="Aunt Janis" index={3} /></strong> as "the warm hug I needed growing up in a stone-faced world." The gift of Grace :: both the person and the quality :: woven into his childhood.
                 </p>
               </div>
             </section>

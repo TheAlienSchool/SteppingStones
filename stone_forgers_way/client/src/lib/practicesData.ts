@@ -298,6 +298,17 @@ export const practices: Practice[] = [
     duration: 'Ongoing',
     frequency: 'Daily awareness',
     category: 'contemplative'
+  },
+  {
+    id: '1937-vector',
+    name: 'The 1937 Vector',
+    description: 'A dynamic micro-practice connecting your current friction to ancestral support.',
+    instructions: 'Stand flat-footed on the Dojo floor, eyes closed. Somaticize the structural load currently felt in your chest or shoulders. Visualize this load traveling straight down your spine, passing through your feet, and anchoring into a solid, glowing stepping stone laid precisely in 1937. Speak aloud: "I do not stand in a void. The vector laid in 1937 holds the weight of my step in 2026." Feel the vagal tone release as the ancestral coordinate absorbs the somatic friction.',
+    coreArchetypeTags: ['forger'],
+    expandedArchetypeTags: ['walker-of-the-way', 'stone-keeper'],
+    duration: '3-5 minutes',
+    frequency: 'When feeling creative fatigue',
+    category: 'ritual'
   }
 ];
 

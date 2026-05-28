@@ -3,6 +3,87 @@ import Layout from "@/components/Layout";
 import { Link } from "wouter";
 import { ChevronDown, Sparkles } from "lucide-react";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
+import { useSound } from "@/contexts/SoundContext";
+
+function GeneKeysEvolutionCard() {
+  const [state, setState] = useState<"shadow" | "gift" | "siddhi">("shadow");
+  const { playChime } = useSound();
+
+  const states = {
+    shadow: {
+      name: "The Shadow: Toroidal Binding & Chaos",
+      desc: "Energy is trapped in circular, defensive loops. The reaction is friction, backache, and fear of moving forward without a map.",
+      tip: "Click to breathe into the friction and summon the Gift...",
+      bg: "bg-stone-950 text-stone-200 border-stone-850",
+      accent: "text-amber-500",
+      freq: 745.8,
+      mode: "dissonant" as const
+    },
+    gift: {
+      name: "The Gift: Wayfinding & Alignment",
+      desc: "Energy is unlocked into pathmaking. You trust the inner compass in your bones. The stepping stones solidify as you step.",
+      tip: "Click to dissolve alignment into ultimate Siddhi grace...",
+      bg: "bg-gradient-to-br from-amber-950 to-amber-900 text-amber-50 border-amber-800",
+      accent: "text-amber-300",
+      freq: 528,
+      mode: "harmonic" as const
+    },
+    siddhi: {
+      name: "The Siddhi: Integrated Grace",
+      desc: "Pure, effortless materialization in the Field. The division between steps and walker dissolves. Form is fabricated through love.",
+      tip: "Click to return to the Shadow, acknowledging the cyclic spiral...",
+      bg: "bg-gradient-to-br from-white to-amber-50/80 text-stone-900 border-amber-200 shadow-xl",
+      accent: "text-amber-700",
+      freq: 1056,
+      mode: "harmonic" as const
+    }
+  };
+
+  const handleTransition = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Avoid triggering accordion close
+    let nextState: "shadow" | "gift" | "siddhi" = "shadow";
+    if (state === "shadow") nextState = "gift";
+    else if (state === "gift") nextState = "siddhi";
+    else nextState = "shadow";
+
+    setState(nextState);
+    
+    // Play transition sound
+    playChime(states[nextState].freq, states[nextState].mode);
+  };
+
+  const active = states[state];
+
+  return (
+    <div 
+      onClick={handleTransition}
+      className={`p-6 rounded-xl border cursor-pointer transition-all duration-500 transform hover:scale-[1.01] shadow-md my-6 ${active.bg}`}
+    >
+      <div className="flex justify-between items-start mb-3">
+        <span className="text-[9px] font-mono uppercase tracking-widest opacity-60">
+          Interactive Evolutionary Catalyst
+        </span>
+        <span className="text-[9px] font-sans font-bold uppercase tracking-wider bg-amber-600 text-white px-2 py-0.5 rounded">
+          {state}
+        </span>
+      </div>
+
+      <h4 className={`text-lg font-serif font-bold mb-2 ${active.accent}`}>
+        {active.name}
+      </h4>
+      <p className="text-sm leading-relaxed mb-4 opacity-90">
+        {active.desc}
+      </p>
+
+      <div className="border-t border-current/25 pt-3 flex items-center justify-between text-xs opacity-75 italic">
+        <span>{active.tip}</span>
+        <svg className="w-4 h-4 animate-pulse text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+    </div>
+  );
+}
 
 interface JourneyPhase {
   id: string;
@@ -89,6 +170,7 @@ const journeyPhases: JourneyPhase[] = [
           The stepping stone only solidifies at a rate that requires human trust and active participation.
           We participate directly in the fabrication of form.
         </p>
+        <GeneKeysEvolutionCard />
       </div>
     )
   },
@@ -256,8 +338,10 @@ const journeyPhases: JourneyPhase[] = [
 
 export default function TheJourney() {
   const [expandedPhases, setExpandedPhases] = useState<Set<string>>(new Set(["origin"]));
+  const { playChime } = useSound();
 
   const togglePhase = (id: string) => {
+    const isOpening = !expandedPhases.has(id);
     setExpandedPhases(prev => {
       const next = new Set(prev);
       if (next.has(id)) {
@@ -267,6 +351,27 @@ export default function TheJourney() {
       }
       return next;
     });
+
+    if (isOpening) {
+      // Map each phase to a beautiful node in our Lydian Ascent Scale
+      const scaleFrequencies: Record<string, number> = {
+        "origin": 528,     // Heart Grounding (Root)
+        "phase-1": 594,    // Throat Articulation (2nd)
+        "phase-2": 660,    // Gut Willpower (3rd)
+        "phase-3": 745.8,  // Thrower's Friction (Augmented 4th - Tritone)
+        "phase-4": 792,    // Conscious Forger Resolution (Perfect 5th)
+        "phase-5": 880,    // Lineage Resonance (6th)
+        "phase-6": 990,    // Crown Ascension (7th)
+        "phase-7": 1056,   // Crown Void / Unbound (Octave)
+        "phase-8": 639,    // Whakapapa Bridge
+        "container": 528   // Return to Ground
+      };
+      const freq = scaleFrequencies[id] || 528;
+      
+      // Trigger tritone tension as dissonant mode, others as harmonic
+      const mode = id === "phase-3" || id === "phase-6" ? "dissonant" : "harmonic";
+      playChime(freq, mode);
+    }
   };
 
   const expandAll = () => {

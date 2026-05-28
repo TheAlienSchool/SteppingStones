@@ -103,10 +103,36 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
     window.location.href = `/glossary#${termToSlug(glossaryEntry.term)}`;
   };
 
-  const playRandomChime = () => {
-    const scale = [528, 594, 660, 792, 880];
-    const freq = scale[Math.floor(Math.random() * scale.length)];
-    playChime(freq, "harmonic");
+  const playContextualChime = () => {
+    const solfeggioMap: Record<string, number> = {
+      'stone-keeper': 396,
+      'carrier': 396,
+      'stone-breaker': 417,
+      'thrower': 417,
+      'jade-hunter': 528,
+      'conscious': 528,
+      'walker-of-the-way': 639,
+      'stone-caller': 741,
+      'stone-witness': 852,
+      'forger': 639
+    };
+
+    let resolvedFreq = 528; // Default Solfeggio MI (Transformation & Heart)
+
+    if (glossaryEntry) {
+      const activeArchetype = 
+        glossaryEntry.expandedArchetypeTags?.[0] || 
+        glossaryEntry.coreArchetypeTags?.[0];
+      
+      if (activeArchetype && solfeggioMap[activeArchetype]) {
+        resolvedFreq = solfeggioMap[activeArchetype];
+      } else {
+        const scale = [528, 594, 660, 792, 880];
+        resolvedFreq = scale[Math.floor(Math.random() * scale.length)];
+      }
+    }
+
+    playChime(resolvedFreq, "harmonic");
   };
 
   return (
@@ -116,12 +142,12 @@ export default function GlossaryTooltip({ term, children, className = "" }: Glos
         onClick={() => {
           const nextState = !isOpen;
           setIsOpen(nextState);
-          if (nextState) playRandomChime();
+          if (nextState) playContextualChime();
         }}
         onMouseEnter={() => {
           if (!isMobile && !isOpen) {
             setIsOpen(true);
-            playRandomChime();
+            playContextualChime();
           }
         }}
         onMouseLeave={() => !isMobile && setIsOpen(false)}

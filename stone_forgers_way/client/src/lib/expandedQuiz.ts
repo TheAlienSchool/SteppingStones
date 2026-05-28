@@ -337,9 +337,16 @@ export function getQuestionsForCoreArchetype(
 
 // localStorage helpers for expanded quiz results
 const EXPANDED_QUIZ_STORAGE_KEY = 'stone_forgers_way_expanded_quiz_results';
+const EXPANDED_QUIZ_HISTORY_KEY = 'stone_forgers_way_expanded_quiz_history';
 
 export function saveExpandedQuizResult(result: ExpandedQuizResult): void {
+  // Save latest single result
   localStorage.setItem(EXPANDED_QUIZ_STORAGE_KEY, JSON.stringify(result));
+  
+  // Save to chronological history list
+  const history = getExpandedQuizHistory();
+  history.push(result);
+  localStorage.setItem(EXPANDED_QUIZ_HISTORY_KEY, JSON.stringify(history));
 }
 
 export function getLatestExpandedQuizResult(): ExpandedQuizResult | null {
@@ -347,8 +354,14 @@ export function getLatestExpandedQuizResult(): ExpandedQuizResult | null {
   return stored ? JSON.parse(stored) : null;
 }
 
+export function getExpandedQuizHistory(): ExpandedQuizResult[] {
+  const stored = localStorage.getItem(EXPANDED_QUIZ_HISTORY_KEY);
+  return stored ? JSON.parse(stored) : [];
+}
+
 export function clearExpandedQuizData(): void {
   localStorage.removeItem(EXPANDED_QUIZ_STORAGE_KEY);
+  localStorage.removeItem(EXPANDED_QUIZ_HISTORY_KEY);
 }
 
 // Combined result helper

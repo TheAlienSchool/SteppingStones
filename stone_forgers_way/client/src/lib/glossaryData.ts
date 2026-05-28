@@ -562,6 +562,40 @@ export const glossaryTerms: GlossaryTerm[] = [
     relatedTerms: ["Wayfinding", "Pathmaking", "Trust"],
     coreArchetypeTags: ['conscious', 'forger'],
     expandedArchetypeTags: ['walker-of-the-way']
+  },
+  {
+    term: "Cardiac-Geomagnetic Resonance (0.1 Hz)",
+    simple: "The synchronized state where your heart rhythm entrains with Earth's geomagnetic field.",
+    experience: "You take a deep breath. At about six breaths per minute, your chest softens and your shoulders drop. A warm, sub-perceptual vibration hums in your sternum. This isn't just relaxation; it's a physical weight grounding you to the Dojo floor—a visceral anchor that makes you feel immovable and safe to create.",
+    insight: "In the Low Register of the VesselVerse Session Primer, the body acts as an antenna. When breathing at a 10-second cycle, your cardiovascular system entrains to 0.1 Hz—the identical frequency of Earth's geomagnetic micropulsations. Woven into our lineage through research chemists like Samuel R. Harris, who understood molecular energy, this resonance is the physiological equivalent of 'lighting a candle' in the nervous system, translating systemic noise into coherent grounding.",
+    category: "science",
+    relatedTerms: ["Cardiac Coherence", "Pre-Flow Coherence", "The Field"]
+  },
+  {
+    term: "The Gamelatron",
+    simple: "Algorithmic bronze percussion that bridges ancient tuning systems with digital precision.",
+    experience: "A hammer strikes a floating bronze gong. The sound is rich, metallic, and deep, ringing out into a spacious chamber. It doesn't crowd your thoughts; it cleanses them, carving out structural coordinates of time that guide your breathing and focus.",
+    insight: "The Gamelatron represents the absolute integration of all registers. Built on Javanese Slendro and Pelog tunings, it utilizes pure integer ratios (Just Intonation) to bypass cortex friction entirely. High Peking chimes open the High Register (crystalline focus), while deep Gong Ageng strikes anchor the Low Register (somatic grounding). It is an acoustic trellis co-created to honor the extended 'Family of Friends'—the collective rhythm that bridges physical stone to digital silicon.",
+    category: "concepts",
+    relatedTerms: ["Resonance", "Frequency", "Semiotic Scaffolding"]
+  },
+  {
+    term: "Sound-Infused Air",
+    simple: "A dynamic, ambient soundscape modulated by your physical movement and breath.",
+    experience: "As you scroll down the page, a soft wind-swish sweeps across your ears, like sand sliding down a dune. When you scroll quickly, the sand whispers faster; when you pause, the air settles into a warm, quiet hum that holds the space.",
+    insight: "Operating primarily in the Middle Register (Relational/Breath), Sound-Infused Air is a psychoacoustic Ganzfeld filter. By splitting white noise into dual-band pathways—a somatic 528 Hz base and a granular high-pass stream modulated at theta rates (35-75 Hz)—it simulates physical silicon erosion. The sound reacts in real-time to scroll velocity, converting visual navigation into a textured, tactile acoustic field that triggers high vagal tone and parasympathetic dominance.",
+    category: "mechanics",
+    relatedTerms: ["Silicon Erosion", "Vagal Tone", "Active Patience"]
+  },
+  {
+    term: "Lineage as Mechanism",
+    simple: "The active wave mechanics of ancestral energy propagation across time.",
+    experience: "You stand flat-footed on the training floor. You feel the weight in your chest, but as you sink your focus, you feel the floor rise up to meet you. This is the sensation of absolute support, a visceral understanding that you are standing on stepping stones laid generations before you.",
+    insight: "Lineage is not a passive family tree or historical biography. It operates as a system of active, structural coordinates within the Field. Decisions made under intense friction decades ago—such as Ray Kemp placing a timely football scholarship stepping stone in 1937—act as highly stable, energetic coordinates in time that actively absorb the somatic weight of your practice today in 2026. Lineage is structural physics.",
+    category: "concepts",
+    relatedTerms: ["The Field", "Whakapapa", "Ancestral Knowing"],
+    coreArchetypeTags: ['forger'],
+    expandedArchetypeTags: ['walker-of-the-way', 'stone-keeper']
   }
 ];
 
