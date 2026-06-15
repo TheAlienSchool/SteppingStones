@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { useSound } from "@/contexts/SoundContext";
 import SteamSans from "@/components/SteamSans";
@@ -32,7 +32,84 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function ArchetypeQuiz() {
   const [, setLocation] = useLocation();
-  const { playChime } = useSound();
+  const { playChime, startSingingBowl, stopSingingBowl, setBowlBreathRatio } = useSound();
+
+  const [isGrounding, setIsGrounding] = useState(true);
+  const [breathPhase, setBreathPhase] = useState<"prepare" | "inhale" | "holdIn" | "exhale" | "holdOut">("prepare");
+  const [breathCycleCount, setBreathCycleCount] = useState(0);
+  const [breathProgress, setBreathProgress] = useState(0);
+  const [secondsRemaining, setSecondsRemaining] = useState(32);
+
+  useEffect(() => {
+    if (!isGrounding) {
+      stopSingingBowl();
+      return;
+    }
+    
+    startSingingBowl();
+
+    let breathTimer: number;
+    const startTime = Date.now();
+    
+    const runCycle = () => {
+      const now = Date.now();
+      const totalElapsed = now - startTime;
+      
+      // Dynamic countdown based on 32s (8s prepare + 24s for 2 full cycles)
+      const remaining = Math.max(0, Math.ceil((32000 - totalElapsed) / 1000));
+      setSecondsRemaining(remaining);
+
+      if (totalElapsed < 8000) {
+        setBreathPhase("prepare");
+        setBowlBreathRatio(0);
+        setBreathProgress(totalElapsed / 8000);
+        setBreathCycleCount(0);
+      } else {
+        const cycleElapsed = (totalElapsed - 8000) % 12000;
+        let phase: "inhale" | "holdIn" | "exhale" | "holdOut";
+        let ratio = 0;
+
+        if (cycleElapsed < 4000) {
+          phase = "inhale";
+          ratio = cycleElapsed / 4000;
+        } else if (cycleElapsed < 6000) {
+          phase = "holdIn";
+          ratio = 1.0;
+        } else if (cycleElapsed < 10000) {
+          phase = "exhale";
+          ratio = 1.0 - (cycleElapsed - 6000) / 4000;
+        } else {
+          phase = "holdOut";
+          ratio = 0.0;
+        }
+
+        setBreathPhase(phase);
+        setBowlBreathRatio(ratio);
+        
+        // Count fully completed cycles
+        const completedCycles = Math.floor((totalElapsed - 8000) / 12000);
+        setBreathCycleCount(completedCycles);
+      }
+      
+      breathTimer = window.setTimeout(runCycle, 50);
+    };
+
+    runCycle();
+
+    return () => {
+      clearTimeout(breathTimer);
+      stopSingingBowl();
+    };
+  }, [isGrounding]);
+
+  const lastQuestionTime = useRef<number>(Date.now());
+
+  // Update question timer on question load
+  useEffect(() => {
+    if (!isGrounding) {
+      lastQuestionTime.current = Date.now();
+    }
+  }, [currentQuestion, isGrounding]);
 
   // Randomize questions and options on mount
   const [randomizedQuestions, setRandomizedQuestions] = useState(() => {
@@ -66,6 +143,12 @@ export default function ArchetypeQuiz() {
     setIsTransitioning(true);
 
     const newAnswers = [...answers, optionIndex];
+
+    // Brooklyn Bridge Gate: Enforce minimum contemplation time of 1600ms per question
+    const timeSpent = Date.now() - lastQuestionTime.current;
+    const minDelay = 1600;
+    const remainingTime = Math.max(0, minDelay - timeSpent);
+    const transitionDelay = Math.max(400, remainingTime);
 
     // Delay to show selection confirmation
     setTimeout(() => {
@@ -140,7 +223,7 @@ export default function ArchetypeQuiz() {
           setIsTransitioning(false);
         }, 500);
       }
-    }, 400);
+    }, transitionDelay);
   };
 
   const handleRestart = () => {
@@ -159,6 +242,89 @@ export default function ArchetypeQuiz() {
     setShowMilestone(false);
     setShowResult(false);
   };
+
+  if (isGrounding) {
+    let ringSize = "scale-[0.85]";
+    let text = "Settle your posture. Find your seat. Prepare.";
+    let ringColor = "border-stone-700/50";
+    
+    if (breathPhase === "inhale") {
+      ringSize = "scale-[1.15]";
+      text = "Breathe in... Expand your chest.";
+      ringColor = "border-amber-500/60 shadow-[0_0_15px_rgba(245,158,11,0.2)]";
+    } else if (breathPhase === "holdIn") {
+      ringSize = "scale-[1.15]";
+      text = "Hold... Absorb the light.";
+      ringColor = "border-amber-400 shadow-[0_0_25px_rgba(245,158,11,0.4)]";
+    } else if (breathPhase === "exhale") {
+      ringSize = "scale-[0.85]";
+      text = "Breathe out... Release the weight.";
+      ringColor = "border-stone-600/60";
+    } else if (breathPhase === "holdOut") {
+      ringSize = "scale-[0.85]";
+      text = "Hold... Rest in stillness.";
+      ringColor = "border-stone-800/40";
+    }
+
+    const canBegin = breathCycleCount >= 2;
+
+    return (
+      <Layout>
+        <div className="min-h-screen py-24 bg-stone-950 flex items-center justify-center relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500 via-transparent to-transparent bg-[size:30px_30px] bg-repeat" />
+          
+          <div className="max-w-md w-full mx-auto px-6 text-center space-y-12 relative z-10">
+            <div className="space-y-4">
+              <span className="text-amber-500/80 uppercase tracking-[0.25em] text-xs font-mono">
+                Somatic Pre-Quiz Calibration
+              </span>
+              <h2 className="text-3xl font-serif text-stone-200">
+                Ground Your Attention
+              </h2>
+              <p className="text-sm text-stone-400 leading-relaxed max-w-sm mx-auto">
+                Before seeking your archetype, settle your nervous system. Align your breath with the visual pacer.
+              </p>
+            </div>
+
+            <div className="relative w-48 h-48 mx-auto flex items-center justify-center">
+              <div 
+                className={`absolute inset-0 rounded-full border-2 transition-all duration-[4000ms] ease-in-out transform ${ringSize} ${ringColor}`}
+              />
+              <div className="absolute inset-0 rounded-full border border-stone-800/30 scale-[1.15] pointer-events-none" />
+              <div className="w-4 h-4 rounded-full bg-amber-500/80 animate-pulse" />
+            </div>
+
+            <div className="h-12 flex items-center justify-center">
+              <SteamSans text={text} register="hba" fontSize={18} className="text-stone-300 font-light" />
+            </div>
+
+            <div className="space-y-4 pt-4">
+              <Button
+                disabled={!canBegin}
+                onClick={() => {
+                  playChime(528, "harmonic");
+                  setIsGrounding(false);
+                }}
+                className={`w-full py-6 rounded-xl font-mono text-sm tracking-widest uppercase transition-all duration-500 ${
+                  canBegin 
+                    ? "bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-[0_4px_20px_rgba(245,158,11,0.25)] cursor-pointer" 
+                    : "bg-stone-800 text-stone-500 opacity-60 cursor-not-allowed"
+                }`}
+              >
+                {canBegin ? "Begin from Stillness" : `Aligning Breath (${secondsRemaining}s)...`}
+              </Button>
+              
+              {!canBegin && (
+                <p className="text-xs text-stone-500 font-mono">
+                  Allow two full breathing cycles to settle and synchronize.
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
 
   if (result) {
     const archetypeName = getArchetypeName(result.archetype);

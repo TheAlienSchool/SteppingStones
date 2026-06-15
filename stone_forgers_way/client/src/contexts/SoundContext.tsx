@@ -22,6 +22,9 @@ interface SoundContextType {
   setLocation: (to: string, options?: any) => void;
   play1937Suture: () => void;
   playWhakapapaChord: (index: number) => void;
+  startSingingBowl: () => void;
+  stopSingingBowl: () => void;
+  setBowlBreathRatio: (ratio: number) => void;
 }
 
 const SoundContext = createContext<SoundContextType | undefined>(undefined);
@@ -54,6 +57,16 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   const lastScrollY = useRef<number>(0);
   const lastScrollTime = useRef<number>(0);
   const chimeTimeout = useRef<number | null>(null);
+
+  // Sympathetic Resonator refs
+  const sympatheticInputRef = useRef<GainNode | null>(null);
+  const sympatheticFiltersRef = useRef<BiquadFilterNode[]>([]);
+
+  // Singing Bowl refs
+  const singingBowlOscsRef = useRef<OscillatorNode[]>([]);
+  const singingBowlGainRef = useRef<GainNode | null>(null);
+  const singingBowlFilterRef = useRef<BiquadFilterNode | null>(null);
+  const singingBowlLfoRef = useRef<OscillatorNode | null>(null);
 
   // Initialize AudioContext, Master Gain, and algorithmic convolver reverb
   const initAudio = (): AudioContext => {
@@ -104,6 +117,30 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       reverbRef.current = { conv, gain: revGain };
     } catch (e) {
       console.warn("Algorithmic convolver reverb initialization failed:", e);
+    }
+
+    // Initialize Sympathetic Strings Resonator Bank
+    try {
+      const symInput = ctx.createGain();
+      symInput.gain.setValueAtTime(0.20, ctx.currentTime);
+      sympatheticInputRef.current = symInput;
+
+      const scaleFrequencies = [220.00, 261.63, 329.63, 392.00, 440.00]; // A3, C4, E4, G4, A4 (A-Minor Pentatonic)
+      sympatheticFiltersRef.current = scaleFrequencies.map((freq) => {
+        const filter = ctx.createBiquadFilter();
+        filter.type = "bandpass";
+        filter.frequency.setValueAtTime(freq, ctx.currentTime);
+        filter.Q.setValueAtTime(95.0, ctx.currentTime); // High Q for bell-like sustain
+        
+        symInput.connect(filter);
+        filter.connect(master);
+        if (reverbRef.current) {
+          filter.connect(reverbRef.current.conv);
+        }
+        return filter;
+      });
+    } catch (e) {
+      console.warn("Sympathetic strings initialization failed:", e);
     }
 
     return ctx;
@@ -200,6 +237,197 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
     } catch (e) {
       console.warn("Companion Sage voice synthesis failed:", e);
     }
+  };
+
+  // Trigger a fast impulse into the high-Q sympathetic strings bank to excite harmonic vibrations
+  const triggerSympatheticImpulse = (intensity: number) => {
+    if (!isSoundActive) return;
+    try {
+      const ctx = initAudio();
+      if (ctx.state === "suspended") {
+        ctx.resume();
+      }
+      if (!sympatheticInputRef.current) return;
+
+      const now = ctx.currentTime;
+      
+      // Generate a microscopic impulse noise burst (6ms)
+      const bufferSize = ctx.sampleRate * 0.006;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 3.0);
+      }
+      
+      const src = ctx.createBufferSource();
+      src.buffer = buffer;
+      
+      const gainNode = ctx.createGain();
+      gainNode.gain.setValueAtTime(intensity * 0.22, now);
+      gainNode.gain.exponentialRampToValueAtTime(0.0001, now + 0.006);
+      
+      src.connect(gainNode);
+      gainNode.connect(sympatheticInputRef.current);
+      src.start(now);
+      
+      setTimeout(() => {
+        try {
+          src.disconnect();
+          gainNode.disconnect();
+        } catch (e) {}
+      }, 50);
+    } catch (e) {
+      console.warn("Sympathetic impulse synthesis failed:", e);
+    }
+  };
+
+  // Synthesize a continuous metal singing bowl sound with low beating fundamentals and rich overtones
+  const startSingingBowl = () => {
+    if (!isSoundActive) return;
+    try {
+      const ctx = initAudio();
+      if (ctx.state === "suspended") {
+        ctx.resume();
+      }
+
+      // Stop existing if already running
+      stopSingingBowl();
+
+      const now = ctx.currentTime;
+
+      // Master gain for the bowl - starts completely silent and fades in slowly (allows the human to catch up)
+      const bowlGain = ctx.createGain();
+      bowlGain.gain.setValueAtTime(0.0, now);
+      bowlGain.gain.linearRampToValueAtTime(0.08, now + 2.5); // Warm, gentle 2.5s fade-in
+      bowlGain.connect(masterGainRef.current!);
+      if (reverbRef.current) {
+        bowlGain.connect(reverbRef.current.conv);
+      }
+      singingBowlGainRef.current = bowlGain;
+
+      // Core Lowpass Filter to shape the frequency spectrum
+      const bowlFilter = ctx.createBiquadFilter();
+      bowlFilter.type = "lowpass";
+      bowlFilter.frequency.setValueAtTime(350, now);
+      bowlFilter.Q.setValueAtTime(1.8, now);
+      bowlFilter.connect(bowlGain);
+      singingBowlFilterRef.current = bowlFilter;
+
+      // Fundamental beat pair (144Hz and 144.3Hz - Solfeggio 432Hz sub-octave)
+      const osc1 = ctx.createOscillator();
+      const osc2 = ctx.createOscillator();
+      osc1.type = "triangle";
+      osc2.type = "sine";
+      osc1.frequency.setValueAtTime(144.0, now);
+      osc2.frequency.setValueAtTime(144.3, now); // 0.3Hz beating rate
+
+      // Harmonic Overtones (3rd and 5th harmonics: 432Hz and 720Hz)
+      const osc3 = ctx.createOscillator();
+      const osc4 = ctx.createOscillator();
+      osc3.type = "sine";
+      osc4.type = "sine";
+      osc3.frequency.setValueAtTime(432.0, now);
+      osc4.frequency.setValueAtTime(720.0, now);
+
+      // Mix individual gains for balance
+      const g1 = ctx.createGain();
+      const g2 = ctx.createGain();
+      const g3 = ctx.createGain();
+      const g4 = ctx.createGain();
+
+      g1.gain.setValueAtTime(0.5, now);
+      g2.gain.setValueAtTime(0.4, now);
+      g3.gain.setValueAtTime(0.2, now);
+      g4.gain.setValueAtTime(0.12, now);
+
+      // Low-frequency amplitude modulator for swirling overtone motion (0.12Hz)
+      const bowlLfo = ctx.createOscillator();
+      const lfoGain = ctx.createGain();
+      bowlLfo.type = "sine";
+      bowlLfo.frequency.setValueAtTime(0.12, now);
+      lfoGain.gain.setValueAtTime(0.06, now);
+      bowlLfo.connect(lfoGain);
+      lfoGain.connect(g3.gain); // Swirl 432Hz
+      lfoGain.connect(g4.gain); // Swirl 720Hz
+
+      osc1.connect(g1);
+      osc2.connect(g2);
+      osc3.connect(g3);
+      osc4.connect(g4);
+
+      g1.connect(bowlFilter);
+      g2.connect(bowlFilter);
+      g3.connect(bowlFilter);
+      g4.connect(bowlFilter);
+
+      osc1.start(now);
+      osc2.start(now);
+      osc3.start(now);
+      osc4.start(now);
+      bowlLfo.start(now);
+
+      singingBowlOscsRef.current = [osc1, osc2, osc3, osc4];
+      singingBowlLfoRef.current = bowlLfo;
+    } catch (e) {
+      console.warn("Singing bowl start failed:", e);
+    }
+  };
+
+  const stopSingingBowl = () => {
+    try {
+      const gainNode = singingBowlGainRef.current;
+      const oscs = singingBowlOscsRef.current;
+      const lfo = singingBowlLfoRef.current;
+
+      if (!gainNode) return;
+
+      const ctx = audioCtxRef.current;
+      if (!ctx) return;
+
+      const now = ctx.currentTime;
+      // Gentle 2.2s fade-out to let the sound fade completely
+      gainNode.gain.cancelScheduledValues(now);
+      gainNode.gain.setValueAtTime(gainNode.gain.value, now);
+      gainNode.gain.exponentialRampToValueAtTime(0.0001, now + 2.2);
+
+      setTimeout(() => {
+        try {
+          oscs.forEach((osc) => {
+            try { osc.stop(); osc.disconnect(); } catch (e) {}
+          });
+          if (lfo) {
+            try { lfo.stop(); lfo.disconnect(); } catch (e) {}
+          }
+          gainNode.disconnect();
+        } catch (e) {}
+      }, 2400);
+
+      singingBowlGainRef.current = null;
+      singingBowlOscsRef.current = [];
+      singingBowlLfoRef.current = null;
+      singingBowlFilterRef.current = null;
+    } catch (e) {
+      console.warn("Singing bowl stop failed:", e);
+    }
+  };
+
+  // Modify singing bowl lowpass frequency & intensity relative to breath phase ratio (0.0 to 1.0)
+  const setBowlBreathRatio = (ratio: number) => {
+    if (!singingBowlFilterRef.current || !audioCtxRef.current) return;
+    try {
+      const now = audioCtxRef.current.currentTime;
+      // Inhale opens the filter to 980Hz (brightening), Exhale closes to 340Hz (warming)
+      const freq = 340 + ratio * 640;
+      singingBowlFilterRef.current.frequency.cancelScheduledValues(now);
+      singingBowlFilterRef.current.frequency.setTargetAtTime(freq, now, 0.18);
+
+      if (singingBowlGainRef.current) {
+        // Subtle volume increase during peak inhale to somaticise lung expansion
+        const targetGain = 0.08 + ratio * 0.024;
+        singingBowlGainRef.current.gain.cancelScheduledValues(now);
+        singingBowlGainRef.current.gain.setTargetAtTime(targetGain, now, 0.2);
+      }
+    } catch (e) {}
   };
 
   // Synthesize a warm, focus-inducing bronze chime using pure Pythagorean perfect fifths and Solfeggio 528Hz harmonics
@@ -895,7 +1123,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
     setBrowserLocation(to, options);
   };
 
-  // Global scroll velocity & scroll-tension monitor
+  // Global scroll velocity & scroll-tension monitor + keypress sympathetic strings hook
   useEffect(() => {
     if (!isSoundActive) return;
 
@@ -924,6 +1152,10 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
           // Throttle sand swish triggers to 120ms to prevent acoustic crowding while preserving responsiveness
           if (nowTime - lastSwishTime.current > 120) {
             playSandSwish(velocity);
+            
+            // Excite the sympathetic strings resonator bank on motion!
+            triggerSympatheticImpulse(Math.min(1.4, velocity * 0.45));
+
             lastSwishTime.current = nowTime;
           }
           
@@ -958,15 +1190,26 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       lastScrollTime.current = currentTime;
     };
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Avoid meta key combinations
+      if (e.ctrlKey || e.altKey || e.metaKey) return;
+      // Key strokes excite A-Minor Pentatonic sympathetic resonators
+      const intensity = e.key === "Enter" ? 1.6 : (e.key === " " ? 1.3 : 0.85);
+      triggerSympatheticImpulse(intensity);
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("keydown", handleKeyDown, { passive: true });
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
       if (chimeTimeout.current) clearTimeout(chimeTimeout.current);
     };
   }, [isSoundActive]);
 
   return (
-    <SoundContext.Provider value={{ isSoundActive, toggleSoundActive, playChime, isSteeping, triggerTransition, visibleLocation, setLocation, play1937Suture, playWhakapapaChord }}>
+    <SoundContext.Provider value={{ isSoundActive, toggleSoundActive, playChime, isSteeping, triggerTransition, visibleLocation, setLocation, play1937Suture, playWhakapapaChord, startSingingBowl, stopSingingBowl, setBowlBreathRatio }}>
       {children}
       
       {/* Global Somatic Pacing Overlay - rendered at app root to prevent remount clipping */}
