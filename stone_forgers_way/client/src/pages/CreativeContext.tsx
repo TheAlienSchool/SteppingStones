@@ -90,7 +90,7 @@ const reflections = [
 const cohortProgram = {
   overview: "7-week intensive for growth-stage founders carrying many stones",
   url: "/forgers-cohort",
-  nextCohort: "January 18, 2026",
+  nextCohort: "August 18, 2026",
   investment: "$2,200 USD",
   maxSize: 22,
   format: "Weekly 90-minute live sessions on video, guided practices, journaling prompts, between-session reflections",
@@ -581,7 +581,14 @@ const voiceGuidelines = {
       voices: "/voices - Dedicated page with comprehensive testimonial showcase"
     },
     approach: "Authentic practitioner feedback showcasing real transformation moments, grounded in archetype framework for consistency",
-    recentUpdate: "Attribution language shifted from 'A Stone Thrower recognizing the teaching' to 'A Stone Forger entering contemplation' to honor the transformative arc of the practice"
+    recentUpdate: "Attribution language shifted from 'A Stone Thrower recognizing the teaching' to 'A Stone Forger entering contemplation' to honor the transformative arc of the practice",
+    examples: [
+      "Trust is the cheat code because it bypasses the tyranny of the rational mind that demands proof before it will move... is an insane quote.",
+      "The backache is the somatic cost of throwing stones while keeping the shield up. The sympathetic nervous system in chronic activation...",
+      "This feels like a whole book spread across a website. The practices and prompts make it real—it's not just philosophy floating in space.",
+      "The color schemes and glossary tooltips are brilliant. The vocabulary you've created is gold—I've never had language for these experiences before.",
+      "I have already started putting down stones. Not throwing them at things, not carrying them—actually forging my path forward."
+    ]
   },
   conversionStrategy: {
     primary: "Archetype quiz (engagement + personalization)",
@@ -658,7 +665,7 @@ function buildContextObject() {
         { path: "/works", name: "Complete Works", description: "Comprehensive overview of The Stone Forger's Way ecosystem" },
         { path: "/social", name: "Social Content Arsenal", description: "35+ shareable cards optimized for social media" },
         { path: "/voices", name: "Voices from The Way", description: "Testimonials from practitioners with archetype-aligned attributions" },
-        { path: "/forgers-cohort", name: "The Stone Forger's Cohort", description: "7-week intensive for growth-stage founders carrying many stones. January 18, 2026" }
+        { path: "/forgers-cohort", name: "The Stone Forger's Cohort", description: "7-week intensive for growth-stage founders carrying many stones. August 18, 2026" }
       ],
       lineage: [
         { path: "/samuel-r-harris", name: "Samuel R. Harris", description: "Kamau's grandfather, chemist and minister" },

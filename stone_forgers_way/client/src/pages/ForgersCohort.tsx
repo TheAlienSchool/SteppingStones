@@ -95,7 +95,7 @@ export default function ForgersCohort() {
     <Layout>
       <SEO
         title="The Stone Forger's Way: 7-Week Cohort for Founders :: The Stone Forger's Way"
-        description="For growth-stage founders who seek guidance, embrace growth, and are ready to turn pressure into clarity—without abandoning their humanity. January 18 cohort."
+        description="For growth-stage founders who seek guidance, embrace growth, and are ready to turn pressure into clarity—without abandoning their humanity. August 18 cohort."
         type="website"
       />
 
@@ -110,7 +110,7 @@ export default function ForgersCohort() {
               <div className="flex justify-center mb-6">
                 <div className="inline-flex items-center gap-2 bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-medium">
                   <Calendar className="w-4 h-4" />
-                  Next Cohort: January 18, 2026
+                  Next Cohort: August 18, 2026
                 </div>
               </div>
 
@@ -683,7 +683,7 @@ export default function ForgersCohort() {
                       <strong>Investment:</strong> $2,200 USD
                     </p>
                     <p className="text-sm text-stone-700">
-                      <strong>Next Cohort:</strong> January 18, 2026
+                      <strong>Next Cohort:</strong> August 18, 2026
                     </p>
                     <p className="text-sm text-stone-700">
                       <strong>Spots Remaining:</strong> Limited to 22 founders
@@ -709,7 +709,7 @@ export default function ForgersCohort() {
                     </div>
                   ) : (
                     <a
-                      href="https://calendly.com/bethecandle/1-1-w-kza"
+                      href="https://calendly.com/bethecandle/an-overview"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block"
@@ -719,6 +719,9 @@ export default function ForgersCohort() {
                       </Button>
                     </a>
                   )}
+                  <p className="text-xs text-stone-500 text-center mt-4">
+                    For more information, contact <a href="mailto:connect@thealienschool.com" className="text-amber-700 hover:underline">connect@thealienschool.com</a>
+                  </p>
                 </div>
               </div>
 
