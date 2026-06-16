@@ -32,7 +32,15 @@ export default function MyArchetype() {
   const [result, setResult] = useState<ReturnType<typeof getLatestQuizResult>>(null);
   const [history, setHistory] = useState<ReturnType<typeof getQuizHistory>>([]);
   const [expandedHistory, setExpandedHistory] = useState<ExpandedQuizResult[]>([]);
-  const { playChime } = useSound();
+  const { playChime, tuningMode, setTuningMode, tensionEvents, clearTensionEvents } = useSound();
+  const [customPractice, setCustomPractice] = useState<string>(() => {
+    return localStorage.getItem("tsfw_custom_postcard_practice") || "";
+  });
+
+  const handleCustomPracticeChange = (text: string) => {
+    setCustomPractice(text);
+    localStorage.setItem("tsfw_custom_postcard_practice", text);
+  };
 
   useEffect(() => {
     const latestResult = getLatestQuizResult();
@@ -400,6 +408,125 @@ export default function MyArchetype() {
               </div>
             )}
 
+            {/* Dojo Sound Tuning Options */}
+            <div className="border-t border-stone-200 pt-8 no-print">
+              <h3 className="text-2xl font-serif text-stone-800 mb-4 text-center md:text-left">
+                <SteamSans text="Dojo Sound Tuning" register="harris" />
+              </h3>
+              <div className="bg-stone-50 border border-stone-200 rounded-lg p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { id: "528hz", name: "Transformation", freq: "528Hz", desc: "Heart rate variability alignment and deep emotional grounding." },
+                  { id: "432hz", name: "Cosmic Grounding", freq: "432Hz", desc: "Biological sub-octave alignment with natural cycles." },
+                  { id: "639hz", name: "Relational Integration", freq: "639Hz", desc: "Pythagorean connection scale supporting social resonance." }
+                ].map((mode) => (
+                  <button
+                    key={mode.id}
+                    onClick={() => {
+                      setTuningMode(mode.id as any);
+                      // Trigger a soft sound to preview the new frequency coordinate!
+                      const baseFreq = mode.id === "528hz" ? 528 : (mode.id === "432hz" ? 432 : 639);
+                      playChime(baseFreq, "harmonic");
+                    }}
+                    className={`flex flex-col text-left p-4 rounded-lg border transition-all duration-300 ${
+                      tuningMode === mode.id
+                        ? "bg-white border-amber-600 shadow-md ring-1 ring-amber-500/20"
+                        : "bg-white/60 border-stone-200 hover:border-stone-300 hover:bg-white"
+                    }`}
+                  >
+                    <span className="text-xs font-mono text-amber-700/80 font-bold uppercase tracking-wider">{mode.freq}</span>
+                    <span className="text-base font-serif text-stone-900 font-bold mt-1">{mode.name}</span>
+                    <p className="text-xs text-stone-600 mt-2 leading-relaxed">{mode.desc}</p>
+                    {tuningMode === mode.id && (
+                      <span className="text-[10px] font-sans font-bold uppercase text-amber-700 tracking-wider mt-auto pt-4 flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                        Active Tuning Mode
+                      </span>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Somatic Awareness Audit Log */}
+            <div className="border-t border-stone-200 pt-8 no-print">
+              <h3 className="text-2xl font-serif text-stone-800 mb-4 text-center md:text-left">
+                <SteamSans text="Somatic Awareness Audit" register="harris" />
+              </h3>
+              
+              <div className="bg-stone-50 border border-stone-200 rounded-lg p-6 space-y-6">
+                <div className="flex flex-wrap justify-between items-center gap-4">
+                  <div>
+                    <h4 className="text-sm font-semibold text-stone-700 uppercase tracking-wider">Kinetic Scanning Activity</h4>
+                    <p className="text-xs text-stone-500 mt-0.5">Logs of high scroll-velocity instances flagged by the system.</p>
+                  </div>
+                  {tensionEvents.length > 0 && (
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={clearTensionEvents}
+                      className="text-stone-600 hover:text-stone-800 border-stone-300"
+                    >
+                      Clear Audit Log
+                    </Button>
+                  )}
+                </div>
+
+                {tensionEvents.length === 0 ? (
+                  <div className="bg-white border border-stone-200/60 rounded p-8 text-center">
+                    <svg className="w-8 h-8 text-stone-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                    <p className="text-sm text-stone-700 font-serif">A Balanced Pace Maintained</p>
+                    <p className="text-xs text-stone-500 mt-1 max-w-sm mx-auto">No high-velocity scrolling events have been recorded. You are navigating with conscious awareness.</p>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {/* Somatic Advice Box */}
+                    <div className="bg-amber-50 border-l border-amber-600 p-4 rounded-r">
+                      <h5 className="text-xs font-serif font-bold uppercase tracking-wider text-amber-800 mb-1">Dojo Practitioner Audit Note</h5>
+                      <p className="text-xs text-amber-950 leading-relaxed">
+                        We noticed {tensionEvents.length} instance{tensionEvents.length > 1 ? "s" : ""} where kinetic scanning velocity crossed stress-activation thresholds. Rapid page scanning is often a physical response to mental hurry. Settle your seat, take a slow breath, and choose presence in your current room of action.
+                      </p>
+                    </div>
+
+                    {/* Scroll log table */}
+                    <div className="max-h-60 overflow-y-auto border border-stone-200 rounded bg-white">
+                      <table className="w-full text-left border-collapse text-xs">
+                        <thead>
+                          <tr className="bg-stone-50 border-b border-stone-200 font-mono text-stone-500">
+                            <th className="p-3 font-semibold">Timestamp</th>
+                            <th className="p-3 font-semibold">Location</th>
+                            <th className="p-3 font-semibold">Somatic State</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {tensionEvents.map((evt) => (
+                            <tr key={evt.timestamp} className="border-b border-stone-100 hover:bg-stone-50/50">
+                              <td className="p-3 text-stone-600 font-mono">
+                                {new Date(evt.timestamp).toLocaleString(undefined, {
+                                  hour: '2-digit',
+                                  minute: '2-digit',
+                                  second: '2-digit'
+                                })}
+                              </td>
+                              <td className="p-3 text-stone-800 font-medium font-mono">
+                                {evt.location === "/" ? "Home" : evt.location.split("/").map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(" > ")}
+                              </td>
+                              <td className="p-3">
+                                <span className="inline-flex items-center gap-1 text-[10px] font-sans font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200/50 px-2 py-0.5 rounded-full">
+                                  Resolved into Stillness
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
             <div className="border-t border-stone-200 pt-8 no-print">
               <h3 className="text-2xl font-serif text-stone-800 mb-4 text-center">
                 <SteamSans text="Share Your Archetype" register="harris" className="w-full text-center" />
@@ -410,23 +537,46 @@ export default function MyArchetype() {
             </div>
 
             {/* Print Deskside Postcard Generator (The Somatic Workspace Anchor) */}
-            <div className="border-t border-stone-200 pt-8 text-center no-print">
-              <h3 className="text-2xl font-serif text-stone-800 mb-2">
-                <SteamSans text="Somatic Workspace Anchor" register="harris" />
-              </h3>
-              <p className="text-sm text-stone-600 max-w-md mx-auto mb-6">
-                Print your archetype’s custom 4x6 deskside card. Place it on your physical desk as a quiet reminder to check your breath and choose presence in moments of daily friction.
-              </p>
-              <Button 
-                onClick={handlePrint} 
-                className="bg-stone-900 hover:bg-stone-800 text-stone-100 flex items-center gap-2 mx-auto"
-                size="lg"
-              >
-                <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-                </svg>
-                Print Deskside Postcard (4x6)
-              </Button>
+            <div className="border-t border-stone-200 pt-8 no-print">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-serif text-stone-800 mb-2">
+                  <SteamSans text="Somatic Workspace Anchor" register="harris" />
+                </h3>
+                <p className="text-sm text-stone-600 max-w-md mx-auto">
+                  Print your archetype’s custom 4x6 deskside card. Place it on your physical desk as a quiet reminder to check your breath and choose presence in moments of daily friction.
+                </p>
+              </div>
+
+              {/* Custom Affirmation Input */}
+              <div className="max-w-md mx-auto mb-6 bg-stone-50 border border-stone-200 rounded-lg p-4 space-y-3 text-left">
+                <label htmlFor="custom-practice-input" className="block text-xs font-serif text-stone-700 font-bold uppercase tracking-wider">
+                  Customize Postcard Practice Text (Optional)
+                </label>
+                <textarea
+                  id="custom-practice-input"
+                  rows={2}
+                  className="w-full text-xs font-sans border border-stone-300 rounded p-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 bg-white text-stone-850"
+                  placeholder={`Default: ${practices[0] || "Pause, check breath..."}`}
+                  value={customPractice}
+                  onChange={(e) => handleCustomPracticeChange(e.target.value)}
+                />
+                <p className="text-[10px] text-stone-500 italic leading-snug">
+                  This text will replace the default practice on the printed 4x6 card. Leave it empty to print the default archetype practice.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <Button 
+                  onClick={handlePrint} 
+                  className="bg-stone-900 hover:bg-stone-800 text-stone-100 flex items-center gap-2 mx-auto"
+                  size="lg"
+                >
+                  <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                  </svg>
+                  Print Deskside Postcard (4x6)
+                </Button>
+              </div>
             </div>
 
             <div className="text-center pt-8 no-print">
@@ -509,7 +659,7 @@ export default function MyArchetype() {
                   Active Presence Practice:
                 </h4>
                 <p className="text-[9.5px] text-stone-600 leading-snug">
-                  {practices[0] || "Feel the stones: Pause, check your breath, and decide if this obligation is yours to carry."}
+                  {customPractice || practices[0] || "Feel the stones: Pause, check your breath, and decide if this obligation is yours to carry."}
                 </p>
               </div>
             </div>

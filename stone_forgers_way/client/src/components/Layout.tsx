@@ -107,7 +107,7 @@ function Breadcrumbs() {
 export default function Layout({ children, showNav = true }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navGroups = useNavigation();
-  const { isSoundActive, toggleSoundActive } = useSound();
+  const { isSoundActive, toggleSoundActive, tuningMode, setTuningMode } = useSound();
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -141,13 +141,27 @@ export default function Layout({ children, showNav = true }: LayoutProps) {
                   ))}
                   
                   {/* Soundscape Control */}
-                  <button
-                    onClick={toggleSoundActive}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-serif border border-amber-600/30 bg-amber-500/5 hover:bg-amber-500/10 text-amber-800 transition-colors cursor-pointer"
-                    aria-label={isSoundActive ? "Deactivate soundscape" : "Activate soundscape"}
-                  >
-                    {isSoundActive ? "Mute Soundscape 🔇" : "Activate The Stone Forger's Soundscape 🔊"}
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={toggleSoundActive}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-serif border border-amber-600/30 bg-amber-500/5 hover:bg-amber-500/10 text-amber-800 transition-colors cursor-pointer"
+                      aria-label={isSoundActive ? "Deactivate soundscape" : "Activate soundscape"}
+                    >
+                      {isSoundActive ? "Mute 🔇" : "Soundscape 🔊"}
+                    </button>
+                    {isSoundActive && (
+                      <select
+                        value={tuningMode}
+                        onChange={(e) => setTuningMode(e.target.value as any)}
+                        className="text-xs font-serif border border-amber-600/30 bg-amber-50/90 rounded-full px-2.5 py-1 text-amber-950 focus:outline-none focus:ring-1 focus:ring-amber-500/30 cursor-pointer"
+                        title="Dojo Sound Tuning Mode"
+                      >
+                        <option value="528hz">528Hz Transformation</option>
+                        <option value="432hz">432Hz Cosmic</option>
+                        <option value="639hz">639Hz Relational</option>
+                      </select>
+                    )}
+                  </div>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -222,14 +236,29 @@ export default function Layout({ children, showNav = true }: LayoutProps) {
                 </div>
 
                 {/* Mobile Soundscape Control */}
-                <div className="p-4 mt-auto border-t border-amber-200/50">
+                <div className="p-4 mt-auto border-t border-amber-200/50 space-y-3">
                   <button
                     onClick={toggleSoundActive}
-                    className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-serif text-sm border border-amber-600/30 bg-amber-500/5 text-amber-800 transition-colors cursor-pointer mb-4"
+                    className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-serif text-sm border border-amber-600/30 bg-amber-500/5 text-amber-800 transition-colors cursor-pointer"
                   >
                     {isSoundActive ? "Mute Soundscape 🔇" : "Activate Soundscape 🔊"}
                   </button>
-                  <p className="text-xs text-stone-500 text-center">
+                  {isSoundActive && (
+                    <div className="flex flex-col gap-1.5">
+                      <label htmlFor="mobile-tuning-mode" className="text-xs font-serif text-stone-500 pl-1">Dojo Sound Tuning</label>
+                      <select
+                        id="mobile-tuning-mode"
+                        value={tuningMode}
+                        onChange={(e) => setTuningMode(e.target.value as any)}
+                        className="w-full text-sm font-serif border border-amber-600/30 bg-white rounded-lg px-3 py-2 text-stone-800 focus:outline-none focus:ring-1 focus:ring-amber-500/30 cursor-pointer"
+                      >
+                        <option value="528hz">528Hz Transformation</option>
+                        <option value="432hz">432Hz Cosmic Grounding</option>
+                        <option value="639hz">639Hz Relational Integration</option>
+                      </select>
+                    </div>
+                  )}
+                  <p className="text-xs text-stone-500 text-center pt-2">
                     "It's better to light a candle than to curse the darkness."
                   </p>
                 </div>

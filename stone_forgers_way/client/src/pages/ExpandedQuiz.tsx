@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation, Link } from "wouter";
 import {
   expandedQuizQuestions,
@@ -129,13 +129,6 @@ export default function ExpandedQuiz() {
     };
   }, [isGrounding]);
 
-  // Update question timer on question load
-  useEffect(() => {
-    if (!isGrounding) {
-      lastQuestionTime.current = Date.now();
-    }
-  }, [currentQuestion, isGrounding]);
-
   // Randomize questions and options on mount
   const [randomizedQuestions, setRandomizedQuestions] = useState(() => {
     return shuffleArray(expandedQuizQuestions).map(q => ({
@@ -145,6 +138,13 @@ export default function ExpandedQuiz() {
   });
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
+
+  // Update question timer on question load
+  useEffect(() => {
+    if (!isGrounding) {
+      lastQuestionTime.current = Date.now();
+    }
+  }, [currentQuestion, isGrounding]);
   const [answers, setAnswers] = useState<number[]>([]);
   const [result, setResult] = useState<ExpandedQuizResult | null>(null);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);

@@ -102,15 +102,6 @@ export default function ArchetypeQuiz() {
     };
   }, [isGrounding]);
 
-  const lastQuestionTime = useRef<number>(Date.now());
-
-  // Update question timer on question load
-  useEffect(() => {
-    if (!isGrounding) {
-      lastQuestionTime.current = Date.now();
-    }
-  }, [currentQuestion, isGrounding]);
-
   // Randomize questions and options on mount
   const [randomizedQuestions, setRandomizedQuestions] = useState(() => {
     return shuffleArray(quizQuestions).map(q => ({
@@ -120,6 +111,15 @@ export default function ArchetypeQuiz() {
   });
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
+
+  const lastQuestionTime = useRef<number>(Date.now());
+
+  // Update question timer on question load
+  useEffect(() => {
+    if (!isGrounding) {
+      lastQuestionTime.current = Date.now();
+    }
+  }, [currentQuestion, isGrounding]);
   const [answers, setAnswers] = useState<number[]>([]);
   const [result, setResult] = useState<QuizResult | null>(null);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);

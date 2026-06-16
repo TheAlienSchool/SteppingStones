@@ -12,6 +12,13 @@ const SOMATIC_PROMPTS = [
   "Receive the spark. Hold the heat. Forge.",
 ];
 
+export type TuningMode = "528hz" | "432hz" | "639hz";
+
+export interface TensionEvent {
+  timestamp: number;
+  location: string;
+}
+
 interface SoundContextType {
   isSoundActive: boolean;
   toggleSoundActive: () => void;
@@ -25,6 +32,10 @@ interface SoundContextType {
   startSingingBowl: () => void;
   stopSingingBowl: () => void;
   setBowlBreathRatio: (ratio: number) => void;
+  tuningMode: TuningMode;
+  setTuningMode: (mode: TuningMode) => void;
+  tensionEvents: TensionEvent[];
+  clearTensionEvents: () => void;
 }
 
 const SoundContext = createContext<SoundContextType | undefined>(undefined);
@@ -37,10 +48,55 @@ export function useSound() {
   return context;
 }
 
+export const getTuningFreqs = (mode: TuningMode) => {
+  if (mode === "432hz") {
+    return {
+      base: 432,
+      ground: 216,
+      subGround: 108,
+      tension: 324,
+      chord: [216, 270, 324, 432],
+      sympathetic: [216.00, 259.20, 324.00, 388.80, 432.00]
+    };
+  } else if (mode === "639hz") {
+    return {
+      base: 639,
+      ground: 319.5,
+      subGround: 159.75,
+      tension: 479.25,
+      chord: [319.5, 399.375, 479.25, 639],
+      sympathetic: [319.50, 383.40, 479.25, 575.10, 639.00]
+    };
+  } else { // Default 528hz
+    return {
+      base: 528,
+      ground: 264,
+      subGround: 132,
+      tension: 396,
+      chord: [264, 330, 396, 528],
+      sympathetic: [220.00, 264.00, 330.00, 396.00, 440.00]
+    };
+  }
+};
+
 export function SoundProvider({ children }: { children: React.ReactNode }) {
   const [isSoundActive, setIsSoundActive] = useState<boolean>(() => {
     const saved = localStorage.getItem("tsfw_sound_active");
     return saved === "true";
+  });
+
+  const [tuningMode, setTuningModeState] = useState<TuningMode>(() => {
+    const saved = localStorage.getItem("tsfw_tuning_mode");
+    return (saved as TuningMode) || "528hz";
+  });
+
+  const [tensionEvents, setTensionEvents] = useState<TensionEvent[]>(() => {
+    try {
+      const saved = localStorage.getItem("tsfw_tension_events");
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      return [];
+    }
   });
 
   const [isSteeping, setIsSteeping] = useState<boolean>(false);
@@ -67,6 +123,40 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   const singingBowlGainRef = useRef<GainNode | null>(null);
   const singingBowlFilterRef = useRef<BiquadFilterNode | null>(null);
   const singingBowlLfoRef = useRef<OscillatorNode | null>(null);
+
+  const setTuningMode = (mode: TuningMode) => {
+    setTuningModeState(mode);
+    localStorage.setItem("tsfw_tuning_mode", mode);
+    
+    // Dynamically update sympathetic resonator filter bank if initialized
+    if (audioCtxRef.current && sympatheticFiltersRef.current.length > 0) {
+      const ctx = audioCtxRef.current;
+      const now = ctx.currentTime;
+      const freqs = getTuningFreqs(mode).sympathetic;
+      sympatheticFiltersRef.current.forEach((filter, idx) => {
+        if (freqs[idx]) {
+          filter.frequency.setValueAtTime(freqs[idx], now);
+        }
+      });
+    }
+  };
+
+  const logTensionEvent = (locationPath: string) => {
+    const newEvent: TensionEvent = {
+      timestamp: Date.now(),
+      location: locationPath
+    };
+    setTensionEvents((prev) => {
+      const updated = [newEvent, ...prev].slice(0, 100);
+      localStorage.setItem("tsfw_tension_events", JSON.stringify(updated));
+      return updated;
+    });
+  };
+
+  const clearTensionEvents = () => {
+    setTensionEvents([]);
+    localStorage.removeItem("tsfw_tension_events");
+  };
 
   // Initialize AudioContext, Master Gain, and algorithmic convolver reverb
   const initAudio = (): AudioContext => {
@@ -125,7 +215,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       symInput.gain.setValueAtTime(0.20, ctx.currentTime);
       sympatheticInputRef.current = symInput;
 
-      const scaleFrequencies = [220.00, 261.63, 329.63, 392.00, 440.00]; // A3, C4, E4, G4, A4 (A-Minor Pentatonic)
+      const scaleFrequencies = getTuningFreqs(tuningMode).sympathetic;
       sympatheticFiltersRef.current = scaleFrequencies.map((freq) => {
         const filter = ctx.createBiquadFilter();
         filter.type = "bandpass";
@@ -430,8 +520,8 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
     } catch (e) {}
   };
 
-  // Synthesize a warm, focus-inducing bronze chime using pure Pythagorean perfect fifths and Solfeggio 528Hz harmonics
-  const playChime = (frequency: number = 528, mode: "harmonic" | "dissonant" = "harmonic") => {
+  // Synthesize a warm, focus-inducing bronze chime using pure Pythagorean perfect fifths and Solfeggio harmonics
+  const playChime = (freqInput?: number, mode: "harmonic" | "dissonant" = "harmonic") => {
     if (!isSoundActive) return;
 
     try {
@@ -441,6 +531,8 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       }
 
       const now = ctx.currentTime;
+      const freqsObj = getTuningFreqs(tuningMode);
+      const frequency = freqInput !== undefined ? freqInput : freqsObj.base;
 
       if (mode === "dissonant") {
         // Dissonant active tension/anticipation chime (warning friction scale)
@@ -605,7 +697,8 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
         ctx.resume();
       }
       const now = ctx.currentTime;
-      const freqs = [264, 396, 528, 792];
+      const freqsObj = getTuningFreqs(tuningMode);
+      const freqs = [freqsObj.ground, freqsObj.tension, freqsObj.base, freqsObj.base * 1.5];
       const freq = freqs[index % freqs.length];
       
       const osc = ctx.createOscillator();
@@ -765,10 +858,10 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       }
 
       // DUAL BIPASS FILTER PATHWAYS:
-      // Filter 1 (Somatic Grounding): A warm, static bandpass around Solfeggio 528Hz
+      // Filter 1 (Somatic Grounding): A warm, static bandpass around Solfeggio base
       const filter1 = ctx.createBiquadFilter();
       filter1.type = "bandpass";
-      filter1.frequency.setValueAtTime(528, now);
+      filter1.frequency.setValueAtTime(getTuningFreqs(tuningMode).base, now);
       filter1.Q.setValueAtTime(2.5, now);
 
       // Filter 2 (Granular Grit): A crisp, high bandpass that slides up with scroll speed
@@ -865,18 +958,18 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       const dur = 1.5 + tension * 2.5; // Up to 4.0 seconds base duration
       const chordVel = 0.35 + tension * 0.15; // Slightly louder for larger resolutions
 
-      // Chord Freqs: 264Hz (grounding root), 330Hz (major third), 396Hz (perfect fifth), 528Hz (somatic heart resonance)
-      // Staggered arpeggiation (strum) to mimic a harp or physical string pluck
+      const freqsObj = getTuningFreqs(tuningMode);
+      // Chord Freqs: Ground, major third, fifth, and root octave
       const notes = [
-        { f: 264, r: 1.0,  del: 0.00, v: 0.50 }, // Grounding Root
-        { f: 330, r: 1.25, del: 0.04, v: 0.38 }, // Just Major Third
-        { f: 396, r: 1.5,  del: 0.08, v: 0.32 }, // Pure Perfect Fifth
-        { f: 528, r: 2.0,  del: 0.12, v: 0.25 }, // Somatic Heart Octave
+        { f: freqsObj.ground, r: 1.0,  del: 0.00, v: 0.50 }, // Grounding Root
+        { f: freqsObj.chord[1], r: 1.25, del: 0.04, v: 0.38 }, // Just Major Third
+        { f: freqsObj.tension, r: 1.5,  del: 0.08, v: 0.32 }, // Pure Perfect Fifth
+        { f: freqsObj.base, r: 2.0,  del: 0.12, v: 0.25 }, // Somatic Heart Octave
       ];
 
       // If they scrolled REALLY fast, add an ecstatic high fifth for ultimate resolution!
       if (tension > 0.75) {
-        notes.push({ f: 792, r: 3.0, del: 0.16, v: 0.14 }); // Shimmering high crown fifth
+        notes.push({ f: freqsObj.base * 1.5, r: 3.0, del: 0.16, v: 0.14 }); // Shimmering high crown fifth
       }
 
       notes.forEach((note) => {
@@ -937,21 +1030,22 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
 
       const now = ctx.currentTime;
       const dur = 2.2; // Silky decay spillover
+      const freqsObj = getTuningFreqs(tuningMode);
 
       // ───────────────────────────────────────────────────────────────────────
-      // 1. POINT 01: THE STRIKE (High Register Peking Chime - 1056Hz)
+      // 1. POINT 01: THE STRIKE (High Register Peking Chime - 2x Base Freq)
       // ───────────────────────────────────────────────────────────────────────
       const sOsc = ctx.createOscillator();
       const sFilter = ctx.createBiquadFilter();
       const sGain = ctx.createGain();
 
       sOsc.type = "sine";
-      sOsc.frequency.setValueAtTime(1056, now);
-      sOsc.frequency.exponentialRampToValueAtTime(528, now + 1.2); // Glide down to root
+      sOsc.frequency.setValueAtTime(freqsObj.base * 2, now);
+      sOsc.frequency.exponentialRampToValueAtTime(freqsObj.base, now + 1.2); // Glide down to root
 
       sFilter.type = "lowpass";
-      sFilter.frequency.setValueAtTime(3000, now);
-      sFilter.frequency.exponentialRampToValueAtTime(1056, now + 0.8);
+      sFilter.frequency.setValueAtTime(freqsObj.base * 6, now);
+      sFilter.frequency.exponentialRampToValueAtTime(freqsObj.base * 2, now + 0.8);
       sFilter.Q.setValueAtTime(1.5, now);
 
       sGain.gain.setValueAtTime(0.001, now);
@@ -985,14 +1079,14 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       }
 
       d1.type = "sine";
-      d1.frequency.setValueAtTime(52.8, now + 0.2); // Low sub-octave of root
-      d1.frequency.exponentialRampToValueAtTime(105.6, now + dur); // Upward sub-bass swell
+      d1.frequency.setValueAtTime(freqsObj.base / 10, now + 0.2); // Low sub-octave of root
+      d1.frequency.exponentialRampToValueAtTime(freqsObj.base / 5, now + dur); // Upward sub-bass swell
 
       d2.type = "triangle"; // Warm throat overtone
-      d2.frequency.setValueAtTime(132, now + 0.2);
+      d2.frequency.setValueAtTime(freqsObj.subGround, now + 0.2);
 
       droneFilter.type = "lowpass";
-      droneFilter.frequency.setValueAtTime(220, now);
+      droneFilter.frequency.setValueAtTime(freqsObj.subGround * 1.6, now);
       droneFilter.Q.setValueAtTime(1.0, now);
 
       // Point 03: Theta wave LFO (4.5Hz) for autonomic spin modulation
@@ -1071,7 +1165,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
           ctx.resume();
         }
         // Play instant beautiful, multi-layered chime to verify the audio field is fully active
-        playChime(528, "harmonic");
+        playChime(undefined, "harmonic");
       } catch (e) {
         console.warn("Could not synchronously initialize AudioContext on click event:", e);
       }
@@ -1164,11 +1258,12 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
         }
 
         // If tension crosses high threshold (> 0.7) and scrolling continues rapidly,
-        // trigger a soft warning chime (396Hz) to prompt autonomic slowing down
+        // trigger a soft warning chime (tension frequency) to prompt autonomic slowing down
         if (scrollTensionRef.current > 0.7 && velocity > 1.8) {
           const nowTime = Date.now();
           if (nowTime - lastTensionChimeTime.current > 1500) { // 1.5 seconds cooldown
-            playChime(396, "dissonant");
+            playChime(getTuningFreqs(tuningMode).tension, "dissonant");
+            logTensionEvent(window.location.pathname);
             lastTensionChimeTime.current = nowTime;
           }
         }
@@ -1209,7 +1304,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   }, [isSoundActive]);
 
   return (
-    <SoundContext.Provider value={{ isSoundActive, toggleSoundActive, playChime, isSteeping, triggerTransition, visibleLocation, setLocation, play1937Suture, playWhakapapaChord, startSingingBowl, stopSingingBowl, setBowlBreathRatio }}>
+    <SoundContext.Provider value={{ isSoundActive, toggleSoundActive, playChime, isSteeping, triggerTransition, visibleLocation, setLocation, play1937Suture, playWhakapapaChord, startSingingBowl, stopSingingBowl, setBowlBreathRatio, tuningMode, setTuningMode, tensionEvents, clearTensionEvents }}>
       {children}
       
       {/* Global Somatic Pacing Overlay - rendered at app root to prevent remount clipping */}
