@@ -303,6 +303,18 @@ const designSystem = {
       font: "Georgia serif",
       usage: "'The Stone Forger's Way' logo text",
       reasoning: "Original branding typeface; maintained for logo consistency and lineage integrity"
+    },
+    steamSans: {
+      name: "STEAM SANS",
+      sansFont: "'DM Sans', sans-serif",
+      monoFont: "'DM Mono', monospace",
+      philosophy: "Modern geometric interfaces optimized for technical and layout readability, featuring special somatic pacing registers",
+      features: [
+        "Harris wide tracking for expanded breathing room between letters",
+        "HBA respiratory characters formatting for conscious phrasing",
+        "Vapor canvas particle system underlays with mobile performance fallbacks",
+        "Text-wrap: pretty configurations for clean word-wrapping and orphan prevention"
+      ]
     }
   },
   colors: {
@@ -343,6 +355,15 @@ const designSystem = {
       text: "stone-700 (body), stone-800 (headings)",
       accent: "amber-600, amber-700 (links, highlights)",
       muted: "stone-400, stone-500 (secondary text)"
+    },
+    sandsOfTheSignal: {
+      name: "Sands of the Signal Palette",
+      variables: {
+        "--soft-gold": "#d4af37",
+        "--digital-cyan": "#00f0ff",
+        "--bg-noise": "SVG-based noise texture for organic tactile overlay"
+      },
+      philosophy: "High-contrast, grounding metallic accents balanced with high-frequency digital cyan cues to stimulate somatic focus during archetype portal navigations"
     }
   },
   socialCardSystem: {
@@ -459,6 +480,32 @@ const designSystem = {
       story: "9:16 aspect ratio - Instagram/Facebook stories (future)"
     },
     branding: "Watermarked with 'The Stone Forger's Way' - changed from TheStoneForger.com to match brand evolution"
+  },
+  compositionalAcoustics: {
+    overview: "Web Audio-driven psychoacoustic landscape designed using Daniel J. Levitin's principles of tension, anticipation, and emotional timbre to align user attention and pacing.",
+    presets: {
+      "528hz": { name: "Transformation (Solfeggio preset)", description: "Clear Solfeggio frequency to prompt cognitive reset and openness" },
+      "432hz": { name: "Cosmic Grounding (Solfeggio preset)", description: "Deeply resonant natural tuning to ground high-tension states" },
+      "639hz": { name: "Relational Integration (Solfeggio preset)", description: "Fosters connection and heart-centered spatial awareness" }
+    },
+    mechanics: [
+      "Pythagorean pure fifth tuning ratios for synthetic chimes",
+      "Somatic transition drones that sweep formants during page changes",
+      "Granular sand swish sounds triggered by scrolling velocity",
+      "Dynamic scroll-tension accumulators tracking velocity with audio alerts",
+      "Deep major chord resolutions on scroll pausing to induce physical relief",
+      "3D spatial pan offsets and frequency sweep filtering to avoid auditory fatigue"
+    ]
+  },
+  practitionerCustomizations: {
+    customPrintPostcards: {
+      description: "Deskside printed cards containing archetype profiles, customized affirmation notes, and margins conforming to 4x6 print specifications",
+      customization: "Affirmations bound dynamically to printed card iframe for physical deskside installation"
+    },
+    somaticAuditLogging: {
+      description: "Localized tracking of scroll tension, practice engagement, and threshold crossings stored in localStorage to foster self-reflective audit trails",
+      mechanics: "Scroll-tension audit alerts log events when scroll acceleration breaches optimal levels, encouraging slow, mindful consumption"
+    }
   }
 };
 
@@ -581,14 +628,15 @@ function buildContextObject() {
       author: "Kamau Zuberi Akabueze",
       url: "https://thestoneforgers.way", // Update with actual URL
       generatedAt: new Date().toISOString(),
-      version: "2.3.2",
+      version: "2.4.0",
       updates: {
         "2.0": "Added Cloud Dancer color integration, Social Cards system (35+ cards), Voices from The Way testimonials, /voices page, updated homepage with testimonial section",
         "2.1": "Added Stone Forger's Cohort program (/forgers-cohort), Stone Philosophy (three states), Infographic specifications (6 visual guides), Cohort testimonials, Full funnel architecture with Archetype Quiz gate",
         "2.2": "COLLECTIVE VOICE TRANSFORMATION - Shifted from prescriptive 'you/your' to inclusive 'we/our' and universal 'one/one's' throughout site. Kamau positioned as fellow-practitioner, not expert above. The Container holds everyone. Invitation to recognition, not diagnosis. Applied to /forgers-cohort as proof of concept.",
         "2.3": "EXPANSION KIT V1.2 - Two-layer archetype system: 4 core archetypes branching into 6 expanded archetypes (Jade Hunter, Walker of The Way, Stone Keeper, Stone Breaker, Stone Caller, Stone Witness). Added Layer 2 quiz (8 questions, randomized), dynamic archetype portals (/archetype/:id), 28 practices with archetype tagging, glossary term archetype filtering, bidirectional educational linking, /archetypes discovery hub transformation with branch visualization. Complete ecosystem integration across /archetypes, /practices, /glossary. HOME PAGE EDU-ENGAGEMENT ENHANCEMENTS: Added 4th 'Archetype Discovery' card to Go Deeper section, post-testimonial two-layer quiz invitation, updated priming language (Step 02), hero CTA micro-copy, practice card deep-linking to filtered views.",
         "2.3.1": "CRITICAL MOBILE BUG FIX - Resolved blank screen issue on Layer 2 quiz results (ExpandedQuiz.tsx). Root cause: Missing CSS animation keyframes for fadeInUp animation combined with opacity-0 initial states caused content to remain invisible on mobile devices. Solution: Injected animation styles via dangerouslySetInnerHTML, removed opacity-0 fallback classes. Mobile rendering verified across all breakpoints (md:, sm:, lg:). Build clean, no TypeScript errors.",
-        "2.3.2": "CREATIVE CONTEXT DOCUMENTATION UPDATE - Fixed Walker of The Way image path (the_invitation_v4.png). Added missing 11th reflection (Welcome to Multifaceted Meditation). Completed comprehensive link audit: added 6 missing routes to pages documentation (/my-archetype, /todays-practice, /works, /thank-you, /privacy-policy, /disclaimer). All internal links verified functional, all reflection slugs match routes, complete ecosystem documentation current."
+        "2.3.2": "CREATIVE CONTEXT DOCUMENTATION UPDATE - Fixed Walker of The Way image path (the_invitation_v4.png). Added missing 11th reflection (Welcome to Multifaceted Meditation). Completed comprehensive link audit: added 6 missing routes to pages documentation (/my-archetype, /todays-practice, /works, /thank-you, /privacy-policy, /disclaimer). All internal links verified functional, all reflection slugs match routes, complete ecosystem documentation current.",
+        "2.4.0": "SOMATIC & PSYCHOACOUSTIC INTEGRATION - Added 'Sands of the Signal' styling features (DM Sans/DM Mono, --soft-gold/--digital-cyan, SVG noise texture overlay, and StoneMap data-streams) and 'STEAM SANS' typographic registers (Harris wide tracking, HBA respiratory characters, canvas particles, text-wrap orphan prevention). Integrated dynamic Pythagorean sound tuning scale presets (528Hz Transformation, 432Hz Cosmic Grounding, 639Hz Relational Integration), sympathetic string updates, dynamic scroll-tension velocity accumulator audio alerts, deep major chord resolutions on scroll pausing, and localized Somatic Awareness Audit logging. Implemented custom deskside print postcard affirmation notes and printed card iframe bindings."
       }
     },
     pages: {
