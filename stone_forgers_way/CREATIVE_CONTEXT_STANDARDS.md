@@ -55,7 +55,34 @@ Keep your voice guidelines highly structured to keep your AI aligned. Standardiz
 
 ---
 
-## 5. Implementation Command for AI Assistants
+## 5. Guide: How to Initialize a Context Room (If `/creative-context` Does Not Exist)
+
+If you are entering an empty repository that does not yet possess a dynamic `/creative-context` room, execute these incremental scaffolding steps to bring your agentic workspace upright:
+
+### Step 01: Discover and Read
+Command your AI agent to scan the directory topology, configurations, and scripts:
+```text
+PROMPT: "We are initializing our interactive Creative Context. List all top-level folders, sitemap pages, routing files (such as App.tsx or routes.ts), design assets, and primary readmes in the workspace."
+```
+
+### Step 02: Gather the Foundational Material
+Ask the agent to extract the implicit core philosophies, vocabulary, and tones from your existing READMEs, core narratives, and mission files. Have it draft an initial database of parameters:
+* **The Physics/Philosophy**: What are your project's main concepts?
+* **The Glossary**: What coordinates of language are unique to this environment?
+* **The Voice**: Are there specific tone registers, separators, or stylistic guidelines?
+
+### Step 03: Scaffold the Data Layer
+Initialize the local static data file. In your code repository (e.g., `src/lib/creativeContextData.ts` or as a standalone `creative-context.json` file in the project's root), tell the agent:
+```text
+PROMPT: "Generate a schema-compliant TS config / JSON dictionary representing our Creative Context metadata based on our gathered sitemap, typography styling, philosophy systems, and vocabularies. Include versioning arrays starting at v1.0.0."
+```
+
+### Step 04: Render the Portal View & Register Routes
+Create a dashboard page (e.g., `src/pages/CreativeContext.tsx`) that reads and visualizes this data beautifully, featuring action buttons to **Download JSON** or **Copy Database to Clipboard**. Finally, link this route to your sitemap (e.g., `/creative-context`) in your main layout menus and sitemap generation scripts.
+
+---
+
+## 6. Implementation Command for AI Assistants
 
 When onboarding a new AI engine to a repository containing this space, copy and copy-paste this direct execution prompt:
 
