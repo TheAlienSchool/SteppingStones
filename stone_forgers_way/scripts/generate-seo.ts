@@ -32,7 +32,7 @@ const pagesRegistry: Record<string, PageMeta> = {
   '/': {
     title: "The Stone Forger's Way :: Move from Chaos to Coherence",
     description: "Are we carrying our burdens in exhausted circles, or are we ready to forge them into cohesive alignment? Walk the dynamic path of self-discovery through somatic exercises, interactive archetype diagnosis, and integrated daily checks designed to anchor creative power and build radical trust.",
-    image: "/The-Forger.png"
+    image: "/The-Forger_Link.png"
   },
   '/journey': {
     title: "The Journey :: The Stone Forger's Way",
