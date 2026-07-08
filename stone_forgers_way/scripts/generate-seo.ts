@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const SITE_URL = process.env.SITE_URL || 'https://wayof.vercel.app';
-const DIST_PATH = path.resolve(__dirname, '../dist/public');
+const DIST_PATH = path.resolve(__dirname, '../dist');
 const INDEX_HTML_PATH = path.join(DIST_PATH, 'index.html');
 const PAGES_DIR = path.resolve(__dirname, '../client/src/pages');
 
@@ -337,7 +337,7 @@ ${urls}
 </urlset>`;
 
   fs.writeFileSync(path.join(DIST_PATH, 'sitemap.xml'), sitemapXml, 'utf8');
-  log(`Sitemap generated successfully in dist/public/sitemap.xml`);
+  log(`Sitemap generated successfully in dist/sitemap.xml`);
 }
 
 function generateRobotsTxt() {
@@ -348,7 +348,7 @@ Allow: /
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
   fs.writeFileSync(path.join(DIST_PATH, 'robots.txt'), robotsTxt, 'utf8');
-  log(`Robots.txt generated successfully in dist/public/robots.txt`);
+  log(`Robots.txt generated successfully in dist/robots.txt`);
 }
 
 // Run the script

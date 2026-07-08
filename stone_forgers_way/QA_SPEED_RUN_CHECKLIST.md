@@ -205,7 +205,7 @@
 
 ### Build Status
 - [ ] `npm run build` completes without errors
-- [ ] dist/public folder created with all assets
+- [ ] dist folder created with all assets
 - [ ] CSS animations included in final CSS bundle
 - [ ] TypeScript compilation successful
 
