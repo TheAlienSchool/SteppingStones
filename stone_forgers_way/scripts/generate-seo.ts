@@ -31,8 +31,8 @@ import { expandedArchetypes } from '../client/src/lib/expandedArchetypes.js';
 const pagesRegistry: Record<string, PageMeta> = {
   '/': {
     title: "The Stone Forger's Way :: Move from Chaos to Coherence",
-    description: "Are we aware of how many stones we are carrying? Their weight is our opportunity. Practices to move from anxious chaos to conscious creation.",
-    image: "/stone-carrier.png"
+    description: "Are we carrying our burdens in exhausted circles, or are we ready to forge them into cohesive alignment? Walk the dynamic path of self-discovery through somatic exercises, interactive archetype diagnosis, and integrated daily checks designed to anchor creative power and build radical trust.",
+    image: "/The-Forger.png"
   },
   '/journey': {
     title: "The Journey :: The Stone Forger's Way",
@@ -266,11 +266,16 @@ function buildPages() {
     const defaultImage = `${SITE_URL}/trust-stepping.png`;
     const imagePath = meta.image ? (meta.image.startsWith('http') ? meta.image : `${SITE_URL}${meta.image}`) : defaultImage;
     const type = meta.type || 'website';
+    const author = "Kamau Zuberi Akabueze";
+    const publishDate = "2025-12-19";
 
     const seoBlock = `
     <!-- Pre-rendered SEO Tags -->
     <link rel="canonical" href="${SITE_URL}${route === '/' ? '' : route}" />
     <meta name="description" content="${meta.description.replace(/"/g, '&quot;')}" />
+    <meta name="author" content="${author}" />
+    <meta property="article:author" content="${author}" />
+    <meta property="article:published_time" content="${publishDate}" />
     <meta property="og:title" content="${meta.title.replace(/"/g, '&quot;')}" />
     <meta property="og:description" content="${meta.description.replace(/"/g, '&quot;')}" />
     <meta property="og:image" content="${imagePath}" />

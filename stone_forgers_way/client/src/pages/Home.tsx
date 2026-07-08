@@ -28,8 +28,8 @@ export default function Home() {
     <Layout showNav={false}>
       <SEO
         title="The Stone Forger's Way :: Move from Chaos to Coherence"
-        description="Are we aware of how many stones we are carrying? Their weight is our opportunity. Practices to move from anxious chaos to conscious creation."
-        image="/stone-carrier.png"
+        description="Are we carrying our burdens in exhausted circles, or are we ready to forge them into cohesive alignment? Walk the dynamic path of self-discovery through somatic exercises, interactive archetype diagnosis, and integrated daily checks designed to anchor creative power and build radical trust."
+        image="/The-Forger.png"
         type="website"
       />
       {/* Floating Hamburger Menu */}
