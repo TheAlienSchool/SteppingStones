@@ -6,40 +6,44 @@ import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import TheJourney from "./pages/TheJourney";
-import Archetypes from "./pages/Archetypes";
-import Concepts from "./pages/Concepts";
-import Practices from "./pages/Practices";
-import Glossary from "./pages/Glossary";
-import About from "./pages/About";
-import Voices from "./pages/Voices";
-import ForgersCohort from "./pages/ForgersCohort";
-import SamuelRHarris from "./pages/SamuelRHarris";
-import TheContainer from "./pages/TheContainer";
-import Reflections from "./pages/Reflections";
-import TheQuestionThatStartedItAll from "./pages/reflections/TheQuestionThatStartedItAll";
-import TrustIsTheCheatCode from "./pages/reflections/TrustIsTheCheatCode";
-import MoneyAsTeacher from "./pages/reflections/MoneyAsTeacher";
-import TheWhalesSong from "./pages/reflections/TheWhalesSong";
-import ThePhysicsOfThought from "./pages/reflections/ThePhysicsOfThought";
-import StoneThrowingVsStoneForging from "./pages/reflections/StoneThrowingVsStoneForging";
-import TheGiftOfGrace from "./pages/reflections/TheGiftOfGrace";
-import TermaInAction from "./pages/reflections/TermaInAction";
-import TheCreativeFortress from "./pages/reflections/TheCreativeFortress";
-import ThePathTo1000WaysToSit from "./pages/reflections/ThePathTo1000WaysToSit";
-import WelcomeToMultifacetedMeditation from "./pages/reflections/WelcomeToMultifacetedMeditation";
-import ThankYou from "./pages/ThankYou";
-import ArchetypeQuiz from "./pages/ArchetypeQuiz";
-import MyArchetype from "./pages/MyArchetype";
-import TodaysPracticePage from "./pages/TodaysPracticePage";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Disclaimer from "./pages/Disclaimer";
-import ArchetypePortal from "./pages/ArchetypePortal";
-import ExpandedQuiz from "./pages/ExpandedQuiz";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 import { SoundProvider, useSound } from "./contexts/SoundContext";
 
-// Code splitting for heavy pages (lazy load on route navigation)
+// Code splitting for secondary pages (lazy load on route navigation)
+const TheJourney = lazy(() => import("./pages/TheJourney"));
+const Archetypes = lazy(() => import("./pages/Archetypes"));
+const Concepts = lazy(() => import("./pages/Concepts"));
+const Practices = lazy(() => import("./pages/Practices"));
+const Glossary = lazy(() => import("./pages/Glossary"));
+const About = lazy(() => import("./pages/About"));
+const Voices = lazy(() => import("./pages/Voices"));
+const ForgersCohort = lazy(() => import("./pages/ForgersCohort"));
+const SamuelRHarris = lazy(() => import("./pages/SamuelRHarris"));
+const TheContainer = lazy(() => import("./pages/TheContainer"));
+const Reflections = lazy(() => import("./pages/Reflections"));
+
+// Reflections
+const TheQuestionThatStartedItAll = lazy(() => import("./pages/reflections/TheQuestionThatStartedItAll"));
+const TrustIsTheCheatCode = lazy(() => import("./pages/reflections/TrustIsTheCheatCode"));
+const MoneyAsTeacher = lazy(() => import("./pages/reflections/MoneyAsTeacher"));
+const TheWhalesSong = lazy(() => import("./pages/reflections/TheWhalesSong"));
+const ThePhysicsOfThought = lazy(() => import("./pages/reflections/ThePhysicsOfThought"));
+const StoneThrowingVsStoneForging = lazy(() => import("./pages/reflections/StoneThrowingVsStoneForging"));
+const TheGiftOfGrace = lazy(() => import("./pages/reflections/TheGiftOfGrace"));
+const TermaInAction = lazy(() => import("./pages/reflections/TermaInAction"));
+const TheCreativeFortress = lazy(() => import("./pages/reflections/TheCreativeFortress"));
+const ThePathTo1000WaysToSit = lazy(() => import("./pages/reflections/ThePathTo1000WaysToSit"));
+const WelcomeToMultifacetedMeditation = lazy(() => import("./pages/reflections/WelcomeToMultifacetedMeditation"));
+
+const ThankYou = lazy(() => import("./pages/ThankYou"));
+const ArchetypeQuiz = lazy(() => import("./pages/ArchetypeQuiz"));
+const MyArchetype = lazy(() => import("./pages/MyArchetype"));
+const TodaysPracticePage = lazy(() => import("./pages/TodaysPracticePage"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const Disclaimer = lazy(() => import("./pages/Disclaimer"));
+const ArchetypePortal = lazy(() => import("./pages/ArchetypePortal"));
+const ExpandedQuiz = lazy(() => import("./pages/ExpandedQuiz"));
+
 const Social = lazy(() => import("./pages/Social"));
 const CompleteWorks = lazy(() => import("./pages/CompleteWorks"));
 const CreativeContext = lazy(() => import("./pages/CreativeContext"));
@@ -66,38 +70,27 @@ function Router() {
   
   return (
     <WouterRouter hook={useSomaticLocation}>
-      <Switch>
-        <Route path={"/"} component={Home} />
-        <Route path={"/journey"} component={TheJourney} />
-        <Route path={"/archetypes"} component={Archetypes} />
-        <Route path={"/archetype/:id"} component={ArchetypePortal} />
-        <Route path={"/archetype-quiz"} component={ArchetypeQuiz} />
-        <Route path={"/expanded-quiz"} component={ExpandedQuiz} />
-        <Route path={"/my-archetype"} component={MyArchetype} />
-        <Route path={"/todays-practice"} component={TodaysPracticePage} />
-        <Route path={"/concepts"} component={Concepts} />
-        <Route path={"/practices"} component={Practices} />
-        <Route path={"/glossary"} component={Glossary} />
-        <Route path={"/works"} component={() => (
-          <Suspense fallback={<PageLoader />}>
-            <CompleteWorks />
-          </Suspense>
-        )} />
-        <Route path="/about" component={About} />
-        <Route path="/social" component={() => (
-          <Suspense fallback={<PageLoader />}>
-            <Social />
-          </Suspense>
-        )} />
-        <Route path="/voices" component={Voices} />
-        <Route path="/forgers-cohort" component={ForgersCohort} />
-        <Route path="/creative-context" component={() => (
-          <Suspense fallback={<PageLoader />}>
-            <CreativeContext />
-          </Suspense>
-        )} />
-        <Route path="/samuel-r-harris" component={SamuelRHarris} />
-        <Route path="/the-container" component={TheContainer} />
+      <Suspense fallback={<PageLoader />}>
+        <Switch>
+          <Route path={"/"} component={Home} />
+          <Route path={"/journey"} component={TheJourney} />
+          <Route path={"/archetypes"} component={Archetypes} />
+          <Route path={"/archetype/:id"} component={ArchetypePortal} />
+          <Route path={"/archetype-quiz"} component={ArchetypeQuiz} />
+          <Route path={"/expanded-quiz"} component={ExpandedQuiz} />
+          <Route path={"/my-archetype"} component={MyArchetype} />
+          <Route path={"/todays-practice"} component={TodaysPracticePage} />
+          <Route path={"/concepts"} component={Concepts} />
+          <Route path={"/practices"} component={Practices} />
+          <Route path={"/glossary"} component={Glossary} />
+          <Route path={"/works"} component={CompleteWorks} />
+          <Route path="/about" component={About} />
+          <Route path="/social" component={Social} />
+          <Route path="/voices" component={Voices} />
+          <Route path="/forgers-cohort" component={ForgersCohort} />
+          <Route path="/creative-context" component={CreativeContext} />
+          <Route path="/samuel-r-harris" component={SamuelRHarris} />
+          <Route path="/the-container" component={TheContainer} />
         <Route path="/reflections" component={Reflections} />
         <Route path="/reflections/the-question-that-started-it-all" component={TheQuestionThatStartedItAll} />
         <Route path="/reflections/trust-is-the-cheat-code" component={TrustIsTheCheatCode} />
@@ -116,6 +109,7 @@ function Router() {
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>
+    </Suspense>
     </WouterRouter>
   );
 }
