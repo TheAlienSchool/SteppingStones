@@ -38,7 +38,7 @@ const expansionTerms = glossaryTerms.filter(t =>
 console.log(`  - ${expansionTerms.length} terms tagged for expanded archetypes`);
 
 // Test each expanded archetype has glossary terms
-const expandedIds = ['jade-hunter', 'the-invitation', 'stone-keeper', 'stone-breaker', 'stone-caller', 'stone-witness'];
+const expandedIds = ['jade-hunter', 'walker-of-the-way', 'stone-keeper', 'stone-breaker', 'stone-caller', 'stone-witness'];
 expandedIds.forEach(id => {
   const terms = getTermsByArchetype(id);
   console.log(`  - ${id}: ${terms.length} glossary terms`);
@@ -113,7 +113,9 @@ const checkPlainLanguage = (text, context) => {
   // Check for gamification language
   const gameWords = ['level up', 'unlock', 'achievement', 'xp', 'points', 'score'];
   gameWords.forEach(word => {
-    if (text.toLowerCase().includes(word)) {
+    const isXp = word === 'xp';
+    const regex = isXp ? new RegExp(`\\b${word}\\b`, 'i') : new RegExp(word, 'i');
+    if (regex.test(text)) {
       issues.push(`Contains gamification: "${word}"`);
     }
   });

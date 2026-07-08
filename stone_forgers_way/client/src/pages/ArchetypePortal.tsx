@@ -30,11 +30,10 @@ export default function ArchetypePortal() {
   if (!archetypeId || !params) {
     return (
       <Layout>
-      <SEO
-        title={`${archetype.name} :: Archetype Portal :: The Stone Forger's Way`}
-        description={archetype.simpleDefinition}
-        image={archetype.imagePath}
-      />
+        <SEO
+          title="Archetype Not Found :: The Stone Forger's Way"
+          description="The requested archetype could not be found."
+        />
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center space-y-6 max-w-md">
             <h1 className="text-4xl font-serif text-stone-800">
@@ -59,6 +58,11 @@ export default function ArchetypePortal() {
 
   return (
     <Layout>
+      <SEO
+        title={`${archetype.name} :: Archetype Portal :: The Stone Forger's Way`}
+        description={archetype.simpleDefinition}
+        image={archetype.imagePath}
+      />
       <div className="bg-gradient-to-b from-amber-50 to-white">
         {/* Hero Section */}
         <section className="reveal-animate py-16 md:py-24">

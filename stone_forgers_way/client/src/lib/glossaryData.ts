@@ -596,6 +596,159 @@ export const glossaryTerms: GlossaryTerm[] = [
     relatedTerms: ["The Field", "Whakapapa", "Ancestral Knowing"],
     coreArchetypeTags: ['forger'],
     expandedArchetypeTags: ['walker-of-the-way', 'stone-keeper']
+  },
+  {
+    term: "Structure",
+    simple: "The organizing design that directs and sustains attention.",
+    experience: "A calendar grid, a Dojo floor, or the regular coordinates of a workout routine... structure is the visible trellis that keeps your energy from collapsing back into noise.",
+    insight: "Without structure, creation drifts and erodes. It provides a stable architecture within the Field to experience presence without collapse.",
+    category: "concepts",
+    relatedTerms: ["The Trellis and the Vine", "Active Patience", "Pattern"],
+    expandedArchetypeTags: ["jade-hunter"]
+  },
+  {
+    term: "Pattern",
+    simple: "The repeating blueprint or configuration of energy in consciousness.",
+    experience: "You notice you react identically to different events. That is a pattern—a recurring, habituated pathway that shapes how you perceive and materialize reality.",
+    insight: "Patterns represent active system software. Recognizing yours is the prerequisite to forging them.",
+    category: "concepts",
+    relatedTerms: ["Pattern Recognition", "Toroidal Binding", "Structure"],
+    expandedArchetypeTags: ["jade-hunter"]
+  },
+  {
+    term: "Algorithm",
+    simple: "The logical sequence of instructions that generates a habit or pattern.",
+    experience: "Trigger → Emotion → Reaction → Obligation. This sequence runs automatically in your nervous system like compiled code, until you pause and audit it.",
+    insight: "Algorithms are the mechanics of habit. By naming the variables, you can override the sequence with presence.",
+    category: "mechanics",
+    relatedTerms: ["Code Audit", "Pattern", "Unbinding"],
+    expandedArchetypeTags: ["jade-hunter"]
+  },
+  {
+    term: "Lineage",
+    simple: "The historical and ancestral sequence from which your wisdom and burdens flow.",
+    experience: "You speak a truth and realize your grandmother expressed the identical sentiment decades ago. That feeling is lineage—a sequence of support and coordinates flowing through you.",
+    insight: "You do not build in isolation. You build in conversation with the lineage of those who walked before.",
+    category: "concepts",
+    relatedTerms: ["Ancestral Knowing", "Whakapapa", "Lineage as Mechanism"],
+    expandedArchetypeTags: ["walker-of-the-way", "stone-keeper"]
+  },
+  {
+    term: "Memory",
+    simple: "The storage format of experiences, encoded in both tissue and the field.",
+    experience: "A scent instantly tethers you to a childhood summer. It is not an intellectual text; it's a physical, somatic feeling stored in your muscles and bone.",
+    insight: "Memory is not passive history; it is active data stored in your instrument, influencing your present attention.",
+    category: "concepts",
+    relatedTerms: ["Somatic", "The Archive", "Lineage"],
+    expandedArchetypeTags: ["stone-keeper"]
+  },
+  {
+    term: "Archive",
+    simple: "The physical and historical record of a lineage's experiences.",
+    experience: "You look at an old family portrait or read a handwritten journal. You feel some weight rising to meet you—the collective records of what was carried and what was forged.",
+    insight: "Preserving the archive allows us to choose which stones are ours to hold and which must be placed back.",
+    category: "concepts",
+    relatedTerms: ["The Archive", "Lineage", "Memory"],
+    expandedArchetypeTags: ["stone-keeper"]
+  },
+  {
+    term: "Ancestral Stones",
+    simple: "The unresolved obligations and gifts transmitted through your lineage.",
+    experience: "You hold a belief that you must constantly work to enjoy safety. You realize your ancestors carried this weight out of absolute necessity, and you inherited it automatically.",
+    insight: "We honor ancestral stones not by carrying them into calcification, but by acknowledging their function and forging their energy.",
+    category: "concepts",
+    relatedTerms: ["Lineage", "Ancestral Knowing", "The Archive"],
+    expandedArchetypeTags: ["stone-keeper"]
+  },
+  {
+    term: "Transformation",
+    simple: "The structural reorganization of your pattern into a higher state of coherence.",
+    experience: "A rigid, painful blockage in your neck or your mind suddenly releases and becomes raw creative power. This is the sensation of transformation.",
+    insight: "Energy cannot be destroyed. Actionable practice shifts your relation to your constraints, reorganizing them from limitations into stepping stones.",
+    category: "practice",
+    relatedTerms: ["Liberation", "Calcification", "Unbinding"],
+    expandedArchetypeTags: ["stone-breaker"]
+  },
+  {
+    term: "Release",
+    simple: "The somatic choice to lay down a stone that is not yours to carry.",
+    experience: "You take a deep exhale and let go of trying to fix a situation you cannot control. The physical tension in your shoulders instantly dissolves.",
+    insight: "Release is active, not passive. It is a decision to trust that the universe holds the weight when you let go.",
+    category: "practice",
+    relatedTerms: ["Unbinding", "Trust", "Liberation"],
+    expandedArchetypeTags: ["stone-breaker"]
+  },
+  {
+    term: "Impact",
+    simple: "The focused force of change applied to a calcified pattern.",
+    experience: "Striking a chisel to crack a stone, or speaking a clear, direct boundary that shatters a long-standing pattern of silence.",
+    insight: "Impact requires precise timing and alignment. A single, focused blow of presence can crack open years of calcification.",
+    category: "mechanics",
+    relatedTerms: ["Calcification", "Transformation", "Liberation"],
+    expandedArchetypeTags: ["stone-breaker"]
+  },
+  {
+    term: "Manifestation",
+    simple: "The process of bringing your intentions into physical, material form.",
+    experience: "You hold an idea in silence, align your breath, express it clearly, and witness the opportunities materializing step by step to build it.",
+    insight: "Manifestation is the natural physics of aligned attention interacting with the creative Field.",
+    category: "mechanics",
+    relatedTerms: ["Summoning", "Fabrication of Form", "Frequency"],
+    expandedArchetypeTags: ["stone-caller"]
+  },
+  {
+    term: "Vibration",
+    simple: "The sub-perceptual frequency at which an element or pattern oscillates.",
+    experience: "A hum in your chest, the quality of a room, or the specific pitch of a speaker's voice that moves you before you understand their words.",
+    insight: "All material form is composed of vibrating energy. Aligning your somatic vibrational rate shifts what you draw to you.",
+    category: "mechanics",
+    relatedTerms: ["Frequency", "Resonance", "Cardiac-Geomagnetic Resonance (0.1 Hz)"],
+    expandedArchetypeTags: ["stone-caller"]
+  },
+  {
+    term: "Word",
+    simple: "The intentional vocalization that acts as a structural pattern for reality.",
+    experience: "You declare 'I am ready,' and your entire posture conforms to that truth. Your spoken words organize the field like physical structures.",
+    insight: "Words are active forces, not labels. Every word spoken is a tiny act of creation that shapes the local field.",
+    category: "mechanics",
+    relatedTerms: ["Manifestation", "Summoning", "Frequency"],
+    expandedArchetypeTags: ["stone-caller"]
+  },
+  {
+    term: "Presence",
+    simple: "The state of complete unified engagement with the current moment.",
+    experience: "You look at a stone, a flower, or a child, and the chatter in your mind completely stops. There is only the seeing and the being.",
+    insight: "Presence is the portal through which all genuine forges occur. It is the raw material of creation.",
+    category: "concepts",
+    relatedTerms: ["Stillness", "Observation", "Pre-Flow Coherence"],
+    expandedArchetypeTags: ["stone-witness"]
+  },
+  {
+    term: "Observation",
+    simple: "The practice of watching without attempting to alter, move, or judge.",
+    experience: "You notice anxiety in your belly. Instead of trying to fix it, you simply sit with it, breathing gently, letting it drift without interference.",
+    insight: "Conscious observation relaxes the nervous system, allowing patterns to unwind themselves naturally.",
+    category: "practice",
+    relatedTerms: ["Presence", "Stillness", "Anchoring"],
+    expandedArchetypeTags: ["stone-witness"]
+  },
+  {
+    term: "Stillness",
+    simple: "The quiet center where all motion and potential reside.",
+    experience: "Sitting completely quiet between breaths, when the silence becomes absolute, yet you feel completely alive, full of infinite possibility.",
+    insight: "Stillness is not empty; it is the dense matrix of all potential form waiting to be called into movement.",
+    category: "practice",
+    relatedTerms: ["Presence", "Observation", "Anchoring"],
+    expandedArchetypeTags: ["stone-witness"]
+  },
+  {
+    term: "Witness Consciousness",
+    simple: "The detached, spacious awareness that observes all thoughts and experiences.",
+    experience: "You watch yourself having an emotion, realizing: 'I am not the anger. I am the sky in which the cloud of anger drift.'",
+    insight: "Accessing witness consciousness bypasses reactivity, anchoring you as a stationary anchor in a chaotic field.",
+    category: "concepts",
+    relatedTerms: ["Presence", "Observation", "Stillness"],
+    expandedArchetypeTags: ["stone-witness"]
   }
 ];
 
