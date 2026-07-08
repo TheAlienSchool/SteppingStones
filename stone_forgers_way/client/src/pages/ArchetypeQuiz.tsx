@@ -40,6 +40,20 @@ export default function ArchetypeQuiz() {
   const [breathCycleCount, setBreathCycleCount] = useState(0);
   const [breathProgress, setBreathProgress] = useState(0);
   const [secondsRemaining, setSecondsRemaining] = useState(32);
+  const [hasPlayedReadySound, setHasPlayedReadySound] = useState(false);
+
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const canBegin = breathCycleCount >= 2;
+
+  useEffect(() => {
+    if (canBegin && !hasPlayedReadySound) {
+      playChime(528, "harmonic");
+      setHasPlayedReadySound(true);
+      if (buttonRef.current) {
+        buttonRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    }
+  }, [canBegin, hasPlayedReadySound, playChime]);
 
   useEffect(() => {
     if (!isGrounding) {
@@ -267,59 +281,62 @@ export default function ArchetypeQuiz() {
       ringColor = "border-stone-800/40";
     }
 
-    const canBegin = breathCycleCount >= 2;
-
     return (
       <Layout>
       <SEO
         title="Archetype Quiz :: Discover Your Pattern :: The Stone Forger's Way"
         description="A 10-question diagnostic to identify your primary relation to creative blockages and alignment."
       />
-        <div className="min-h-screen py-24 bg-stone-950 flex items-center justify-center relative overflow-hidden">
+        <div className="min-h-[calc(100vh-112px)] py-6 md:py-10 bg-stone-950 flex items-center justify-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500 via-transparent to-transparent bg-[size:30px_30px] bg-repeat" />
           
-          <div className="max-w-md w-full mx-auto px-6 text-center space-y-12 relative z-10">
-            <div className="space-y-4">
+          <div className="max-w-md w-full mx-auto px-6 text-center space-y-6 md:space-y-8 relative z-10">
+            <div className="space-y-3">
               <span className="text-amber-500/80 uppercase tracking-[0.25em] text-xs font-mono">
                 Somatic Pre-Quiz Calibration
               </span>
-              <h2 className="text-3xl font-serif text-stone-200">
+              <h2 className="text-2xl md:text-3xl font-serif text-stone-200">
                 Ground Your Attention
               </h2>
-              <p className="text-sm text-stone-400 leading-relaxed max-w-sm mx-auto">
+              <p className="text-xs md:text-sm text-stone-400 leading-relaxed max-w-sm mx-auto">
                 Before seeking your archetype, settle your nervous system. Align your breath with the visual pacer.
               </p>
             </div>
 
-            <div className="relative w-48 h-48 mx-auto flex items-center justify-center">
+            <div className="relative w-36 h-36 md:w-48 md:h-48 mx-auto flex items-center justify-center">
               <div 
                 className={`absolute inset-0 rounded-full border-2 transition-all duration-[4000ms] ease-in-out transform ${ringSize} ${ringColor}`}
               />
               <div className="absolute inset-0 rounded-full border border-stone-800/30 scale-[1.15] pointer-events-none" />
-              <div className="w-4 h-4 rounded-full bg-amber-500/80 animate-pulse" />
+              <div className="w-3.5 h-3.5 rounded-full bg-amber-500/80 animate-pulse" />
             </div>
 
-            <div className="h-12 flex items-center justify-center">
-              <SteamSans text={text} register="hba" fontSize={18} className="text-stone-300 font-light" />
+            <div className="h-10 flex items-center justify-center">
+              <SteamSans text={text} register="hba" fontSize={16} className="text-stone-300 font-light" />
             </div>
 
-            <div className="space-y-4 pt-4">
+            <div className="space-y-3 pt-2">
               <Button
+                ref={buttonRef}
                 disabled={!canBegin}
                 onClick={() => {
                   playChime(528, "harmonic");
                   setIsGrounding(false);
                 }}
-                className={`w-full py-6 rounded-xl font-mono text-sm tracking-widest uppercase transition-all duration-500 ${
+                className={`w-full py-5 md:py-6 rounded-xl font-mono text-xs md:text-sm tracking-widest uppercase transition-all duration-500 ${
                   canBegin 
-                    ? "bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-[0_4px_20px_rgba(245,158,11,0.25)] cursor-pointer" 
+                    ? "bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-[0_0_25px_rgba(245,158,11,0.45)] hover:shadow-[0_0_35px_rgba(245,158,11,0.65)] hover:scale-[1.02] cursor-pointer border border-amber-300/30" 
                     : "bg-stone-800 text-stone-500 opacity-60 cursor-not-allowed"
                 }`}
               >
                 {canBegin ? "Begin from Stillness" : `Aligning Breath (${secondsRemaining}s)...`}
               </Button>
               
-              {!canBegin && (
+              {canBegin ? (
+                <p className="text-xs text-amber-500/80 font-mono animate-pulse tracking-wider">
+                  ✦ Stillness achieved. Click above to begin your journey. ✦
+                </p>
+              ) : (
                 <p className="text-xs text-stone-500 font-mono">
                   Allow two full breathing cycles to settle and synchronize.
                 </p>
