@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import SocialShare from "@/components/SocialShare";
 import NewsletterSignup from "@/components/NewsletterSignup";
@@ -7,6 +8,11 @@ import GlossaryTooltip from "@/components/GlossaryTooltip";
 export default function TheQuestionThatStartedItAll() {
   return (
     <Layout>
+      <SEO
+        title="The Question That Started It All :: Reflections :: The Stone Forger's Way"
+        description={'"How is my father not inside of you?" The catalyst question that birthed the Stone Forger\'s Way.'}
+        type="article"
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

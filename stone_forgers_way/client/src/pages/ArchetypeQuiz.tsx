@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -270,6 +271,10 @@ export default function ArchetypeQuiz() {
 
     return (
       <Layout>
+      <SEO
+        title="Archetype Quiz :: Discover Your Pattern :: The Stone Forger's Way"
+        description="A 10-question diagnostic to identify your primary relation to creative blockages and alignment."
+      />
         <div className="min-h-screen py-24 bg-stone-950 flex items-center justify-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500 via-transparent to-transparent bg-[size:30px_30px] bg-repeat" />
           

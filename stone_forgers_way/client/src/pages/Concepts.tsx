@@ -1,10 +1,15 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
 import { Link } from "wouter";
 
 export default function Concepts() {
   return (
     <Layout>
+      <SEO
+        title="Concepts :: Core Philosophy :: The Stone Forger's Way"
+        description="Explore the core structural models and principles: Active Patience, the Shield, the Trellis, and Toroidal Binding."
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

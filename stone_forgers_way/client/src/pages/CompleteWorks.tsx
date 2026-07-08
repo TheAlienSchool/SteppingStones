@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import { useState } from "react";
 import { Link } from "wouter";
@@ -95,6 +96,10 @@ export default function CompleteWorks() {
 
   return (
     <Layout>
+      <SEO
+        title="Complete Works :: Samuel R. Harris :: The Stone Forger's Way"
+        description="Explore the full collection of papers, letters, and research notes of Samuel R. Harris."
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">

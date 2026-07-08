@@ -1,9 +1,14 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
 
 export default function TheContainer() {
   return (
     <Layout>
+      <SEO
+        title="The Container :: Sacred Residency :: The Stone Forger's Way"
+        description="Learn about the 1000 Ways to Sit physical residency spaces and containers of practice."
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

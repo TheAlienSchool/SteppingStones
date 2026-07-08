@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link, useSearch } from "wouter";
 import { Heart, ArrowRight } from "lucide-react";
@@ -20,6 +21,10 @@ export default function ThankYou() {
 
   return (
     <Layout>
+      <SEO
+        title="Thank You :: The Stone Forger's Way"
+        description="Thank you for supporting the legacy and research of the Stone Forger's Way."
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-12">

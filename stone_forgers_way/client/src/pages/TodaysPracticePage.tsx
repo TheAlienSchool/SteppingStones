@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import TodaysPractice from "@/components/TodaysPractice";
 import PracticeReminder from "@/components/PracticeReminder";
 import { getTodaysPractice, practices, getPracticesForArchetype, getArchetypeDisplayName, type Practice } from "@/lib/todaysPractice";
@@ -20,6 +21,10 @@ export default function TodaysPracticePage() {
 
   return (
     <Layout>
+      <SEO
+        title="Today's Practice :: The Stone Forger's Way"
+        description="Find a single, daily somatic alignment check or reflective practice for your day."
+      />
       <div className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           {/* Header */}

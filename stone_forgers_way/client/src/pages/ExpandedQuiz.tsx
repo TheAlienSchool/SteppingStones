@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -216,6 +217,10 @@ export default function ExpandedQuiz() {
   if (!coreArchetype) {
     return (
       <Layout>
+      <SEO
+        title="Expanded Quiz :: The Frictional Lens :: The Stone Forger's Way"
+        description="Deepen your self-knowledge with the second stage of the quiz and uncover your specific frictional state."
+      />
         <div className="min-h-screen py-24 bg-gradient-to-b from-amber-50 to-stone-50 flex items-center justify-center">
           <div className="text-center space-y-6">
             <div className="w-16 h-16 mx-auto border-4 border-amber-600 border-t-transparent rounded-full animate-spin" />

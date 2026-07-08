@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
@@ -64,6 +65,10 @@ export default function Practices() {
 
   return (
     <Layout>
+      <SEO
+        title="Practices :: Somatic Integration :: The Stone Forger's Way"
+        description="Access the full curriculum of exercises, somatic checks, and breathwork to ground your awareness."
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

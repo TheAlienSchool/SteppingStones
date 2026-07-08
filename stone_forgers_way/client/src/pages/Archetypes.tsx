@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -73,6 +74,10 @@ The Stone Forger is not a destination. It is a practice. It is the conscious cho
 export default function Archetypes() {
   return (
     <Layout>
+      <SEO
+        title="The Archetypes :: Core & Frictional States :: The Stone Forger's Way"
+        description="Understand the 4 Core Archetypes (Carrier, Thrower, Conscious Forger, Stone Forger) and the 6 Frictional Reality Archetypes."
+      />
       <div className="bg-gradient-to-b from-amber-50 to-white">
         {/* Header - Pause Animation */}
         <section className="reveal-animate py-24">

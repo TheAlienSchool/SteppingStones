@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRoute, Link } from "wouter";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
 import SocialShare from "@/components/SocialShare";
@@ -29,6 +30,11 @@ export default function ArchetypePortal() {
   if (!archetypeId || !params) {
     return (
       <Layout>
+      <SEO
+        title={`${archetype.name} :: Archetype Portal :: The Stone Forger's Way`}
+        description={archetype.simpleDefinition}
+        image={archetype.imagePath}
+      />
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center space-y-6 max-w-md">
             <h1 className="text-4xl font-serif text-stone-800">

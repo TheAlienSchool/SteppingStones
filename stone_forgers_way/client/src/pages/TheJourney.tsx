@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Link } from "wouter";
 import { ChevronDown, Sparkles } from "lucide-react";
 import GlossaryTooltip from "@/components/GlossaryTooltip";
@@ -384,6 +385,10 @@ export default function TheJourney() {
 
   return (
     <Layout>
+      <SEO
+        title="The Journey :: The Stone Forger's Way"
+        description="Explore the developmental stages of the Stone Forger: from Carrier, to Thrower, to Conscious Forger, and finally the integrated Stone Forger."
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

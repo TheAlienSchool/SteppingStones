@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import SocialShare from "@/components/SocialShare";
 import NewsletterSignup from "@/components/NewsletterSignup";
@@ -7,6 +8,11 @@ import GlossaryTooltip from "@/components/GlossaryTooltip";
 export default function WelcomeToMultifacetedMeditation() {
   return (
     <Layout>
+      <SEO
+        title="Welcome to Multifaceted Meditation :: Reflections :: The Stone Forger's Way"
+        description="An introductory guide to integrating breath, somatic awareness, and intellectual inquiry in practice."
+        type="article"
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

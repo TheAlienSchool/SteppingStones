@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
@@ -52,6 +53,10 @@ export default function TheGlossary() {
 
   return (
     <Layout>
+      <SEO
+        title="Glossary :: Terms of the Way :: The Stone Forger's Way"
+        description="Browse the precise definitions, terms, and lenses that form the language of the Stone Forger's path."
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

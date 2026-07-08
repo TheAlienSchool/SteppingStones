@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import SocialShare from "@/components/SocialShare";
 import NewsletterSignup from "@/components/NewsletterSignup";
@@ -6,6 +7,11 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 export default function TheWhalesSong() {
   return (
     <Layout>
+      <SEO
+        title="The Whale's Song :: Reflections :: The Stone Forger's Way"
+        description="When intention sinks deep enough, it doesn't drown — it echoes forever in the Field."
+        type="article"
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

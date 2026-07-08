@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import ContributionInvitation from "@/components/ContributionInvitation";
 import SocialShare from "@/components/SocialShare";
 import NewsletterSignup from "@/components/NewsletterSignup";
@@ -6,6 +7,11 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 export default function TrustIsTheCheatCode() {
   return (
     <Layout>
+      <SEO
+        title="Trust Is The Cheat Code :: Reflections :: The Stone Forger's Way"
+        description="Moving from anxious control to radical trust. Why trust is the core mechanism of the Stone Forger."
+        type="article"
+      />
       <div className="min-h-screen py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
